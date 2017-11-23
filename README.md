@@ -4,7 +4,7 @@ MCC is a High-Level Net "Blaster" for the Model-Checking Contest (MCC).
 
 We use the term *blaster*, instead of *unfolding*, to underline the fact that
 our translation is very crude. A comparable tool is *andl*, distributed with
-[Marcie]("http://www-dssz.informatik.tu-cottbus.de/DSSZ/Software/Marcie"). In
+[Marcie](http://www-dssz.informatik.tu-cottbus.de/DSSZ/Software/Marcie). In
 the future, we plan to use the transformation to compute interesting properties
 of the models, like symetries and/or set of places that can be clustered
 together.
@@ -52,9 +52,9 @@ $> mcc help hlnet
 
 ## License
 
-This software is distributed under the [CECILL-B]("http://www.cecill.info") license.
+This software is distributed under the [CECILL-B](http://www.cecill.info) license.
 A copy of the license agreement is found in file LICENSE.
 
 ## Authors
 
-* **Silvano DAL ZILIO** -  [LAAS/CNRS]("https://www.laas.fr/")
+* **Silvano DAL ZILIO** -  [LAAS/CNRS](https://www.laas.fr/)
