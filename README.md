@@ -10,7 +10,8 @@ of the models, like symetries and/or set of places that can be clustered
 together.
 
 At the moment, we simply recognize the case of high-level nets with a single
-variable used with a circular symmetry (basically a "scalar set"). This allows us to manage very big instances of the Philosophers model.
+variable used with a circular symmetry (basically, this is a "scalar set"). This
+allows us to manage very big instances of the *Philosophers* model.
 
 ## Getting Started
 
