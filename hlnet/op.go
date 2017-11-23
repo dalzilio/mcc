@@ -11,7 +11,7 @@ package hlnet
 // transitions. OUT is an arc from a transition to a place.
 type ARC int
 
-// IN the kind of input arcs while OUT is for output.
+// IN is the kind of input arcs while OUT is for output.
 const (
 	IN ARC = iota
 	OUT
