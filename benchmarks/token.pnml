@@ -1,0 +1,423 @@
+<?xml version="1.0"?>
+<pnml 
+	xmlns="http://www.pnml.org/version-2009/grammar/pnml">
+	<net id="TokenRing-COL-005" type="http://www.pnml.org/version-2009/grammar/symmetricnet">
+		<page id="tokenringDefaultPage">
+			<place id="state">
+				<name>
+					<text>State</text>
+				</name>
+				<type>
+					<text>Couple</text>
+					<structure>
+						<usersort declaration="couple"/>
+					</structure>
+				</type>
+				<hlinitialMarking>
+					<text>{($i,$i) | 0 leq $i leq 5}</text>
+					<structure>
+						<add>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="process0"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="process0"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="process1"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="process1"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="process2"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="process2"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="process3"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="process3"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="process4"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="process4"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="process5"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="process5"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+						</add>
+					</structure>
+				</hlinitialMarking>
+			</place>
+			<transition id="mainprocess">
+				<name>
+					<text>MainProcess</text>
+				</name>
+			</transition>
+			<transition id="otherprocess">
+				<name>
+					<text>OtherProcess</text>
+				</name>
+				<condition>
+					<text>[i ineq 0 and x ineq y]</text>
+					<structure>
+						<and>
+							<subterm>
+								<inequality>
+									<subterm>
+										<variable refvariable="vari"/>
+									</subterm>
+									<subterm>
+										<useroperator declaration="process0"/>
+									</subterm>
+								</inequality>
+							</subterm>
+							<subterm>
+								<inequality>
+									<subterm>
+										<variable refvariable="varx"/>
+									</subterm>
+									<subterm>
+										<variable refvariable="vary"/>
+									</subterm>
+								</inequality>
+							</subterm>
+						</and>
+					</structure>
+				</condition>
+			</transition>
+			<arc id="mainproc2state" source="mainprocess" target="state">
+				<name>
+					<text>MainProcess2State</text>
+				</name>
+				<hlinscription>
+					<text>1'(0, x++1) + 1'(5, x)</text>
+					<structure>
+						<add>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="process0"/>
+											</subterm>
+											<subterm>
+												<successor>
+													<subterm>
+														<variable refvariable="varx"/>
+													</subterm>
+												</successor>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="process5"/>
+											</subterm>
+											<subterm>
+												<variable refvariable="varx"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+						</add>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="state2mainproc" source="state" target="mainprocess">
+				<name>
+					<text>State2MainProc</text>
+				</name>
+				<hlinscription>
+					<text>1'(0, x) + 1'(5,x)</text>
+					<structure>
+						<add>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="process0"/>
+											</subterm>
+											<subterm>
+												<variable refvariable="varx"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="process5"/>
+											</subterm>
+											<subterm>
+												<variable refvariable="varx"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+						</add>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="otherproc2state" source="otherprocess" target="state">
+				<name>
+					<text>OtherProcess2State</text>
+				</name>
+				<hlinscription>
+					<text>1'(i, y) + 1'(i--1, y)</text>
+					<structure>
+						<add>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<variable refvariable="vari"/>
+											</subterm>
+											<subterm>
+												<variable refvariable="vary"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<predecessor>
+													<subterm>
+														<variable refvariable="vari"/>
+													</subterm>
+												</predecessor>
+											</subterm>
+											<subterm>
+												<variable refvariable="vary"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+						</add>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="state2otherproc" source="state" target="otherprocess">
+				<name>
+					<text>State2OtherProcess</text>
+				</name>
+				<hlinscription>
+					<text>1'(i, x) + 1'(i--1, y)</text>
+					<structure>
+						<add>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<variable refvariable="vari"/>
+											</subterm>
+											<subterm>
+												<variable refvariable="varx"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<predecessor>
+													<subterm>
+														<variable refvariable="vari"/>
+													</subterm>
+												</predecessor>
+											</subterm>
+											<subterm>
+												<variable refvariable="vary"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+						</add>
+					</structure>
+				</hlinscription>
+			</arc>
+		</page>
+		<name>
+			<text>TokenRing-COL-005</text>
+		</name>
+		<declaration>
+			<structure>
+				<declarations>
+					<namedsort id="process" name="Process">
+						<cyclicenumeration>
+							<feconstant id="process0" name="0"/>
+							<feconstant id="process1" name="1"/>
+							<feconstant id="process2" name="2"/>
+							<feconstant id="process3" name="3"/>
+							<feconstant id="process4" name="4"/>
+							<feconstant id="process5" name="5"/>
+						</cyclicenumeration>
+					</namedsort>
+					<namedsort id="couple" name="Couple">
+						<productsort>
+							<usersort declaration="process"/>
+							<usersort declaration="process"/>
+						</productsort>
+					</namedsort>
+					<variabledecl id="vari" name="i">
+						<usersort declaration="process"/>
+					</variabledecl>
+					<variabledecl id="varx" name="x">
+						<usersort declaration="process"/>
+					</variabledecl>
+					<variabledecl id="vary" name="y">
+						<usersort declaration="process"/>
+					</variabledecl>
+				</declarations>
+			</structure>
+		</declaration>
+	</net>
+</pnml>

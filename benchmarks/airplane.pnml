@@ -1,0 +1,1848 @@
+<?xml version="1.0"?>
+<pnml xmlns="http://www.pnml.org/version-2009/grammar/pnml">
+	<net id="AirplaneLD-COL-0010" type="http://www.pnml.org/version-2009/grammar/symmetricnet">
+		<page id="DocumentDefaultPage">
+			<place id="stp5">
+				<name>
+					<text>stp5</text>
+				</name>
+				<type>
+					<text>Dot</text>
+					<structure>
+						<usersort declaration="dot"/>
+					</structure>
+				</type>
+				<hlinitialMarking>
+					<text>1'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinitialMarking>
+			</place>
+			<place id="stp4">
+				<name>
+					<text>stp4</text>
+				</name>
+				<type>
+					<text>Dot</text>
+					<structure>
+						<usersort declaration="dot"/>
+					</structure>
+				</type>
+				<hlinitialMarking>
+					<text>1'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinitialMarking>
+			</place>
+			<place id="stp3">
+				<name>
+					<text>stp3</text>
+				</name>
+				<type>
+					<text>Dot</text>
+					<structure>
+						<usersort declaration="dot"/>
+					</structure>
+				</type>
+				<hlinitialMarking>
+					<text>1'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinitialMarking>
+			</place>
+			<place id="stp2">
+				<name>
+					<text>stp2</text>
+				</name>
+				<type>
+					<text>Dot</text>
+					<structure>
+						<usersort declaration="dot"/>
+					</structure>
+				</type>
+				<hlinitialMarking>
+					<text>1'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinitialMarking>
+			</place>
+			<place id="stp1">
+				<name>
+					<text>stp1</text>
+				</name>
+				<type>
+					<text>Dot</text>
+					<structure>
+						<usersort declaration="dot"/>
+					</structure>
+				</type>
+				<hlinitialMarking>
+					<text>1'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinitialMarking>
+			</place>
+			<place id="SpeedPossibleVal">
+				<name>
+					<text>SpeedPossibleVal</text>
+				</name>
+				<type>
+					<text>Speed</text>
+					<structure>
+						<usersort declaration="Speed"/>
+					</structure>
+				</type>
+				<hlinitialMarking>
+					<text>1'(Speed.all)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<all>
+									<usersort declaration="Speed"/>
+								</all>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinitialMarking>
+			</place>
+			<place id="AltitudePossibleVal">
+				<name>
+					<text>AltitudePossibleVal</text>
+				</name>
+				<type>
+					<text>Altitude</text>
+					<structure>
+						<usersort declaration="Altitude"/>
+					</structure>
+				</type>
+				<hlinitialMarking>
+					<text>1'(Altitude.all)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<all>
+									<usersort declaration="Altitude"/>
+								</all>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinitialMarking>
+			</place>
+			<place id="WeightPossibleVal">
+				<name>
+					<text>WeightPossibleVal</text>
+				</name>
+				<type>
+					<text>Weight</text>
+					<structure>
+						<usersort declaration="weight"/>
+					</structure>
+				</type>
+				<hlinitialMarking>
+					<text>1'(Weight.all)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<all>
+									<usersort declaration="weight"/>
+								</all>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinitialMarking>
+			</place>
+			<place id="P5">
+				<name>
+					<text>P5</text>
+				</name>
+				<type>
+					<text>Dot</text>
+					<structure>
+						<usersort declaration="dot"/>
+					</structure>
+				</type>
+			</place>
+			<place id="P4">
+				<name>
+					<text>P4</text>
+				</name>
+				<type>
+					<text>Dot</text>
+					<structure>
+						<usersort declaration="dot"/>
+					</structure>
+				</type>
+			</place>
+			<place id="P3">
+				<name>
+					<text>P3</text>
+				</name>
+				<type>
+					<text>Dot</text>
+					<structure>
+						<usersort declaration="dot"/>
+					</structure>
+				</type>
+			</place>
+			<place id="P2">
+				<name>
+					<text>P2</text>
+				</name>
+				<type>
+					<text>Dot</text>
+					<structure>
+						<usersort declaration="dot"/>
+					</structure>
+				</type>
+			</place>
+			<place id="P6">
+				<name>
+					<text>P6</text>
+				</name>
+				<type>
+					<text>Dot</text>
+					<structure>
+						<usersort declaration="dot"/>
+					</structure>
+				</type>
+			</place>
+			<place id="P1">
+				<name>
+					<text>P1</text>
+				</name>
+				<type>
+					<text>Dot</text>
+					<structure>
+						<usersort declaration="dot"/>
+					</structure>
+				</type>
+				<hlinitialMarking>
+					<text>1'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinitialMarking>
+			</place>
+			<place id="Weight_Right_Wheel">
+				<name>
+					<text>Weight_Right_Wheel</text>
+				</name>
+				<type>
+					<text>Weight</text>
+					<structure>
+						<usersort declaration="weight"/>
+					</structure>
+				</type>
+			</place>
+			<place id="Weight_Left_Wheel">
+				<name>
+					<text>Weight_Left_Wheel</text>
+				</name>
+				<type>
+					<text>Weight</text>
+					<structure>
+						<usersort declaration="weight"/>
+					</structure>
+				</type>
+			</place>
+			<place id="TheAltitude">
+				<name>
+					<text>TheAltitude</text>
+				</name>
+				<type>
+					<text>Altitude</text>
+					<structure>
+						<usersort declaration="Altitude"/>
+					</structure>
+				</type>
+			</place>
+			<place id="Speed_Left_Wheel">
+				<name>
+					<text>Speed_Left_Wheel</text>
+				</name>
+				<type>
+					<text>Speed</text>
+					<structure>
+						<usersort declaration="Speed"/>
+					</structure>
+				</type>
+			</place>
+			<place id="Speed_Right_Wheel">
+				<name>
+					<text>Speed_Right_Wheel</text>
+				</name>
+				<type>
+					<text>Speed</text>
+					<structure>
+						<usersort declaration="Speed"/>
+					</structure>
+				</type>
+			</place>
+			<place id="Plane_On_Ground_Signal_no">
+				<name>
+					<text>Plane_On_Ground_Signal_no</text>
+				</name>
+				<type>
+					<text>Signal</text>
+					<structure>
+						<usersort declaration="signal"/>
+					</structure>
+				</type>
+			</place>
+			<transition id="SpeedLW">
+				<name>
+					<text>SpeedLW</text>
+				</name>
+			</transition>
+			<transition id="SpeedRW">
+				<name>
+					<text>SpeedRW</text>
+				</name>
+			</transition>
+			<transition id="getAlt">
+				<name>
+					<text>getAlt</text>
+				</name>
+			</transition>
+			<transition id="SampleRW">
+				<name>
+					<text>SampleRW</text>
+				</name>
+			</transition>
+			<transition id="SampleLW">
+				<name>
+					<text>SampleLW</text>
+				</name>
+			</transition>
+			<transition id="t5_2">
+				<name>
+					<text>t5_2</text>
+				</name>
+				<condition>
+					<text>(S) lte (Speed5) or (S) eq (Speed10)</text>
+					<structure>
+						<or>
+							<subterm>
+								<lessthanorequal>
+									<subterm>
+										<variable refvariable="varS"/>
+									</subterm>
+									<subterm>
+										<useroperator declaration="Speed5"/>
+									</subterm>
+								</lessthanorequal>
+							</subterm>
+							<subterm>
+								<equality>
+									<subterm>
+										<variable refvariable="varS"/>
+									</subterm>
+									<subterm>
+										<useroperator declaration="Speed10"/>
+									</subterm>
+								</equality>
+							</subterm>
+						</or>
+					</structure>
+				</condition>
+			</transition>
+			<transition id="t5_1">
+				<name>
+					<text>t5_1</text>
+				</name>
+				<condition>
+					<text>(S) gt (Speed5) and (S) ineq (Speed10)</text>
+					<structure>
+						<and>
+							<subterm>
+								<greaterthan>
+									<subterm>
+										<variable refvariable="varS"/>
+									</subterm>
+									<subterm>
+										<useroperator declaration="Speed5"/>
+									</subterm>
+								</greaterthan>
+							</subterm>
+							<subterm>
+								<inequality>
+									<subterm>
+										<variable refvariable="varS"/>
+									</subterm>
+									<subterm>
+										<useroperator declaration="Speed10"/>
+									</subterm>
+								</inequality>
+							</subterm>
+						</and>
+					</structure>
+				</condition>
+			</transition>
+			<transition id="t4_2">
+				<name>
+					<text>t4_2</text>
+				</name>
+				<condition>
+					<text>(S) lte (Speed5) or (S) eq (Speed10)</text>
+					<structure>
+						<or>
+							<subterm>
+								<lessthanorequal>
+									<subterm>
+										<variable refvariable="varS"/>
+									</subterm>
+									<subterm>
+										<useroperator declaration="Speed5"/>
+									</subterm>
+								</lessthanorequal>
+							</subterm>
+							<subterm>
+								<equality>
+									<subterm>
+										<variable refvariable="varS"/>
+									</subterm>
+									<subterm>
+										<useroperator declaration="Speed10"/>
+									</subterm>
+								</equality>
+							</subterm>
+						</or>
+					</structure>
+				</condition>
+			</transition>
+			<transition id="t4_1">
+				<name>
+					<text>t4_1</text>
+				</name>
+				<condition>
+					<text>(S) gt (Speed5) and (S) ineq (Speed10)</text>
+					<structure>
+						<and>
+							<subterm>
+								<greaterthan>
+									<subterm>
+										<variable refvariable="varS"/>
+									</subterm>
+									<subterm>
+										<useroperator declaration="Speed5"/>
+									</subterm>
+								</greaterthan>
+							</subterm>
+							<subterm>
+								<inequality>
+									<subterm>
+										<variable refvariable="varS"/>
+									</subterm>
+									<subterm>
+										<useroperator declaration="Speed10"/>
+									</subterm>
+								</inequality>
+							</subterm>
+						</and>
+					</structure>
+				</condition>
+			</transition>
+			<transition id="t3_2">
+				<name>
+					<text>t3_2</text>
+				</name>
+				<condition>
+					<text>(A) gte (Altitude10) or (A) eq (Altitude20)</text>
+					<structure>
+						<or>
+							<subterm>
+								<greaterthanorequal>
+									<subterm>
+										<variable refvariable="varA"/>
+									</subterm>
+									<subterm>
+										<useroperator declaration="Altitude10"/>
+									</subterm>
+								</greaterthanorequal>
+							</subterm>
+							<subterm>
+								<equality>
+									<subterm>
+										<variable refvariable="varA"/>
+									</subterm>
+									<subterm>
+										<useroperator declaration="Altitude20"/>
+									</subterm>
+								</equality>
+							</subterm>
+						</or>
+					</structure>
+				</condition>
+			</transition>
+			<transition id="t3_1">
+				<name>
+					<text>t3_1</text>
+				</name>
+				<condition>
+					<text>(A) lt (Altitude10) and (A) ineq (Altitude20)</text>
+					<structure>
+						<and>
+							<subterm>
+								<lessthan>
+									<subterm>
+										<variable refvariable="varA"/>
+									</subterm>
+									<subterm>
+										<useroperator declaration="Altitude10"/>
+									</subterm>
+								</lessthan>
+							</subterm>
+							<subterm>
+								<inequality>
+									<subterm>
+										<variable refvariable="varA"/>
+									</subterm>
+									<subterm>
+										<useroperator declaration="Altitude20"/>
+									</subterm>
+								</inequality>
+							</subterm>
+						</and>
+					</structure>
+				</condition>
+			</transition>
+			<transition id="t2_2">
+				<name>
+					<text>t2_2</text>
+				</name>
+				<condition>
+					<text>(W) eq (Weightoff)</text>
+					<structure>
+						<equality>
+							<subterm>
+								<variable refvariable="varW"/>
+							</subterm>
+							<subterm>
+								<useroperator declaration="Weight1"/>
+							</subterm>
+						</equality>
+					</structure>
+				</condition>
+			</transition>
+			<transition id="t2_1">
+				<name>
+					<text>t2_1</text>
+				</name>
+				<condition>
+					<text>(W) eq (Weighton)</text>
+					<structure>
+						<equality>
+							<subterm>
+								<variable refvariable="varW"/>
+							</subterm>
+							<subterm>
+								<useroperator declaration="Weight0"/>
+							</subterm>
+						</equality>
+					</structure>
+				</condition>
+			</transition>
+			<transition id="t1_2">
+				<name>
+					<text>t1_2</text>
+				</name>
+				<condition>
+					<text>(W) eq (Weightoff)</text>
+					<structure>
+						<equality>
+							<subterm>
+								<variable refvariable="varW"/>
+							</subterm>
+							<subterm>
+								<useroperator declaration="Weight1"/>
+							</subterm>
+						</equality>
+					</structure>
+				</condition>
+			</transition>
+			<transition id="t1_1">
+				<name>
+					<text>t1_1</text>
+				</name>
+				<condition>
+					<text>(W) eq (Weighton)</text>
+					<structure>
+						<equality>
+							<subterm>
+								<variable refvariable="varW"/>
+							</subterm>
+							<subterm>
+								<useroperator declaration="Weight0"/>
+							</subterm>
+						</equality>
+					</structure>
+				</condition>
+			</transition>
+			<arc id="arc38" source="Speed_Right_Wheel" target="t5_2">
+				<name>
+					<text>38</text>
+				</name>
+				<hlinscription>
+					<text>1'[(S)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varS"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc39" source="stp5" target="SpeedRW">
+				<name>
+					<text>39</text>
+				</name>
+				<hlinscription>
+					<text>1'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc40" source="stp4" target="SpeedLW">
+				<name>
+					<text>40</text>
+				</name>
+				<hlinscription>
+					<text>1'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc41" source="stp3" target="getAlt">
+				<name>
+					<text>41</text>
+				</name>
+				<hlinscription>
+					<text>1'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc42" source="stp2" target="SampleRW">
+				<name>
+					<text>42</text>
+				</name>
+				<hlinscription>
+					<text>1'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc43" source="stp1" target="SampleLW">
+				<name>
+					<text>43</text>
+				</name>
+				<hlinscription>
+					<text>1'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc44" source="SpeedLW" target="Speed_Left_Wheel">
+				<name>
+					<text>44</text>
+				</name>
+				<hlinscription>
+					<text>1'[(S)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varS"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc45" source="SpeedRW" target="Speed_Right_Wheel">
+				<name>
+					<text>45</text>
+				</name>
+				<hlinscription>
+					<text>1'[(S)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varS"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc46" source="SpeedRW" target="SpeedPossibleVal">
+				<name>
+					<text>46</text>
+				</name>
+				<hlinscription>
+					<text>1'[(S)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varS"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc47" source="SpeedPossibleVal" target="SpeedRW">
+				<name>
+					<text>47</text>
+				</name>
+				<hlinscription>
+					<text>1'[(S)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varS"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc48" source="SpeedPossibleVal" target="SpeedLW">
+				<name>
+					<text>48</text>
+				</name>
+				<hlinscription>
+					<text>1'[(S)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varS"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc49" source="SpeedLW" target="SpeedPossibleVal">
+				<name>
+					<text>49</text>
+				</name>
+				<hlinscription>
+					<text>1'[(S)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varS"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc50" source="getAlt" target="TheAltitude">
+				<name>
+					<text>50</text>
+				</name>
+				<hlinscription>
+					<text>1'[(A)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varA"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc51" source="getAlt" target="AltitudePossibleVal">
+				<name>
+					<text>51</text>
+				</name>
+				<hlinscription>
+					<text>1'[(A)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varA"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc52" source="AltitudePossibleVal" target="getAlt">
+				<name>
+					<text>52</text>
+				</name>
+				<hlinscription>
+					<text>1'[(A)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varA"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc53" source="SampleRW" target="Weight_Right_Wheel">
+				<name>
+					<text>53</text>
+				</name>
+				<hlinscription>
+					<text>1'[(W)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varW"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc54" source="SampleRW" target="WeightPossibleVal">
+				<name>
+					<text>54</text>
+				</name>
+				<hlinscription>
+					<text>1'[(W)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varW"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc55" source="WeightPossibleVal" target="SampleRW">
+				<name>
+					<text>55</text>
+				</name>
+				<hlinscription>
+					<text>1'[(W)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varW"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc56" source="WeightPossibleVal" target="SampleLW">
+				<name>
+					<text>56</text>
+				</name>
+				<hlinscription>
+					<text>1'[(W)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varW"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc57" source="SampleLW" target="WeightPossibleVal">
+				<name>
+					<text>57</text>
+				</name>
+				<hlinscription>
+					<text>1'[(W)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varW"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc58" source="SampleLW" target="Weight_Left_Wheel">
+				<name>
+					<text>58</text>
+				</name>
+				<hlinscription>
+					<text>1'[(W)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varW"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc59" source="t1_1" target="Plane_On_Ground_Signal_no">
+				<name>
+					<text>59</text>
+				</name>
+				<hlinscription>
+					<text>1'[(SignalT)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<useroperator declaration="Signal0"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc60" source="t2_1" target="Plane_On_Ground_Signal_no">
+				<name>
+					<text>60</text>
+				</name>
+				<hlinscription>
+					<text>1'[(SignalT)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<useroperator declaration="Signal0"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc61" source="t1_1" target="P6">
+				<name>
+					<text>61</text>
+				</name>
+				<hlinscription>
+					<text>1'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc62" source="P1" target="t1_1">
+				<name>
+					<text>62</text>
+				</name>
+				<hlinscription>
+					<text>1'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc63" source="Weight_Left_Wheel" target="t1_1">
+				<name>
+					<text>63</text>
+				</name>
+				<hlinscription>
+					<text>1'[(W)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varW"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc64" source="P1" target="t1_2">
+				<name>
+					<text>64</text>
+				</name>
+				<hlinscription>
+					<text>1'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc65" source="Weight_Left_Wheel" target="t1_2">
+				<name>
+					<text>65</text>
+				</name>
+				<hlinscription>
+					<text>1'[(W)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varW"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc66" source="t1_2" target="P2">
+				<name>
+					<text>66</text>
+				</name>
+				<hlinscription>
+					<text>1'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc67" source="P2" target="t2_1">
+				<name>
+					<text>67</text>
+				</name>
+				<hlinscription>
+					<text>1'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc68" source="P2" target="t2_2">
+				<name>
+					<text>68</text>
+				</name>
+				<hlinscription>
+					<text>1'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc69" source="t2_1" target="P6">
+				<name>
+					<text>69</text>
+				</name>
+				<hlinscription>
+					<text>1'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc70" source="Weight_Right_Wheel" target="t2_1">
+				<name>
+					<text>70</text>
+				</name>
+				<hlinscription>
+					<text>1'[(W)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varW"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc71" source="Weight_Right_Wheel" target="t2_2">
+				<name>
+					<text>71</text>
+				</name>
+				<hlinscription>
+					<text>1'[(W)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varW"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc72" source="t2_2" target="P3">
+				<name>
+					<text>72</text>
+				</name>
+				<hlinscription>
+					<text>1'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc73" source="P3" target="t3_1">
+				<name>
+					<text>73</text>
+				</name>
+				<hlinscription>
+					<text>1'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc74" source="P3" target="t3_2">
+				<name>
+					<text>74</text>
+				</name>
+				<hlinscription>
+					<text>1'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc75" source="TheAltitude" target="t3_1">
+				<name>
+					<text>75</text>
+				</name>
+				<hlinscription>
+					<text>1'[(A)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varA"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc76" source="TheAltitude" target="t3_2">
+				<name>
+					<text>76</text>
+				</name>
+				<hlinscription>
+					<text>1'[(A)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varA"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc77" source="t3_1" target="P6">
+				<name>
+					<text>77</text>
+				</name>
+				<hlinscription>
+					<text>1'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc78" source="t3_1" target="Plane_On_Ground_Signal_no">
+				<name>
+					<text>78</text>
+				</name>
+				<hlinscription>
+					<text>1'[(SignalT)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<useroperator declaration="Signal0"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc79" source="t3_2" target="P4">
+				<name>
+					<text>79</text>
+				</name>
+				<hlinscription>
+					<text>1'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc80" source="Speed_Left_Wheel" target="t4_1">
+				<name>
+					<text>80</text>
+				</name>
+				<hlinscription>
+					<text>1'[(S)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varS"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc81" source="Speed_Left_Wheel" target="t4_2">
+				<name>
+					<text>81</text>
+				</name>
+				<hlinscription>
+					<text>1'[(S)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varS"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc82" source="P4" target="t4_1">
+				<name>
+					<text>82</text>
+				</name>
+				<hlinscription>
+					<text>1'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc83" source="t4_1" target="P6">
+				<name>
+					<text>83</text>
+				</name>
+				<hlinscription>
+					<text>1'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc84" source="t4_1" target="Plane_On_Ground_Signal_no">
+				<name>
+					<text>84</text>
+				</name>
+				<hlinscription>
+					<text>1'[(SignalT)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<useroperator declaration="Signal0"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc85" source="t4_2" target="P5">
+				<name>
+					<text>85</text>
+				</name>
+				<hlinscription>
+					<text>1'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc86" source="P5" target="t5_1">
+				<name>
+					<text>86</text>
+				</name>
+				<hlinscription>
+					<text>1'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc87" source="Speed_Right_Wheel" target="t5_1">
+				<name>
+					<text>87</text>
+				</name>
+				<hlinscription>
+					<text>1'[(S)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varS"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc88" source="t5_1" target="P6">
+				<name>
+					<text>88</text>
+				</name>
+				<hlinscription>
+					<text>1'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc89" source="t5_1" target="Plane_On_Ground_Signal_no">
+				<name>
+					<text>89</text>
+				</name>
+				<hlinscription>
+					<text>1'[(SignalT)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<useroperator declaration="Signal0"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc90" source="t5_2" target="P6">
+				<name>
+					<text>90</text>
+				</name>
+				<hlinscription>
+					<text>1'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc91" source="t5_2" target="Plane_On_Ground_Signal_no">
+				<name>
+					<text>91</text>
+				</name>
+				<hlinscription>
+					<text>1'[(SignalF)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<useroperator declaration="Signal1"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc92" source="P4" target="t4_2">
+				<name>
+					<text>92</text>
+				</name>
+				<hlinscription>
+					<text>1'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc93" source="P5" target="t5_2">
+				<name>
+					<text>93</text>
+				</name>
+				<hlinscription>
+					<text>1'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+		</page>
+		<name>
+			<text>AirplaneLD-COL-0010</text>
+		</name>
+		<declaration>
+			<structure>
+				<declarations>
+					<namedsort id="weight" name="Weight">
+						<cyclicenumeration>
+							<feconstant id="Weight0" name="on"/>
+							<feconstant id="Weight1" name="off"/>
+						</cyclicenumeration>
+					</namedsort>
+					<namedsort id="Speed" name="Speed">
+						<cyclicenumeration>
+							<feconstant id="Speed1" name="1"/>
+							<feconstant id="Speed2" name="2"/>
+							<feconstant id="Speed3" name="3"/>
+							<feconstant id="Speed4" name="4"/>
+							<feconstant id="Speed5" name="5"/>
+							<feconstant id="Speed6" name="6"/>
+							<feconstant id="Speed7" name="7"/>
+							<feconstant id="Speed8" name="8"/>
+							<feconstant id="Speed9" name="9"/>
+							<feconstant id="Speed10" name="10"/>
+						</cyclicenumeration>
+					</namedsort>
+					<namedsort id="Altitude" name="Altitude">
+						<cyclicenumeration>
+							<feconstant id="Altitude1" name="1"/>
+							<feconstant id="Altitude2" name="2"/>
+							<feconstant id="Altitude3" name="3"/>
+							<feconstant id="Altitude4" name="4"/>
+							<feconstant id="Altitude5" name="5"/>
+							<feconstant id="Altitude6" name="6"/>
+							<feconstant id="Altitude7" name="7"/>
+							<feconstant id="Altitude8" name="8"/>
+							<feconstant id="Altitude9" name="9"/>
+							<feconstant id="Altitude10" name="10"/>
+							<feconstant id="Altitude11" name="11"/>
+							<feconstant id="Altitude12" name="12"/>
+							<feconstant id="Altitude13" name="13"/>
+							<feconstant id="Altitude14" name="14"/>
+							<feconstant id="Altitude15" name="15"/>
+							<feconstant id="Altitude16" name="16"/>
+							<feconstant id="Altitude17" name="17"/>
+							<feconstant id="Altitude18" name="18"/>
+							<feconstant id="Altitude19" name="19"/>
+							<feconstant id="Altitude20" name="20"/>
+						</cyclicenumeration>
+					</namedsort>
+					<namedsort id="signal" name="Signal">
+						<cyclicenumeration>
+							<feconstant id="Signal0" name="T"/>
+							<feconstant id="Signal1" name="F"/>
+						</cyclicenumeration>
+					</namedsort>
+					<variabledecl id="varW" name="W">
+						<usersort declaration="weight"/>
+					</variabledecl>
+					<variabledecl id="varA" name="A">
+						<usersort declaration="Altitude"/>
+					</variabledecl>
+					<variabledecl id="varS" name="S">
+						<usersort declaration="Speed"/>
+					</variabledecl>
+					<namedsort id="dot" name="Dot">
+						<dot/>
+					</namedsort>
+				</declarations>
+			</structure>
+		</declaration>
+	</net>
+</pnml>

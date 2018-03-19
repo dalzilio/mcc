@@ -31,6 +31,7 @@ var hlnetCmd = &cobra.Command{
 var hlnetFileName string
 var hlnetOutFileName string
 var hlnetUseName bool
+var hlnetDebugMode bool
 var hlnetLogger *log.Logger
 
 func init() {
@@ -38,6 +39,7 @@ func init() {
 	hlnetCmd.Flags().StringVarP(&hlnetFileName, "file", "i", "", "name of the input file (.pnml)")
 	hlnetCmd.Flags().StringVarP(&hlnetOutFileName, "out", "o", "", "basename of the output file (without extension, default to input file basename)")
 	hlnetCmd.Flags().BoolVar(&hlnetUseName, "name", false, "use PNML (document) name for the output file")
+	hlnetCmd.Flags().BoolVar(&hlnetDebugMode, "debug", false, "output a readable version in a format that can be displayed by Tina")
 
 	hlnetLogger = log.New(os.Stderr, "MCC HLNET:", 0)
 }
@@ -89,6 +91,12 @@ func convert(filename string) {
 	}
 	if hlnetUseName {
 		outfile = p.Name
+	}
+
+	if hlnetDebugMode {
+		hl := hlnet.Build(p)
+		ioutil.WriteFile(outfile+".net", []byte(hl.String()+hl.Tina()), 0755)
+		os.Exit(0)
 	}
 
 	p.SetVerbose(pnml.MINIMAL)

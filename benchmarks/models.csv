@@ -1,0 +1,21 @@
+# FILE NAME, MODEL NAME, NUM. PLACES, NUM. TRANSITIONS
+airplane,AirplaneLD-COL-0010,20,15
+csrepetition,CSRepetitions-COL-02,6,5
+bridges,Document,15,11
+qcertif,Document,30,26
+quasi,Document,30,26
+safebus,Document,20,14
+dot2,DotAndBoxes-COL-2,8,8
+dot3,DotAndBoxes-COL-3,8,8
+drinking,DrinkVendingMachine-COL-02,6,7
+galloc,GlobalResAllocation-COL-03,5,7
+lamport,LamportFastMutEx-COL-3,18,17
+neoelection,NeoElection-COL-2,18,22
+permadmissibility,PermAdmissibility-COL-01,40,16
+peterson,Peterson-COL-2,11,14
+philo,Philosophers-COL-050000,5,5
+polyorb-lf,PolyORBLF-COL-S02J04T06,81,65
+polyorb-nt,PolyORBNT-COL-S05J20,48,38
+sharedmemory,SharedMemory-COL-000005,6,5
+simple,SimpleLoadBal-COL-02,14,13
+token,TokenRing-COL-005,1,2

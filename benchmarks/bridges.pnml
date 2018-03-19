@@ -1,0 +1,1701 @@
+<?xml version="1.0"?>
+<pnml xmlns="http://www.pnml.org/version-2009/grammar/pnml">
+	<net id="pnml3775859722371373876" type="http://www.pnml.org/version-2009/grammar/symmetricnet">
+		<page id="DocumentDefaultPage">
+			<place id="CAPACITE">
+				<name>
+					<text>CAPACITE</text>
+				</name>
+				<type>
+					<text>Dot</text>
+					<structure>
+						<usersort declaration="dot"/>
+					</structure>
+				</type>
+				<hlinitialMarking>
+					<text>5'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="5">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinitialMarking>
+			</place>
+			<place id="NB_ATTENTE_A">
+				<name>
+					<text>NB_ATTENTE_A</text>
+				</name>
+				<type>
+					<text>voitureA</text>
+					<structure>
+						<usersort declaration="voitureA"/>
+					</structure>
+				</type>
+				<hlinitialMarking>
+					<text>1'(voitureA0)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<useroperator declaration="voitureA0"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinitialMarking>
+			</place>
+			<place id="SORTI_A">
+				<name>
+					<text>SORTI_A</text>
+				</name>
+				<type>
+					<text>Dot</text>
+					<structure>
+						<usersort declaration="dot"/>
+					</structure>
+				</type>
+			</place>
+			<place id="ROUTE_A">
+				<name>
+					<text>ROUTE_A</text>
+				</name>
+				<type>
+					<text>Dot</text>
+					<structure>
+						<usersort declaration="dot"/>
+					</structure>
+				</type>
+				<hlinitialMarking>
+					<text>4'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="4">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinitialMarking>
+			</place>
+			<place id="ATTENTE_A">
+				<name>
+					<text>ATTENTE_A</text>
+				</name>
+				<type>
+					<text>Dot</text>
+					<structure>
+						<usersort declaration="dot"/>
+					</structure>
+				</type>
+			</place>
+			<place id="SUR_PONT_A">
+				<name>
+					<text>SUR_PONT_A</text>
+				</name>
+				<type>
+					<text>Dot</text>
+					<structure>
+						<usersort declaration="dot"/>
+					</structure>
+				</type>
+			</place>
+			<place id="NB_ATTENTE_B">
+				<name>
+					<text>NB_ATTENTE_B</text>
+				</name>
+				<type>
+					<text>voitureB</text>
+					<structure>
+						<usersort declaration="voitureB"/>
+					</structure>
+				</type>
+				<hlinitialMarking>
+					<text>1'(voitureB0)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<useroperator declaration="voitureB0"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinitialMarking>
+			</place>
+			<place id="SUR_PONT_B">
+				<name>
+					<text>SUR_PONT_B</text>
+				</name>
+				<type>
+					<text>Dot</text>
+					<structure>
+						<usersort declaration="dot"/>
+					</structure>
+				</type>
+			</place>
+			<place id="ATTENTE_B">
+				<name>
+					<text>ATTENTE_B</text>
+				</name>
+				<type>
+					<text>Dot</text>
+					<structure>
+						<usersort declaration="dot"/>
+					</structure>
+				</type>
+			</place>
+			<place id="ROUTE_B">
+				<name>
+					<text>ROUTE_B</text>
+				</name>
+				<type>
+					<text>Dot</text>
+					<structure>
+						<usersort declaration="dot"/>
+					</structure>
+				</type>
+				<hlinitialMarking>
+					<text>4'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="4">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinitialMarking>
+			</place>
+			<place id="SORTI_B">
+				<name>
+					<text>SORTI_B</text>
+				</name>
+				<type>
+					<text>Dot</text>
+					<structure>
+						<usersort declaration="dot"/>
+					</structure>
+				</type>
+			</place>
+			<place id="CONTROLEUR">
+				<name>
+					<text>CONTROLEUR</text>
+				</name>
+				<type>
+					<text>sens</text>
+					<structure>
+						<usersort declaration="sens"/>
+					</structure>
+				</type>
+			</place>
+			<place id="CHOIX">
+				<name>
+					<text>CHOIX</text>
+				</name>
+				<type>
+					<text>sens</text>
+					<structure>
+						<usersort declaration="sens"/>
+					</structure>
+				</type>
+				<hlinitialMarking>
+					<text>1'(sens1)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<useroperator declaration="sens1"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinitialMarking>
+			</place>
+			<place id="COMPTEUR">
+				<name>
+					<text>COMPTEUR</text>
+				</name>
+				<type>
+					<text>compteur</text>
+					<structure>
+						<usersort declaration="compteur"/>
+					</structure>
+				</type>
+				<hlinitialMarking>
+					<text>1'(compteur0)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<useroperator declaration="compteur0"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinitialMarking>
+			</place>
+			<place id="VIDANGE">
+				<name>
+					<text>VIDANGE</text>
+				</name>
+				<type>
+					<text>sens</text>
+					<structure>
+						<usersort declaration="sens"/>
+					</structure>
+				</type>
+			</place>
+			<transition id="enregistrement_A">
+				<name>
+					<text>enregistrement_A</text>
+				</name>
+			</transition>
+			<transition id="liberation_A">
+				<name>
+					<text>liberation_A</text>
+				</name>
+			</transition>
+			<transition id="autorisation_B">
+				<name>
+					<text>autorisation_B</text>
+				</name>
+				<condition>
+					<text>(s) eq (sens2) and (cB) gt (voitureB0)</text>
+					<structure>
+						<and>
+							<subterm>
+								<equality>
+									<subterm>
+										<variable refvariable="vars"/>
+									</subterm>
+									<subterm>
+										<useroperator declaration="sens2"/>
+									</subterm>
+								</equality>
+							</subterm>
+							<subterm>
+								<greaterthan>
+									<subterm>
+										<variable refvariable="varcB"/>
+									</subterm>
+									<subterm>
+										<useroperator declaration="voitureB0"/>
+									</subterm>
+								</greaterthan>
+							</subterm>
+						</and>
+					</structure>
+				</condition>
+			</transition>
+			<transition id="basculement">
+				<name>
+					<text>basculement</text>
+				</name>
+			</transition>
+			<transition id="liberation_B">
+				<name>
+					<text>liberation_B</text>
+				</name>
+			</transition>
+			<transition id="enregistrement_B">
+				<name>
+					<text>enregistrement_B</text>
+				</name>
+			</transition>
+			<transition id="decision">
+				<name>
+					<text>decision</text>
+				</name>
+				<condition>
+					<text>(cpt) lt (compteur2)</text>
+					<structure>
+						<lessthan>
+							<subterm>
+								<variable refvariable="varcpt"/>
+							</subterm>
+							<subterm>
+								<useroperator declaration="compteur2"/>
+							</subterm>
+						</lessthan>
+					</structure>
+				</condition>
+			</transition>
+			<transition id="altern_cpt">
+				<name>
+					<text>altern_cpt</text>
+				</name>
+				<condition>
+					<text>(cpt) eq (compteur2)</text>
+					<structure>
+						<equality>
+							<subterm>
+								<variable refvariable="varcpt"/>
+							</subterm>
+							<subterm>
+								<useroperator declaration="compteur2"/>
+							</subterm>
+						</equality>
+					</structure>
+				</condition>
+			</transition>
+			<transition id="timeout_A">
+				<name>
+					<text>timeout_A</text>
+				</name>
+				<condition>
+					<text>(s) eq (sens1) and (cA) eq (voitureA0) and (cB) gt (voitureB0)</text>
+					<structure>
+						<and>
+							<subterm>
+								<equality>
+									<subterm>
+										<variable refvariable="vars"/>
+									</subterm>
+									<subterm>
+										<useroperator declaration="sens1"/>
+									</subterm>
+								</equality>
+							</subterm>
+							<subterm>
+								<and>
+									<subterm>
+										<equality>
+											<subterm>
+												<variable refvariable="varcA"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="voitureA0"/>
+											</subterm>
+										</equality>
+									</subterm>
+									<subterm>
+										<greaterthan>
+											<subterm>
+												<variable refvariable="varcB"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="voitureB0"/>
+											</subterm>
+										</greaterthan>
+									</subterm>
+								</and>
+							</subterm>
+						</and>
+					</structure>
+				</condition>
+			</transition>
+			<transition id="timeout_B">
+				<name>
+					<text>timeout_B</text>
+				</name>
+				<condition>
+					<text>(s) eq (sens2) and (cB) eq (voitureB0) and (cA) gt (voitureA0)</text>
+					<structure>
+						<and>
+							<subterm>
+								<equality>
+									<subterm>
+										<variable refvariable="vars"/>
+									</subterm>
+									<subterm>
+										<useroperator declaration="sens2"/>
+									</subterm>
+								</equality>
+							</subterm>
+							<subterm>
+								<and>
+									<subterm>
+										<equality>
+											<subterm>
+												<variable refvariable="varcB"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="voitureB0"/>
+											</subterm>
+										</equality>
+									</subterm>
+									<subterm>
+										<greaterthan>
+											<subterm>
+												<variable refvariable="varcA"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="voitureA0"/>
+											</subterm>
+										</greaterthan>
+									</subterm>
+								</and>
+							</subterm>
+						</and>
+					</structure>
+				</condition>
+			</transition>
+			<transition id="autorisation_A">
+				<name>
+					<text>autorisation_A</text>
+				</name>
+				<condition>
+					<text>(s) eq (sens1) and (cA) gt (voitureA0)</text>
+					<structure>
+						<and>
+							<subterm>
+								<equality>
+									<subterm>
+										<variable refvariable="vars"/>
+									</subterm>
+									<subterm>
+										<useroperator declaration="sens1"/>
+									</subterm>
+								</equality>
+							</subterm>
+							<subterm>
+								<greaterthan>
+									<subterm>
+										<variable refvariable="varcA"/>
+									</subterm>
+									<subterm>
+										<useroperator declaration="voitureA0"/>
+									</subterm>
+								</greaterthan>
+							</subterm>
+						</and>
+					</structure>
+				</condition>
+			</transition>
+			<arc id="arc29" source="timeout_B" target="NB_ATTENTE_A">
+				<name>
+					<text>29</text>
+				</name>
+				<hlinscription>
+					<text>1'[(cA)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varcA"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc30" source="timeout_A" target="NB_ATTENTE_B">
+				<name>
+					<text>30</text>
+				</name>
+				<hlinscription>
+					<text>1'[(cB)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varcB"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc31" source="NB_ATTENTE_A" target="timeout_B">
+				<name>
+					<text>31</text>
+				</name>
+				<hlinscription>
+					<text>1'[(cA)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varcA"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc32" source="NB_ATTENTE_B" target="timeout_A">
+				<name>
+					<text>32</text>
+				</name>
+				<hlinscription>
+					<text>1'[(cB)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varcB"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc33" source="CONTROLEUR" target="timeout_A">
+				<name>
+					<text>33</text>
+				</name>
+				<hlinscription>
+					<text>1'[(s)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="vars"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc34" source="CONTROLEUR" target="timeout_B">
+				<name>
+					<text>34</text>
+				</name>
+				<hlinscription>
+					<text>1'[(s)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="vars"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc35" source="CONTROLEUR" target="autorisation_B">
+				<name>
+					<text>35</text>
+				</name>
+				<hlinscription>
+					<text>1'[(s)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="vars"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc36" source="decision" target="CONTROLEUR">
+				<name>
+					<text>36</text>
+				</name>
+				<hlinscription>
+					<text>1'[(s)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="vars"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc37" source="CHOIX" target="decision">
+				<name>
+					<text>37</text>
+				</name>
+				<hlinscription>
+					<text>1'[(s)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="vars"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc38" source="autorisation_B" target="CHOIX">
+				<name>
+					<text>38</text>
+				</name>
+				<hlinscription>
+					<text>1'[(s)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="vars"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc39" source="basculement" target="CHOIX">
+				<name>
+					<text>39</text>
+				</name>
+				<hlinscription>
+					<text>1'[(s)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="vars"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc40" source="CHOIX" target="altern_cpt">
+				<name>
+					<text>40</text>
+				</name>
+				<hlinscription>
+					<text>1'[(s)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="vars"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc41" source="COMPTEUR" target="altern_cpt">
+				<name>
+					<text>41</text>
+				</name>
+				<hlinscription>
+					<text>1'[(cpt)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varcpt"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc42" source="decision" target="COMPTEUR">
+				<name>
+					<text>42</text>
+				</name>
+				<hlinscription>
+					<text>1'[(cpt++)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<successor>
+									<subterm>
+										<variable refvariable="varcpt"/>
+									</subterm>
+								</successor>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc43" source="COMPTEUR" target="decision">
+				<name>
+					<text>43</text>
+				</name>
+				<hlinscription>
+					<text>1'[(cpt)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varcpt"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc44" source="COMPTEUR" target="timeout_A">
+				<name>
+					<text>44</text>
+				</name>
+				<hlinscription>
+					<text>1'[(cpt)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varcpt"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc45" source="timeout_A" target="COMPTEUR">
+				<name>
+					<text>45</text>
+				</name>
+				<hlinscription>
+					<text>1'[(compteur0)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<useroperator declaration="compteur0"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc46" source="COMPTEUR" target="timeout_B">
+				<name>
+					<text>46</text>
+				</name>
+				<hlinscription>
+					<text>1'[(cpt)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varcpt"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc47" source="timeout_B" target="COMPTEUR">
+				<name>
+					<text>47</text>
+				</name>
+				<hlinscription>
+					<text>1'[(compteur0)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<useroperator declaration="compteur0"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc48" source="altern_cpt" target="COMPTEUR">
+				<name>
+					<text>48</text>
+				</name>
+				<hlinscription>
+					<text>1'[(compteur0)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<useroperator declaration="compteur0"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc49" source="timeout_B" target="VIDANGE">
+				<name>
+					<text>49</text>
+				</name>
+				<hlinscription>
+					<text>1'[(s++)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<successor>
+									<subterm>
+										<variable refvariable="vars"/>
+									</subterm>
+								</successor>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc50" source="VIDANGE" target="basculement">
+				<name>
+					<text>50</text>
+				</name>
+				<hlinscription>
+					<text>1'[(s)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="vars"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc51" source="altern_cpt" target="VIDANGE">
+				<name>
+					<text>51</text>
+				</name>
+				<hlinscription>
+					<text>1'[(s++)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<successor>
+									<subterm>
+										<variable refvariable="vars"/>
+									</subterm>
+								</successor>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc52" source="timeout_A" target="VIDANGE">
+				<name>
+					<text>52</text>
+				</name>
+				<hlinscription>
+					<text>1'[(s++)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<successor>
+									<subterm>
+										<variable refvariable="vars"/>
+									</subterm>
+								</successor>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc53" source="autorisation_B" target="SUR_PONT_B">
+				<name>
+					<text>53</text>
+				</name>
+				<hlinscription>
+					<text>1'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc54" source="SUR_PONT_B" target="liberation_B">
+				<name>
+					<text>54</text>
+				</name>
+				<hlinscription>
+					<text>1'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc55" source="NB_ATTENTE_B" target="enregistrement_B">
+				<name>
+					<text>55</text>
+				</name>
+				<hlinscription>
+					<text>1'[(cB)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varcB"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc56" source="NB_ATTENTE_B" target="timeout_B">
+				<name>
+					<text>56</text>
+				</name>
+				<hlinscription>
+					<text>1'[(cB)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varcB"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc57" source="enregistrement_B" target="NB_ATTENTE_B">
+				<name>
+					<text>57</text>
+				</name>
+				<hlinscription>
+					<text>1'[(cB++)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<successor>
+									<subterm>
+										<variable refvariable="varcB"/>
+									</subterm>
+								</successor>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc58" source="timeout_B" target="NB_ATTENTE_B">
+				<name>
+					<text>58</text>
+				</name>
+				<hlinscription>
+					<text>1'[(cB)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varcB"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc59" source="NB_ATTENTE_B" target="autorisation_B">
+				<name>
+					<text>59</text>
+				</name>
+				<hlinscription>
+					<text>1'[(cB)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varcB"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc60" source="autorisation_B" target="NB_ATTENTE_B">
+				<name>
+					<text>60</text>
+				</name>
+				<hlinscription>
+					<text>1'[(cB--)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<predecessor>
+									<subterm>
+										<variable refvariable="varcB"/>
+									</subterm>
+								</predecessor>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc61" source="enregistrement_B" target="ATTENTE_B">
+				<name>
+					<text>61</text>
+				</name>
+				<hlinscription>
+					<text>1'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc62" source="ATTENTE_B" target="autorisation_B">
+				<name>
+					<text>62</text>
+				</name>
+				<hlinscription>
+					<text>1'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc63" source="ROUTE_B" target="enregistrement_B">
+				<name>
+					<text>63</text>
+				</name>
+				<hlinscription>
+					<text>1'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc64" source="liberation_A" target="SORTI_A">
+				<name>
+					<text>64</text>
+				</name>
+				<hlinscription>
+					<text>1'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc65" source="liberation_B" target="SORTI_B">
+				<name>
+					<text>65</text>
+				</name>
+				<hlinscription>
+					<text>1'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc66" source="ROUTE_A" target="enregistrement_A">
+				<name>
+					<text>66</text>
+				</name>
+				<hlinscription>
+					<text>1'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc67" source="enregistrement_A" target="ATTENTE_A">
+				<name>
+					<text>67</text>
+				</name>
+				<hlinscription>
+					<text>1'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc68" source="liberation_A" target="CAPACITE">
+				<name>
+					<text>68</text>
+				</name>
+				<hlinscription>
+					<text>1'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc69" source="liberation_B" target="CAPACITE">
+				<name>
+					<text>69</text>
+				</name>
+				<hlinscription>
+					<text>1'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc70" source="CAPACITE" target="autorisation_B">
+				<name>
+					<text>70</text>
+				</name>
+				<hlinscription>
+					<text>1'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc71" source="basculement" target="CAPACITE">
+				<name>
+					<text>71</text>
+				</name>
+				<hlinscription>
+					<text>5'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="5">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc72" source="CAPACITE" target="basculement">
+				<name>
+					<text>72</text>
+				</name>
+				<hlinscription>
+					<text>5'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="5">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc73" source="SUR_PONT_A" target="liberation_A">
+				<name>
+					<text>73</text>
+				</name>
+				<hlinscription>
+					<text>1'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc74" source="NB_ATTENTE_A" target="enregistrement_A">
+				<name>
+					<text>74</text>
+				</name>
+				<hlinscription>
+					<text>1'[(cA)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varcA"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc75" source="enregistrement_A" target="NB_ATTENTE_A">
+				<name>
+					<text>75</text>
+				</name>
+				<hlinscription>
+					<text>1'[(cA++)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<successor>
+									<subterm>
+										<variable refvariable="varcA"/>
+									</subterm>
+								</successor>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc76" source="NB_ATTENTE_A" target="timeout_A">
+				<name>
+					<text>76</text>
+				</name>
+				<hlinscription>
+					<text>1'[(cA)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varcA"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc77" source="timeout_A" target="NB_ATTENTE_A">
+				<name>
+					<text>77</text>
+				</name>
+				<hlinscription>
+					<text>1'[(cA)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varcA"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc78" source="autorisation_A" target="NB_ATTENTE_A">
+				<name>
+					<text>78</text>
+				</name>
+				<hlinscription>
+					<text>1'[(cA--)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<predecessor>
+									<subterm>
+										<variable refvariable="varcA"/>
+									</subterm>
+								</predecessor>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc79" source="NB_ATTENTE_A" target="autorisation_A">
+				<name>
+					<text>79</text>
+				</name>
+				<hlinscription>
+					<text>1'[(cA)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varcA"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc80" source="autorisation_A" target="SUR_PONT_A">
+				<name>
+					<text>80</text>
+				</name>
+				<hlinscription>
+					<text>1'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc81" source="CAPACITE" target="autorisation_A">
+				<name>
+					<text>81</text>
+				</name>
+				<hlinscription>
+					<text>1'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc82" source="ATTENTE_A" target="autorisation_A">
+				<name>
+					<text>82</text>
+				</name>
+				<hlinscription>
+					<text>1'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc83" source="autorisation_A" target="CHOIX">
+				<name>
+					<text>83</text>
+				</name>
+				<hlinscription>
+					<text>1'[(s)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="vars"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc84" source="CONTROLEUR" target="autorisation_A">
+				<name>
+					<text>84</text>
+				</name>
+				<hlinscription>
+					<text>1'[(s)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="vars"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+		</page>
+		<name>
+			<text>Document</text>
+		</name>
+		<declaration>
+			<structure>
+				<declarations>
+					<namedsort id="sens" name="sens">
+						<cyclicenumeration>
+							<feconstant id="sens1" name="1"/>
+							<feconstant id="sens2" name="2"/>
+						</cyclicenumeration>
+					</namedsort>
+					<namedsort id="compteur" name="compteur">
+						<cyclicenumeration>
+							<feconstant id="compteur0" name="0"/>
+							<feconstant id="compteur1" name="1"/>
+							<feconstant id="compteur2" name="2"/>
+						</cyclicenumeration>
+					</namedsort>
+					<namedsort id="voitureA" name="voitureA">
+						<cyclicenumeration>
+							<feconstant id="voitureA0" name="0"/>
+							<feconstant id="voitureA1" name="1"/>
+							<feconstant id="voitureA2" name="2"/>
+							<feconstant id="voitureA3" name="3"/>
+							<feconstant id="voitureA4" name="4"/>
+						</cyclicenumeration>
+					</namedsort>
+					<namedsort id="voitureB" name="voitureB">
+						<cyclicenumeration>
+							<feconstant id="voitureB0" name="0"/>
+							<feconstant id="voitureB1" name="1"/>
+							<feconstant id="voitureB2" name="2"/>
+							<feconstant id="voitureB3" name="3"/>
+							<feconstant id="voitureB4" name="4"/>
+						</cyclicenumeration>
+					</namedsort>
+					<variabledecl id="vars" name="s">
+						<usersort declaration="sens"/>
+					</variabledecl>
+					<variabledecl id="varcpt" name="cpt">
+						<usersort declaration="compteur"/>
+					</variabledecl>
+					<variabledecl id="varcA" name="cA">
+						<usersort declaration="voitureA"/>
+					</variabledecl>
+					<variabledecl id="varcB" name="cB">
+						<usersort declaration="voitureB"/>
+					</variabledecl>
+					<namedsort id="dot" name="Dot">
+						<dot/>
+					</namedsort>
+				</declarations>
+			</structure>
+		</declaration>
+	</net>
+</pnml>
