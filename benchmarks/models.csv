@@ -1,4 +1,10 @@
-# FILE NAME, MODEL NAME, NUM. PLACES, NUM. TRANSITIONS
+# 1 FILE NAME
+# 2 MODEL NAME
+# 3 NUM. PLACES (COLORED)
+# 4 NUM. TRANSITIONS (COLORED)
+# 5 NUM. PLACES (CORENET)
+# 6 NUM. TRANSITIONS (CORENET)
+# 7 NUM. STATES
 airplane,AirplaneLD-COL-0010,20,15,89,88
 csrepetition,CSRepetitions-COL-02,6,5,23,28
 bridges,Document,15,11,28,52
@@ -19,3 +25,16 @@ polyorb-nt,PolyORBNT-COL-S05J20,48,38,369,1230
 sharedmemory,SharedMemory-COL-000005,6,5,46,60
 simple,SimpleLoadBal-COL-02,14,13,32,65
 token,TokenRing-COL-005,1,2,36,156
+DrinkVendingMachine-COL-10,DrinkVendingMachine-COL-10,6,7,120,1160
+DrinkVendingMachine-COL-16,DrinkVendingMachine-COL-16,6,7,120,1160
+GlobalResAllocation-COL-06,GlobalResAllocation-COL-06,5,7,102,136662
+GlobalResAllocation-COL-07,GlobalResAllocation-COL-07,5,7,0,0
+PhilosophersDyn-COL-50,PhilosophersDyn-COL-50,8,7,2850,255150
+PhilosophersDyn-COL-80,PhilosophersDyn-COL-80,8,7,0,0
+SafeBus-COL-50,Document,20,14,5606,140251
+SafeBus-COL-80,Document,20,14,0,0
+SharedMemory-COL-000100,SharedMemory-COL-000100,6,5,10401,20200
+SharedMemory-COL-000200,SharedMemory-COL-000200,6,5,0,0
+TokenRing-COL-050,TokenRing-COL-050,1,2,2601,127551
+TokenRing-COL-100,TokenRing-COL-100,1,2,0,0
+BART-COL-002,BART-COL-002,4,7,732,2282

@@ -35,7 +35,7 @@ func TestBuild(t *testing.T) {
 		expected[r[0]] = TestPNML{n: r[1], pl: pl, tr: tr}
 	}
 	// Iterate through all the PNML file in the benchmarks folder
-	directory := "../benchmarks/"
+	directory := "../benchmarks/simple/"
 	files, err := ioutil.ReadDir(directory)
 	if err != nil {
 		t.Errorf("pnml.Build(): error opening the benchmarks folder (%s)", directory)
@@ -79,7 +79,7 @@ var result string
 
 func BenchmarkBuild(b *testing.B) {
 	// Find all the PNML file in the benchmarks folder
-	directory := "../benchmarks/"
+	directory := "../benchmarks/simple/"
 	files, err := ioutil.ReadDir(directory)
 	if err != nil {
 		os.Exit(1)

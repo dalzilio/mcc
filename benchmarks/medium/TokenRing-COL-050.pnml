@@ -1,0 +1,1322 @@
+<?xml version="1.0"?>
+<pnml xmlns="http://www.pnml.org/version-2009/grammar/pnml">
+	<net id="TokenRing-COL-050" type="http://www.pnml.org/version-2009/grammar/symmetricnet">
+		<page id="tokenringDefaultPage">
+			<place id="state">
+				<name>
+					<text>State</text>
+				</name>
+				<type>
+					<text>Couple</text>
+					<structure>
+						<usersort declaration="couple"/>
+					</structure>
+				</type>
+				<hlinitialMarking>
+					<text>{($i,$i) | 0 leq $i leq 50}</text>
+					<structure>
+						<add>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="process0"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="process0"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="process1"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="process1"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="process2"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="process2"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="process3"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="process3"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="process4"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="process4"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="process5"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="process5"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="process6"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="process6"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="process7"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="process7"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="process8"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="process8"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="process9"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="process9"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="process10"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="process10"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="process11"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="process11"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="process12"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="process12"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="process13"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="process13"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="process14"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="process14"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="process15"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="process15"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="process16"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="process16"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="process17"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="process17"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="process18"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="process18"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="process19"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="process19"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="process20"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="process20"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="process21"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="process21"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="process22"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="process22"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="process23"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="process23"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="process24"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="process24"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="process25"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="process25"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="process26"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="process26"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="process27"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="process27"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="process28"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="process28"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="process29"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="process29"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="process30"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="process30"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="process31"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="process31"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="process32"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="process32"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="process33"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="process33"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="process34"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="process34"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="process35"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="process35"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="process36"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="process36"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="process37"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="process37"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="process38"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="process38"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="process39"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="process39"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="process40"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="process40"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="process41"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="process41"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="process42"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="process42"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="process43"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="process43"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="process44"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="process44"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="process45"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="process45"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="process46"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="process46"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="process47"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="process47"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="process48"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="process48"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="process49"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="process49"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="process50"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="process50"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+						</add>
+					</structure>
+				</hlinitialMarking>
+			</place>
+			<transition id="mainprocess">
+				<name>
+					<text>MainProcess</text>
+				</name>
+			</transition>
+			<transition id="otherprocess">
+				<name>
+					<text>OtherProcess</text>
+				</name>
+				<condition>
+					<text>[i ineq 0 and x ineq y]</text>
+					<structure>
+						<and>
+							<subterm>
+								<inequality>
+									<subterm>
+										<variable refvariable="vari"/>
+									</subterm>
+									<subterm>
+										<useroperator declaration="process0"/>
+									</subterm>
+								</inequality>
+							</subterm>
+							<subterm>
+								<inequality>
+									<subterm>
+										<variable refvariable="varx"/>
+									</subterm>
+									<subterm>
+										<variable refvariable="vary"/>
+									</subterm>
+								</inequality>
+							</subterm>
+						</and>
+					</structure>
+				</condition>
+			</transition>
+			<arc id="mainproc2state" source="mainprocess" target="state">
+				<name>
+					<text>MainProcess2State</text>
+				</name>
+				<hlinscription>
+					<text>1'(0, x++1) + 1'(50, x)</text>
+					<structure>
+						<add>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="process0"/>
+											</subterm>
+											<subterm>
+												<successor>
+													<subterm>
+														<variable refvariable="varx"/>
+													</subterm>
+												</successor>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="process50"/>
+											</subterm>
+											<subterm>
+												<variable refvariable="varx"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+						</add>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="state2mainproc" source="state" target="mainprocess">
+				<name>
+					<text>State2MainProc</text>
+				</name>
+				<hlinscription>
+					<text>1'(0, x) + 1'(50,x)</text>
+					<structure>
+						<add>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="process0"/>
+											</subterm>
+											<subterm>
+												<variable refvariable="varx"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="process50"/>
+											</subterm>
+											<subterm>
+												<variable refvariable="varx"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+						</add>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="otherproc2state" source="otherprocess" target="state">
+				<name>
+					<text>OtherProcess2State</text>
+				</name>
+				<hlinscription>
+					<text>1'(i, y) + 1'(i--1, y)</text>
+					<structure>
+						<add>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<variable refvariable="vari"/>
+											</subterm>
+											<subterm>
+												<variable refvariable="vary"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<predecessor>
+													<subterm>
+														<variable refvariable="vari"/>
+													</subterm>
+												</predecessor>
+											</subterm>
+											<subterm>
+												<variable refvariable="vary"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+						</add>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="state2otherproc" source="state" target="otherprocess">
+				<name>
+					<text>State2OtherProcess</text>
+				</name>
+				<hlinscription>
+					<text>1'(i, x) + 1'(i--1, y)</text>
+					<structure>
+						<add>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<variable refvariable="vari"/>
+											</subterm>
+											<subterm>
+												<variable refvariable="varx"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<predecessor>
+													<subterm>
+														<variable refvariable="vari"/>
+													</subterm>
+												</predecessor>
+											</subterm>
+											<subterm>
+												<variable refvariable="vary"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+						</add>
+					</structure>
+				</hlinscription>
+			</arc>
+		</page>
+		<name>
+			<text>TokenRing-COL-050</text>
+		</name>
+		<declaration>
+			<structure>
+				<declarations>
+					<namedsort id="process" name="Process">
+						<cyclicenumeration>
+							<feconstant id="process0" name="0"/>
+							<feconstant id="process1" name="1"/>
+							<feconstant id="process2" name="2"/>
+							<feconstant id="process3" name="3"/>
+							<feconstant id="process4" name="4"/>
+							<feconstant id="process5" name="5"/>
+							<feconstant id="process6" name="6"/>
+							<feconstant id="process7" name="7"/>
+							<feconstant id="process8" name="8"/>
+							<feconstant id="process9" name="9"/>
+							<feconstant id="process10" name="10"/>
+							<feconstant id="process11" name="11"/>
+							<feconstant id="process12" name="12"/>
+							<feconstant id="process13" name="13"/>
+							<feconstant id="process14" name="14"/>
+							<feconstant id="process15" name="15"/>
+							<feconstant id="process16" name="16"/>
+							<feconstant id="process17" name="17"/>
+							<feconstant id="process18" name="18"/>
+							<feconstant id="process19" name="19"/>
+							<feconstant id="process20" name="20"/>
+							<feconstant id="process21" name="21"/>
+							<feconstant id="process22" name="22"/>
+							<feconstant id="process23" name="23"/>
+							<feconstant id="process24" name="24"/>
+							<feconstant id="process25" name="25"/>
+							<feconstant id="process26" name="26"/>
+							<feconstant id="process27" name="27"/>
+							<feconstant id="process28" name="28"/>
+							<feconstant id="process29" name="29"/>
+							<feconstant id="process30" name="30"/>
+							<feconstant id="process31" name="31"/>
+							<feconstant id="process32" name="32"/>
+							<feconstant id="process33" name="33"/>
+							<feconstant id="process34" name="34"/>
+							<feconstant id="process35" name="35"/>
+							<feconstant id="process36" name="36"/>
+							<feconstant id="process37" name="37"/>
+							<feconstant id="process38" name="38"/>
+							<feconstant id="process39" name="39"/>
+							<feconstant id="process40" name="40"/>
+							<feconstant id="process41" name="41"/>
+							<feconstant id="process42" name="42"/>
+							<feconstant id="process43" name="43"/>
+							<feconstant id="process44" name="44"/>
+							<feconstant id="process45" name="45"/>
+							<feconstant id="process46" name="46"/>
+							<feconstant id="process47" name="47"/>
+							<feconstant id="process48" name="48"/>
+							<feconstant id="process49" name="49"/>
+							<feconstant id="process50" name="50"/>
+						</cyclicenumeration>
+					</namedsort>
+					<namedsort id="couple" name="Couple">
+						<productsort>
+							<usersort declaration="process"/>
+							<usersort declaration="process"/>
+						</productsort>
+					</namedsort>
+					<variabledecl id="vari" name="i">
+						<usersort declaration="process"/>
+					</variabledecl>
+					<variabledecl id="varx" name="x">
+						<usersort declaration="process"/>
+					</variabledecl>
+					<variabledecl id="vary" name="y">
+						<usersort declaration="process"/>
+					</variabledecl>
+				</declarations>
+			</structure>
+		</declaration>
+	</net>
+</pnml>

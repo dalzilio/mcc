@@ -5,6 +5,8 @@
 package cmd
 
 import (
+	"bufio"
+
 	"github.com/dalzilio/mcc/corenet"
 	"github.com/dalzilio/mcc/hlnet"
 	"github.com/dalzilio/mcc/pnml"
@@ -114,6 +116,15 @@ func convert(filename string) {
 
 	cn = corenet.Build(p, hl)
 	hlnetLogger.Println("file " + outfile + " is a NET")
-	outfile = outfile + ".net"
-	ioutil.WriteFile(outfile, []byte(cn.String()), 0755)
+	out, err := os.Create(outfile + ".net")
+	if err != nil {
+		hlnetLogger.Println("Error creating result file:", err)
+		os.Exit(1)
+		return
+	}
+	defer out.Close()
+	w := bufio.NewWriter(out)
+	cn.Write(w)
+	w.Flush()
+	// ioutil.WriteFile(outfile, []byte(cn.String()), 0755)
 }

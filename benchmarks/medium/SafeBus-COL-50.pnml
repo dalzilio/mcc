@@ -1,0 +1,2030 @@
+<?xml version="1.0"?>
+<pnml xmlns="http://www.pnml.org/version-2009/grammar/pnml">
+	<net id="pnml-5728823702757435556" type="http://www.pnml.org/version-2009/grammar/symmetricnet">
+		<page id="DocumentDefaultPage">
+			<place id="Cpt2">
+				<name>
+					<text>Cpt2</text>
+				</name>
+				<type>
+					<text>It</text>
+					<structure>
+						<usersort declaration="It"/>
+					</structure>
+				</type>
+				<hlinitialMarking>
+					<text>1'(It1)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<useroperator declaration="It1"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinitialMarking>
+			</place>
+			<place id="Cpt1">
+				<name>
+					<text>Cpt1</text>
+				</name>
+				<type>
+					<text>It</text>
+					<structure>
+						<usersort declaration="It"/>
+					</structure>
+				</type>
+				<hlinitialMarking>
+					<text>1'(It1)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<useroperator declaration="It1"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinitialMarking>
+			</place>
+			<place id="msgl">
+				<name>
+					<text>msgl</text>
+				</name>
+				<type>
+					<text>It</text>
+					<structure>
+						<usersort declaration="It"/>
+					</structure>
+				</type>
+				<hlinitialMarking>
+					<text>1'(It.all)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<all>
+									<usersort declaration="It"/>
+								</all>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinitialMarking>
+			</place>
+			<place id="cable_free">
+				<name>
+					<text>cable_free</text>
+				</name>
+				<type>
+					<text>Dot</text>
+					<structure>
+						<usersort declaration="dot"/>
+					</structure>
+				</type>
+				<hlinitialMarking>
+					<text>1'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinitialMarking>
+			</place>
+			<place id="cable_used">
+				<name>
+					<text>cable_used</text>
+				</name>
+				<type>
+					<text>It</text>
+					<structure>
+						<usersort declaration="It"/>
+					</structure>
+				</type>
+			</place>
+			<place id="FMC">
+				<name>
+					<text>FMC</text>
+				</name>
+				<type>
+					<text>It</text>
+					<structure>
+						<usersort declaration="It"/>
+					</structure>
+				</type>
+			</place>
+			<place id="AMC">
+				<name>
+					<text>AMC</text>
+				</name>
+				<type>
+					<text>Dom</text>
+					<structure>
+						<usersort declaration="dom"/>
+					</structure>
+				</type>
+			</place>
+			<place id="wait_ack">
+				<name>
+					<text>wait_ack</text>
+				</name>
+				<type>
+					<text>Dom</text>
+					<structure>
+						<usersort declaration="dom"/>
+					</structure>
+				</type>
+			</place>
+			<place id="wait_cable">
+				<name>
+					<text>wait_cable</text>
+				</name>
+				<type>
+					<text>It</text>
+					<structure>
+						<usersort declaration="It"/>
+					</structure>
+				</type>
+			</place>
+			<place id="listen">
+				<name>
+					<text>listen</text>
+				</name>
+				<type>
+					<text>It</text>
+					<structure>
+						<usersort declaration="It"/>
+					</structure>
+				</type>
+				<hlinitialMarking>
+					<text>1'(It.all)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<all>
+									<usersort declaration="It"/>
+								</all>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinitialMarking>
+			</place>
+			<place id="RMC">
+				<name>
+					<text>RMC</text>
+				</name>
+				<type>
+					<text>It</text>
+					<structure>
+						<usersort declaration="It"/>
+					</structure>
+				</type>
+			</place>
+			<place id="ACK">
+				<name>
+					<text>ACK</text>
+				</name>
+				<type>
+					<text>Dot</text>
+					<structure>
+						<usersort declaration="dot"/>
+					</structure>
+				</type>
+			</place>
+			<place id="PMC">
+				<name>
+					<text>PMC</text>
+				</name>
+				<type>
+					<text>It</text>
+					<structure>
+						<usersort declaration="It"/>
+					</structure>
+				</type>
+			</place>
+			<place id="MSG">
+				<name>
+					<text>MSG</text>
+				</name>
+				<type>
+					<text>It</text>
+					<structure>
+						<usersort declaration="It"/>
+					</structure>
+				</type>
+			</place>
+			<place id="T_out">
+				<name>
+					<text>T_out</text>
+				</name>
+				<type>
+					<text>Dot</text>
+					<structure>
+						<usersort declaration="dot"/>
+					</structure>
+				</type>
+			</place>
+			<place id="R_tout">
+				<name>
+					<text>R_tout</text>
+				</name>
+				<type>
+					<text>Dot</text>
+					<structure>
+						<usersort declaration="dot"/>
+					</structure>
+				</type>
+				<hlinitialMarking>
+					<text>1'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinitialMarking>
+			</place>
+			<place id="S_tout">
+				<name>
+					<text>S_tout</text>
+				</name>
+				<type>
+					<text>Dot</text>
+					<structure>
+						<usersort declaration="dot"/>
+					</structure>
+				</type>
+			</place>
+			<place id="wait_msg">
+				<name>
+					<text>wait_msg</text>
+				</name>
+				<type>
+					<text>It</text>
+					<structure>
+						<usersort declaration="It"/>
+					</structure>
+				</type>
+			</place>
+			<place id="FMCb">
+				<name>
+					<text>FMCb</text>
+				</name>
+				<type>
+					<text>Dot</text>
+					<structure>
+						<usersort declaration="dot"/>
+					</structure>
+				</type>
+				<hlinitialMarking>
+					<text>1'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinitialMarking>
+			</place>
+			<place id="loop_em">
+				<name>
+					<text>loop_em</text>
+				</name>
+				<type>
+					<text>It</text>
+					<structure>
+						<usersort declaration="It"/>
+					</structure>
+				</type>
+			</place>
+			<transition id="loss_a">
+				<name>
+					<text>loss_a</text>
+				</name>
+			</transition>
+			<transition id="I_reemit">
+				<name>
+					<text>I_reemit</text>
+				</name>
+			</transition>
+			<transition id="C_refuse">
+				<name>
+					<text>C_refuse</text>
+				</name>
+				<condition>
+					<text>(x) eq (y)</text>
+					<structure>
+						<equality>
+							<subterm>
+								<variable refvariable="varx"/>
+							</subterm>
+							<subterm>
+								<variable refvariable="vary"/>
+							</subterm>
+						</equality>
+					</structure>
+				</condition>
+			</transition>
+			<transition id="C_free">
+				<name>
+					<text>C_free</text>
+				</name>
+				<condition>
+					<text>(i) eq (j)</text>
+					<structure>
+						<equality>
+							<subterm>
+								<variable refvariable="vari"/>
+							</subterm>
+							<subterm>
+								<variable refvariable="varj"/>
+							</subterm>
+						</equality>
+					</structure>
+				</condition>
+			</transition>
+			<transition id="C_provide">
+				<name>
+					<text>C_provide</text>
+				</name>
+				<condition>
+					<text>(x) eq (y)</text>
+					<structure>
+						<equality>
+							<subterm>
+								<variable refvariable="varx"/>
+							</subterm>
+							<subterm>
+								<variable refvariable="vary"/>
+							</subterm>
+						</equality>
+					</structure>
+				</condition>
+			</transition>
+			<transition id="I_rec1">
+				<name>
+					<text>I_rec1</text>
+				</name>
+				<condition>
+					<text>(r) eq (i)</text>
+					<structure>
+						<equality>
+							<subterm>
+								<variable refvariable="varr"/>
+							</subterm>
+							<subterm>
+								<variable refvariable="vari"/>
+							</subterm>
+						</equality>
+					</structure>
+				</condition>
+			</transition>
+			<transition id="I_free">
+				<name>
+					<text>I_free</text>
+				</name>
+			</transition>
+			<transition id="I_emit">
+				<name>
+					<text>I_emit</text>
+				</name>
+				<condition>
+					<text>(i) eq (j) and (r) ineq (i)</text>
+					<structure>
+						<and>
+							<subterm>
+								<equality>
+									<subterm>
+										<variable refvariable="vari"/>
+									</subterm>
+									<subterm>
+										<variable refvariable="varj"/>
+									</subterm>
+								</equality>
+							</subterm>
+							<subterm>
+								<inequality>
+									<subterm>
+										<variable refvariable="varr"/>
+									</subterm>
+									<subterm>
+										<variable refvariable="vari"/>
+									</subterm>
+								</inequality>
+							</subterm>
+						</and>
+					</structure>
+				</condition>
+			</transition>
+			<transition id="I_refused">
+				<name>
+					<text>I_refused</text>
+				</name>
+				<condition>
+					<text>(i) eq (j)</text>
+					<structure>
+						<equality>
+							<subterm>
+								<variable refvariable="vari"/>
+							</subterm>
+							<subterm>
+								<variable refvariable="varj"/>
+							</subterm>
+						</equality>
+					</structure>
+				</condition>
+			</transition>
+			<transition id="I_ask1">
+				<name>
+					<text>I_ask1</text>
+				</name>
+			</transition>
+			<transition id="loss_m">
+				<name>
+					<text>loss_m</text>
+				</name>
+			</transition>
+			<transition id="Gto">
+				<name>
+					<text>Gto</text>
+				</name>
+			</transition>
+			<transition id="I_rec2">
+				<name>
+					<text>I_rec2</text>
+				</name>
+				<condition>
+					<text>(r) eq (i)</text>
+					<structure>
+						<equality>
+							<subterm>
+								<variable refvariable="varr"/>
+							</subterm>
+							<subterm>
+								<variable refvariable="vari"/>
+							</subterm>
+						</equality>
+					</structure>
+				</condition>
+			</transition>
+			<transition id="I_ask2">
+				<name>
+					<text>I_ask2</text>
+				</name>
+			</transition>
+			<arc id="arc37" source="I_ask1" target="Cpt1">
+				<name>
+					<text>37</text>
+				</name>
+				<hlinscription>
+					<text>1'[(x++)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<successor>
+									<subterm>
+										<variable refvariable="varx"/>
+									</subterm>
+								</successor>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc38" source="C_refuse" target="Cpt2">
+				<name>
+					<text>38</text>
+				</name>
+				<hlinscription>
+					<text>1'[(x++)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<successor>
+									<subterm>
+										<variable refvariable="varx"/>
+									</subterm>
+								</successor>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc39" source="C_provide" target="Cpt2">
+				<name>
+					<text>39</text>
+				</name>
+				<hlinscription>
+					<text>1'[(x++)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<successor>
+									<subterm>
+										<variable refvariable="varx"/>
+									</subterm>
+								</successor>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc40" source="Cpt2" target="C_provide">
+				<name>
+					<text>40</text>
+				</name>
+				<hlinscription>
+					<text>1'[(y)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="vary"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc41" source="Cpt2" target="C_refuse">
+				<name>
+					<text>41</text>
+				</name>
+				<hlinscription>
+					<text>1'[(y)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="vary"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc42" source="Cpt1" target="I_ask1">
+				<name>
+					<text>42</text>
+				</name>
+				<hlinscription>
+					<text>1'[(x)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varx"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc43" source="I_emit" target="msgl">
+				<name>
+					<text>43</text>
+				</name>
+				<hlinscription>
+					<text>1'[(r)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varr"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc44" source="msgl" target="I_emit">
+				<name>
+					<text>44</text>
+				</name>
+				<hlinscription>
+					<text>1'[(r)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varr"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc45" source="loss_a" target="T_out">
+				<name>
+					<text>45</text>
+				</name>
+				<hlinscription>
+					<text>1'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc46" source="ACK" target="loss_a">
+				<name>
+					<text>46</text>
+				</name>
+				<hlinscription>
+					<text>1'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc47" source="I_reemit" target="wait_ack">
+				<name>
+					<text>47</text>
+				</name>
+				<hlinscription>
+					<text>1'[(i),(r)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<tuple>
+									<subterm>
+										<variable refvariable="vari"/>
+									</subterm>
+									<subterm>
+										<variable refvariable="varr"/>
+									</subterm>
+								</tuple>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc48" source="wait_ack" target="I_reemit">
+				<name>
+					<text>48</text>
+				</name>
+				<hlinscription>
+					<text>1'[(i),(r)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<tuple>
+									<subterm>
+										<variable refvariable="vari"/>
+									</subterm>
+									<subterm>
+										<variable refvariable="varr"/>
+									</subterm>
+								</tuple>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc49" source="I_reemit" target="MSG">
+				<name>
+					<text>49</text>
+				</name>
+				<hlinscription>
+					<text>1'[(r)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varr"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc50" source="AMC" target="C_provide">
+				<name>
+					<text>50</text>
+				</name>
+				<hlinscription>
+					<text>1'[(i),(x)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<tuple>
+									<subterm>
+										<variable refvariable="vari"/>
+									</subterm>
+									<subterm>
+										<variable refvariable="varx"/>
+									</subterm>
+								</tuple>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc51" source="AMC" target="C_refuse">
+				<name>
+					<text>51</text>
+				</name>
+				<hlinscription>
+					<text>1'[(i),(x)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<tuple>
+									<subterm>
+										<variable refvariable="vari"/>
+									</subterm>
+									<subterm>
+										<variable refvariable="varx"/>
+									</subterm>
+								</tuple>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc52" source="FMC" target="C_free">
+				<name>
+					<text>52</text>
+				</name>
+				<hlinscription>
+					<text>1'[(j)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varj"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc53" source="C_free" target="cable_free">
+				<name>
+					<text>53</text>
+				</name>
+				<hlinscription>
+					<text>1'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc54" source="cable_used" target="C_free">
+				<name>
+					<text>54</text>
+				</name>
+				<hlinscription>
+					<text>1'[(i)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="vari"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc55" source="C_provide" target="cable_used">
+				<name>
+					<text>55</text>
+				</name>
+				<hlinscription>
+					<text>1'[(i)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="vari"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc56" source="cable_free" target="C_provide">
+				<name>
+					<text>56</text>
+				</name>
+				<hlinscription>
+					<text>1'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc57" source="C_refuse" target="cable_used">
+				<name>
+					<text>57</text>
+				</name>
+				<hlinscription>
+					<text>1'[(j)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varj"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc58" source="cable_used" target="C_refuse">
+				<name>
+					<text>58</text>
+				</name>
+				<hlinscription>
+					<text>1'[(j)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varj"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc59" source="listen" target="I_ask1">
+				<name>
+					<text>59</text>
+				</name>
+				<hlinscription>
+					<text>1'[(i)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="vari"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc60" source="I_ask1" target="wait_cable">
+				<name>
+					<text>60</text>
+				</name>
+				<hlinscription>
+					<text>1'[(i)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="vari"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc61" source="wait_cable" target="I_refused">
+				<name>
+					<text>61</text>
+				</name>
+				<hlinscription>
+					<text>1'[(i)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="vari"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc62" source="wait_cable" target="I_emit">
+				<name>
+					<text>62</text>
+				</name>
+				<hlinscription>
+					<text>1'[(i)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="vari"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc63" source="I_emit" target="wait_ack">
+				<name>
+					<text>63</text>
+				</name>
+				<hlinscription>
+					<text>1'[(i),(r)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<tuple>
+									<subterm>
+										<variable refvariable="vari"/>
+									</subterm>
+									<subterm>
+										<variable refvariable="varr"/>
+									</subterm>
+								</tuple>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc64" source="wait_ack" target="I_free">
+				<name>
+					<text>64</text>
+				</name>
+				<hlinscription>
+					<text>1'[(i),(r)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<tuple>
+									<subterm>
+										<variable refvariable="vari"/>
+									</subterm>
+									<subterm>
+										<variable refvariable="varr"/>
+									</subterm>
+								</tuple>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc65" source="I_free" target="listen">
+				<name>
+					<text>65</text>
+				</name>
+				<hlinscription>
+					<text>1'[(i)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="vari"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc66" source="I_rec1" target="listen">
+				<name>
+					<text>66</text>
+				</name>
+				<hlinscription>
+					<text>1'[(i)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="vari"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc67" source="listen" target="I_rec1">
+				<name>
+					<text>67</text>
+				</name>
+				<hlinscription>
+					<text>1'[(i)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="vari"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc68" source="MSG" target="I_rec1">
+				<name>
+					<text>68</text>
+				</name>
+				<hlinscription>
+					<text>1'[(r)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varr"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc69" source="I_emit" target="MSG">
+				<name>
+					<text>69</text>
+				</name>
+				<hlinscription>
+					<text>1'[(r)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varr"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc70" source="I_rec1" target="ACK">
+				<name>
+					<text>70</text>
+				</name>
+				<hlinscription>
+					<text>1'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc71" source="RMC" target="I_refused">
+				<name>
+					<text>71</text>
+				</name>
+				<hlinscription>
+					<text>1'[(j)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varj"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc72" source="PMC" target="I_emit">
+				<name>
+					<text>72</text>
+				</name>
+				<hlinscription>
+					<text>1'[(j)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varj"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc73" source="C_provide" target="PMC">
+				<name>
+					<text>73</text>
+				</name>
+				<hlinscription>
+					<text>1'[(i)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="vari"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc74" source="C_refuse" target="RMC">
+				<name>
+					<text>74</text>
+				</name>
+				<hlinscription>
+					<text>1'[(i)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="vari"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc75" source="I_free" target="FMC">
+				<name>
+					<text>75</text>
+				</name>
+				<hlinscription>
+					<text>1'[(i)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="vari"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc76" source="I_ask1" target="AMC">
+				<name>
+					<text>76</text>
+				</name>
+				<hlinscription>
+					<text>1'[(i),(x)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<tuple>
+									<subterm>
+										<variable refvariable="vari"/>
+									</subterm>
+									<subterm>
+										<variable refvariable="varx"/>
+									</subterm>
+								</tuple>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc77" source="ACK" target="I_free">
+				<name>
+					<text>77</text>
+				</name>
+				<hlinscription>
+					<text>1'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc78" source="MSG" target="loss_m">
+				<name>
+					<text>78</text>
+				</name>
+				<hlinscription>
+					<text>1'[(r)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varr"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc79" source="loss_m" target="T_out">
+				<name>
+					<text>79</text>
+				</name>
+				<hlinscription>
+					<text>1'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc80" source="T_out" target="I_reemit">
+				<name>
+					<text>80</text>
+				</name>
+				<hlinscription>
+					<text>1'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc81" source="R_tout" target="loss_a">
+				<name>
+					<text>81</text>
+				</name>
+				<hlinscription>
+					<text>1'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc82" source="R_tout" target="loss_m">
+				<name>
+					<text>82</text>
+				</name>
+				<hlinscription>
+					<text>1'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc83" source="FMC" target="Gto">
+				<name>
+					<text>83</text>
+				</name>
+				<hlinscription>
+					<text>1'[(i)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="vari"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc84" source="Gto" target="FMC">
+				<name>
+					<text>84</text>
+				</name>
+				<hlinscription>
+					<text>1'[(i)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="vari"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc85" source="Gto" target="R_tout">
+				<name>
+					<text>85</text>
+				</name>
+				<hlinscription>
+					<text>1'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc86" source="loss_a" target="S_tout">
+				<name>
+					<text>86</text>
+				</name>
+				<hlinscription>
+					<text>1'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc87" source="loss_m" target="S_tout">
+				<name>
+					<text>87</text>
+				</name>
+				<hlinscription>
+					<text>1'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc88" source="S_tout" target="Gto">
+				<name>
+					<text>88</text>
+				</name>
+				<hlinscription>
+					<text>1'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc89" source="wait_msg" target="I_rec2">
+				<name>
+					<text>89</text>
+				</name>
+				<hlinscription>
+					<text>1'[(i)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="vari"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc90" source="I_refused" target="wait_msg">
+				<name>
+					<text>90</text>
+				</name>
+				<hlinscription>
+					<text>1'[(i)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="vari"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc91" source="MSG" target="I_rec2">
+				<name>
+					<text>91</text>
+				</name>
+				<hlinscription>
+					<text>1'[(r)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varr"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc92" source="I_rec2" target="ACK">
+				<name>
+					<text>92</text>
+				</name>
+				<hlinscription>
+					<text>1'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc93" source="FMCb" target="I_free">
+				<name>
+					<text>93</text>
+				</name>
+				<hlinscription>
+					<text>1'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc94" source="C_free" target="FMCb">
+				<name>
+					<text>94</text>
+				</name>
+				<hlinscription>
+					<text>1'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc95" source="FMCb" target="C_provide">
+				<name>
+					<text>95</text>
+				</name>
+				<hlinscription>
+					<text>1'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc96" source="FMCb" target="C_refuse">
+				<name>
+					<text>96</text>
+				</name>
+				<hlinscription>
+					<text>1'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc97" source="C_provide" target="FMCb">
+				<name>
+					<text>97</text>
+				</name>
+				<hlinscription>
+					<text>1'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc98" source="C_refuse" target="FMCb">
+				<name>
+					<text>98</text>
+				</name>
+				<hlinscription>
+					<text>1'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc99" source="I_ask2" target="Cpt1">
+				<name>
+					<text>99</text>
+				</name>
+				<hlinscription>
+					<text>1'[(x++)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<successor>
+									<subterm>
+										<variable refvariable="varx"/>
+									</subterm>
+								</successor>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc100" source="Cpt1" target="I_ask2">
+				<name>
+					<text>100</text>
+				</name>
+				<hlinscription>
+					<text>1'[(x)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varx"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc101" source="I_ask2" target="wait_cable">
+				<name>
+					<text>101</text>
+				</name>
+				<hlinscription>
+					<text>1'[(i)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="vari"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc102" source="I_ask2" target="AMC">
+				<name>
+					<text>102</text>
+				</name>
+				<hlinscription>
+					<text>1'[(i),(x)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<tuple>
+									<subterm>
+										<variable refvariable="vari"/>
+									</subterm>
+									<subterm>
+										<variable refvariable="varx"/>
+									</subterm>
+								</tuple>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc103" source="I_rec2" target="loop_em">
+				<name>
+					<text>103</text>
+				</name>
+				<hlinscription>
+					<text>1'[(i)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="vari"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc104" source="loop_em" target="I_ask2">
+				<name>
+					<text>104</text>
+				</name>
+				<hlinscription>
+					<text>1'[(i)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="vari"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+		</page>
+		<name>
+			<text>Document</text>
+		</name>
+		<declaration>
+			<structure>
+				<declarations>
+					<namedsort id="It" name="It">
+						<cyclicenumeration>
+							<feconstant id="It1" name="1"/>
+							<feconstant id="It2" name="2"/>
+							<feconstant id="It3" name="3"/>
+							<feconstant id="It4" name="4"/>
+							<feconstant id="It5" name="5"/>
+							<feconstant id="It6" name="6"/>
+							<feconstant id="It7" name="7"/>
+							<feconstant id="It8" name="8"/>
+							<feconstant id="It9" name="9"/>
+							<feconstant id="It10" name="10"/>
+							<feconstant id="It11" name="11"/>
+							<feconstant id="It12" name="12"/>
+							<feconstant id="It13" name="13"/>
+							<feconstant id="It14" name="14"/>
+							<feconstant id="It15" name="15"/>
+							<feconstant id="It16" name="16"/>
+							<feconstant id="It17" name="17"/>
+							<feconstant id="It18" name="18"/>
+							<feconstant id="It19" name="19"/>
+							<feconstant id="It20" name="20"/>
+							<feconstant id="It21" name="21"/>
+							<feconstant id="It22" name="22"/>
+							<feconstant id="It23" name="23"/>
+							<feconstant id="It24" name="24"/>
+							<feconstant id="It25" name="25"/>
+							<feconstant id="It26" name="26"/>
+							<feconstant id="It27" name="27"/>
+							<feconstant id="It28" name="28"/>
+							<feconstant id="It29" name="29"/>
+							<feconstant id="It30" name="30"/>
+							<feconstant id="It31" name="31"/>
+							<feconstant id="It32" name="32"/>
+							<feconstant id="It33" name="33"/>
+							<feconstant id="It34" name="34"/>
+							<feconstant id="It35" name="35"/>
+							<feconstant id="It36" name="36"/>
+							<feconstant id="It37" name="37"/>
+							<feconstant id="It38" name="38"/>
+							<feconstant id="It39" name="39"/>
+							<feconstant id="It40" name="40"/>
+							<feconstant id="It41" name="41"/>
+							<feconstant id="It42" name="42"/>
+							<feconstant id="It43" name="43"/>
+							<feconstant id="It44" name="44"/>
+							<feconstant id="It45" name="45"/>
+							<feconstant id="It46" name="46"/>
+							<feconstant id="It47" name="47"/>
+							<feconstant id="It48" name="48"/>
+							<feconstant id="It49" name="49"/>
+							<feconstant id="It50" name="50"/>
+						</cyclicenumeration>
+					</namedsort>
+					<namedsort id="dom" name="Dom">
+						<productsort>
+							<usersort declaration="It"/>
+							<usersort declaration="It"/>
+						</productsort>
+					</namedsort>
+					<variabledecl id="vary" name="y">
+						<usersort declaration="It"/>
+					</variabledecl>
+					<variabledecl id="varx" name="x">
+						<usersort declaration="It"/>
+					</variabledecl>
+					<variabledecl id="varr" name="r">
+						<usersort declaration="It"/>
+					</variabledecl>
+					<variabledecl id="varj" name="j">
+						<usersort declaration="It"/>
+					</variabledecl>
+					<variabledecl id="vari" name="i">
+						<usersort declaration="It"/>
+					</variabledecl>
+					<namedsort id="dot" name="Dot">
+						<dot/>
+					</namedsort>
+				</declarations>
+			</structure>
+		</declaration>
+	</net>
+</pnml>
