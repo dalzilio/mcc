@@ -5,11 +5,12 @@
 package cmd
 
 import (
+	"bufio"
+
 	"github.com/dalzilio/mcc/corenet"
 	"github.com/dalzilio/mcc/hlnet"
 	"github.com/dalzilio/mcc/pnml"
 
-	"io/ioutil"
 	"log"
 	"os"
 	"path/filepath"
@@ -97,6 +98,16 @@ func lolaConvert(filename string) {
 	hl := hlnet.Build(p)
 
 	cn := corenet.Build(p, hl)
-	outfile = outfile + ".net"
-	ioutil.WriteFile(outfile, []byte(cn.Lola()), 0755)
+	out, err := os.Create(outfile + ".net")
+	if err != nil {
+		hlnetLogger.Println("Error creating result file:", err)
+		os.Exit(1)
+		return
+	}
+	defer out.Close()
+	w := bufio.NewWriter(out)
+	cn.LolaWrite(w)
+	w.Flush()
+	// 	outfile = outfile + ".net"
+	// ioutil.WriteFile(outfile, []byte(cn.Lola()), 0755)
 }

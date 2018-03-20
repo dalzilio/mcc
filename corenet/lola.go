@@ -4,8 +4,11 @@
 
 package corenet
 
-import "fmt"
-import "strconv"
+import (
+	"fmt"
+	"io"
+	"strconv"
+)
 
 // ----------------------------------------------------------------------
 
@@ -26,14 +29,17 @@ func multstring(ee []string, start, delim, end string) string {
 
 // ----------------------------------------------------------------------
 
+// Lola generates a net with the lola format
 func (pl Place) Lola() string {
 	return "p" + strconv.Itoa(pl.count)
 }
 
+// Lola generates a net with the lola format
 func (pl corep) Lola() string {
 	return fmt.Sprintf("%s: %d", pl.Place.Lola(), pl.int)
 }
 
+// Lola generates a net with the lola format
 func (tr Trans) Lola() string {
 	s := "TRANSITION t" + strconv.Itoa(tr.count) + "\n"
 	s += fmt.Sprintf("\t{-- %s --}\n", tr.label)
@@ -50,6 +56,7 @@ func (tr Trans) Lola() string {
 	return s + "\n"
 }
 
+// Lola generates a net with the lola format
 func (net Net) Lola() string {
 	s := "PLACE\n"
 	var list, comments []string
@@ -73,4 +80,62 @@ func (net Net) Lola() string {
 		s += v.Lola()
 	}
 	return s
+}
+
+// LolaWrite prints a net with the lola format on an io.Writer
+func (net Net) LolaWrite(w io.Writer) {
+	fmt.Fprint(w, "PLACE\n")
+	fmt.Fprint(w, "\t")
+	flag := false
+	for _, v := range net.pl {
+		if flag {
+			fmt.Fprint(w, ", ")
+		} else {
+			flag = true
+		}
+		fmt.Fprintf(w, " p%d", v.count)
+	}
+	fmt.Fprint(w, ";\n")
+
+	fmt.Fprint(w, "MARKING\n")
+	fmt.Fprint(w, "\t")
+	flag = false
+	for _, v := range net.pl {
+		if v.init != 0 {
+			if flag {
+				fmt.Fprint(w, ", ")
+			} else {
+				flag = true
+			}
+			fmt.Fprintf(w, "%s: %d", v.Lola(), strconv.Itoa(v.init))
+		}
+	}
+	fmt.Fprint(w, ";\n")
+
+	for _, v := range net.tr {
+		fmt.Fprintf(w, "TRANSITION t%d\n", strconv.Itoa(v.count))
+		fmt.Fprint(w, "\tCONSUME ")
+		flag = false
+		for _, val := range v.in {
+			if flag {
+				fmt.Fprint(w, ", ")
+			} else {
+				flag = true
+			}
+			fmt.Fprint(w, val.Lola())
+		}
+		fmt.Fprint(w, ";\n")
+
+		fmt.Fprint(w, "\tPRODUCE ")
+		flag = false
+		for _, val := range v.out {
+			if flag {
+				fmt.Fprint(w, ", ")
+			} else {
+				flag = true
+			}
+			fmt.Fprint(w, val.Lola())
+		}
+		fmt.Fprint(w, ";\n")
+	}
 }
