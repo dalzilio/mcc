@@ -1,0 +1,997 @@
+<?xml version="1.0"?>
+<pnml xmlns="http://www.pnml.org/version-2009/grammar/pnml">
+	<net id="DrinkVendingMachine-COL-10" type="http://www.pnml.org/version-2009/grammar/symmetricnet">
+		<page id="DocumentDefaultPage">
+			<place id="optionSlots">
+				<name>
+					<text>optionSlots</text>
+				</name>
+				<type>
+					<text>Options</text>
+					<structure>
+						<usersort declaration="Options"/>
+					</structure>
+				</type>
+			</place>
+			<place id="theOptions">
+				<name>
+					<text>theOptions</text>
+				</name>
+				<type>
+					<text>Options</text>
+					<structure>
+						<usersort declaration="Options"/>
+					</structure>
+				</type>
+				<hlinitialMarking>
+					<text>1'(Options.all)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<all>
+									<usersort declaration="Options"/>
+								</all>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinitialMarking>
+			</place>
+			<place id="productSlots">
+				<name>
+					<text>productSlots</text>
+				</name>
+				<type>
+					<text>Products</text>
+					<structure>
+						<usersort declaration="Products"/>
+					</structure>
+				</type>
+			</place>
+			<place id="theProducts">
+				<name>
+					<text>theProducts</text>
+				</name>
+				<type>
+					<text>Products</text>
+					<structure>
+						<usersort declaration="Products"/>
+					</structure>
+				</type>
+				<hlinitialMarking>
+					<text>1'(Products.all)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<all>
+									<usersort declaration="Products"/>
+								</all>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinitialMarking>
+			</place>
+			<place id="wait">
+				<name>
+					<text>wait</text>
+				</name>
+				<type>
+					<text>Quality</text>
+					<structure>
+						<usersort declaration="Quality"/>
+					</structure>
+				</type>
+				<hlinitialMarking>
+					<text>1'(Quality.all)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<all>
+									<usersort declaration="Quality"/>
+								</all>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinitialMarking>
+			</place>
+			<place id="ready">
+				<name>
+					<text>ready</text>
+				</name>
+				<type>
+					<text>Quality</text>
+					<structure>
+						<usersort declaration="Quality"/>
+					</structure>
+				</type>
+			</place>
+			<transition id="addOption">
+				<name>
+					<text>addOption</text>
+				</name>
+			</transition>
+			<transition id="addProduct">
+				<name>
+					<text>addProduct</text>
+				</name>
+			</transition>
+			<transition id="elaborate0">
+				<name>
+					<text>elaborate0</text>
+				</name>
+				<condition>
+					<text>(x) lte (Quality10)</text>
+					<structure>
+						<lessthanorequal>
+							<subterm>
+								<variable refvariable="varx"/>
+							</subterm>
+							<subterm>
+								<useroperator declaration="Quality10"/>
+							</subterm>
+						</lessthanorequal>
+					</structure>
+				</condition>
+			</transition>
+			<transition id="serve">
+				<name>
+					<text>serve</text>
+				</name>
+			</transition>
+			<transition id="elaborate1">
+				<name>
+					<text>elaborate1</text>
+				</name>
+				<condition>
+					<text>(x) gt (Quality10) and (x) lte (Quality20)</text>
+					<structure>
+						<and>
+							<subterm>
+								<greaterthan>
+									<subterm>
+										<variable refvariable="varx"/>
+									</subterm>
+									<subterm>
+										<useroperator declaration="Quality10"/>
+									</subterm>
+								</greaterthan>
+							</subterm>
+							<subterm>
+								<lessthanorequal>
+									<subterm>
+										<variable refvariable="varx"/>
+									</subterm>
+									<subterm>
+										<useroperator declaration="Quality20"/>
+									</subterm>
+								</lessthanorequal>
+							</subterm>
+						</and>
+					</structure>
+				</condition>
+			</transition>
+			<transition id="elaborate2">
+				<name>
+					<text>elaborate2</text>
+				</name>
+				<condition>
+					<text>(x) gt (Quality20) and (x) lte (Quality30)</text>
+					<structure>
+						<and>
+							<subterm>
+								<greaterthan>
+									<subterm>
+										<variable refvariable="varx"/>
+									</subterm>
+									<subterm>
+										<useroperator declaration="Quality20"/>
+									</subterm>
+								</greaterthan>
+							</subterm>
+							<subterm>
+								<lessthanorequal>
+									<subterm>
+										<variable refvariable="varx"/>
+									</subterm>
+									<subterm>
+										<useroperator declaration="Quality30"/>
+									</subterm>
+								</lessthanorequal>
+							</subterm>
+						</and>
+					</structure>
+				</condition>
+			</transition>
+			<transition id="elaborate3">
+				<name>
+					<text>elaborate3</text>
+				</name>
+				<condition>
+					<text>(x) gt (Quality30) and (x) lte (Quality40)</text>
+					<structure>
+						<and>
+							<subterm>
+								<greaterthan>
+									<subterm>
+										<variable refvariable="varx"/>
+									</subterm>
+									<subterm>
+										<useroperator declaration="Quality30"/>
+									</subterm>
+								</greaterthan>
+							</subterm>
+							<subterm>
+								<lessthanorequal>
+									<subterm>
+										<variable refvariable="varx"/>
+									</subterm>
+									<subterm>
+										<useroperator declaration="Quality40"/>
+									</subterm>
+								</lessthanorequal>
+							</subterm>
+						</and>
+					</structure>
+				</condition>
+			</transition>
+			<arc id="arc34" source="elaborate0" target="ready">
+				<name>
+					<text>34</text>
+				</name>
+				<hlinscription>
+					<text>1'[(x)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varx"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc35" source="wait" target="elaborate0">
+				<name>
+					<text>35</text>
+				</name>
+				<hlinscription>
+					<text>1'[(x)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varx"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc32" source="elaborate1" target="optionSlots">
+				<name>
+					<text>32</text>
+				</name>
+				<hlinscription>
+					<text>1'[(o1)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varo1"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc33" source="theOptions" target="elaborate1">
+				<name>
+					<text>33</text>
+				</name>
+				<hlinscription>
+					<text>1'[(o1)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varo1"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc38" source="elaborate1" target="productSlots">
+				<name>
+					<text>38</text>
+				</name>
+				<hlinscription>
+					<text>1'[(p)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varp"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc39" source="theProducts" target="elaborate1">
+				<name>
+					<text>39</text>
+				</name>
+				<hlinscription>
+					<text>1'[(p)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varp"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc36" source="elaborate1" target="ready">
+				<name>
+					<text>36</text>
+				</name>
+				<hlinscription>
+					<text>1'[(x)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varx"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc37" source="wait" target="elaborate1">
+				<name>
+					<text>37</text>
+				</name>
+				<hlinscription>
+					<text>1'[(x)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varx"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc42" source="elaborate2" target="optionSlots">
+				<name>
+					<text>42</text>
+				</name>
+				<hlinscription>
+					<text>1'[(o1)] + 1'[(o2)]</text>
+					<structure>
+						<add>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<variable refvariable="varo1"/>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<variable refvariable="varo2"/>
+									</subterm>
+								</numberof>
+							</subterm>
+						</add>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc43" source="theOptions" target="elaborate2">
+				<name>
+					<text>43</text>
+				</name>
+				<hlinscription>
+					<text>1'[(o1)] + 1'[(o2)]</text>
+					<structure>
+						<add>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<variable refvariable="varo1"/>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<variable refvariable="varo2"/>
+									</subterm>
+								</numberof>
+							</subterm>
+						</add>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc40" source="elaborate2" target="productSlots">
+				<name>
+					<text>40</text>
+				</name>
+				<hlinscription>
+					<text>1'[(p)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varp"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc41" source="theProducts" target="elaborate2">
+				<name>
+					<text>41</text>
+				</name>
+				<hlinscription>
+					<text>1'[(p)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varp"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc17" source="elaborate2" target="ready">
+				<name>
+					<text>17</text>
+				</name>
+				<hlinscription>
+					<text>1'[(x)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varx"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc16" source="wait" target="elaborate2">
+				<name>
+					<text>16</text>
+				</name>
+				<hlinscription>
+					<text>1'[(x)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varx"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc19" source="elaborate3" target="optionSlots">
+				<name>
+					<text>19</text>
+				</name>
+				<hlinscription>
+					<text>1'[(o1)] + 1'[(o2)] + 1'[(o3)]</text>
+					<structure>
+						<add>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<variable refvariable="varo1"/>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<variable refvariable="varo2"/>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<variable refvariable="varo3"/>
+									</subterm>
+								</numberof>
+							</subterm>
+						</add>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc18" source="theOptions" target="elaborate3">
+				<name>
+					<text>18</text>
+				</name>
+				<hlinscription>
+					<text>1'[(o1)] + 1'[(o2)] + 1'[(o3)]</text>
+					<structure>
+						<add>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<variable refvariable="varo1"/>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<variable refvariable="varo2"/>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<variable refvariable="varo3"/>
+									</subterm>
+								</numberof>
+							</subterm>
+						</add>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc21" source="elaborate3" target="productSlots">
+				<name>
+					<text>21</text>
+				</name>
+				<hlinscription>
+					<text>1'[(p)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varp"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc20" source="theProducts" target="elaborate3">
+				<name>
+					<text>20</text>
+				</name>
+				<hlinscription>
+					<text>1'[(p)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varp"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc23" source="elaborate3" target="ready">
+				<name>
+					<text>23</text>
+				</name>
+				<hlinscription>
+					<text>1'[(x)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varx"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc22" source="wait" target="elaborate3">
+				<name>
+					<text>22</text>
+				</name>
+				<hlinscription>
+					<text>1'[(x)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varx"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc25" source="productSlots" target="addProduct">
+				<name>
+					<text>25</text>
+				</name>
+				<hlinscription>
+					<text>1'[(p)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varp"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc24" source="addProduct" target="theProducts">
+				<name>
+					<text>24</text>
+				</name>
+				<hlinscription>
+					<text>1'[(p)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varp"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc27" source="optionSlots" target="addOption">
+				<name>
+					<text>27</text>
+				</name>
+				<hlinscription>
+					<text>1'[(o1)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varo1"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc26" source="addOption" target="theOptions">
+				<name>
+					<text>26</text>
+				</name>
+				<hlinscription>
+					<text>1'[(o1)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varo1"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc29" source="ready" target="serve">
+				<name>
+					<text>29</text>
+				</name>
+				<hlinscription>
+					<text>1'[(x)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varx"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc28" source="serve" target="wait">
+				<name>
+					<text>28</text>
+				</name>
+				<hlinscription>
+					<text>1'[(x)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varx"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc31" source="theProducts" target="elaborate0">
+				<name>
+					<text>31</text>
+				</name>
+				<hlinscription>
+					<text>1'[(p)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varp"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc30" source="elaborate0" target="productSlots">
+				<name>
+					<text>30</text>
+				</name>
+				<hlinscription>
+					<text>1'[(p)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varp"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+		</page>
+		<name>
+			<text>DrinkVendingMachine-COL-10</text>
+		</name>
+		<declaration>
+			<structure>
+				<declarations>
+					<namedsort id="Quality" name="Quality">
+						<cyclicenumeration>
+							<feconstant id="Quality1" name="1"/>
+							<feconstant id="Quality2" name="2"/>
+							<feconstant id="Quality3" name="3"/>
+							<feconstant id="Quality4" name="4"/>
+							<feconstant id="Quality5" name="5"/>
+							<feconstant id="Quality6" name="6"/>
+							<feconstant id="Quality7" name="7"/>
+							<feconstant id="Quality8" name="8"/>
+							<feconstant id="Quality9" name="9"/>
+							<feconstant id="Quality10" name="10"/>
+							<feconstant id="Quality11" name="11"/>
+							<feconstant id="Quality12" name="12"/>
+							<feconstant id="Quality13" name="13"/>
+							<feconstant id="Quality14" name="14"/>
+							<feconstant id="Quality15" name="15"/>
+							<feconstant id="Quality16" name="16"/>
+							<feconstant id="Quality17" name="17"/>
+							<feconstant id="Quality18" name="18"/>
+							<feconstant id="Quality19" name="19"/>
+							<feconstant id="Quality20" name="20"/>
+							<feconstant id="Quality21" name="21"/>
+							<feconstant id="Quality22" name="22"/>
+							<feconstant id="Quality23" name="23"/>
+							<feconstant id="Quality24" name="24"/>
+							<feconstant id="Quality25" name="25"/>
+							<feconstant id="Quality26" name="26"/>
+							<feconstant id="Quality27" name="27"/>
+							<feconstant id="Quality28" name="28"/>
+							<feconstant id="Quality29" name="29"/>
+							<feconstant id="Quality30" name="30"/>
+							<feconstant id="Quality31" name="31"/>
+							<feconstant id="Quality32" name="32"/>
+							<feconstant id="Quality33" name="33"/>
+							<feconstant id="Quality34" name="34"/>
+							<feconstant id="Quality35" name="35"/>
+							<feconstant id="Quality36" name="36"/>
+							<feconstant id="Quality37" name="37"/>
+							<feconstant id="Quality38" name="38"/>
+							<feconstant id="Quality39" name="39"/>
+							<feconstant id="Quality40" name="40"/>
+						</cyclicenumeration>
+					</namedsort>
+					<namedsort id="Products" name="Products">
+						<cyclicenumeration>
+							<feconstant id="Products1" name="1"/>
+							<feconstant id="Products2" name="2"/>
+							<feconstant id="Products3" name="3"/>
+							<feconstant id="Products4" name="4"/>
+							<feconstant id="Products5" name="5"/>
+							<feconstant id="Products6" name="6"/>
+							<feconstant id="Products7" name="7"/>
+							<feconstant id="Products8" name="8"/>
+							<feconstant id="Products9" name="9"/>
+							<feconstant id="Products10" name="10"/>
+						</cyclicenumeration>
+					</namedsort>
+					<namedsort id="Options" name="Options">
+						<cyclicenumeration>
+							<feconstant id="Options1" name="1"/>
+							<feconstant id="Options2" name="2"/>
+							<feconstant id="Options3" name="3"/>
+							<feconstant id="Options4" name="4"/>
+							<feconstant id="Options5" name="5"/>
+							<feconstant id="Options6" name="6"/>
+							<feconstant id="Options7" name="7"/>
+							<feconstant id="Options8" name="8"/>
+							<feconstant id="Options9" name="9"/>
+							<feconstant id="Options10" name="10"/>
+						</cyclicenumeration>
+					</namedsort>
+					<variabledecl id="varp" name="p">
+						<usersort declaration="Products"/>
+					</variabledecl>
+					<variabledecl id="varo3" name="o3">
+						<usersort declaration="Options"/>
+					</variabledecl>
+					<variabledecl id="varo2" name="o2">
+						<usersort declaration="Options"/>
+					</variabledecl>
+					<variabledecl id="varo1" name="o1">
+						<usersort declaration="Options"/>
+					</variabledecl>
+					<variabledecl id="varx" name="x">
+						<usersort declaration="Quality"/>
+					</variabledecl>
+				</declarations>
+			</structure>
+		</declaration>
+	</net>
+</pnml>

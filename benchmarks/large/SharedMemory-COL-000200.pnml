@@ -1,0 +1,720 @@
+<?xml version="1.0"?>
+<pnml xmlns="http://www.pnml.org/version-2009/grammar/pnml">
+	<net id="SharedMemory-COL-000200" type="http://www.pnml.org/version-2009/grammar/symmetricnet">
+		<page id="memDefaultPage">
+			<place id="ownMemAcc">
+				<name>
+					<text>OwnMemAcc</text>
+				</name>
+				<type>
+					<text>P</text>
+					<structure>
+						<usersort declaration="pclass"/>
+					</structure>
+				</type>
+			</place>
+			<place id="queue">
+				<name>
+					<text>Queue</text>
+				</name>
+				<type>
+					<text>P</text>
+					<structure>
+						<usersort declaration="pclass"/>
+					</structure>
+				</type>
+			</place>
+			<place id="memory">
+				<name>
+					<text>Memory</text>
+				</name>
+				<type>
+					<text>P</text>
+					<structure>
+						<usersort declaration="pclass"/>
+					</structure>
+				</type>
+				<hlinitialMarking>
+					<text>P.all</text>
+					<structure>
+						<all>
+							<usersort declaration="pclass"/>
+						</all>
+					</structure>
+				</hlinitialMarking>
+			</place>
+			<place id="active">
+				<name>
+					<text>Active</text>
+				</name>
+				<type>
+					<text>P</text>
+					<structure>
+						<usersort declaration="pclass"/>
+					</structure>
+				</type>
+				<hlinitialMarking>
+					<text>P.all</text>
+					<structure>
+						<all>
+							<usersort declaration="pclass"/>
+						</all>
+					</structure>
+				</hlinitialMarking>
+			</place>
+			<place id="extMemAcc">
+				<name>
+					<text>Ext_Mem_Acc</text>
+				</name>
+				<type>
+					<text>PxP</text>
+					<structure>
+						<usersort declaration="pDomainId"/>
+					</structure>
+				</type>
+			</place>
+			<place id="extBus">
+				<name>
+					<text>Ext_Bus</text>
+				</name>
+				<type>
+					<text>Dot</text>
+					<structure>
+						<usersort declaration="dot"/>
+					</structure>
+				</type>
+				<hlinitialMarking>
+					<text>1'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinitialMarking>
+			</place>
+			<transition id="beginOwnAcc">
+				<name>
+					<text>Begin_Own_Acc</text>
+				</name>
+			</transition>
+			<transition id="reqExtAcc">
+				<name>
+					<text>Req_Ext_Acc</text>
+				</name>
+			</transition>
+			<transition id="endExtAcc">
+				<name>
+					<text>End_Ext_Acc</text>
+				</name>
+			</transition>
+			<transition id="endOwnAcc">
+				<name>
+					<text>End_Own_Acc</text>
+				</name>
+				<condition>
+					<text>[m eq x]</text>
+					<structure>
+						<equality>
+							<subterm>
+								<variable refvariable="varm"/>
+							</subterm>
+							<subterm>
+								<variable refvariable="varx"/>
+							</subterm>
+						</equality>
+					</structure>
+				</condition>
+			</transition>
+			<transition id="beginExtAcc">
+				<name>
+					<text>Begin_Ext_Acc</text>
+				</name>
+				<condition>
+					<text>[x ineq m]</text>
+					<structure>
+						<inequality>
+							<subterm>
+								<variable refvariable="varx"/>
+							</subterm>
+							<subterm>
+								<variable refvariable="varm"/>
+							</subterm>
+						</inequality>
+					</structure>
+				</condition>
+			</transition>
+			<arc id="oma2eoa" source="ownMemAcc" target="endOwnAcc">
+				<name>
+					<text>OwnMemAcc2End_Own_Acc</text>
+				</name>
+				<hlinscription>
+					<text>1'(x)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varx"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="mem2eoa" source="memory" target="endOwnAcc">
+				<name>
+					<text>Memory2End_Own_Acc</text>
+				</name>
+				<hlinscription>
+					<text>1'(m)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varm"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="mem2bea" source="memory" target="beginExtAcc">
+				<name>
+					<text>Memory2Begin_Ext_Acc</text>
+				</name>
+				<hlinscription>
+					<text>1'(m)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varm"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="act2boa" source="active" target="beginOwnAcc">
+				<name>
+					<text>Active2Begin_Own_Acc</text>
+				</name>
+				<hlinscription>
+					<text>1'(x)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varx"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="act2rea" source="active" target="reqExtAcc">
+				<name>
+					<text>Active2Req_Ext_Acc</text>
+				</name>
+				<hlinscription>
+					<text>1'(x)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varx"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="que2bea" source="queue" target="beginExtAcc">
+				<name>
+					<text>Queue2Begin_Ext_Acc</text>
+				</name>
+				<hlinscription>
+					<text>1'(x)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varx"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="ema2eea" source="extMemAcc" target="endExtAcc">
+				<name>
+					<text>Ext_Mem_Acc2End_Ext_Acc</text>
+				</name>
+				<hlinscription>
+					<text>1'(x)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<tuple>
+									<subterm>
+										<variable refvariable="varx"/>
+									</subterm>
+									<subterm>
+										<variable refvariable="vary"/>
+									</subterm>
+								</tuple>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="exb2bea" source="extBus" target="beginExtAcc">
+				<name>
+					<text>Ext_Bus2Begin_Ext_Acc</text>
+				</name>
+				<hlinscription>
+					<text>1'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="boa2oma" source="beginOwnAcc" target="ownMemAcc">
+				<name>
+					<text>Begin_Own_Acc2OwnMemAcc</text>
+				</name>
+				<hlinscription>
+					<text>1'(x)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varx"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="eoa2mem" source="endOwnAcc" target="memory">
+				<name>
+					<text>End_Own_Acc2Memory</text>
+				</name>
+				<hlinscription>
+					<text>1'(m)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varm"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="eea2mem" source="endExtAcc" target="memory">
+				<name>
+					<text>End_Ext_Acc2Memory</text>
+				</name>
+				<hlinscription>
+					<text>1'(y)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="vary"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="eoa2act" source="endOwnAcc" target="active">
+				<name>
+					<text>End_Own_Acc2Active</text>
+				</name>
+				<hlinscription>
+					<text>1'(x)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varx"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="eea2act" source="endExtAcc" target="active">
+				<name>
+					<text>End_Ext_Acc2Active</text>
+				</name>
+				<hlinscription>
+					<text>1'(x)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varx"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="rea2que" source="reqExtAcc" target="queue">
+				<name>
+					<text>Req_Ext_Acc2Queue</text>
+				</name>
+				<hlinscription>
+					<text>1'(x)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varx"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="bea2ema" source="beginExtAcc" target="extMemAcc">
+				<name>
+					<text>Begin_Ext_Acc2Ext_Mem_Acc</text>
+				</name>
+				<hlinscription>
+					<text>1'(x,m)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<tuple>
+									<subterm>
+										<variable refvariable="varx"/>
+									</subterm>
+									<subterm>
+										<variable refvariable="varm"/>
+									</subterm>
+								</tuple>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="eea2exb" source="endExtAcc" target="extBus">
+				<name>
+					<text>End_Ext_Acc2Ext_Bus</text>
+				</name>
+				<hlinscription>
+					<text>1'(dot)</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<dotconstant/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+		</page>
+		<name>
+			<text>SharedMemory-COL-000200</text>
+		</name>
+		<declaration>
+			<structure>
+				<declarations>
+					<namedsort id="pclass" name="P">
+						<cyclicenumeration>
+							<feconstant id="pId1" name="1"/>
+							<feconstant id="pId2" name="2"/>
+							<feconstant id="pId3" name="3"/>
+							<feconstant id="pId4" name="4"/>
+							<feconstant id="pId5" name="5"/>
+							<feconstant id="pId6" name="6"/>
+							<feconstant id="pId7" name="7"/>
+							<feconstant id="pId8" name="8"/>
+							<feconstant id="pId9" name="9"/>
+							<feconstant id="pId10" name="10"/>
+							<feconstant id="pId11" name="11"/>
+							<feconstant id="pId12" name="12"/>
+							<feconstant id="pId13" name="13"/>
+							<feconstant id="pId14" name="14"/>
+							<feconstant id="pId15" name="15"/>
+							<feconstant id="pId16" name="16"/>
+							<feconstant id="pId17" name="17"/>
+							<feconstant id="pId18" name="18"/>
+							<feconstant id="pId19" name="19"/>
+							<feconstant id="pId20" name="20"/>
+							<feconstant id="pId21" name="21"/>
+							<feconstant id="pId22" name="22"/>
+							<feconstant id="pId23" name="23"/>
+							<feconstant id="pId24" name="24"/>
+							<feconstant id="pId25" name="25"/>
+							<feconstant id="pId26" name="26"/>
+							<feconstant id="pId27" name="27"/>
+							<feconstant id="pId28" name="28"/>
+							<feconstant id="pId29" name="29"/>
+							<feconstant id="pId30" name="30"/>
+							<feconstant id="pId31" name="31"/>
+							<feconstant id="pId32" name="32"/>
+							<feconstant id="pId33" name="33"/>
+							<feconstant id="pId34" name="34"/>
+							<feconstant id="pId35" name="35"/>
+							<feconstant id="pId36" name="36"/>
+							<feconstant id="pId37" name="37"/>
+							<feconstant id="pId38" name="38"/>
+							<feconstant id="pId39" name="39"/>
+							<feconstant id="pId40" name="40"/>
+							<feconstant id="pId41" name="41"/>
+							<feconstant id="pId42" name="42"/>
+							<feconstant id="pId43" name="43"/>
+							<feconstant id="pId44" name="44"/>
+							<feconstant id="pId45" name="45"/>
+							<feconstant id="pId46" name="46"/>
+							<feconstant id="pId47" name="47"/>
+							<feconstant id="pId48" name="48"/>
+							<feconstant id="pId49" name="49"/>
+							<feconstant id="pId50" name="50"/>
+							<feconstant id="pId51" name="51"/>
+							<feconstant id="pId52" name="52"/>
+							<feconstant id="pId53" name="53"/>
+							<feconstant id="pId54" name="54"/>
+							<feconstant id="pId55" name="55"/>
+							<feconstant id="pId56" name="56"/>
+							<feconstant id="pId57" name="57"/>
+							<feconstant id="pId58" name="58"/>
+							<feconstant id="pId59" name="59"/>
+							<feconstant id="pId60" name="60"/>
+							<feconstant id="pId61" name="61"/>
+							<feconstant id="pId62" name="62"/>
+							<feconstant id="pId63" name="63"/>
+							<feconstant id="pId64" name="64"/>
+							<feconstant id="pId65" name="65"/>
+							<feconstant id="pId66" name="66"/>
+							<feconstant id="pId67" name="67"/>
+							<feconstant id="pId68" name="68"/>
+							<feconstant id="pId69" name="69"/>
+							<feconstant id="pId70" name="70"/>
+							<feconstant id="pId71" name="71"/>
+							<feconstant id="pId72" name="72"/>
+							<feconstant id="pId73" name="73"/>
+							<feconstant id="pId74" name="74"/>
+							<feconstant id="pId75" name="75"/>
+							<feconstant id="pId76" name="76"/>
+							<feconstant id="pId77" name="77"/>
+							<feconstant id="pId78" name="78"/>
+							<feconstant id="pId79" name="79"/>
+							<feconstant id="pId80" name="80"/>
+							<feconstant id="pId81" name="81"/>
+							<feconstant id="pId82" name="82"/>
+							<feconstant id="pId83" name="83"/>
+							<feconstant id="pId84" name="84"/>
+							<feconstant id="pId85" name="85"/>
+							<feconstant id="pId86" name="86"/>
+							<feconstant id="pId87" name="87"/>
+							<feconstant id="pId88" name="88"/>
+							<feconstant id="pId89" name="89"/>
+							<feconstant id="pId90" name="90"/>
+							<feconstant id="pId91" name="91"/>
+							<feconstant id="pId92" name="92"/>
+							<feconstant id="pId93" name="93"/>
+							<feconstant id="pId94" name="94"/>
+							<feconstant id="pId95" name="95"/>
+							<feconstant id="pId96" name="96"/>
+							<feconstant id="pId97" name="97"/>
+							<feconstant id="pId98" name="98"/>
+							<feconstant id="pId99" name="99"/>
+							<feconstant id="pId100" name="100"/>
+							<feconstant id="pId101" name="101"/>
+							<feconstant id="pId102" name="102"/>
+							<feconstant id="pId103" name="103"/>
+							<feconstant id="pId104" name="104"/>
+							<feconstant id="pId105" name="105"/>
+							<feconstant id="pId106" name="106"/>
+							<feconstant id="pId107" name="107"/>
+							<feconstant id="pId108" name="108"/>
+							<feconstant id="pId109" name="109"/>
+							<feconstant id="pId110" name="110"/>
+							<feconstant id="pId111" name="111"/>
+							<feconstant id="pId112" name="112"/>
+							<feconstant id="pId113" name="113"/>
+							<feconstant id="pId114" name="114"/>
+							<feconstant id="pId115" name="115"/>
+							<feconstant id="pId116" name="116"/>
+							<feconstant id="pId117" name="117"/>
+							<feconstant id="pId118" name="118"/>
+							<feconstant id="pId119" name="119"/>
+							<feconstant id="pId120" name="120"/>
+							<feconstant id="pId121" name="121"/>
+							<feconstant id="pId122" name="122"/>
+							<feconstant id="pId123" name="123"/>
+							<feconstant id="pId124" name="124"/>
+							<feconstant id="pId125" name="125"/>
+							<feconstant id="pId126" name="126"/>
+							<feconstant id="pId127" name="127"/>
+							<feconstant id="pId128" name="128"/>
+							<feconstant id="pId129" name="129"/>
+							<feconstant id="pId130" name="130"/>
+							<feconstant id="pId131" name="131"/>
+							<feconstant id="pId132" name="132"/>
+							<feconstant id="pId133" name="133"/>
+							<feconstant id="pId134" name="134"/>
+							<feconstant id="pId135" name="135"/>
+							<feconstant id="pId136" name="136"/>
+							<feconstant id="pId137" name="137"/>
+							<feconstant id="pId138" name="138"/>
+							<feconstant id="pId139" name="139"/>
+							<feconstant id="pId140" name="140"/>
+							<feconstant id="pId141" name="141"/>
+							<feconstant id="pId142" name="142"/>
+							<feconstant id="pId143" name="143"/>
+							<feconstant id="pId144" name="144"/>
+							<feconstant id="pId145" name="145"/>
+							<feconstant id="pId146" name="146"/>
+							<feconstant id="pId147" name="147"/>
+							<feconstant id="pId148" name="148"/>
+							<feconstant id="pId149" name="149"/>
+							<feconstant id="pId150" name="150"/>
+							<feconstant id="pId151" name="151"/>
+							<feconstant id="pId152" name="152"/>
+							<feconstant id="pId153" name="153"/>
+							<feconstant id="pId154" name="154"/>
+							<feconstant id="pId155" name="155"/>
+							<feconstant id="pId156" name="156"/>
+							<feconstant id="pId157" name="157"/>
+							<feconstant id="pId158" name="158"/>
+							<feconstant id="pId159" name="159"/>
+							<feconstant id="pId160" name="160"/>
+							<feconstant id="pId161" name="161"/>
+							<feconstant id="pId162" name="162"/>
+							<feconstant id="pId163" name="163"/>
+							<feconstant id="pId164" name="164"/>
+							<feconstant id="pId165" name="165"/>
+							<feconstant id="pId166" name="166"/>
+							<feconstant id="pId167" name="167"/>
+							<feconstant id="pId168" name="168"/>
+							<feconstant id="pId169" name="169"/>
+							<feconstant id="pId170" name="170"/>
+							<feconstant id="pId171" name="171"/>
+							<feconstant id="pId172" name="172"/>
+							<feconstant id="pId173" name="173"/>
+							<feconstant id="pId174" name="174"/>
+							<feconstant id="pId175" name="175"/>
+							<feconstant id="pId176" name="176"/>
+							<feconstant id="pId177" name="177"/>
+							<feconstant id="pId178" name="178"/>
+							<feconstant id="pId179" name="179"/>
+							<feconstant id="pId180" name="180"/>
+							<feconstant id="pId181" name="181"/>
+							<feconstant id="pId182" name="182"/>
+							<feconstant id="pId183" name="183"/>
+							<feconstant id="pId184" name="184"/>
+							<feconstant id="pId185" name="185"/>
+							<feconstant id="pId186" name="186"/>
+							<feconstant id="pId187" name="187"/>
+							<feconstant id="pId188" name="188"/>
+							<feconstant id="pId189" name="189"/>
+							<feconstant id="pId190" name="190"/>
+							<feconstant id="pId191" name="191"/>
+							<feconstant id="pId192" name="192"/>
+							<feconstant id="pId193" name="193"/>
+							<feconstant id="pId194" name="194"/>
+							<feconstant id="pId195" name="195"/>
+							<feconstant id="pId196" name="196"/>
+							<feconstant id="pId197" name="197"/>
+							<feconstant id="pId198" name="198"/>
+							<feconstant id="pId199" name="199"/>
+							<feconstant id="pId200" name="200"/>
+						</cyclicenumeration>
+					</namedsort>
+					<namedsort id="dot" name="Dot">
+						<dot/>
+					</namedsort>
+					<namedsort id="pDomainId" name="PxP">
+						<productsort>
+							<usersort declaration="pclass"/>
+							<usersort declaration="pclass"/>
+						</productsort>
+					</namedsort>
+					<variabledecl id="varx" name="x">
+						<usersort declaration="pclass"/>
+					</variabledecl>
+					<variabledecl id="vary" name="y">
+						<usersort declaration="pclass"/>
+					</variabledecl>
+					<variabledecl id="varm" name="m">
+						<usersort declaration="pclass"/>
+					</variabledecl>
+				</declarations>
+			</structure>
+		</declaration>
+	</net>
+</pnml>
