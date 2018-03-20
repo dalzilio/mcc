@@ -93,7 +93,7 @@ func (net Net) LolaWrite(w io.Writer) {
 		} else {
 			flag = true
 		}
-		fmt.Fprintf(w, " p%d", v.count)
+		fmt.Fprintf(w, "p%d", v.count)
 	}
 	fmt.Fprint(w, ";\n")
 
@@ -107,13 +107,13 @@ func (net Net) LolaWrite(w io.Writer) {
 			} else {
 				flag = true
 			}
-			fmt.Fprintf(w, "%s: %d", v.Lola(), strconv.Itoa(v.init))
+			fmt.Fprintf(w, "%s: %d", v.Lola(), v.init)
 		}
 	}
 	fmt.Fprint(w, ";\n")
 
 	for _, v := range net.tr {
-		fmt.Fprintf(w, "TRANSITION t%d\n", strconv.Itoa(v.count))
+		fmt.Fprintf(w, "TRANSITION t%d\n", v.count)
 		fmt.Fprint(w, "\tCONSUME ")
 		flag = false
 		for _, val := range v.in {
@@ -136,6 +136,6 @@ func (net Net) LolaWrite(w io.Writer) {
 			}
 			fmt.Fprint(w, val.Lola())
 		}
-		fmt.Fprint(w, ";\n")
+		fmt.Fprint(w, ";\n\n")
 	}
 }
