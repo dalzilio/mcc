@@ -5,6 +5,7 @@
 # 5 NUM. PLACES (CORENET)
 # 6 NUM. TRANSITIONS (CORENET)
 # 7 NUM. STATES
+referendum,Referendum-COL-010,4,3,31,21
 airplane,AirplaneLD-COL-0010,20,15,89,88
 csrepetition,CSRepetitions-COL-02,6,5,23,28
 bridges,Document,15,11,28,52

@@ -7,12 +7,25 @@ package corenet
 import (
 	"fmt"
 	"sort"
+	"strings"
 
 	"github.com/dalzilio/mcc/hlnet"
 	"github.com/dalzilio/mcc/pnml"
 )
 
 // ----------------------------------------------------------------------
+
+func makepname(net *pnml.Net, count int, hlpcount int, val *pnml.Value) string {
+	if !net.SLICED {
+		return fmt.Sprintf("p_%d", count)
+	}
+	s := strings.Builder{}
+	fmt.Fprintf(&s, "p_%d_%d", hlpcount, val.Head)
+	for v := val.Tail; v != nil; v = v.Tail {
+		fmt.Fprintf(&s, "_%d", v.Head)
+	}
+	return s.String()
+}
 
 func makeplabel(net *pnml.Net, name string, val *pnml.Value) string {
 	if net.VERBOSE == pnml.QUIET {
@@ -76,15 +89,18 @@ func Build(pnet *pnml.Net, hl *hlnet.Net) *Net {
 	var net Net
 	net.name = pnet.Name
 	net.verbose = pnet.VERBOSE
+	net.sliced = pnet.SLICED
 
 	// we build all the places in the final net. They are of the form p x val,
 	// where val is one of the possible values from the type of p. We build a
 	// map to find the given place from the pair {p val}
 	cpl := make(map[coreAssoc]*Place)
 	pcount := 0
+	hlpcount := 0
 	for k, p := range hl.Places {
 		for _, v := range pnet.World[p.Type] {
-			cp := Place{count: pcount, label: makeplabel(pnet, k, v)}
+
+			cp := Place{count: pcount, name: makepname(pnet, pcount, hlpcount, v), label: makeplabel(pnet, k, v)}
 			pcount++
 			cpl[coreAssoc{place: p, val: v}] = &cp
 			net.pl = append(net.pl, &cp)
@@ -96,6 +112,7 @@ func Build(pnet *pnml.Net, hl *hlnet.Net) *Net {
 				cp.init = multv[k]
 			}
 		}
+		hlpcount++
 	}
 
 	// we go through all the transitions and build coretrans by enumerating all

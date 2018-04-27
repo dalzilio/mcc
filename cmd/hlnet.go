@@ -34,6 +34,7 @@ var hlnetFileName string
 var hlnetOutFileName string
 var hlnetUseName bool
 var hlnetDebugMode bool
+var hlnetUseComplexPNames bool
 var hlnetLogger *log.Logger
 
 func init() {
@@ -42,18 +43,18 @@ func init() {
 	hlnetCmd.Flags().StringVarP(&hlnetOutFileName, "out", "o", "", "basename of the output file (without extension, default to input file basename)")
 	hlnetCmd.Flags().BoolVar(&hlnetUseName, "name", false, "use PNML (document) name for the output file")
 	hlnetCmd.Flags().BoolVar(&hlnetDebugMode, "debug", false, "output a readable version in a format that can be displayed by Tina")
-
+	hlnetCmd.Flags().BoolVar(&hlnetUseComplexPNames, "sliced", false, "use structured naming for places")
 	hlnetLogger = log.New(os.Stderr, "MCC HLNET:", 0)
 }
 
 func convert(filename string) {
 	// we capture panics
-	defer func() {
-		if r := recover(); r != nil {
-			hlnetLogger.Println("Error in generation: cannot compute")
-			os.Exit(1)
-		}
-	}()
+	// defer func() {
+	// 	if r := recover(); r != nil {
+	// 		hlnetLogger.Println("Error in generation: cannot compute")
+	// 		os.Exit(1)
+	// 	}
+	// }()
 
 	if filename == "" {
 		hlnetLogger.Println("Bad command line! Input file mandatory. Use option -i")
@@ -101,6 +102,7 @@ func convert(filename string) {
 		os.Exit(0)
 	}
 
+	p.SetSliced(hlnetUseComplexPNames)
 	p.SetVerbose(pnml.MINIMAL)
 	p.SetFES(false)
 	hl := hlnet.Build(p)
@@ -126,5 +128,4 @@ func convert(filename string) {
 	w := bufio.NewWriter(out)
 	cn.Write(w)
 	w.Flush()
-	// ioutil.WriteFile(outfile, []byte(cn.String()), 0755)
 }
