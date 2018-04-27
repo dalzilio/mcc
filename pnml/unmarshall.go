@@ -37,6 +37,8 @@ type Net struct {
 	vdot *Value
 	// VERBOSE guides the level of information in the outputs
 	VERBOSE VERB
+	// SLICED tells us whether we want to use complex names when naming places
+	SLICED bool
 	// MCC tells us whether we should allow duplicate transitions on conditions.
 	MCC bool
 	// FES tells us whether we should use the FiniteEnumeration semantics (the
@@ -51,6 +53,14 @@ type Net struct {
 // the output.
 func (net *Net) SetVerbose(b VERB) {
 	net.VERBOSE = b
+}
+
+// ----------------------------------------------------------------------
+
+// SetSliced sets the value of the SLICED setting. true means more information on
+// the names of places.
+func (net *Net) SetSliced(b bool) {
+	net.SLICED = b
 }
 
 // ----------------------------------------------------------------------

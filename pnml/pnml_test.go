@@ -79,7 +79,7 @@ var result string
 
 func BenchmarkBuild(b *testing.B) {
 	// Find all the PNML file in the benchmarks folder
-	directory := "../benchmarks/simple/"
+	directory := "../benchmarks/large/"
 	files, err := ioutil.ReadDir(directory)
 	if err != nil {
 		os.Exit(1)

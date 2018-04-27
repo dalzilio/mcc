@@ -108,6 +108,4 @@ func lolaConvert(filename string) {
 	w := bufio.NewWriter(out)
 	cn.LolaWrite(w)
 	w.Flush()
-	// 	outfile = outfile + ".net"
-	// ioutil.WriteFile(outfile, []byte(cn.Lola()), 0755)
 }
