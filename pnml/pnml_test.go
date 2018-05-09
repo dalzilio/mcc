@@ -54,7 +54,7 @@ func TestBuild(t *testing.T) {
 			var p = new(Net)
 			err = decoder.Build(p)
 			if err != nil {
-				t.Errorf("pnml.Build(): error decoding PNML file: %s", err)
+				t.Errorf("pnml.Build(): error decoding PNML file %s: %s", filename, err)
 			}
 
 			filename = filename[0 : len(filename)-len(".pnml")]
