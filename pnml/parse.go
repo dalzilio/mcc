@@ -124,23 +124,26 @@ func parseExprElement(decoder *xml.Decoder) (Expression, error) {
 			skipUntilEnd(decoder)
 			return Dot{}, nil
 		case "numberof":
-			// we consider the case where numberof does not have two subelements has this
-			// was found in one PNML model, SimpleLoad.
+			// we consider the case where numberof does not have two subelements
+			// (the multiplicity is missing). This was found in one PNML model,
+			// SimpleLoad, and lately on instance DotAndBoxes-COL-3 found in the
+			// MCC website. The same problem appears in files dot2.pnml and
+			// dot3.pnml of the benchmarks/simple folder.
 			res1, _ := parseExprElement(decoder)
-			res2, _ := parseExprElement(decoder)
-			skipUntilEnd(decoder)
 			if numb, ok := res1.(Numberof); ok {
+				res2, _ := parseExprElement(decoder)
+				skipUntilEnd(decoder)
 				numb.Expression = res2
 				return numb, nil
 			}
-			if numb, ok := res2.(Numberof); ok {
-				numb.Expression = res1
-				return numb, nil
-			}
+			res2, _ := parseExprElement(decoder)
 			if res2 == nil {
+				// it means that res1 was a value, not a numberconstant, and
+				// that the multiplicity was forgotten in the XML numberof
+				// element.
 				return Numberof{Expression: res1, Mult: 1}, nil
 			}
-			return nil, errors.New("Malformed PNML in numberof")
+			return nil, errors.New("Malformed PNML in numberof, numberconstant is missing")
 		case "numberconstant":
 			var val NumberConstant
 			decoder.DecodeElement(&val, &se)
