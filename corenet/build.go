@@ -89,7 +89,7 @@ func appendCorep(in []corep, c corep) []corep {
 func normalize2aname(s string) string {
 	anamize := func(r rune) rune {
 		switch {
-		case (r >= 'A' && r <= 'z') || (r >= '0' && r <= 'z'):
+		case (r >= 'A' && r <= 'z') || (r >= '0' && r <= '9'):
 			return r
 		default:
 			return '_'
