@@ -15,12 +15,12 @@ import (
 
 // ----------------------------------------------------------------------
 
-func makepname(net *pnml.Net, count int, hlpcount int, val *pnml.Value) string {
+func makepname(net *pnml.Net, pname string, count int, hlpcount int, val *pnml.Value) string {
 	if !net.SLICED {
 		return fmt.Sprintf("p_%d", count)
 	}
 	s := strings.Builder{}
-	fmt.Fprintf(&s, "p_%d_%d", hlpcount, val.Head)
+	fmt.Fprintf(&s, "%s_%d", pname, val.Head)
 	for v := val.Tail; v != nil; v = v.Tail {
 		fmt.Fprintf(&s, "_%d", v.Head)
 	}
@@ -83,6 +83,21 @@ func appendCorep(in []corep, c corep) []corep {
 
 // ----------------------------------------------------------------------
 
+// normalize2aname returns an identifier that can be used in a .net file. We do
+// not ensure that identifiers names will not clash with each other (but it
+// should)
+func normalize2aname(s string) string {
+	anamize := func(r rune) rune {
+		switch {
+		case (r >= 'A' && r <= 'z') || (r >= '0' && r <= 'z'):
+			return r
+		default:
+			return '_'
+		}
+	}
+	return strings.Map(anamize, s)
+}
+
 // Build returns a core net from a colored Petri net  by unfolding the
 // corresponding hlnet.
 func Build(pnet *pnml.Net, hl *hlnet.Net) *Net {
@@ -99,8 +114,8 @@ func Build(pnet *pnml.Net, hl *hlnet.Net) *Net {
 	hlpcount := 0
 	for k, p := range hl.Places {
 		for _, v := range pnet.World[p.Type] {
-
-			cp := Place{count: pcount, name: makepname(pnet, pcount, hlpcount, v), label: makeplabel(pnet, k, v)}
+			pname := normalize2aname(k)
+			cp := Place{count: pcount, name: makepname(pnet, pname, pcount, hlpcount, v), label: makeplabel(pnet, pname, v)}
 			pcount++
 			cpl[coreAssoc{place: p, val: v}] = &cp
 			net.pl = append(net.pl, &cp)
