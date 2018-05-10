@@ -20,7 +20,11 @@ func makepname(net *pnml.Net, pname string, count int, hlpcount int, val *pnml.V
 		return fmt.Sprintf("p_%d", count)
 	}
 	s := strings.Builder{}
-	fmt.Fprintf(&s, "%s_%d", pname, val.Head)
+	s.WriteString(pname)
+	if val.Head == 0 {
+		return s.String()
+	}
+	fmt.Fprintf(&s, "_%d", val.Head)
 	for v := val.Tail; v != nil; v = v.Tail {
 		fmt.Fprintf(&s, "_%d", v.Head)
 	}
@@ -161,14 +165,16 @@ func Build(pnet *pnml.Net, hl *hlnet.Net) *Net {
 					}
 				}
 				if sat {
-					// if pnet.VERBOSE > pnml.QUIET {
-					// 	sort.Slice(ct.in, func(i, j int) bool {
-					// 		return ct.in[i].count < ct.in[j].count
-					// 	})
-					// 	sort.Slice(ct.out, func(i, j int) bool {
-					// 		return ct.out[i].count < ct.out[j].count
-					// 	})
-					// }
+					if net.sliced {
+						// we sort the in and out places of the transition to
+						// obtain a deterministic order of the places.
+						sort.Slice(ct.in, func(i, j int) bool {
+							return ct.in[i].name < ct.in[j].name
+						})
+						sort.Slice(ct.out, func(i, j int) bool {
+							return ct.out[i].name < ct.out[j].name
+						})
+					}
 					net.tr = append(net.tr, &ct)
 					tcount++
 				}
@@ -177,6 +183,44 @@ func Build(pnet *pnml.Net, hl *hlnet.Net) *Net {
 				break
 			}
 		}
+	}
+
+	// we also sort the transitions when net.sliced is true
+	if net.sliced {
+		sort.Slice(net.tr, func(i, j int) bool {
+			k := 0
+			for k < len(net.tr[i].in) && k < len(net.tr[j].in) {
+				if net.tr[i].in[k] == net.tr[j].in[k] {
+					k++
+					continue
+				}
+				if net.tr[i].in[k].name == net.tr[j].in[k].name {
+					return (net.tr[i].in[k].int < net.tr[j].in[k].int)
+				}
+				return (net.tr[i].in[k].name < net.tr[j].in[k].name)
+			}
+			if k < len(net.tr[i].in) {
+				return false
+			}
+			if k < len(net.tr[j].in) {
+				return true
+			}
+			k = 0
+			for k < len(net.tr[i].out) && k < len(net.tr[j].out) {
+				if net.tr[i].out[k] == net.tr[j].out[k] {
+					k++
+					continue
+				}
+				if net.tr[i].out[k].name == net.tr[j].out[k].name {
+					return (net.tr[i].out[k].int < net.tr[j].out[k].int)
+				}
+				return (net.tr[i].out[k].name < net.tr[j].out[k].name)
+			}
+			if k < len(net.tr[i].out) {
+				return false
+			}
+			return true
+		})
 	}
 
 	return &net
