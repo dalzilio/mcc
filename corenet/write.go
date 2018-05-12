@@ -29,8 +29,8 @@ func (pl corep) Write(w io.Writer) {
 	fmt.Fprintf(w, " %s*%d", pl.name, pl.int)
 }
 
-func (tr Trans) Write(w io.Writer) {
-	fmt.Fprintf(w, "tr t%d ", tr.count)
+func (tr Trans) Write(w io.Writer, k int) {
+	fmt.Fprintf(w, "tr t%d ", k)
 	for _, v := range tr.in {
 		v.Write(w)
 	}
@@ -54,7 +54,7 @@ func (net Net) Write(w io.Writer) {
 		v.Write(w)
 	}
 
-	for _, v := range net.tr {
-		v.Write(w)
+	for k, v := range net.tr {
+		v.Write(w, k)
 	}
 }

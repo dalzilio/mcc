@@ -5,8 +5,9 @@
 package corenet
 
 import (
-	"github.com/dalzilio/mcc/pnml"
 	"fmt"
+
+	"github.com/dalzilio/mcc/pnml"
 )
 
 // ----------------------------------------------------------------------
@@ -65,19 +66,9 @@ func (net Net) String() string {
 		return s
 	}
 
-	// when VERBOSE mode is above QUIET we sort by labels
-	// sort.SliceStable(net.pl, func(i, j int) bool { return net.pl[i].label < net.pl[j].label })
-	// sort.SliceStable(net.tr, func(i, j int) bool {
-	// 	if net.tr[i].label == net.tr[j].label {
-	// 		return net.tr[i].count < net.tr[j].count
-	// 	}
-	// 	return net.tr[i].label < net.tr[j].label
-	// })
-
 	for _, v := range net.pl {
 		s += v.String()
 	}
-
 	for _, v := range net.tr {
 		s += v.String()
 	}
