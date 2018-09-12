@@ -1,0 +1,7034 @@
+<?xml version="1.0"?>
+<pnml xmlns="http://www.pnml.org/version-2009/grammar/pnml">
+	<net id="BART-COL-002" type="http://www.pnml.org/version-2009/grammar/symmetricnet">
+		<page id="DocumentDefaultPage">
+			<place id="DistStation">
+				<name>
+					<text>DistStation</text>
+				</name>
+				<type>
+					<text>distance</text>
+					<structure>
+						<usersort declaration="distance"/>
+					</structure>
+				</type>
+				<hlinitialMarking>
+					<text>1'(distance40) + 1'(distance39) + 1'(distance38) + 1'(distance37) + 1'(distance36) + 1'(distance35) + 1'(distance34) + 1'(distance33) + 1'(distance32) + 1'(distance31) + 1'(distance30) + 1'(distance29) + 1'(distance28) + 1'(distance27) + 1'(distance26) + 1'(distance25) + 1'(distance24) + 1'(distance23) + 1'(distance22) + 1'(distance21) + 1'(distance20) + 1'(distance19) + 1'(distance18) + 1'(distance17) + 1'(distance16) + 1'(distance15) + 1'(distance14) + 1'(distance13) + 1'(distance12) + 1'(distance11) + 1'(distance10) + 1'(distance9) + 1'(distance8) + 1'(distance7) + 1'(distance6) + 1'(distance5)</text>
+					<structure>
+						<add>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<useroperator declaration="distance40"/>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<useroperator declaration="distance39"/>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<useroperator declaration="distance38"/>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<useroperator declaration="distance37"/>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<useroperator declaration="distance36"/>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<useroperator declaration="distance35"/>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<useroperator declaration="distance34"/>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<useroperator declaration="distance33"/>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<useroperator declaration="distance32"/>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<useroperator declaration="distance31"/>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<useroperator declaration="distance30"/>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<useroperator declaration="distance29"/>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<useroperator declaration="distance28"/>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<useroperator declaration="distance27"/>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<useroperator declaration="distance26"/>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<useroperator declaration="distance25"/>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<useroperator declaration="distance24"/>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<useroperator declaration="distance23"/>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<useroperator declaration="distance22"/>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<useroperator declaration="distance21"/>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<useroperator declaration="distance20"/>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<useroperator declaration="distance19"/>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<useroperator declaration="distance18"/>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<useroperator declaration="distance17"/>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<useroperator declaration="distance16"/>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<useroperator declaration="distance15"/>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<useroperator declaration="distance14"/>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<useroperator declaration="distance13"/>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<useroperator declaration="distance12"/>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<useroperator declaration="distance11"/>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<useroperator declaration="distance10"/>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<useroperator declaration="distance9"/>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<useroperator declaration="distance8"/>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<useroperator declaration="distance7"/>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<useroperator declaration="distance6"/>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<useroperator declaration="distance5"/>
+									</subterm>
+								</numberof>
+							</subterm>
+						</add>
+					</structure>
+				</hlinitialMarking>
+			</place>
+			<place id="TrainState">
+				<name>
+					<text>TrainState</text>
+				</name>
+				<type>
+					<text>traincontext</text>
+					<structure>
+						<usersort declaration="traincontext"/>
+					</structure>
+				</type>
+				<hlinitialMarking>
+					<text>1'[(trainid.all),(speed0),(distance0)]</text>
+					<structure>
+						<add>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="trainid1"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed0"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance0"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="trainid2"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed0"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance0"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+						</add>
+					</structure>
+				</hlinitialMarking>
+			</place>
+			<place id="StopTable">
+				<name>
+					<text>StopTable</text>
+				</name>
+				<type>
+					<text>speedXdist</text>
+					<structure>
+						<usersort declaration="speedxdist"/>
+					</structure>
+				</type>
+				<hlinitialMarking>
+					<text>1'[(speed0),(distance0)] + 1'[(speed1),(distance1)] + 1'[(speed2),(distance3)] + 1'[(speed3),(distance6)] + 1'[(speed4),(distance10)] + 1'[(speed5),(distance15)]</text>
+					<structure>
+						<add>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="speed0"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance0"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="speed1"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance1"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="speed2"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance3"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="speed3"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance6"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="speed4"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance10"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="speed5"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance15"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+						</add>
+					</structure>
+				</hlinitialMarking>
+			</place>
+			<place id="NewDistTable">
+				<name>
+					<text>NewDistTable</text>
+				</name>
+				<type>
+					<text>distXspeedXdist</text>
+					<structure>
+						<usersort declaration="distxspeedxdist"/>
+					</structure>
+				</type>
+				<hlinitialMarking>
+					<text>1'[(distance1),(speed0),(distance1)] + 1'[(distance1),(speed1),(distance0)] + 1'[(distance2),(speed0),(distance2)] + 1'[(distance2),(speed1),(distance1)] + 1'[(distance2),(speed2),(distance0)] + 1'[(distance3),(speed2),(distance1)] + 1'[(distance3),(speed3),(distance0)] + 1'[(distance4),(speed0),(distance4)] + 1'[(distance4),(speed1),(distance3)] + 1'[(distance4),(speed2),(distance2)] + 1'[(distance4),(speed3),(distance1)] + 1'[(distance5),(speed1),(distance4)] + 1'[(distance5),(speed2),(distance3)] + 1'[(distance5),(speed3),(distance2)] + 1'[(distance5),(speed4),(distance1)] + 1'[(distance5),(speed5),(distance0)] + 1'[(distance6),(speed0),(distance6)] + 1'[(distance6),(speed3),(distance3)] + 1'[(distance6),(speed4),(distance2)] + 1'[(distance6),(speed5),(distance1)] + 1'[(distance7),(speed0),(distance7)] + 1'[(distance7),(speed1),(distance6)] + 1'[(distance7),(speed2),(distance5)] + 1'[(distance7),(speed5),(distance2)] + 1'[(distance8),(speed0),(distance8)] + 1'[(distance8),(speed1),(distance7)] + 1'[(distance8),(speed2),(distance6)] + 1'[(distance8),(speed3),(distance5)] + 1'[(distance8),(speed4),(distance4)] + 1'[(distance9),(speed1),(distance8)] + 1'[(distance9),(speed2),(distance7)] + 1'[(distance9),(speed3),(distance6)] + 1'[(distance9),(speed4),(distance5)] + 1'[(distance9),(speed5),(distance4)] + 1'[(distance10),(speed0),(distance10)] + 1'[(distance7),(speed3),(distance4)] + 1'[(distance7),(speed4),(distance3)] + 1'[(distance6),(speed1),(distance5)] + 1'[(distance6),(speed2),(distance4)] + 1'[(distance4),(speed4),(distance0)] + 1'[(distance5),(speed0),(distance5)] + 1'[(distance3),(speed0),(distance3)] + 1'[(distance3),(speed1),(distance2)] + 1'[(distance12),(speed4),(distance8)] + 1'[(distance11),(speed3),(distance8)] + 1'[(distance10),(speed1),(distance9)] + 1'[(distance10),(speed2),(distance8)] + 1'[(distance8),(speed5),(distance3)] + 1'[(distance9),(speed0),(distance9)] + 1'[(distance10),(speed3),(distance7)] + 1'[(distance10),(speed4),(distance6)] + 1'[(distance10),(speed5),(distance5)] + 1'[(distance11),(speed0),(distance11)] + 1'[(distance11),(speed1),(distance10)] + 1'[(distance11),(speed2),(distance9)] + 1'[(distance11),(speed4),(distance7)] + 1'[(distance11),(speed5),(distance6)] + 1'[(distance12),(speed0),(distance12)] + 1'[(distance12),(speed1),(distance11)] + 1'[(distance12),(speed2),(distance10)] + 1'[(distance12),(speed3),(distance9)] + 1'[(distance12),(speed5),(distance7)] + 1'[(distance13),(speed0),(distance13)] + 1'[(distance13),(speed1),(distance12)] + 1'[(distance13),(speed2),(distance11)] + 1'[(distance13),(speed3),(distance10)] + 1'[(distance13),(speed4),(distance9)] + 1'[(distance14),(speed0),(distance14)] + 1'[(distance14),(speed1),(distance13)] + 1'[(distance14),(speed2),(distance12)] + 1'[(distance14),(speed3),(distance11)] + 1'[(distance14),(speed4),(distance10)] + 1'[(distance14),(speed5),(distance9)] + 1'[(distance15),(speed0),(distance15)] + 1'[(distance15),(speed1),(distance14)] + 1'[(distance15),(speed2),(distance13)] + 1'[(distance15),(speed3),(distance12)] + 1'[(distance15),(speed4),(distance11)] + 1'[(distance15),(speed5),(distance10)] + 1'[(distance16),(speed0),(distance16)] + 1'[(distance16),(speed1),(distance15)] + 1'[(distance16),(speed2),(distance14)] + 1'[(distance16),(speed3),(distance13)] + 1'[(distance16),(speed4),(distance12)] + 1'[(distance16),(speed5),(distance11)] + 1'[(distance17),(speed0),(distance17)] + 1'[(distance17),(speed1),(distance16)] + 1'[(distance17),(speed2),(distance15)] + 1'[(distance17),(speed3),(distance14)] + 1'[(distance17),(speed4),(distance13)] + 1'[(distance17),(speed5),(distance12)] + 1'[(distance18),(speed0),(distance18)] + 1'[(distance18),(speed1),(distance17)] + 1'[(distance18),(speed2),(distance16)] + 1'[(distance18),(speed3),(distance15)] + 1'[(distance18),(speed4),(distance14)] + 1'[(distance18),(speed5),(distance13)] + 1'[(distance19),(speed0),(distance19)] + 1'[(distance19),(speed1),(distance18)] + 1'[(distance19),(speed2),(distance17)] + 1'[(distance19),(speed3),(distance16)] + 1'[(distance19),(speed4),(distance15)] + 1'[(distance19),(speed5),(distance14)] + 1'[(distance20),(speed0),(distance20)] + 1'[(distance20),(speed1),(distance19)] + 1'[(distance20),(speed2),(distance18)] + 1'[(distance20),(speed3),(distance17)] + 1'[(distance20),(speed4),(distance16)] + 1'[(distance20),(speed5),(distance15)] + 1'[(distance21),(speed0),(distance21)] + 1'[(distance21),(speed1),(distance20)] + 1'[(distance21),(speed2),(distance19)] + 1'[(distance21),(speed3),(distance18)] + 1'[(distance21),(speed4),(distance17)] + 1'[(distance21),(speed5),(distance16)] + 1'[(distance22),(speed0),(distance22)] + 1'[(distance22),(speed1),(distance21)] + 1'[(distance22),(speed2),(distance20)] + 1'[(distance22),(speed3),(distance19)] + 1'[(distance22),(speed4),(distance18)] + 1'[(distance22),(speed5),(distance17)] + 1'[(distance23),(speed0),(distance23)] + 1'[(distance23),(speed1),(distance22)] + 1'[(distance23),(speed2),(distance21)] + 1'[(distance23),(speed3),(distance20)] + 1'[(distance23),(speed4),(distance19)] + 1'[(distance23),(speed5),(distance18)] + 1'[(distance24),(speed0),(distance24)] + 1'[(distance24),(speed1),(distance23)] + 1'[(distance24),(speed2),(distance22)] + 1'[(distance24),(speed3),(distance21)] + 1'[(distance24),(speed4),(distance20)] + 1'[(distance24),(speed5),(distance19)] + 1'[(distance25),(speed0),(distance25)] + 1'[(distance25),(speed1),(distance24)] + 1'[(distance25),(speed2),(distance23)] + 1'[(distance25),(speed3),(distance22)] + 1'[(distance25),(speed4),(distance21)] + 1'[(distance25),(speed5),(distance20)] + 1'[(distance26),(speed0),(distance26)] + 1'[(distance26),(speed1),(distance25)] + 1'[(distance26),(speed2),(distance24)] + 1'[(distance26),(speed3),(distance23)] + 1'[(distance26),(speed4),(distance22)] + 1'[(distance26),(speed5),(distance21)] + 1'[(distance27),(speed0),(distance27)] + 1'[(distance27),(speed1),(distance26)] + 1'[(distance27),(speed2),(distance25)] + 1'[(distance27),(speed3),(distance24)] + 1'[(distance27),(speed4),(distance23)] + 1'[(distance27),(speed5),(distance22)] + 1'[(distance28),(speed0),(distance28)] + 1'[(distance28),(speed1),(distance27)] + 1'[(distance28),(speed2),(distance26)] + 1'[(distance28),(speed3),(distance25)] + 1'[(distance28),(speed4),(distance24)] + 1'[(distance28),(speed5),(distance23)] + 1'[(distance29),(speed0),(distance29)] + 1'[(distance29),(speed1),(distance28)] + 1'[(distance29),(speed2),(distance27)] + 1'[(distance29),(speed3),(distance26)] + 1'[(distance29),(speed4),(distance25)] + 1'[(distance29),(speed5),(distance24)] + 1'[(distance30),(speed0),(distance30)] + 1'[(distance30),(speed1),(distance29)] + 1'[(distance30),(speed2),(distance28)] + 1'[(distance30),(speed3),(distance27)] + 1'[(distance30),(speed4),(distance26)] + 1'[(distance30),(speed5),(distance25)] + 1'[(distance31),(speed0),(distance31)] + 1'[(distance31),(speed1),(distance30)] + 1'[(distance31),(speed2),(distance29)] + 1'[(distance31),(speed3),(distance28)] + 1'[(distance31),(speed4),(distance27)] + 1'[(distance31),(speed5),(distance26)] + 1'[(distance32),(speed0),(distance32)] + 1'[(distance32),(speed1),(distance31)] + 1'[(distance32),(speed2),(distance30)] + 1'[(distance32),(speed3),(distance29)] + 1'[(distance32),(speed4),(distance28)] + 1'[(distance32),(speed5),(distance27)] + 1'[(distance33),(speed0),(distance33)] + 1'[(distance33),(speed1),(distance32)] + 1'[(distance33),(speed2),(distance31)] + 1'[(distance33),(speed3),(distance30)] + 1'[(distance33),(speed4),(distance29)] + 1'[(distance33),(speed5),(distance28)] + 1'[(distance34),(speed0),(distance34)] + 1'[(distance34),(speed1),(distance33)] + 1'[(distance34),(speed2),(distance32)] + 1'[(distance34),(speed3),(distance31)] + 1'[(distance34),(speed4),(distance30)] + 1'[(distance34),(speed5),(distance29)] + 1'[(distance35),(speed0),(distance35)] + 1'[(distance35),(speed1),(distance34)] + 1'[(distance35),(speed2),(distance33)] + 1'[(distance35),(speed3),(distance32)] + 1'[(distance35),(speed4),(distance31)] + 1'[(distance35),(speed5),(distance30)] + 1'[(distance36),(speed0),(distance36)] + 1'[(distance36),(speed1),(distance35)] + 1'[(distance36),(speed2),(distance34)] + 1'[(distance36),(speed3),(distance33)] + 1'[(distance36),(speed4),(distance32)] + 1'[(distance36),(speed5),(distance31)] + 1'[(distance37),(speed0),(distance37)] + 1'[(distance37),(speed1),(distance36)] + 1'[(distance37),(speed2),(distance35)] + 1'[(distance37),(speed3),(distance34)] + 1'[(distance37),(speed4),(distance33)] + 1'[(distance37),(speed5),(distance32)] + 1'[(distance38),(speed0),(distance38)] + 1'[(distance38),(speed1),(distance37)] + 1'[(distance38),(speed2),(distance36)] + 1'[(distance38),(speed3),(distance35)] + 1'[(distance38),(speed4),(distance34)] + 1'[(distance38),(speed5),(distance33)] + 1'[(distance39),(speed0),(distance39)] + 1'[(distance39),(speed1),(distance38)] + 1'[(distance39),(speed2),(distance37)] + 1'[(distance39),(speed3),(distance36)] + 1'[(distance39),(speed4),(distance35)] + 1'[(distance39),(speed5),(distance34)] + 1'[(distance40),(speed0),(distance40)] + 1'[(distance40),(speed1),(distance39)] + 1'[(distance40),(speed2),(distance38)] + 1'[(distance40),(speed3),(distance37)] + 1'[(distance40),(speed4),(distance36)] + 1'[(distance40),(speed5),(distance35)] + 1'[(distance13),(speed5),(distance8)]</text>
+					<structure>
+						<add>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance1"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed0"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance1"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance1"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed1"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance0"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance2"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed0"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance2"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance2"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed1"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance1"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance2"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed2"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance0"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance3"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed2"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance1"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance3"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed3"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance0"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance4"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed0"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance4"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance4"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed1"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance3"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance4"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed2"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance2"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance4"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed3"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance1"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance5"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed1"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance4"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance5"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed2"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance3"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance5"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed3"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance2"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance5"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed4"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance1"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance5"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed5"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance0"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance6"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed0"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance6"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance6"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed3"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance3"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance6"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed4"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance2"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance6"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed5"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance1"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance7"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed0"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance7"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance7"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed1"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance6"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance7"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed2"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance5"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance7"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed5"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance2"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance8"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed0"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance8"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance8"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed1"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance7"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance8"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed2"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance6"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance8"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed3"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance5"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance8"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed4"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance4"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance9"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed1"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance8"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance9"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed2"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance7"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance9"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed3"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance6"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance9"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed4"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance5"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance9"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed5"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance4"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance10"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed0"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance10"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance7"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed3"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance4"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance7"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed4"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance3"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance6"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed1"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance5"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance6"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed2"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance4"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance4"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed4"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance0"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance5"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed0"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance5"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance3"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed0"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance3"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance3"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed1"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance2"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance12"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed4"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance8"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance11"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed3"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance8"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance10"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed1"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance9"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance10"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed2"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance8"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance8"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed5"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance3"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance9"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed0"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance9"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance10"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed3"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance7"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance10"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed4"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance6"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance10"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed5"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance5"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance11"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed0"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance11"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance11"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed1"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance10"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance11"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed2"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance9"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance11"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed4"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance7"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance11"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed5"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance6"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance12"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed0"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance12"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance12"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed1"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance11"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance12"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed2"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance10"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance12"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed3"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance9"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance12"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed5"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance7"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance13"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed0"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance13"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance13"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed1"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance12"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance13"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed2"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance11"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance13"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed3"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance10"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance13"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed4"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance9"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance14"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed0"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance14"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance14"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed1"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance13"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance14"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed2"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance12"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance14"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed3"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance11"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance14"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed4"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance10"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance14"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed5"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance9"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance15"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed0"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance15"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance15"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed1"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance14"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance15"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed2"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance13"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance15"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed3"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance12"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance15"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed4"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance11"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance15"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed5"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance10"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance16"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed0"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance16"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance16"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed1"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance15"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance16"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed2"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance14"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance16"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed3"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance13"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance16"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed4"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance12"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance16"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed5"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance11"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance17"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed0"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance17"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance17"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed1"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance16"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance17"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed2"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance15"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance17"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed3"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance14"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance17"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed4"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance13"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance17"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed5"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance12"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance18"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed0"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance18"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance18"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed1"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance17"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance18"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed2"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance16"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance18"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed3"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance15"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance18"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed4"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance14"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance18"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed5"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance13"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance19"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed0"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance19"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance19"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed1"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance18"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance19"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed2"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance17"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance19"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed3"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance16"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance19"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed4"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance15"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance19"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed5"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance14"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance20"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed0"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance20"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance20"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed1"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance19"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance20"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed2"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance18"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance20"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed3"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance17"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance20"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed4"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance16"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance20"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed5"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance15"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance21"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed0"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance21"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance21"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed1"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance20"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance21"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed2"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance19"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance21"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed3"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance18"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance21"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed4"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance17"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance21"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed5"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance16"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance22"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed0"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance22"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance22"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed1"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance21"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance22"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed2"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance20"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance22"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed3"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance19"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance22"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed4"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance18"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance22"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed5"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance17"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance23"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed0"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance23"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance23"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed1"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance22"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance23"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed2"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance21"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance23"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed3"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance20"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance23"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed4"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance19"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance23"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed5"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance18"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance24"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed0"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance24"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance24"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed1"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance23"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance24"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed2"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance22"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance24"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed3"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance21"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance24"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed4"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance20"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance24"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed5"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance19"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance25"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed0"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance25"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance25"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed1"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance24"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance25"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed2"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance23"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance25"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed3"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance22"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance25"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed4"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance21"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance25"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed5"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance20"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance26"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed0"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance26"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance26"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed1"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance25"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance26"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed2"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance24"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance26"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed3"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance23"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance26"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed4"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance22"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance26"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed5"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance21"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance27"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed0"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance27"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance27"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed1"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance26"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance27"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed2"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance25"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance27"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed3"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance24"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance27"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed4"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance23"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance27"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed5"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance22"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance28"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed0"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance28"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance28"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed1"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance27"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance28"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed2"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance26"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance28"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed3"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance25"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance28"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed4"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance24"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance28"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed5"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance23"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance29"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed0"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance29"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance29"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed1"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance28"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance29"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed2"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance27"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance29"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed3"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance26"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance29"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed4"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance25"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance29"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed5"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance24"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance30"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed0"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance30"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance30"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed1"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance29"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance30"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed2"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance28"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance30"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed3"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance27"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance30"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed4"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance26"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance30"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed5"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance25"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance31"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed0"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance31"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance31"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed1"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance30"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance31"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed2"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance29"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance31"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed3"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance28"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance31"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed4"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance27"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance31"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed5"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance26"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance32"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed0"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance32"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance32"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed1"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance31"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance32"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed2"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance30"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance32"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed3"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance29"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance32"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed4"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance28"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance32"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed5"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance27"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance33"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed0"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance33"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance33"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed1"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance32"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance33"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed2"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance31"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance33"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed3"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance30"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance33"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed4"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance29"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance33"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed5"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance28"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance34"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed0"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance34"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance34"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed1"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance33"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance34"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed2"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance32"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance34"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed3"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance31"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance34"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed4"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance30"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance34"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed5"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance29"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance35"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed0"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance35"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance35"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed1"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance34"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance35"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed2"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance33"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance35"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed3"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance32"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance35"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed4"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance31"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance35"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed5"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance30"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance36"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed0"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance36"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance36"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed1"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance35"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance36"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed2"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance34"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance36"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed3"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance33"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance36"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed4"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance32"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance36"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed5"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance31"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance37"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed0"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance37"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance37"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed1"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance36"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance37"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed2"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance35"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance37"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed3"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance34"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance37"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed4"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance33"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance37"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed5"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance32"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance38"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed0"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance38"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance38"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed1"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance37"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance38"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed2"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance36"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance38"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed3"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance35"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance38"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed4"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance34"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance38"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed5"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance33"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance39"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed0"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance39"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance39"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed1"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance38"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance39"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed2"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance37"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance39"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed3"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance36"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance39"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed4"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance35"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance39"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed5"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance34"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance40"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed0"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance40"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance40"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed1"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance39"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance40"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed2"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance38"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance40"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed3"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance37"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance40"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed4"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance36"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance40"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed5"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance35"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<useroperator declaration="distance13"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="speed5"/>
+											</subterm>
+											<subterm>
+												<useroperator declaration="distance8"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+						</add>
+					</structure>
+				</hlinitialMarking>
+			</place>
+			<transition id="TrainStable">
+				<name>
+					<text>TrainStable</text>
+				</name>
+				<condition>
+					<text>(da2) lte (ds2) and (da) gt (ds) or (da2) gt (ds2) and (tsp) eq (speed4) or (tsp) eq (speed1) and (db) gt (distance1)</text>
+					<structure>
+						<or>
+							<subterm>
+								<and>
+									<subterm>
+										<lessthanorequal>
+											<subterm>
+												<variable refvariable="varda2"/>
+											</subterm>
+											<subterm>
+												<variable refvariable="vards2"/>
+											</subterm>
+										</lessthanorequal>
+									</subterm>
+									<subterm>
+										<greaterthan>
+											<subterm>
+												<variable refvariable="varda"/>
+											</subterm>
+											<subterm>
+												<variable refvariable="vards"/>
+											</subterm>
+										</greaterthan>
+									</subterm>
+								</and>
+							</subterm>
+							<subterm>
+								<or>
+									<subterm>
+										<and>
+											<subterm>
+												<greaterthan>
+													<subterm>
+														<variable refvariable="varda2"/>
+													</subterm>
+													<subterm>
+														<variable refvariable="vards2"/>
+													</subterm>
+												</greaterthan>
+											</subterm>
+											<subterm>
+												<equality>
+													<subterm>
+														<variable refvariable="vartsp"/>
+													</subterm>
+													<subterm>
+														<useroperator declaration="speed4"/>
+													</subterm>
+												</equality>
+											</subterm>
+										</and>
+									</subterm>
+									<subterm>
+										<and>
+											<subterm>
+												<equality>
+													<subterm>
+														<variable refvariable="vartsp"/>
+													</subterm>
+													<subterm>
+														<useroperator declaration="speed1"/>
+													</subterm>
+												</equality>
+											</subterm>
+											<subterm>
+												<greaterthan>
+													<subterm>
+														<variable refvariable="vardb"/>
+													</subterm>
+													<subterm>
+														<useroperator declaration="distance1"/>
+													</subterm>
+												</greaterthan>
+											</subterm>
+										</and>
+									</subterm>
+								</or>
+							</subterm>
+						</or>
+					</structure>
+				</condition>
+			</transition>
+			<transition id="TrainDecc">
+				<name>
+					<text>TrainDecc</text>
+				</name>
+				<condition>
+					<text>(da) lte (ds) and (tsp) gt (speed1)</text>
+					<structure>
+						<and>
+							<subterm>
+								<lessthanorequal>
+									<subterm>
+										<variable refvariable="varda"/>
+									</subterm>
+									<subterm>
+										<variable refvariable="vards"/>
+									</subterm>
+								</lessthanorequal>
+							</subterm>
+							<subterm>
+								<greaterthan>
+									<subterm>
+										<variable refvariable="vartsp"/>
+									</subterm>
+									<subterm>
+										<useroperator declaration="speed1"/>
+									</subterm>
+								</greaterthan>
+							</subterm>
+						</and>
+					</structure>
+				</condition>
+			</transition>
+			<transition id="TrainAcc">
+				<name>
+					<text>TrainAcc</text>
+				</name>
+				<condition>
+					<text>(da2) gt (ds2) and (tsp) lt (speed4)</text>
+					<structure>
+						<and>
+							<subterm>
+								<greaterthan>
+									<subterm>
+										<variable refvariable="varda2"/>
+									</subterm>
+									<subterm>
+										<variable refvariable="vards2"/>
+									</subterm>
+								</greaterthan>
+							</subterm>
+							<subterm>
+								<lessthan>
+									<subterm>
+										<variable refvariable="vartsp"/>
+									</subterm>
+									<subterm>
+										<useroperator declaration="speed4"/>
+									</subterm>
+								</lessthan>
+							</subterm>
+						</and>
+					</structure>
+				</condition>
+			</transition>
+			<transition id="TooEarly">
+				<name>
+					<text>TooEarly</text>
+				</name>
+				<condition>
+					<text>(tsp) eq (speed0) and (db) gt (distance0)</text>
+					<structure>
+						<and>
+							<subterm>
+								<equality>
+									<subterm>
+										<variable refvariable="vartsp"/>
+									</subterm>
+									<subterm>
+										<useroperator declaration="speed0"/>
+									</subterm>
+								</equality>
+							</subterm>
+							<subterm>
+								<greaterthan>
+									<subterm>
+										<variable refvariable="vardb"/>
+									</subterm>
+									<subterm>
+										<useroperator declaration="distance0"/>
+									</subterm>
+								</greaterthan>
+							</subterm>
+						</and>
+					</structure>
+				</condition>
+			</transition>
+			<transition id="MissStation">
+				<name>
+					<text>MissStation</text>
+				</name>
+				<condition>
+					<text>(tsp) gt (speed0) and (db) eq (distance0)</text>
+					<structure>
+						<and>
+							<subterm>
+								<greaterthan>
+									<subterm>
+										<variable refvariable="vartsp"/>
+									</subterm>
+									<subterm>
+										<useroperator declaration="speed0"/>
+									</subterm>
+								</greaterthan>
+							</subterm>
+							<subterm>
+								<equality>
+									<subterm>
+										<variable refvariable="vardb"/>
+									</subterm>
+									<subterm>
+										<useroperator declaration="distance0"/>
+									</subterm>
+								</equality>
+							</subterm>
+						</and>
+					</structure>
+				</condition>
+			</transition>
+			<transition id="AtStation">
+				<name>
+					<text>AtStation</text>
+				</name>
+			</transition>
+			<transition id="TrainStop">
+				<name>
+					<text>TrainStop</text>
+				</name>
+			</transition>
+			<arc id="arc14" source="DistStation" target="AtStation">
+				<hlinscription>
+					<text>1'[(da)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varda"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc15" source="AtStation" target="DistStation">
+				<hlinscription>
+					<text>1'[(da)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<variable refvariable="varda"/>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc16" source="AtStation" target="TrainState">
+				<hlinscription>
+					<text>1'[(tid),(speed1),(da)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<tuple>
+									<subterm>
+										<variable refvariable="vartid"/>
+									</subterm>
+									<subterm>
+										<useroperator declaration="speed1"/>
+									</subterm>
+									<subterm>
+										<variable refvariable="varda"/>
+									</subterm>
+								</tuple>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc17" source="TrainAcc" target="TrainState">
+				<hlinscription>
+					<text>1'[(tid),(tsp++),(da)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<tuple>
+									<subterm>
+										<variable refvariable="vartid"/>
+									</subterm>
+									<subterm>
+										<successor>
+											<subterm>
+												<variable refvariable="vartsp"/>
+											</subterm>
+										</successor>
+									</subterm>
+									<subterm>
+										<variable refvariable="varda"/>
+									</subterm>
+								</tuple>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc18" source="TrainDecc" target="TrainState">
+				<hlinscription>
+					<text>1'[(tid),(tsp--),(da)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<tuple>
+									<subterm>
+										<variable refvariable="vartid"/>
+									</subterm>
+									<subterm>
+										<predecessor>
+											<subterm>
+												<variable refvariable="vartsp"/>
+											</subterm>
+										</predecessor>
+									</subterm>
+									<subterm>
+										<variable refvariable="varda"/>
+									</subterm>
+								</tuple>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc19" source="TrainStable" target="TrainState">
+				<hlinscription>
+					<text>1'[(tid),(tsp),(da)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<tuple>
+									<subterm>
+										<variable refvariable="vartid"/>
+									</subterm>
+									<subterm>
+										<variable refvariable="vartsp"/>
+									</subterm>
+									<subterm>
+										<variable refvariable="varda"/>
+									</subterm>
+								</tuple>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc20" source="TrainState" target="AtStation">
+				<hlinscription>
+					<text>1'[(tid),(speed0),(distance0)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<tuple>
+									<subterm>
+										<variable refvariable="vartid"/>
+									</subterm>
+									<subterm>
+										<useroperator declaration="speed0"/>
+									</subterm>
+									<subterm>
+										<useroperator declaration="distance0"/>
+									</subterm>
+								</tuple>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc21" source="TrainState" target="MissStation">
+				<hlinscription>
+					<text>1'[(tid),(tsp),(db)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<tuple>
+									<subterm>
+										<variable refvariable="vartid"/>
+									</subterm>
+									<subterm>
+										<variable refvariable="vartsp"/>
+									</subterm>
+									<subterm>
+										<variable refvariable="vardb"/>
+									</subterm>
+								</tuple>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc22" source="TrainState" target="TooEarly">
+				<hlinscription>
+					<text>1'[(tid),(tsp),(db)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<tuple>
+									<subterm>
+										<variable refvariable="vartid"/>
+									</subterm>
+									<subterm>
+										<variable refvariable="vartsp"/>
+									</subterm>
+									<subterm>
+										<variable refvariable="vardb"/>
+									</subterm>
+								</tuple>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc23" source="TrainState" target="TrainAcc">
+				<hlinscription>
+					<text>1'[(tid),(tsp),(db)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<tuple>
+									<subterm>
+										<variable refvariable="vartid"/>
+									</subterm>
+									<subterm>
+										<variable refvariable="vartsp"/>
+									</subterm>
+									<subterm>
+										<variable refvariable="vardb"/>
+									</subterm>
+								</tuple>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc24" source="TrainState" target="TrainDecc">
+				<hlinscription>
+					<text>1'[(tid),(tsp),(db)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<tuple>
+									<subterm>
+										<variable refvariable="vartid"/>
+									</subterm>
+									<subterm>
+										<variable refvariable="vartsp"/>
+									</subterm>
+									<subterm>
+										<variable refvariable="vardb"/>
+									</subterm>
+								</tuple>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc25" source="TrainState" target="TrainStable">
+				<hlinscription>
+					<text>1'[(tid),(tsp),(db)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<tuple>
+									<subterm>
+										<variable refvariable="vartid"/>
+									</subterm>
+									<subterm>
+										<variable refvariable="vartsp"/>
+									</subterm>
+									<subterm>
+										<variable refvariable="vardb"/>
+									</subterm>
+								</tuple>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc26" source="StopTable" target="TrainAcc">
+				<hlinscription>
+					<text>1'[(tsp++),(ds2)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<tuple>
+									<subterm>
+										<successor>
+											<subterm>
+												<variable refvariable="vartsp"/>
+											</subterm>
+										</successor>
+									</subterm>
+									<subterm>
+										<variable refvariable="vards2"/>
+									</subterm>
+								</tuple>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc27" source="StopTable" target="TrainDecc">
+				<hlinscription>
+					<text>1'[(tsp++),(ds2)] + 1'[(tsp),(ds)]</text>
+					<structure>
+						<add>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<successor>
+													<subterm>
+														<variable refvariable="vartsp"/>
+													</subterm>
+												</successor>
+											</subterm>
+											<subterm>
+												<variable refvariable="vards2"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<variable refvariable="vartsp"/>
+											</subterm>
+											<subterm>
+												<variable refvariable="vards"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+						</add>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc28" source="StopTable" target="TrainStable">
+				<hlinscription>
+					<text>1'[(tsp++),(ds2)] + 1'[(tsp),(ds)]</text>
+					<structure>
+						<add>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<successor>
+													<subterm>
+														<variable refvariable="vartsp"/>
+													</subterm>
+												</successor>
+											</subterm>
+											<subterm>
+												<variable refvariable="vards2"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<variable refvariable="vartsp"/>
+											</subterm>
+											<subterm>
+												<variable refvariable="vards"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+						</add>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc29" source="TrainStable" target="StopTable">
+				<hlinscription>
+					<text>1'[(tsp++),(ds2)] + 1'[(tsp),(ds)]</text>
+					<structure>
+						<add>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<successor>
+													<subterm>
+														<variable refvariable="vartsp"/>
+													</subterm>
+												</successor>
+											</subterm>
+											<subterm>
+												<variable refvariable="vards2"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<variable refvariable="vartsp"/>
+											</subterm>
+											<subterm>
+												<variable refvariable="vards"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+						</add>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc30" source="TrainDecc" target="StopTable">
+				<hlinscription>
+					<text>1'[(tsp++),(ds2)] + 1'[(tsp),(ds)]</text>
+					<structure>
+						<add>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<successor>
+													<subterm>
+														<variable refvariable="vartsp"/>
+													</subterm>
+												</successor>
+											</subterm>
+											<subterm>
+												<variable refvariable="vards2"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<variable refvariable="vartsp"/>
+											</subterm>
+											<subterm>
+												<variable refvariable="vards"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+						</add>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc31" source="TrainAcc" target="StopTable">
+				<hlinscription>
+					<text>1'[(tsp++),(ds2)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<tuple>
+									<subterm>
+										<successor>
+											<subterm>
+												<variable refvariable="vartsp"/>
+											</subterm>
+										</successor>
+									</subterm>
+									<subterm>
+										<variable refvariable="vards2"/>
+									</subterm>
+								</tuple>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc32" source="NewDistTable" target="TrainAcc">
+				<hlinscription>
+					<text>1'[(db),(tsp++),(da2)] + 1'[(db),(tsp),(da)]</text>
+					<structure>
+						<add>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<variable refvariable="vardb"/>
+											</subterm>
+											<subterm>
+												<successor>
+													<subterm>
+														<variable refvariable="vartsp"/>
+													</subterm>
+												</successor>
+											</subterm>
+											<subterm>
+												<variable refvariable="varda2"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<variable refvariable="vardb"/>
+											</subterm>
+											<subterm>
+												<variable refvariable="vartsp"/>
+											</subterm>
+											<subterm>
+												<variable refvariable="varda"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+						</add>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc33" source="NewDistTable" target="TrainDecc">
+				<hlinscription>
+					<text>1'[(db),(tsp++),(da2)] + 1'[(db),(tsp),(da)]</text>
+					<structure>
+						<add>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<variable refvariable="vardb"/>
+											</subterm>
+											<subterm>
+												<successor>
+													<subterm>
+														<variable refvariable="vartsp"/>
+													</subterm>
+												</successor>
+											</subterm>
+											<subterm>
+												<variable refvariable="varda2"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<variable refvariable="vardb"/>
+											</subterm>
+											<subterm>
+												<variable refvariable="vartsp"/>
+											</subterm>
+											<subterm>
+												<variable refvariable="varda"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+						</add>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc34" source="NewDistTable" target="TrainStable">
+				<hlinscription>
+					<text>1'[(db),(tsp++),(da2)] + 1'[(db),(tsp),(da)]</text>
+					<structure>
+						<add>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<variable refvariable="vardb"/>
+											</subterm>
+											<subterm>
+												<successor>
+													<subterm>
+														<variable refvariable="vartsp"/>
+													</subterm>
+												</successor>
+											</subterm>
+											<subterm>
+												<variable refvariable="varda2"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<variable refvariable="vardb"/>
+											</subterm>
+											<subterm>
+												<variable refvariable="vartsp"/>
+											</subterm>
+											<subterm>
+												<variable refvariable="varda"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+						</add>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc35" source="TrainAcc" target="NewDistTable">
+				<hlinscription>
+					<text>1'[(db),(tsp++),(da2)] + 1'[(db),(tsp),(da)]</text>
+					<structure>
+						<add>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<variable refvariable="vardb"/>
+											</subterm>
+											<subterm>
+												<successor>
+													<subterm>
+														<variable refvariable="vartsp"/>
+													</subterm>
+												</successor>
+											</subterm>
+											<subterm>
+												<variable refvariable="varda2"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<variable refvariable="vardb"/>
+											</subterm>
+											<subterm>
+												<variable refvariable="vartsp"/>
+											</subterm>
+											<subterm>
+												<variable refvariable="varda"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+						</add>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc36" source="TrainDecc" target="NewDistTable">
+				<hlinscription>
+					<text>1'[(db),(tsp++),(da2)] + 1'[(db),(tsp),(da)]</text>
+					<structure>
+						<add>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<variable refvariable="vardb"/>
+											</subterm>
+											<subterm>
+												<successor>
+													<subterm>
+														<variable refvariable="vartsp"/>
+													</subterm>
+												</successor>
+											</subterm>
+											<subterm>
+												<variable refvariable="varda2"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<variable refvariable="vardb"/>
+											</subterm>
+											<subterm>
+												<variable refvariable="vartsp"/>
+											</subterm>
+											<subterm>
+												<variable refvariable="varda"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+						</add>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc37" source="TrainStable" target="NewDistTable">
+				<hlinscription>
+					<text>1'[(db),(tsp++),(da2)] + 1'[(db),(tsp),(da)]</text>
+					<structure>
+						<add>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<variable refvariable="vardb"/>
+											</subterm>
+											<subterm>
+												<successor>
+													<subterm>
+														<variable refvariable="vartsp"/>
+													</subterm>
+												</successor>
+											</subterm>
+											<subterm>
+												<variable refvariable="varda2"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+							<subterm>
+								<numberof>
+									<subterm>
+										<numberconstant value="1">
+											<positive/>
+										</numberconstant>
+									</subterm>
+									<subterm>
+										<tuple>
+											<subterm>
+												<variable refvariable="vardb"/>
+											</subterm>
+											<subterm>
+												<variable refvariable="vartsp"/>
+											</subterm>
+											<subterm>
+												<variable refvariable="varda"/>
+											</subterm>
+										</tuple>
+									</subterm>
+								</numberof>
+							</subterm>
+						</add>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc38" source="TrainState" target="TrainStop">
+				<hlinscription>
+					<text>1'[(tid),(speed1),(distance1)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<tuple>
+									<subterm>
+										<variable refvariable="vartid"/>
+									</subterm>
+									<subterm>
+										<useroperator declaration="speed1"/>
+									</subterm>
+									<subterm>
+										<useroperator declaration="distance1"/>
+									</subterm>
+								</tuple>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="arc39" source="TrainStop" target="TrainState">
+				<hlinscription>
+					<text>1'[(tid),(speed0),(distance0)]</text>
+					<structure>
+						<numberof>
+							<subterm>
+								<numberconstant value="1">
+									<positive/>
+								</numberconstant>
+							</subterm>
+							<subterm>
+								<tuple>
+									<subterm>
+										<variable refvariable="vartid"/>
+									</subterm>
+									<subterm>
+										<useroperator declaration="speed0"/>
+									</subterm>
+									<subterm>
+										<useroperator declaration="distance0"/>
+									</subterm>
+								</tuple>
+							</subterm>
+						</numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+		</page>
+		<name>
+			<text>BART-COL-002</text>
+		</name>
+		<declaration>
+			<structure>
+				<declarations>
+					<namedsort id="trainid" name="trainid">
+						<cyclicenumeration>
+							<feconstant id="trainid1" name="1"/>
+							<feconstant id="trainid2" name="2"/>
+						</cyclicenumeration>
+					</namedsort>
+					<namedsort id="speed" name="speed">
+						<cyclicenumeration>
+							<feconstant id="speed0" name="0"/>
+							<feconstant id="speed1" name="1"/>
+							<feconstant id="speed2" name="2"/>
+							<feconstant id="speed3" name="3"/>
+							<feconstant id="speed4" name="4"/>
+							<feconstant id="speed5" name="5"/>
+						</cyclicenumeration>
+					</namedsort>
+					<namedsort id="distance" name="distance">
+						<cyclicenumeration>
+							<feconstant id="distance0" name="0"/>
+							<feconstant id="distance1" name="1"/>
+							<feconstant id="distance2" name="2"/>
+							<feconstant id="distance3" name="3"/>
+							<feconstant id="distance4" name="4"/>
+							<feconstant id="distance5" name="5"/>
+							<feconstant id="distance6" name="6"/>
+							<feconstant id="distance7" name="7"/>
+							<feconstant id="distance8" name="8"/>
+							<feconstant id="distance9" name="9"/>
+							<feconstant id="distance10" name="10"/>
+							<feconstant id="distance11" name="11"/>
+							<feconstant id="distance12" name="12"/>
+							<feconstant id="distance13" name="13"/>
+							<feconstant id="distance14" name="14"/>
+							<feconstant id="distance15" name="15"/>
+							<feconstant id="distance16" name="16"/>
+							<feconstant id="distance17" name="17"/>
+							<feconstant id="distance18" name="18"/>
+							<feconstant id="distance19" name="19"/>
+							<feconstant id="distance20" name="20"/>
+							<feconstant id="distance21" name="21"/>
+							<feconstant id="distance22" name="22"/>
+							<feconstant id="distance23" name="23"/>
+							<feconstant id="distance24" name="24"/>
+							<feconstant id="distance25" name="25"/>
+							<feconstant id="distance26" name="26"/>
+							<feconstant id="distance27" name="27"/>
+							<feconstant id="distance28" name="28"/>
+							<feconstant id="distance29" name="29"/>
+							<feconstant id="distance30" name="30"/>
+							<feconstant id="distance31" name="31"/>
+							<feconstant id="distance32" name="32"/>
+							<feconstant id="distance33" name="33"/>
+							<feconstant id="distance34" name="34"/>
+							<feconstant id="distance35" name="35"/>
+							<feconstant id="distance36" name="36"/>
+							<feconstant id="distance37" name="37"/>
+							<feconstant id="distance38" name="38"/>
+							<feconstant id="distance39" name="39"/>
+							<feconstant id="distance40" name="40"/>
+						</cyclicenumeration>
+					</namedsort>
+					<namedsort id="traincontext" name="traincontext">
+						<productsort>
+							<usersort declaration="trainid"/>
+							<usersort declaration="speed"/>
+							<usersort declaration="distance"/>
+						</productsort>
+					</namedsort>
+					<namedsort id="speedxdist" name="speedXdist">
+						<productsort>
+							<usersort declaration="speed"/>
+							<usersort declaration="distance"/>
+						</productsort>
+					</namedsort>
+					<namedsort id="distxspeedxdist" name="distXspeedXdist">
+						<productsort>
+							<usersort declaration="distance"/>
+							<usersort declaration="speed"/>
+							<usersort declaration="distance"/>
+						</productsort>
+					</namedsort>
+					<variabledecl id="vartid" name="tid">
+						<usersort declaration="trainid"/>
+					</variabledecl>
+					<variabledecl id="vartsp" name="tsp">
+						<usersort declaration="speed"/>
+					</variabledecl>
+					<variabledecl id="vards2" name="ds2">
+						<usersort declaration="distance"/>
+					</variabledecl>
+					<variabledecl id="varda2" name="da2">
+						<usersort declaration="distance"/>
+					</variabledecl>
+					<variabledecl id="varda" name="da">
+						<usersort declaration="distance"/>
+					</variabledecl>
+					<variabledecl id="vardb" name="db">
+						<usersort declaration="distance"/>
+					</variabledecl>
+					<variabledecl id="vards" name="ds">
+						<usersort declaration="distance"/>
+					</variabledecl>
+				</declarations>
+			</structure>
+		</declaration>
+	</net>
+</pnml>
