@@ -15,7 +15,7 @@ import (
 
 // ----------------------------------------------------------------------
 
-func makepname(net *pnml.Net, pname string, count int, hlpcount int, val *pnml.Value) string {
+func makepname(net *pnml.Net, pname string, count int, val *pnml.Value) string {
 	if !net.SLICED {
 		return fmt.Sprintf("p_%d", count)
 	}
@@ -24,9 +24,16 @@ func makepname(net *pnml.Net, pname string, count int, hlpcount int, val *pnml.V
 	if val.Head == 0 {
 		return s.String()
 	}
-	fmt.Fprintf(&s, "_%d", val.Head)
+	if net.VERBOSE == pnml.QUIET {
+		fmt.Fprintf(&s, "_%d", val.Head)
+		for v := val.Tail; v != nil; v = v.Tail {
+			fmt.Fprintf(&s, "_%d", v.Head)
+		}
+		return s.String()
+	}
+	fmt.Fprintf(&s, "_%s", net.Identity[val.Head])
 	for v := val.Tail; v != nil; v = v.Tail {
-		fmt.Fprintf(&s, "_%d", v.Head)
+		fmt.Fprintf(&s, "_%s", net.Identity[v.Head])
 	}
 	return s.String()
 }
@@ -36,15 +43,11 @@ func makeplabel(net *pnml.Net, name string, val *pnml.Value) string {
 		return ""
 	}
 
-	if net.VERBOSE != pnml.MAXIMAL {
-		return fmt.Sprintf("%s", name)
-	}
-
-	s := fmt.Sprintf("%s %s", name, net.Identity[val.Head])
+	s := fmt.Sprintf("%s_%s", name, net.Identity[val.Head])
 	if val.Tail == nil {
 		return s
 	}
-	return makeplabel(net, s+" x", val.Tail)
+	return makeplabel(net, s+"x", val.Tail)
 }
 
 func maketlabel(net *pnml.Net, name string, env pnml.Env) string {
@@ -115,72 +118,61 @@ func Build(pnet *pnml.Net, hl *hlnet.Net) *Net {
 	// map to find the given place from the pair {p val}
 	cpl := make(map[coreAssoc]*Place)
 	pcount := 0
-	hlpcount := 0
 	for k, p := range hl.Places {
-		for _, v := range pnet.World[p.Type] {
-			pname := normalize2aname(k)
-			cp := Place{count: pcount, name: makepname(pnet, pname, pcount, hlpcount, v), label: makeplabel(pnet, pname, v)}
-			pcount++
-			cpl[coreAssoc{place: p, val: v}] = &cp
-			net.pl = append(net.pl, &cp)
-		}
-		if p.Init != nil {
+		pname := normalize2aname(k)
+		if p.Stable {
+			// when the place is stable, its rechable "values" are the one in
+			// its initial marking (moreover the marking of the place is an
+			// invariant). We still keep those places in the net in order to have the
+			// right value for "maximal number of tokens in a marking" but we do
+			// not need to add the edges (this should speed up the computation
+			// of invariants).
 			initv, multv := p.Init.Match(pnet, nil)
 			for k, v := range initv {
-				cp := cpl[coreAssoc{place: p, val: v}]
+				cp := Place{count: pcount, name: makepname(pnet, pname, pcount, v), label: makeplabel(pnet, pname, v)}
 				cp.init = multv[k]
+				pcount++
+				cpl[coreAssoc{place: p, val: v}] = &cp
+				net.pl = append(net.pl, &cp)
+			}
+		} else {
+			// the possible values of p are the one in its type
+			for _, v := range pnet.World[p.Type] {
+				cp := Place{count: pcount, name: makepname(pnet, pname, pcount, v), label: makeplabel(pnet, pname, v)}
+				pcount++
+				cpl[coreAssoc{place: p, val: v}] = &cp
+				net.pl = append(net.pl, &cp)
+			}
+			if p.Init != nil {
+				initv, multv := p.Init.Match(pnet, nil)
+				for k, v := range initv {
+					cp := cpl[coreAssoc{place: p, val: v}]
+					cp.init = multv[k]
+				}
 			}
 		}
-		hlpcount++
 	}
 
 	// we go through all the transitions and build coretrans by enumerating all
 	// the possible association of variables and values, testing if the
-	// condition is true.
+	// condition is true. iterator[i] gives the value (index) we are currently
+	// considering for variable varnames[i].
 	tcount := 0
 	for k, t := range hl.Trans {
-		env := t.Env
-		varnames, iterator, enums := mkiter(pnet, env)
-		for {
-			if t.Cond.OK(pnet, env) {
-				ct := Trans{count: tcount, label: maketlabel(pnet, k, env)}
-				sat := true
-				for _, e := range t.Arcs {
-					if e.Pattern == nil {
-						sat = false
-						break
-					}
-					f, m := e.Pattern.Match(pnet, env)
-					if f == nil {
-						sat = false
-						break
-					}
-					for i := range f {
-						place := cpl[coreAssoc{place: e.Place, val: f[i]}]
-						if e.Kind == hlnet.IN {
-							ct.in = appendCorep(ct.in, corep{Place: place, int: m[i]})
-						} else {
-							ct.out = appendCorep(ct.out, corep{Place: place, int: m[i]})
-						}
-					}
+		for iter := mkiter(pnet, cpl, t); iter.hasNext(); {
+			if ct, ok := iter.check(); ok {
+				ct.count = tcount
+				ct.label = maketlabel(pnet, k, iter.env)
+				if net.sliced {
+					sort.Slice(ct.in, func(i, j int) bool {
+						return ct.in[i].name < ct.in[j].name
+					})
+					sort.Slice(ct.out, func(i, j int) bool {
+						return ct.out[i].name < ct.out[j].name
+					})
 				}
-				if sat {
-					if net.sliced {
-						// we sort the in and out places of the transition to
-						// obtain a deterministic order of the places.
-						sort.Slice(ct.in, func(i, j int) bool {
-							return ct.in[i].name < ct.in[j].name
-						})
-						sort.Slice(ct.out, func(i, j int) bool {
-							return ct.out[i].name < ct.out[j].name
-						})
-					}
-					net.tr = append(net.tr, &ct)
-					tcount++
-				}
-			}
-			if ok := nextiter(pnet, env, varnames, iterator, enums); !ok {
-				break
+				net.tr = append(net.tr, ct)
+				tcount++
 			}
 		}
 	}

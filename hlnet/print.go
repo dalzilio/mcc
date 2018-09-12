@@ -43,8 +43,12 @@ func (net Net) Tina() string {
 
 	s := fmt.Sprintf("net {%s}\n", net.Name)
 	for k, v := range net.Places {
+		isstable := ""
+		if v.Stable {
+			isstable = "(stable) "
+		}
 		if is := pInit(v.Init); is != "-" {
-			s += fmt.Sprintf("pl {%s} : {%s} (1)\n", k, is)
+			s += fmt.Sprintf("pl {%s} : {%s%s} (1)\n", k, isstable, is)
 		} else {
 			s += fmt.Sprintf("pl {%s}\n", k)
 		}

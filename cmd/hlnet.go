@@ -35,6 +35,7 @@ var hlnetOutFileName string
 var hlnetUseName bool
 var hlnetDebugMode bool
 var hlnetUseComplexPNames bool
+var hlnetVerbose bool
 var hlnetLogger *log.Logger
 
 func init() {
@@ -44,6 +45,7 @@ func init() {
 	hlnetCmd.Flags().BoolVar(&hlnetUseName, "name", false, "use PNML (document) name for the output file")
 	hlnetCmd.Flags().BoolVar(&hlnetDebugMode, "debug", false, "output a readable version in a format that can be displayed by Tina")
 	hlnetCmd.Flags().BoolVar(&hlnetUseComplexPNames, "sliced", false, "use structured naming for places")
+	hlnetCmd.Flags().BoolVar(&hlnetVerbose, "verbose", false, "add extra information in the labels of the .net file")
 	hlnetLogger = log.New(os.Stderr, "MCC HLNET:", 0)
 }
 
@@ -103,7 +105,13 @@ func convert(filename string) {
 	}
 
 	p.SetSliced(hlnetUseComplexPNames)
-	p.SetVerbose(pnml.MINIMAL)
+
+	if hlnetVerbose {
+		p.SetVerbose(pnml.MINIMAL)
+	} else {
+		p.SetVerbose(pnml.QUIET)
+	}
+
 	p.SetFES(false)
 	hl := hlnet.Build(p)
 

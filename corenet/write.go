@@ -19,6 +19,7 @@ func (pl Place) Write(w io.Writer) {
 		return
 	}
 	fmt.Fprintf(w, "pl %s (%d)\n", pl.name, pl.init)
+	return
 }
 
 func (pl corep) Write(w io.Writer) {
@@ -30,7 +31,11 @@ func (pl corep) Write(w io.Writer) {
 }
 
 func (tr Trans) Write(w io.Writer, k int) {
-	fmt.Fprintf(w, "tr t%d ", k)
+	if tr.label == "" {
+		fmt.Fprintf(w, "tr t%d ", k)
+	} else {
+		fmt.Fprintf(w, "tr t%d : {%s} ", k, tr.label)
+	}
 	for _, v := range tr.in {
 		v.Write(w)
 	}
