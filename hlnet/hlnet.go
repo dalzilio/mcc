@@ -17,8 +17,9 @@ type Net struct {
 
 // Place is the concrete type of symmetric nets places.
 type Place struct {
-	Init pnml.Expression
-	Type string
+	Init   pnml.Expression
+	Type   string
+	Stable bool
 }
 
 // Transition is the concrete type of symmetric nets transitions.
@@ -72,13 +73,14 @@ func Build(n *pnml.Net) *Net {
 
 	for _, a := range n.Page.Arcs {
 		e := Arcs{Pattern: a.Pattern}
+		if e.Pattern == nil {
+			e.Pattern = pnml.Operation{Op: pnml.NIL}
+		}
 		if p, ok := net.Places[a.Source]; ok {
 			// arc source is a place, target is a transition. The edge is of
 			// kind IN. We add the variables in the pattern to env.
 			t := net.Trans[a.Target]
-			if a.Pattern != nil {
-				e.Pattern.AddEnv(t.Env)
-			}
+			e.Pattern.AddEnv(t.Env)
 			e.Place = p
 			e.Kind = IN
 			t.Arcs = append(t.Arcs, &e)
@@ -87,12 +89,21 @@ func Build(n *pnml.Net) *Net {
 			// arc source is a transition, target is a place. The edge is of
 			// kind OUT.
 			t := net.Trans[a.Source]
-			if a.Pattern != nil {
-				e.Pattern.AddEnv(t.Env)
-			}
+			e.Pattern.AddEnv(t.Env)
 			e.Place = p
 			e.Kind = OUT
 			t.Arcs = append(t.Arcs, &e)
+		}
+	}
+
+	// if there are less than 5 places we try to find "stable places", that is a
+	// place p such that, for every transition t, there is an edge t--exp-->p if
+	// and only if there is an edge p--exp-->t. When a place is stable we know
+	// that the tokens in place p (the possible pairs p x val) are exactly the
+	// same than in the initial marking.
+	if len(net.Places) < 6 {
+		for _, p := range net.Places {
+			p.Stable = net.IsPlaceStable(p)
 		}
 	}
 
