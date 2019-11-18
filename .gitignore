@@ -61,3 +61,5 @@ Thumbs.db
 *.ndr
 *.adr
 *.aut
+__debug_bin
+.gitignore

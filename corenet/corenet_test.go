@@ -161,7 +161,7 @@ func BenchmarkSharedMemoryM(b *testing.B) { benchmarkFile(b, "medium/SharedMemor
 func BenchmarkTokenRingM(b *testing.B) { benchmarkFile(b, "medium/TokenRing-COL-050.pnml") }
 
 func BenchmarkBARTXL(b *testing.B) {
-	benchmarkFile(b, "large/BART-COL-002.pnml")
+	benchmarkFile(b, "large/BART-COL-060.pnml")
 }
 func BenchmarkDrinkVendingMachineXL(b *testing.B) {
 	benchmarkFile(b, "large/DrinkVendingMachine-COL-16.pnml")

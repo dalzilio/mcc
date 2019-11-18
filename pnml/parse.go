@@ -148,6 +148,14 @@ func parseExprElement(decoder *xml.Decoder) (Expression, error) {
 			var val NumberConstant
 			decoder.DecodeElement(&val, &se)
 			return Numberof{Expression: nil, Mult: val.Value}, nil
+		case "finiteintrangeconstant":
+			var val FIRangeConstant
+			decoder.DecodeElement(&val, &se)
+			return FIRConstant{
+				value: val.Value,
+				start: val.Range.Start,
+				end:   val.Range.End,
+			}, nil
 		case "variable":
 			var val Variable
 			decoder.DecodeElement(&val, &se)

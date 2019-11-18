@@ -2,6 +2,10 @@
 // Use of this source code is governed by the CeCILL-B license
 // that can be found in the LICENSE file.
 
+//go:generate stringer -type=TYP
+
+// We may need to install go stringer first: go get golang.org/x/tools/cmd/stringer
+
 package pnml
 
 // OP is the type of operations in a PNML expression
@@ -30,6 +34,7 @@ const (
 	DOT TYP = iota
 	CENUM
 	FENUM
+	FINTRANGE
 	PROD
 	NUMERIC
 )

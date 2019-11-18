@@ -5,6 +5,8 @@
 package pnml
 
 import (
+	"fmt"
+	"log"
 	"strconv"
 )
 
@@ -34,15 +36,27 @@ func (net *Net) compareExp(p1, p2 *Value, op OP) bool {
 	case EQ:
 		return p1 == p2
 	case GREATTHAN:
-		return p1.Head > p2.Head
+		if p1.Head >= 0 {
+			return p1.Head > p2.Head
+		}
+		return p1.Head < p2.Head
 	case GREATTHANEQ:
-		return p1.Head >= p2.Head
+		if p1.Head >= 0 {
+			return p1.Head >= p2.Head
+		}
+		return p1.Head <= p2.Head
 	case INEQ:
 		return p1 != p2
 	case LESSTHAN:
-		return p1.Head < p2.Head
+		if p1.Head >= 0 {
+			return p1.Head < p2.Head
+		}
+		return p1.Head > p2.Head
 	case LESSTHANEQ:
-		return p1.Head <= p2.Head
+		if p1.Head >= 0 {
+			return p1.Head <= p2.Head
+		}
+		return p1.Head >= p2.Head
 	}
 	panic("not reachable in compareExp")
 }
@@ -252,7 +266,38 @@ func (p Constant) String() string {
 func (p Constant) AddEnv(env Env) {}
 
 func (p Constant) Match(net *Net, env Env) ([]*Value, []int) {
-	return []*Value{net.order[string(p)]}, []int{1}
+	pval, found := net.order[string(p)]
+	if !found {
+		f, wfound := net.World[string(p)]
+		if !wfound {
+			log.Fatalf("identifier %s is not a constant or a known type", string(p))
+		}
+		m := make([]int, len(f))
+		for i := range f {
+			m[i] = 1
+		}
+		return f, m
+	}
+	return []*Value{pval}, []int{1}
+}
+
+// ----------------------------------------------------------------------
+
+// FIRConstant is the type of finite int range constant expressions.
+type FIRConstant struct {
+	value int
+	start int
+	end   int
+}
+
+func (p FIRConstant) String() string {
+	return fmt.Sprintf("_int{%d,%d}%d", p.start, p.end, p.value)
+}
+
+func (p FIRConstant) AddEnv(env Env) {}
+
+func (p FIRConstant) Match(net *Net, env Env) ([]*Value, []int) {
+	return []*Value{net.order[p.String()]}, []int{1}
 }
 
 // ----------------------------------------------------------------------

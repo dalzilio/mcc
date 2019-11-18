@@ -19,12 +19,17 @@ type Net struct {
 	Declaration Declaration `xml:"declaration>structure>declarations"`
 	// Env is an association between a variable name and its type name, found in declaration
 	Env map[string]string
-	// types tells in which type a given constant belongs
+	// types gives the type (declaration) corresponding to a given constant.
+	// This is only used for FENUM and CENUM (for computing predecessors and
+	// successors)
 	types map[string]*TypeDecl
+	// ranges is used to find a suitable finite int range type given the bounds.
+	// The idea is that two ranges with the same bounds are isomorphic types.
+	ranges map[IntRange]*TypeDecl
 	// position tells the position of the constant in its type; used for successor
 	position map[string]int
 	// order associates a unique Value to every Constant; it is used for
-	// encoding Constant into Value
+	// encoding Constants into Values
 	order map[string]*Value
 	// Identity associates a string to a constant index. This is only useful for printing
 	// debugging information
@@ -89,27 +94,52 @@ type Page struct {
 }
 
 // Declaration is the type of a PNML net declaration. It contains declarations
-// for types and variables used in the net.
+// for types and variables used in the net. We also added partitions (and
+// partitionelement) from model VehicularWifi
 type Declaration struct {
-	Sorts []*TypeDecl `xml:"namedsort"`
-	Vars  []*VarDecl  `xml:"variabledecl"`
+	Sorts      []*TypeDecl      `xml:"namedsort"`
+	Vars       []*VarDecl       `xml:"variabledecl"`
+	Partitions []*PartitionDecl `xml:"partition"`
 }
 
 // ----------------------------------------------------------------------
 
-// TypeDecl is the type of  PNML type declarations. Test is the field Dot is not
-// nil to check whether this is a dot.
+// TypeDecl is the type of  PNML type declarations. We use a pointer field for
+// Dot in order to discriminate to differentiate between defualt value and field
+// initialized. Same with finite int range.
 type TypeDecl struct {
 	Sort    TYP
 	Elem    []string
 	ID      string    `xml:"id,attr"`
 	CEnum   []Fec     `xml:"cyclicenumeration>feconstant,omitempty"`
 	FEnum   []Fec     `xml:"finiteenumeration>feconstant,omitempty"`
+	FIntRan *IntRange `xml:"finiteintrange,omitempty"`
 	Product []Type    `xml:"productsort>usersort,omitempty"`
 	Dot     *struct{} `xml:"dot,omitempty"`
 }
 
 // ----------------------------------------------------------------------
+
+// PartitionDecl is the type of  PNML partition declarations.
+type PartitionDecl struct {
+	ID         string `xml:"id,attr"`
+	Type       `xml:"usersort,omitempty"`
+	Partitions []Partition `xml:"partitionelement,omitempty"`
+}
+
+// Partition list a subset of values of a given (enumeration) type.
+type Partition struct {
+	ID   string `xml:"id,attr"`
+	Elem []Type `xml:"useroperator,omitempty"`
+}
+
+// ----------------------------------------------------------------------
+
+// IntRange is the type of PNML int ranges
+type IntRange struct {
+	Start int `xml:"start,attr"`
+	End   int `xml:"end,attr"`
+}
 
 // Fec is the type of  PNML enumeration constants.
 type Fec struct {
@@ -168,6 +198,12 @@ type Arc struct {
 // NumberConstant is used in PNML expressions.
 type NumberConstant struct {
 	Value int `xml:"value,attr"`
+}
+
+// FIRangeConstant is used in PNML expressions.
+type FIRangeConstant struct {
+	Value int      `xml:"value,attr"`
+	Range IntRange `xml:"finiteintrange"`
 }
 
 // Variable is used in PNML expressions.

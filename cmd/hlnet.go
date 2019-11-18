@@ -100,7 +100,7 @@ func convert(filename string) {
 
 	if hlnetDebugMode {
 		hl := hlnet.Build(p)
-		ioutil.WriteFile(outfile+".net", []byte(hl.String()+hl.Tina()), 0755)
+		ioutil.WriteFile(outfile+".net", []byte(p.String()+hl.Tina()), 0755)
 		os.Exit(0)
 	}
 

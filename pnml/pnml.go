@@ -30,16 +30,16 @@ func (e *Net) Next(i int, val *Value) *Value {
 	return e.order[typ.Elem[pos%len(typ.Elem)]]
 }
 
-// All returns the set of constant in the type with ID name as a slice of
-// Expressions.
-func (e *Net) All(name string) []Expression {
-	typ := e.types[name].Elem
-	res := make([]Expression, len(typ))
-	for k, v := range typ {
-		res[k] = Constant(v)
-	}
-	return res
-}
+// // All returns the set of constant in the type with ID name as a slice of
+// // Expressions.
+// func (e *Net) All(name string) []Expression {
+// 	typ := e.types[name].Elem
+// 	res := make([]Expression, len(typ))
+// 	for k, v := range typ {
+// 		res[k] = Constant(v)
+// 	}
+// 	return res
+// }
 
 // ----------------------------------------------------------------------
 
@@ -74,6 +74,7 @@ func (d *Decoder) Build(net *Net) error {
 	// we allocate the enumerators and other useful maps
 	net.Env = make(map[string]string)
 	net.types = make(map[string]*TypeDecl)
+	net.ranges = make(map[IntRange]*TypeDecl)
 	net.position = make(map[string]int)
 	net.order = make(map[string]*Value)
 	net.Identity = make([]string, 1)
@@ -92,6 +93,32 @@ func (d *Decoder) Build(net *Net) error {
 		case v.Dot != nil:
 			v.Sort = DOT
 			net.World[v.ID] = []*Value{net.vdot}
+		case v.FIntRan != nil:
+			// we expand a range like a FEnum with constants of the form _intx
+			v.Sort = FINTRANGE
+			pv, found := net.ranges[*v.FIntRan]
+			if !found {
+				v.Elem = make([]string, v.FIntRan.End-v.FIntRan.Start+1)
+				list := make([]*Value, len(v.Elem))
+				fir := FIRConstant{start: v.FIntRan.Start, end: v.FIntRan.End}
+				for i := 0; i < len(v.Elem); i++ {
+					fir.value = v.FIntRan.Start + i
+					c := fir.String()
+					v.Elem[i] = c
+					net.Identity = append(net.Identity, c)
+					net.position[c] = i
+					val := Value{Head: ccount}
+					ccount++
+					net.order[c] = &val
+					net.unique[val] = &val
+					list[i] = &val
+					net.types[c] = v
+				}
+				net.ranges[*v.FIntRan] = v
+				net.World[v.ID] = list
+			} else {
+				net.World[v.ID] = net.World[pv.ID]
+			}
 		case v.CEnum != nil:
 			v.Sort = CENUM
 			v.Elem = make([]string, len(v.CEnum))
@@ -99,7 +126,6 @@ func (d *Decoder) Build(net *Net) error {
 				v.Elem[i] = c.ID
 				net.position[c.ID] = i
 			}
-			v.CEnum = nil
 		case v.FEnum != nil:
 			v.Sort = FENUM
 			v.Elem = make([]string, len(v.FEnum))
@@ -107,14 +133,12 @@ func (d *Decoder) Build(net *Net) error {
 				v.Elem[i] = c.ID
 				net.position[c.ID] = i
 			}
-			v.FEnum = nil
 		case v.Product != nil:
 			v.Sort = PROD
 			v.Elem = make([]string, len(v.Product))
 			for i, c := range v.Product {
 				v.Elem[i] = c.ID
 			}
-			v.Product = nil
 		}
 		if v.Sort == CENUM || v.Sort == FENUM {
 			list := make([]*Value, len(v.Elem))
@@ -141,7 +165,18 @@ func (d *Decoder) Build(net *Net) error {
 		net.Env[v.ID] = v.Type.ID
 	}
 
-	// We parse the expressions in the places, transitions and arcs of the firat
+	// we associate the list of partition element to their identifiers
+	for _, p := range net.Declaration.Partitions {
+		for _, pe := range p.Partitions {
+			val := []*Value{}
+			for _, e := range pe.Elem {
+				val = append(val, net.order[e.ID])
+			}
+			net.World[pe.ID] = val
+		}
+	}
+
+	// We parse the expressions in the places, transitions and arcs of the first
 	// page.
 	for _, t := range net.Page.Trans {
 		exp, err := parseExpression(t.XML.InnerXML)

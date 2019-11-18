@@ -1,0 +1,4697 @@
+<?xml version="1.0"?>
+<pnml xmlns="http://www.pnml.org/version-2009/grammar/pnml">
+	<!-- Written by GreatSPN Editor. -->
+	<net id="VehicularWifi-COL-none" type="http://www.pnml.org/version-2009/grammar/symmetricnet">
+		<name>
+			<text>VehicularWifi-COL-none</text>
+		</name>
+		<declaration>
+			<structure>
+				<declarations>
+					<!-- Declaration of user-defined color classes (sorts) -->
+					<namedsort id="dot" name="Dot">
+						<dot/>
+					</namedsort>
+					<namedsort id="St" name="St">
+						<finiteintrange start="1" end="2"/>
+					</namedsort>
+					<namedsort id="PT" name="PT">
+						<cyclicenumeration>
+							<feconstant id="rts" name="rts"/>
+							<feconstant id="cts" name="cts"/>
+							<feconstant id="data" name="data"/>
+							<feconstant id="ack" name="ack"/>
+						</cyclicenumeration>
+					</namedsort>
+					<namedsort id="SR" name="SR">
+						<productsort>
+							<usersort declaration="St"/>
+							<usersort declaration="St"/>
+						</productsort>
+					</namedsort>
+					<namedsort id="P" name="P">
+						<productsort>
+							<usersort declaration="St"/>
+							<usersort declaration="St"/>
+							<usersort declaration="Pr"/>
+							<usersort declaration="PT"/>
+						</productsort>
+					</namedsort>
+					<namedsort id="SRB" name="SRB">
+						<productsort>
+							<usersort declaration="St"/>
+							<usersort declaration="St"/>
+							<usersort declaration="Pr"/>
+							<usersort declaration="BackoffStage"/>
+						</productsort>
+					</namedsort>
+					<namedsort id="BackoffStage" name="BackoffStage">
+						<cyclicenumeration>
+							<feconstant id="b1" name="b1"/>
+							<feconstant id="b2" name="b2"/>
+							<feconstant id="b3" name="b3"/>
+							<feconstant id="b4" name="b4"/>
+							<feconstant id="b5" name="b5"/>
+							<feconstant id="b6" name="b6"/>
+							<feconstant id="b7" name="b7"/>
+							<feconstant id="b8" name="b8"/>
+							<feconstant id="b9" name="b9"/>
+							<feconstant id="b10" name="b10"/>
+							<feconstant id="b11" name="b11"/>
+							<feconstant id="b12" name="b12"/>
+							<feconstant id="b13" name="b13"/>
+							<feconstant id="b14" name="b14"/>
+							<feconstant id="b15" name="b15"/>
+							<feconstant id="b16" name="b16"/>
+							<feconstant id="b17" name="b17"/>
+							<feconstant id="b18" name="b18"/>
+							<feconstant id="b19" name="b19"/>
+							<feconstant id="b20" name="b20"/>
+							<feconstant id="b21" name="b21"/>
+							<feconstant id="b22" name="b22"/>
+							<feconstant id="b23" name="b23"/>
+							<feconstant id="b24" name="b24"/>
+							<feconstant id="b25" name="b25"/>
+							<feconstant id="b26" name="b26"/>
+							<feconstant id="b27" name="b27"/>
+							<feconstant id="b28" name="b28"/>
+							<feconstant id="b29" name="b29"/>
+							<feconstant id="b30" name="b30"/>
+							<feconstant id="b31" name="b31"/>
+							<feconstant id="b32" name="b32"/>
+							<feconstant id="b33" name="b33"/>
+							<feconstant id="b34" name="b34"/>
+							<feconstant id="b35" name="b35"/>
+							<feconstant id="b36" name="b36"/>
+							<feconstant id="b37" name="b37"/>
+							<feconstant id="b38" name="b38"/>
+							<feconstant id="b39" name="b39"/>
+							<feconstant id="b40" name="b40"/>
+							<feconstant id="b41" name="b41"/>
+							<feconstant id="b42" name="b42"/>
+							<feconstant id="b43" name="b43"/>
+							<feconstant id="b44" name="b44"/>
+							<feconstant id="b45" name="b45"/>
+							<feconstant id="b46" name="b46"/>
+							<feconstant id="b47" name="b47"/>
+							<feconstant id="b48" name="b48"/>
+							<feconstant id="b49" name="b49"/>
+							<feconstant id="b50" name="b50"/>
+							<feconstant id="b51" name="b51"/>
+							<feconstant id="b52" name="b52"/>
+							<feconstant id="b53" name="b53"/>
+							<feconstant id="b54" name="b54"/>
+							<feconstant id="b55" name="b55"/>
+							<feconstant id="b56" name="b56"/>
+							<feconstant id="b57" name="b57"/>
+							<feconstant id="b58" name="b58"/>
+							<feconstant id="b59" name="b59"/>
+							<feconstant id="b60" name="b60"/>
+							<feconstant id="b61" name="b61"/>
+							<feconstant id="b62" name="b62"/>
+							<feconstant id="b63" name="b63"/>
+							<feconstant id="b64" name="b64"/>
+							<feconstant id="b65" name="b65"/>
+							<feconstant id="b66" name="b66"/>
+							<feconstant id="b67" name="b67"/>
+							<feconstant id="b68" name="b68"/>
+							<feconstant id="b69" name="b69"/>
+							<feconstant id="b70" name="b70"/>
+							<feconstant id="b71" name="b71"/>
+							<feconstant id="b72" name="b72"/>
+							<feconstant id="b73" name="b73"/>
+							<feconstant id="b74" name="b74"/>
+							<feconstant id="b75" name="b75"/>
+							<feconstant id="b76" name="b76"/>
+							<feconstant id="b77" name="b77"/>
+							<feconstant id="b78" name="b78"/>
+							<feconstant id="b79" name="b79"/>
+							<feconstant id="b80" name="b80"/>
+							<feconstant id="b81" name="b81"/>
+							<feconstant id="b82" name="b82"/>
+							<feconstant id="b83" name="b83"/>
+							<feconstant id="b84" name="b84"/>
+							<feconstant id="b85" name="b85"/>
+							<feconstant id="b86" name="b86"/>
+							<feconstant id="b87" name="b87"/>
+							<feconstant id="b88" name="b88"/>
+							<feconstant id="b89" name="b89"/>
+							<feconstant id="b90" name="b90"/>
+							<feconstant id="b91" name="b91"/>
+							<feconstant id="b92" name="b92"/>
+							<feconstant id="b93" name="b93"/>
+							<feconstant id="b94" name="b94"/>
+							<feconstant id="b95" name="b95"/>
+							<feconstant id="b96" name="b96"/>
+							<feconstant id="b97" name="b97"/>
+							<feconstant id="b98" name="b98"/>
+							<feconstant id="b99" name="b99"/>
+							<feconstant id="b100" name="b100"/>
+							<feconstant id="b101" name="b101"/>
+							<feconstant id="b102" name="b102"/>
+							<feconstant id="b103" name="b103"/>
+							<feconstant id="b104" name="b104"/>
+							<feconstant id="b105" name="b105"/>
+							<feconstant id="b106" name="b106"/>
+							<feconstant id="b107" name="b107"/>
+							<feconstant id="b108" name="b108"/>
+							<feconstant id="b109" name="b109"/>
+							<feconstant id="b110" name="b110"/>
+							<feconstant id="b111" name="b111"/>
+							<feconstant id="b112" name="b112"/>
+							<feconstant id="b113" name="b113"/>
+							<feconstant id="b114" name="b114"/>
+							<feconstant id="b115" name="b115"/>
+							<feconstant id="b116" name="b116"/>
+							<feconstant id="b117" name="b117"/>
+							<feconstant id="b118" name="b118"/>
+							<feconstant id="b119" name="b119"/>
+							<feconstant id="b120" name="b120"/>
+							<feconstant id="b121" name="b121"/>
+							<feconstant id="b122" name="b122"/>
+							<feconstant id="b123" name="b123"/>
+							<feconstant id="b124" name="b124"/>
+							<feconstant id="b125" name="b125"/>
+							<feconstant id="b126" name="b126"/>
+							<feconstant id="b127" name="b127"/>
+							<feconstant id="b128" name="b128"/>
+							<feconstant id="b129" name="b129"/>
+							<feconstant id="b130" name="b130"/>
+							<feconstant id="b131" name="b131"/>
+							<feconstant id="b132" name="b132"/>
+							<feconstant id="b133" name="b133"/>
+							<feconstant id="b134" name="b134"/>
+							<feconstant id="b135" name="b135"/>
+							<feconstant id="b136" name="b136"/>
+							<feconstant id="b137" name="b137"/>
+							<feconstant id="b138" name="b138"/>
+							<feconstant id="b139" name="b139"/>
+							<feconstant id="b140" name="b140"/>
+							<feconstant id="b141" name="b141"/>
+							<feconstant id="b142" name="b142"/>
+							<feconstant id="b143" name="b143"/>
+							<feconstant id="b144" name="b144"/>
+							<feconstant id="b145" name="b145"/>
+							<feconstant id="b146" name="b146"/>
+							<feconstant id="b147" name="b147"/>
+							<feconstant id="b148" name="b148"/>
+							<feconstant id="b149" name="b149"/>
+							<feconstant id="b150" name="b150"/>
+							<feconstant id="b151" name="b151"/>
+							<feconstant id="b152" name="b152"/>
+							<feconstant id="b153" name="b153"/>
+							<feconstant id="b154" name="b154"/>
+							<feconstant id="b155" name="b155"/>
+							<feconstant id="b156" name="b156"/>
+							<feconstant id="b157" name="b157"/>
+							<feconstant id="b158" name="b158"/>
+							<feconstant id="b159" name="b159"/>
+							<feconstant id="b160" name="b160"/>
+							<feconstant id="b161" name="b161"/>
+							<feconstant id="b162" name="b162"/>
+							<feconstant id="b163" name="b163"/>
+							<feconstant id="b164" name="b164"/>
+							<feconstant id="b165" name="b165"/>
+							<feconstant id="b166" name="b166"/>
+							<feconstant id="b167" name="b167"/>
+							<feconstant id="b168" name="b168"/>
+							<feconstant id="b169" name="b169"/>
+							<feconstant id="b170" name="b170"/>
+							<feconstant id="b171" name="b171"/>
+							<feconstant id="b172" name="b172"/>
+							<feconstant id="b173" name="b173"/>
+							<feconstant id="b174" name="b174"/>
+							<feconstant id="b175" name="b175"/>
+							<feconstant id="b176" name="b176"/>
+							<feconstant id="b177" name="b177"/>
+							<feconstant id="b178" name="b178"/>
+							<feconstant id="b179" name="b179"/>
+							<feconstant id="b180" name="b180"/>
+							<feconstant id="b181" name="b181"/>
+							<feconstant id="b182" name="b182"/>
+							<feconstant id="b183" name="b183"/>
+							<feconstant id="b184" name="b184"/>
+							<feconstant id="b185" name="b185"/>
+							<feconstant id="b186" name="b186"/>
+							<feconstant id="b187" name="b187"/>
+							<feconstant id="b188" name="b188"/>
+							<feconstant id="b189" name="b189"/>
+							<feconstant id="b190" name="b190"/>
+							<feconstant id="b191" name="b191"/>
+							<feconstant id="b192" name="b192"/>
+							<feconstant id="b193" name="b193"/>
+							<feconstant id="b194" name="b194"/>
+							<feconstant id="b195" name="b195"/>
+							<feconstant id="b196" name="b196"/>
+							<feconstant id="b197" name="b197"/>
+							<feconstant id="b198" name="b198"/>
+							<feconstant id="b199" name="b199"/>
+							<feconstant id="b200" name="b200"/>
+							<feconstant id="b201" name="b201"/>
+							<feconstant id="b202" name="b202"/>
+							<feconstant id="b203" name="b203"/>
+							<feconstant id="b204" name="b204"/>
+							<feconstant id="b205" name="b205"/>
+							<feconstant id="b206" name="b206"/>
+							<feconstant id="b207" name="b207"/>
+							<feconstant id="b208" name="b208"/>
+							<feconstant id="b209" name="b209"/>
+							<feconstant id="b210" name="b210"/>
+							<feconstant id="b211" name="b211"/>
+							<feconstant id="b212" name="b212"/>
+							<feconstant id="b213" name="b213"/>
+							<feconstant id="b214" name="b214"/>
+							<feconstant id="b215" name="b215"/>
+							<feconstant id="b216" name="b216"/>
+							<feconstant id="b217" name="b217"/>
+							<feconstant id="b218" name="b218"/>
+							<feconstant id="b219" name="b219"/>
+							<feconstant id="b220" name="b220"/>
+							<feconstant id="b221" name="b221"/>
+							<feconstant id="b222" name="b222"/>
+							<feconstant id="b223" name="b223"/>
+							<feconstant id="b224" name="b224"/>
+							<feconstant id="b225" name="b225"/>
+							<feconstant id="b226" name="b226"/>
+							<feconstant id="b227" name="b227"/>
+							<feconstant id="b228" name="b228"/>
+							<feconstant id="b229" name="b229"/>
+							<feconstant id="b230" name="b230"/>
+							<feconstant id="b231" name="b231"/>
+							<feconstant id="b232" name="b232"/>
+							<feconstant id="b233" name="b233"/>
+							<feconstant id="b234" name="b234"/>
+							<feconstant id="b235" name="b235"/>
+							<feconstant id="b236" name="b236"/>
+							<feconstant id="b237" name="b237"/>
+							<feconstant id="b238" name="b238"/>
+							<feconstant id="b239" name="b239"/>
+							<feconstant id="b240" name="b240"/>
+							<feconstant id="b241" name="b241"/>
+							<feconstant id="b242" name="b242"/>
+							<feconstant id="b243" name="b243"/>
+							<feconstant id="b244" name="b244"/>
+							<feconstant id="b245" name="b245"/>
+							<feconstant id="b246" name="b246"/>
+							<feconstant id="b247" name="b247"/>
+							<feconstant id="b248" name="b248"/>
+							<feconstant id="b249" name="b249"/>
+							<feconstant id="b250" name="b250"/>
+							<feconstant id="b251" name="b251"/>
+							<feconstant id="b252" name="b252"/>
+							<feconstant id="b253" name="b253"/>
+							<feconstant id="b254" name="b254"/>
+							<feconstant id="b255" name="b255"/>
+							<feconstant id="b256" name="b256"/>
+							<feconstant id="b257" name="b257"/>
+							<feconstant id="b258" name="b258"/>
+							<feconstant id="b259" name="b259"/>
+							<feconstant id="b260" name="b260"/>
+							<feconstant id="b261" name="b261"/>
+							<feconstant id="b262" name="b262"/>
+							<feconstant id="b263" name="b263"/>
+							<feconstant id="b264" name="b264"/>
+							<feconstant id="b265" name="b265"/>
+							<feconstant id="b266" name="b266"/>
+							<feconstant id="b267" name="b267"/>
+							<feconstant id="b268" name="b268"/>
+							<feconstant id="b269" name="b269"/>
+							<feconstant id="b270" name="b270"/>
+							<feconstant id="b271" name="b271"/>
+							<feconstant id="b272" name="b272"/>
+							<feconstant id="b273" name="b273"/>
+							<feconstant id="b274" name="b274"/>
+							<feconstant id="b275" name="b275"/>
+							<feconstant id="b276" name="b276"/>
+							<feconstant id="b277" name="b277"/>
+							<feconstant id="b278" name="b278"/>
+							<feconstant id="b279" name="b279"/>
+							<feconstant id="b280" name="b280"/>
+							<feconstant id="b281" name="b281"/>
+							<feconstant id="b282" name="b282"/>
+							<feconstant id="b283" name="b283"/>
+							<feconstant id="b284" name="b284"/>
+							<feconstant id="b285" name="b285"/>
+							<feconstant id="b286" name="b286"/>
+							<feconstant id="b287" name="b287"/>
+							<feconstant id="b288" name="b288"/>
+							<feconstant id="b289" name="b289"/>
+							<feconstant id="b290" name="b290"/>
+							<feconstant id="b291" name="b291"/>
+							<feconstant id="b292" name="b292"/>
+							<feconstant id="b293" name="b293"/>
+							<feconstant id="b294" name="b294"/>
+							<feconstant id="b295" name="b295"/>
+							<feconstant id="b296" name="b296"/>
+							<feconstant id="b297" name="b297"/>
+							<feconstant id="b298" name="b298"/>
+							<feconstant id="b299" name="b299"/>
+							<feconstant id="b300" name="b300"/>
+							<feconstant id="b301" name="b301"/>
+							<feconstant id="b302" name="b302"/>
+							<feconstant id="b303" name="b303"/>
+							<feconstant id="b304" name="b304"/>
+							<feconstant id="b305" name="b305"/>
+							<feconstant id="b306" name="b306"/>
+							<feconstant id="b307" name="b307"/>
+							<feconstant id="b308" name="b308"/>
+							<feconstant id="b309" name="b309"/>
+							<feconstant id="b310" name="b310"/>
+							<feconstant id="b311" name="b311"/>
+							<feconstant id="b312" name="b312"/>
+							<feconstant id="b313" name="b313"/>
+							<feconstant id="b314" name="b314"/>
+							<feconstant id="b315" name="b315"/>
+							<feconstant id="b316" name="b316"/>
+							<feconstant id="b317" name="b317"/>
+							<feconstant id="b318" name="b318"/>
+							<feconstant id="b319" name="b319"/>
+							<feconstant id="b320" name="b320"/>
+							<feconstant id="b321" name="b321"/>
+							<feconstant id="b322" name="b322"/>
+							<feconstant id="b323" name="b323"/>
+							<feconstant id="b324" name="b324"/>
+							<feconstant id="b325" name="b325"/>
+							<feconstant id="b326" name="b326"/>
+							<feconstant id="b327" name="b327"/>
+							<feconstant id="b328" name="b328"/>
+							<feconstant id="b329" name="b329"/>
+							<feconstant id="b330" name="b330"/>
+							<feconstant id="b331" name="b331"/>
+							<feconstant id="b332" name="b332"/>
+							<feconstant id="b333" name="b333"/>
+							<feconstant id="b334" name="b334"/>
+							<feconstant id="b335" name="b335"/>
+							<feconstant id="b336" name="b336"/>
+							<feconstant id="b337" name="b337"/>
+							<feconstant id="b338" name="b338"/>
+							<feconstant id="b339" name="b339"/>
+							<feconstant id="b340" name="b340"/>
+							<feconstant id="b341" name="b341"/>
+							<feconstant id="b342" name="b342"/>
+							<feconstant id="b343" name="b343"/>
+							<feconstant id="b344" name="b344"/>
+							<feconstant id="b345" name="b345"/>
+							<feconstant id="b346" name="b346"/>
+							<feconstant id="b347" name="b347"/>
+							<feconstant id="b348" name="b348"/>
+							<feconstant id="b349" name="b349"/>
+							<feconstant id="b350" name="b350"/>
+							<feconstant id="b351" name="b351"/>
+							<feconstant id="b352" name="b352"/>
+							<feconstant id="b353" name="b353"/>
+							<feconstant id="b354" name="b354"/>
+							<feconstant id="b355" name="b355"/>
+							<feconstant id="b356" name="b356"/>
+							<feconstant id="b357" name="b357"/>
+							<feconstant id="b358" name="b358"/>
+							<feconstant id="b359" name="b359"/>
+							<feconstant id="b360" name="b360"/>
+							<feconstant id="b361" name="b361"/>
+							<feconstant id="b362" name="b362"/>
+							<feconstant id="b363" name="b363"/>
+							<feconstant id="b364" name="b364"/>
+							<feconstant id="b365" name="b365"/>
+							<feconstant id="b366" name="b366"/>
+							<feconstant id="b367" name="b367"/>
+							<feconstant id="b368" name="b368"/>
+							<feconstant id="b369" name="b369"/>
+							<feconstant id="b370" name="b370"/>
+							<feconstant id="b371" name="b371"/>
+							<feconstant id="b372" name="b372"/>
+							<feconstant id="b373" name="b373"/>
+							<feconstant id="b374" name="b374"/>
+							<feconstant id="b375" name="b375"/>
+							<feconstant id="b376" name="b376"/>
+							<feconstant id="b377" name="b377"/>
+							<feconstant id="b378" name="b378"/>
+							<feconstant id="b379" name="b379"/>
+							<feconstant id="b380" name="b380"/>
+							<feconstant id="b381" name="b381"/>
+							<feconstant id="b382" name="b382"/>
+							<feconstant id="b383" name="b383"/>
+							<feconstant id="b384" name="b384"/>
+							<feconstant id="b385" name="b385"/>
+							<feconstant id="b386" name="b386"/>
+							<feconstant id="b387" name="b387"/>
+							<feconstant id="b388" name="b388"/>
+							<feconstant id="b389" name="b389"/>
+							<feconstant id="b390" name="b390"/>
+							<feconstant id="b391" name="b391"/>
+							<feconstant id="b392" name="b392"/>
+							<feconstant id="b393" name="b393"/>
+							<feconstant id="b394" name="b394"/>
+							<feconstant id="b395" name="b395"/>
+							<feconstant id="b396" name="b396"/>
+							<feconstant id="b397" name="b397"/>
+							<feconstant id="b398" name="b398"/>
+							<feconstant id="b399" name="b399"/>
+							<feconstant id="b400" name="b400"/>
+							<feconstant id="b401" name="b401"/>
+							<feconstant id="b402" name="b402"/>
+							<feconstant id="b403" name="b403"/>
+							<feconstant id="b404" name="b404"/>
+							<feconstant id="b405" name="b405"/>
+							<feconstant id="b406" name="b406"/>
+							<feconstant id="b407" name="b407"/>
+							<feconstant id="b408" name="b408"/>
+							<feconstant id="b409" name="b409"/>
+							<feconstant id="b410" name="b410"/>
+							<feconstant id="b411" name="b411"/>
+							<feconstant id="b412" name="b412"/>
+							<feconstant id="b413" name="b413"/>
+							<feconstant id="b414" name="b414"/>
+							<feconstant id="b415" name="b415"/>
+							<feconstant id="b416" name="b416"/>
+							<feconstant id="b417" name="b417"/>
+							<feconstant id="b418" name="b418"/>
+							<feconstant id="b419" name="b419"/>
+							<feconstant id="b420" name="b420"/>
+							<feconstant id="b421" name="b421"/>
+							<feconstant id="b422" name="b422"/>
+							<feconstant id="b423" name="b423"/>
+							<feconstant id="b424" name="b424"/>
+							<feconstant id="b425" name="b425"/>
+							<feconstant id="b426" name="b426"/>
+							<feconstant id="b427" name="b427"/>
+							<feconstant id="b428" name="b428"/>
+							<feconstant id="b429" name="b429"/>
+							<feconstant id="b430" name="b430"/>
+							<feconstant id="b431" name="b431"/>
+							<feconstant id="b432" name="b432"/>
+							<feconstant id="b433" name="b433"/>
+							<feconstant id="b434" name="b434"/>
+							<feconstant id="b435" name="b435"/>
+							<feconstant id="b436" name="b436"/>
+							<feconstant id="b437" name="b437"/>
+							<feconstant id="b438" name="b438"/>
+							<feconstant id="b439" name="b439"/>
+							<feconstant id="b440" name="b440"/>
+							<feconstant id="b441" name="b441"/>
+							<feconstant id="b442" name="b442"/>
+							<feconstant id="b443" name="b443"/>
+							<feconstant id="b444" name="b444"/>
+							<feconstant id="b445" name="b445"/>
+							<feconstant id="b446" name="b446"/>
+							<feconstant id="b447" name="b447"/>
+							<feconstant id="b448" name="b448"/>
+							<feconstant id="b449" name="b449"/>
+							<feconstant id="b450" name="b450"/>
+							<feconstant id="b451" name="b451"/>
+							<feconstant id="b452" name="b452"/>
+							<feconstant id="b453" name="b453"/>
+							<feconstant id="b454" name="b454"/>
+							<feconstant id="b455" name="b455"/>
+							<feconstant id="b456" name="b456"/>
+							<feconstant id="b457" name="b457"/>
+							<feconstant id="b458" name="b458"/>
+							<feconstant id="b459" name="b459"/>
+							<feconstant id="b460" name="b460"/>
+							<feconstant id="b461" name="b461"/>
+							<feconstant id="b462" name="b462"/>
+							<feconstant id="b463" name="b463"/>
+							<feconstant id="b464" name="b464"/>
+							<feconstant id="b465" name="b465"/>
+							<feconstant id="b466" name="b466"/>
+							<feconstant id="b467" name="b467"/>
+							<feconstant id="b468" name="b468"/>
+							<feconstant id="b469" name="b469"/>
+							<feconstant id="b470" name="b470"/>
+							<feconstant id="b471" name="b471"/>
+							<feconstant id="b472" name="b472"/>
+							<feconstant id="b473" name="b473"/>
+							<feconstant id="b474" name="b474"/>
+							<feconstant id="b475" name="b475"/>
+							<feconstant id="b476" name="b476"/>
+							<feconstant id="b477" name="b477"/>
+							<feconstant id="b478" name="b478"/>
+							<feconstant id="b479" name="b479"/>
+							<feconstant id="b480" name="b480"/>
+							<feconstant id="b481" name="b481"/>
+							<feconstant id="b482" name="b482"/>
+							<feconstant id="b483" name="b483"/>
+							<feconstant id="b484" name="b484"/>
+							<feconstant id="b485" name="b485"/>
+							<feconstant id="b486" name="b486"/>
+							<feconstant id="b487" name="b487"/>
+							<feconstant id="b488" name="b488"/>
+							<feconstant id="b489" name="b489"/>
+							<feconstant id="b490" name="b490"/>
+							<feconstant id="b491" name="b491"/>
+							<feconstant id="b492" name="b492"/>
+							<feconstant id="b493" name="b493"/>
+							<feconstant id="b494" name="b494"/>
+							<feconstant id="b495" name="b495"/>
+							<feconstant id="b496" name="b496"/>
+							<feconstant id="b497" name="b497"/>
+							<feconstant id="b498" name="b498"/>
+							<feconstant id="b499" name="b499"/>
+							<feconstant id="b500" name="b500"/>
+							<feconstant id="b501" name="b501"/>
+							<feconstant id="b502" name="b502"/>
+							<feconstant id="b503" name="b503"/>
+							<feconstant id="b504" name="b504"/>
+							<feconstant id="b505" name="b505"/>
+							<feconstant id="b506" name="b506"/>
+							<feconstant id="b507" name="b507"/>
+							<feconstant id="b508" name="b508"/>
+							<feconstant id="b509" name="b509"/>
+							<feconstant id="b510" name="b510"/>
+							<feconstant id="b511" name="b511"/>
+							<feconstant id="b512" name="b512"/>
+							<feconstant id="b513" name="b513"/>
+							<feconstant id="b514" name="b514"/>
+							<feconstant id="b515" name="b515"/>
+							<feconstant id="b516" name="b516"/>
+							<feconstant id="b517" name="b517"/>
+							<feconstant id="b518" name="b518"/>
+							<feconstant id="b519" name="b519"/>
+							<feconstant id="b520" name="b520"/>
+							<feconstant id="b521" name="b521"/>
+							<feconstant id="b522" name="b522"/>
+							<feconstant id="b523" name="b523"/>
+							<feconstant id="b524" name="b524"/>
+							<feconstant id="b525" name="b525"/>
+							<feconstant id="b526" name="b526"/>
+							<feconstant id="b527" name="b527"/>
+							<feconstant id="b528" name="b528"/>
+							<feconstant id="b529" name="b529"/>
+							<feconstant id="b530" name="b530"/>
+							<feconstant id="b531" name="b531"/>
+							<feconstant id="b532" name="b532"/>
+							<feconstant id="b533" name="b533"/>
+							<feconstant id="b534" name="b534"/>
+							<feconstant id="b535" name="b535"/>
+							<feconstant id="b536" name="b536"/>
+							<feconstant id="b537" name="b537"/>
+							<feconstant id="b538" name="b538"/>
+							<feconstant id="b539" name="b539"/>
+							<feconstant id="b540" name="b540"/>
+							<feconstant id="b541" name="b541"/>
+							<feconstant id="b542" name="b542"/>
+							<feconstant id="b543" name="b543"/>
+							<feconstant id="b544" name="b544"/>
+							<feconstant id="b545" name="b545"/>
+							<feconstant id="b546" name="b546"/>
+							<feconstant id="b547" name="b547"/>
+							<feconstant id="b548" name="b548"/>
+							<feconstant id="b549" name="b549"/>
+							<feconstant id="b550" name="b550"/>
+							<feconstant id="b551" name="b551"/>
+							<feconstant id="b552" name="b552"/>
+							<feconstant id="b553" name="b553"/>
+							<feconstant id="b554" name="b554"/>
+							<feconstant id="b555" name="b555"/>
+							<feconstant id="b556" name="b556"/>
+							<feconstant id="b557" name="b557"/>
+							<feconstant id="b558" name="b558"/>
+							<feconstant id="b559" name="b559"/>
+							<feconstant id="b560" name="b560"/>
+							<feconstant id="b561" name="b561"/>
+							<feconstant id="b562" name="b562"/>
+							<feconstant id="b563" name="b563"/>
+							<feconstant id="b564" name="b564"/>
+							<feconstant id="b565" name="b565"/>
+							<feconstant id="b566" name="b566"/>
+							<feconstant id="b567" name="b567"/>
+							<feconstant id="b568" name="b568"/>
+							<feconstant id="b569" name="b569"/>
+							<feconstant id="b570" name="b570"/>
+							<feconstant id="b571" name="b571"/>
+							<feconstant id="b572" name="b572"/>
+							<feconstant id="b573" name="b573"/>
+							<feconstant id="b574" name="b574"/>
+							<feconstant id="b575" name="b575"/>
+							<feconstant id="b576" name="b576"/>
+							<feconstant id="b577" name="b577"/>
+							<feconstant id="b578" name="b578"/>
+							<feconstant id="b579" name="b579"/>
+							<feconstant id="b580" name="b580"/>
+							<feconstant id="b581" name="b581"/>
+							<feconstant id="b582" name="b582"/>
+							<feconstant id="b583" name="b583"/>
+							<feconstant id="b584" name="b584"/>
+							<feconstant id="b585" name="b585"/>
+							<feconstant id="b586" name="b586"/>
+							<feconstant id="b587" name="b587"/>
+							<feconstant id="b588" name="b588"/>
+							<feconstant id="b589" name="b589"/>
+							<feconstant id="b590" name="b590"/>
+							<feconstant id="b591" name="b591"/>
+							<feconstant id="b592" name="b592"/>
+							<feconstant id="b593" name="b593"/>
+							<feconstant id="b594" name="b594"/>
+							<feconstant id="b595" name="b595"/>
+							<feconstant id="b596" name="b596"/>
+							<feconstant id="b597" name="b597"/>
+							<feconstant id="b598" name="b598"/>
+							<feconstant id="b599" name="b599"/>
+							<feconstant id="b600" name="b600"/>
+							<feconstant id="b601" name="b601"/>
+							<feconstant id="b602" name="b602"/>
+							<feconstant id="b603" name="b603"/>
+							<feconstant id="b604" name="b604"/>
+							<feconstant id="b605" name="b605"/>
+							<feconstant id="b606" name="b606"/>
+							<feconstant id="b607" name="b607"/>
+							<feconstant id="b608" name="b608"/>
+							<feconstant id="b609" name="b609"/>
+							<feconstant id="b610" name="b610"/>
+							<feconstant id="b611" name="b611"/>
+							<feconstant id="b612" name="b612"/>
+							<feconstant id="b613" name="b613"/>
+							<feconstant id="b614" name="b614"/>
+							<feconstant id="b615" name="b615"/>
+							<feconstant id="b616" name="b616"/>
+							<feconstant id="b617" name="b617"/>
+							<feconstant id="b618" name="b618"/>
+							<feconstant id="b619" name="b619"/>
+							<feconstant id="b620" name="b620"/>
+							<feconstant id="b621" name="b621"/>
+							<feconstant id="b622" name="b622"/>
+							<feconstant id="b623" name="b623"/>
+							<feconstant id="b624" name="b624"/>
+							<feconstant id="b625" name="b625"/>
+							<feconstant id="b626" name="b626"/>
+							<feconstant id="b627" name="b627"/>
+							<feconstant id="b628" name="b628"/>
+							<feconstant id="b629" name="b629"/>
+							<feconstant id="b630" name="b630"/>
+							<feconstant id="b631" name="b631"/>
+							<feconstant id="b632" name="b632"/>
+							<feconstant id="b633" name="b633"/>
+							<feconstant id="b634" name="b634"/>
+							<feconstant id="b635" name="b635"/>
+							<feconstant id="b636" name="b636"/>
+							<feconstant id="b637" name="b637"/>
+							<feconstant id="b638" name="b638"/>
+							<feconstant id="b639" name="b639"/>
+							<feconstant id="b640" name="b640"/>
+							<feconstant id="b641" name="b641"/>
+							<feconstant id="b642" name="b642"/>
+							<feconstant id="b643" name="b643"/>
+							<feconstant id="b644" name="b644"/>
+							<feconstant id="b645" name="b645"/>
+							<feconstant id="b646" name="b646"/>
+							<feconstant id="b647" name="b647"/>
+							<feconstant id="b648" name="b648"/>
+							<feconstant id="b649" name="b649"/>
+							<feconstant id="b650" name="b650"/>
+							<feconstant id="b651" name="b651"/>
+							<feconstant id="b652" name="b652"/>
+							<feconstant id="b653" name="b653"/>
+							<feconstant id="b654" name="b654"/>
+							<feconstant id="b655" name="b655"/>
+							<feconstant id="b656" name="b656"/>
+							<feconstant id="b657" name="b657"/>
+							<feconstant id="b658" name="b658"/>
+							<feconstant id="b659" name="b659"/>
+							<feconstant id="b660" name="b660"/>
+							<feconstant id="b661" name="b661"/>
+							<feconstant id="b662" name="b662"/>
+							<feconstant id="b663" name="b663"/>
+							<feconstant id="b664" name="b664"/>
+							<feconstant id="b665" name="b665"/>
+							<feconstant id="b666" name="b666"/>
+							<feconstant id="b667" name="b667"/>
+							<feconstant id="b668" name="b668"/>
+							<feconstant id="b669" name="b669"/>
+							<feconstant id="b670" name="b670"/>
+							<feconstant id="b671" name="b671"/>
+							<feconstant id="b672" name="b672"/>
+							<feconstant id="b673" name="b673"/>
+							<feconstant id="b674" name="b674"/>
+							<feconstant id="b675" name="b675"/>
+							<feconstant id="b676" name="b676"/>
+							<feconstant id="b677" name="b677"/>
+							<feconstant id="b678" name="b678"/>
+							<feconstant id="b679" name="b679"/>
+							<feconstant id="b680" name="b680"/>
+							<feconstant id="b681" name="b681"/>
+							<feconstant id="b682" name="b682"/>
+							<feconstant id="b683" name="b683"/>
+							<feconstant id="b684" name="b684"/>
+							<feconstant id="b685" name="b685"/>
+							<feconstant id="b686" name="b686"/>
+							<feconstant id="b687" name="b687"/>
+							<feconstant id="b688" name="b688"/>
+							<feconstant id="b689" name="b689"/>
+							<feconstant id="b690" name="b690"/>
+							<feconstant id="b691" name="b691"/>
+							<feconstant id="b692" name="b692"/>
+							<feconstant id="b693" name="b693"/>
+							<feconstant id="b694" name="b694"/>
+							<feconstant id="b695" name="b695"/>
+							<feconstant id="b696" name="b696"/>
+							<feconstant id="b697" name="b697"/>
+							<feconstant id="b698" name="b698"/>
+							<feconstant id="b699" name="b699"/>
+							<feconstant id="b700" name="b700"/>
+							<feconstant id="b701" name="b701"/>
+							<feconstant id="b702" name="b702"/>
+							<feconstant id="b703" name="b703"/>
+							<feconstant id="b704" name="b704"/>
+							<feconstant id="b705" name="b705"/>
+							<feconstant id="b706" name="b706"/>
+							<feconstant id="b707" name="b707"/>
+							<feconstant id="b708" name="b708"/>
+							<feconstant id="b709" name="b709"/>
+							<feconstant id="b710" name="b710"/>
+							<feconstant id="b711" name="b711"/>
+							<feconstant id="b712" name="b712"/>
+							<feconstant id="b713" name="b713"/>
+							<feconstant id="b714" name="b714"/>
+							<feconstant id="b715" name="b715"/>
+							<feconstant id="b716" name="b716"/>
+							<feconstant id="b717" name="b717"/>
+							<feconstant id="b718" name="b718"/>
+							<feconstant id="b719" name="b719"/>
+							<feconstant id="b720" name="b720"/>
+							<feconstant id="b721" name="b721"/>
+							<feconstant id="b722" name="b722"/>
+							<feconstant id="b723" name="b723"/>
+							<feconstant id="b724" name="b724"/>
+							<feconstant id="b725" name="b725"/>
+							<feconstant id="b726" name="b726"/>
+							<feconstant id="b727" name="b727"/>
+							<feconstant id="b728" name="b728"/>
+							<feconstant id="b729" name="b729"/>
+							<feconstant id="b730" name="b730"/>
+							<feconstant id="b731" name="b731"/>
+							<feconstant id="b732" name="b732"/>
+							<feconstant id="b733" name="b733"/>
+							<feconstant id="b734" name="b734"/>
+							<feconstant id="b735" name="b735"/>
+							<feconstant id="b736" name="b736"/>
+							<feconstant id="b737" name="b737"/>
+							<feconstant id="b738" name="b738"/>
+							<feconstant id="b739" name="b739"/>
+							<feconstant id="b740" name="b740"/>
+							<feconstant id="b741" name="b741"/>
+							<feconstant id="b742" name="b742"/>
+							<feconstant id="b743" name="b743"/>
+							<feconstant id="b744" name="b744"/>
+							<feconstant id="b745" name="b745"/>
+							<feconstant id="b746" name="b746"/>
+							<feconstant id="b747" name="b747"/>
+							<feconstant id="b748" name="b748"/>
+							<feconstant id="b749" name="b749"/>
+							<feconstant id="b750" name="b750"/>
+							<feconstant id="b751" name="b751"/>
+							<feconstant id="b752" name="b752"/>
+							<feconstant id="b753" name="b753"/>
+							<feconstant id="b754" name="b754"/>
+							<feconstant id="b755" name="b755"/>
+							<feconstant id="b756" name="b756"/>
+							<feconstant id="b757" name="b757"/>
+							<feconstant id="b758" name="b758"/>
+							<feconstant id="b759" name="b759"/>
+							<feconstant id="b760" name="b760"/>
+							<feconstant id="b761" name="b761"/>
+							<feconstant id="b762" name="b762"/>
+							<feconstant id="b763" name="b763"/>
+							<feconstant id="b764" name="b764"/>
+							<feconstant id="b765" name="b765"/>
+							<feconstant id="b766" name="b766"/>
+							<feconstant id="b767" name="b767"/>
+							<feconstant id="b768" name="b768"/>
+							<feconstant id="b769" name="b769"/>
+							<feconstant id="b770" name="b770"/>
+							<feconstant id="b771" name="b771"/>
+							<feconstant id="b772" name="b772"/>
+							<feconstant id="b773" name="b773"/>
+							<feconstant id="b774" name="b774"/>
+							<feconstant id="b775" name="b775"/>
+							<feconstant id="b776" name="b776"/>
+							<feconstant id="b777" name="b777"/>
+							<feconstant id="b778" name="b778"/>
+							<feconstant id="b779" name="b779"/>
+							<feconstant id="b780" name="b780"/>
+							<feconstant id="b781" name="b781"/>
+							<feconstant id="b782" name="b782"/>
+							<feconstant id="b783" name="b783"/>
+							<feconstant id="b784" name="b784"/>
+							<feconstant id="b785" name="b785"/>
+							<feconstant id="b786" name="b786"/>
+							<feconstant id="b787" name="b787"/>
+							<feconstant id="b788" name="b788"/>
+							<feconstant id="b789" name="b789"/>
+							<feconstant id="b790" name="b790"/>
+							<feconstant id="b791" name="b791"/>
+							<feconstant id="b792" name="b792"/>
+							<feconstant id="b793" name="b793"/>
+							<feconstant id="b794" name="b794"/>
+							<feconstant id="b795" name="b795"/>
+							<feconstant id="b796" name="b796"/>
+							<feconstant id="b797" name="b797"/>
+							<feconstant id="b798" name="b798"/>
+							<feconstant id="b799" name="b799"/>
+							<feconstant id="b800" name="b800"/>
+							<feconstant id="b801" name="b801"/>
+							<feconstant id="b802" name="b802"/>
+							<feconstant id="b803" name="b803"/>
+							<feconstant id="b804" name="b804"/>
+							<feconstant id="b805" name="b805"/>
+							<feconstant id="b806" name="b806"/>
+							<feconstant id="b807" name="b807"/>
+							<feconstant id="b808" name="b808"/>
+							<feconstant id="b809" name="b809"/>
+							<feconstant id="b810" name="b810"/>
+							<feconstant id="b811" name="b811"/>
+							<feconstant id="b812" name="b812"/>
+							<feconstant id="b813" name="b813"/>
+							<feconstant id="b814" name="b814"/>
+							<feconstant id="b815" name="b815"/>
+							<feconstant id="b816" name="b816"/>
+							<feconstant id="b817" name="b817"/>
+							<feconstant id="b818" name="b818"/>
+							<feconstant id="b819" name="b819"/>
+							<feconstant id="b820" name="b820"/>
+							<feconstant id="b821" name="b821"/>
+							<feconstant id="b822" name="b822"/>
+							<feconstant id="b823" name="b823"/>
+							<feconstant id="b824" name="b824"/>
+							<feconstant id="b825" name="b825"/>
+							<feconstant id="b826" name="b826"/>
+							<feconstant id="b827" name="b827"/>
+							<feconstant id="b828" name="b828"/>
+							<feconstant id="b829" name="b829"/>
+							<feconstant id="b830" name="b830"/>
+							<feconstant id="b831" name="b831"/>
+							<feconstant id="b832" name="b832"/>
+							<feconstant id="b833" name="b833"/>
+							<feconstant id="b834" name="b834"/>
+							<feconstant id="b835" name="b835"/>
+							<feconstant id="b836" name="b836"/>
+							<feconstant id="b837" name="b837"/>
+							<feconstant id="b838" name="b838"/>
+							<feconstant id="b839" name="b839"/>
+							<feconstant id="b840" name="b840"/>
+							<feconstant id="b841" name="b841"/>
+							<feconstant id="b842" name="b842"/>
+							<feconstant id="b843" name="b843"/>
+							<feconstant id="b844" name="b844"/>
+							<feconstant id="b845" name="b845"/>
+							<feconstant id="b846" name="b846"/>
+							<feconstant id="b847" name="b847"/>
+							<feconstant id="b848" name="b848"/>
+							<feconstant id="b849" name="b849"/>
+							<feconstant id="b850" name="b850"/>
+							<feconstant id="b851" name="b851"/>
+							<feconstant id="b852" name="b852"/>
+							<feconstant id="b853" name="b853"/>
+							<feconstant id="b854" name="b854"/>
+							<feconstant id="b855" name="b855"/>
+							<feconstant id="b856" name="b856"/>
+							<feconstant id="b857" name="b857"/>
+							<feconstant id="b858" name="b858"/>
+							<feconstant id="b859" name="b859"/>
+							<feconstant id="b860" name="b860"/>
+							<feconstant id="b861" name="b861"/>
+							<feconstant id="b862" name="b862"/>
+							<feconstant id="b863" name="b863"/>
+							<feconstant id="b864" name="b864"/>
+							<feconstant id="b865" name="b865"/>
+							<feconstant id="b866" name="b866"/>
+							<feconstant id="b867" name="b867"/>
+							<feconstant id="b868" name="b868"/>
+							<feconstant id="b869" name="b869"/>
+							<feconstant id="b870" name="b870"/>
+							<feconstant id="b871" name="b871"/>
+							<feconstant id="b872" name="b872"/>
+							<feconstant id="b873" name="b873"/>
+							<feconstant id="b874" name="b874"/>
+							<feconstant id="b875" name="b875"/>
+							<feconstant id="b876" name="b876"/>
+							<feconstant id="b877" name="b877"/>
+							<feconstant id="b878" name="b878"/>
+							<feconstant id="b879" name="b879"/>
+							<feconstant id="b880" name="b880"/>
+							<feconstant id="b881" name="b881"/>
+							<feconstant id="b882" name="b882"/>
+							<feconstant id="b883" name="b883"/>
+							<feconstant id="b884" name="b884"/>
+							<feconstant id="b885" name="b885"/>
+							<feconstant id="b886" name="b886"/>
+							<feconstant id="b887" name="b887"/>
+							<feconstant id="b888" name="b888"/>
+							<feconstant id="b889" name="b889"/>
+							<feconstant id="b890" name="b890"/>
+							<feconstant id="b891" name="b891"/>
+							<feconstant id="b892" name="b892"/>
+							<feconstant id="b893" name="b893"/>
+							<feconstant id="b894" name="b894"/>
+							<feconstant id="b895" name="b895"/>
+							<feconstant id="b896" name="b896"/>
+							<feconstant id="b897" name="b897"/>
+							<feconstant id="b898" name="b898"/>
+							<feconstant id="b899" name="b899"/>
+							<feconstant id="b900" name="b900"/>
+							<feconstant id="b901" name="b901"/>
+							<feconstant id="b902" name="b902"/>
+							<feconstant id="b903" name="b903"/>
+							<feconstant id="b904" name="b904"/>
+							<feconstant id="b905" name="b905"/>
+							<feconstant id="b906" name="b906"/>
+							<feconstant id="b907" name="b907"/>
+							<feconstant id="b908" name="b908"/>
+							<feconstant id="b909" name="b909"/>
+							<feconstant id="b910" name="b910"/>
+							<feconstant id="b911" name="b911"/>
+							<feconstant id="b912" name="b912"/>
+							<feconstant id="b913" name="b913"/>
+							<feconstant id="b914" name="b914"/>
+							<feconstant id="b915" name="b915"/>
+							<feconstant id="b916" name="b916"/>
+							<feconstant id="b917" name="b917"/>
+							<feconstant id="b918" name="b918"/>
+							<feconstant id="b919" name="b919"/>
+							<feconstant id="b920" name="b920"/>
+							<feconstant id="b921" name="b921"/>
+							<feconstant id="b922" name="b922"/>
+							<feconstant id="b923" name="b923"/>
+							<feconstant id="b924" name="b924"/>
+							<feconstant id="b925" name="b925"/>
+							<feconstant id="b926" name="b926"/>
+							<feconstant id="b927" name="b927"/>
+							<feconstant id="b928" name="b928"/>
+							<feconstant id="b929" name="b929"/>
+							<feconstant id="b930" name="b930"/>
+							<feconstant id="b931" name="b931"/>
+							<feconstant id="b932" name="b932"/>
+							<feconstant id="b933" name="b933"/>
+							<feconstant id="b934" name="b934"/>
+							<feconstant id="b935" name="b935"/>
+							<feconstant id="b936" name="b936"/>
+							<feconstant id="b937" name="b937"/>
+							<feconstant id="b938" name="b938"/>
+							<feconstant id="b939" name="b939"/>
+							<feconstant id="b940" name="b940"/>
+							<feconstant id="b941" name="b941"/>
+							<feconstant id="b942" name="b942"/>
+							<feconstant id="b943" name="b943"/>
+							<feconstant id="b944" name="b944"/>
+							<feconstant id="b945" name="b945"/>
+							<feconstant id="b946" name="b946"/>
+							<feconstant id="b947" name="b947"/>
+							<feconstant id="b948" name="b948"/>
+							<feconstant id="b949" name="b949"/>
+							<feconstant id="b950" name="b950"/>
+							<feconstant id="b951" name="b951"/>
+							<feconstant id="b952" name="b952"/>
+							<feconstant id="b953" name="b953"/>
+							<feconstant id="b954" name="b954"/>
+							<feconstant id="b955" name="b955"/>
+							<feconstant id="b956" name="b956"/>
+							<feconstant id="b957" name="b957"/>
+							<feconstant id="b958" name="b958"/>
+							<feconstant id="b959" name="b959"/>
+							<feconstant id="b960" name="b960"/>
+							<feconstant id="b961" name="b961"/>
+							<feconstant id="b962" name="b962"/>
+							<feconstant id="b963" name="b963"/>
+							<feconstant id="b964" name="b964"/>
+							<feconstant id="b965" name="b965"/>
+							<feconstant id="b966" name="b966"/>
+							<feconstant id="b967" name="b967"/>
+							<feconstant id="b968" name="b968"/>
+							<feconstant id="b969" name="b969"/>
+							<feconstant id="b970" name="b970"/>
+							<feconstant id="b971" name="b971"/>
+							<feconstant id="b972" name="b972"/>
+							<feconstant id="b973" name="b973"/>
+							<feconstant id="b974" name="b974"/>
+							<feconstant id="b975" name="b975"/>
+							<feconstant id="b976" name="b976"/>
+							<feconstant id="b977" name="b977"/>
+							<feconstant id="b978" name="b978"/>
+							<feconstant id="b979" name="b979"/>
+							<feconstant id="b980" name="b980"/>
+							<feconstant id="b981" name="b981"/>
+							<feconstant id="b982" name="b982"/>
+							<feconstant id="b983" name="b983"/>
+							<feconstant id="b984" name="b984"/>
+							<feconstant id="b985" name="b985"/>
+							<feconstant id="b986" name="b986"/>
+							<feconstant id="b987" name="b987"/>
+							<feconstant id="b988" name="b988"/>
+							<feconstant id="b989" name="b989"/>
+							<feconstant id="b990" name="b990"/>
+							<feconstant id="b991" name="b991"/>
+							<feconstant id="b992" name="b992"/>
+							<feconstant id="b993" name="b993"/>
+							<feconstant id="b994" name="b994"/>
+							<feconstant id="b995" name="b995"/>
+							<feconstant id="b996" name="b996"/>
+							<feconstant id="b997" name="b997"/>
+							<feconstant id="b998" name="b998"/>
+							<feconstant id="b999" name="b999"/>
+							<feconstant id="b1000" name="b1000"/>
+							<feconstant id="b1001" name="b1001"/>
+							<feconstant id="b1002" name="b1002"/>
+							<feconstant id="b1003" name="b1003"/>
+							<feconstant id="b1004" name="b1004"/>
+							<feconstant id="b1005" name="b1005"/>
+							<feconstant id="b1006" name="b1006"/>
+							<feconstant id="b1007" name="b1007"/>
+							<feconstant id="b1008" name="b1008"/>
+							<feconstant id="b1009" name="b1009"/>
+							<feconstant id="b1010" name="b1010"/>
+							<feconstant id="b1011" name="b1011"/>
+							<feconstant id="b1012" name="b1012"/>
+							<feconstant id="b1013" name="b1013"/>
+							<feconstant id="b1014" name="b1014"/>
+							<feconstant id="b1015" name="b1015"/>
+							<feconstant id="b1016" name="b1016"/>
+							<feconstant id="b1017" name="b1017"/>
+							<feconstant id="b1018" name="b1018"/>
+							<feconstant id="b1019" name="b1019"/>
+							<feconstant id="b1020" name="b1020"/>
+							<feconstant id="b1021" name="b1021"/>
+							<feconstant id="b1022" name="b1022"/>
+							<feconstant id="b1023" name="b1023"/>
+							<feconstant id="b1024" name="b1024"/>
+						</cyclicenumeration>
+					</namedsort>
+					<partition id="BackoffStagepartition" name="BackoffStagePartition">
+						<usersort declaration="BackoffStage"/>
+						<partitionelement id="bs1" name="bs1">
+							<useroperator declaration="b1"/>
+							<useroperator declaration="b2"/>
+							<useroperator declaration="b3"/>
+							<useroperator declaration="b4"/>
+						</partitionelement>
+						<partitionelement id="bs2" name="bs2">
+							<useroperator declaration="b5"/>
+							<useroperator declaration="b6"/>
+							<useroperator declaration="b7"/>
+							<useroperator declaration="b8"/>
+						</partitionelement>
+						<partitionelement id="bs3" name="bs3">
+							<useroperator declaration="b9"/>
+							<useroperator declaration="b10"/>
+							<useroperator declaration="b11"/>
+							<useroperator declaration="b12"/>
+							<useroperator declaration="b13"/>
+							<useroperator declaration="b14"/>
+							<useroperator declaration="b15"/>
+							<useroperator declaration="b16"/>
+						</partitionelement>
+						<partitionelement id="bs4" name="bs4">
+							<useroperator declaration="b17"/>
+							<useroperator declaration="b18"/>
+							<useroperator declaration="b19"/>
+							<useroperator declaration="b20"/>
+							<useroperator declaration="b21"/>
+							<useroperator declaration="b22"/>
+							<useroperator declaration="b23"/>
+							<useroperator declaration="b24"/>
+							<useroperator declaration="b25"/>
+							<useroperator declaration="b26"/>
+							<useroperator declaration="b27"/>
+							<useroperator declaration="b28"/>
+							<useroperator declaration="b29"/>
+							<useroperator declaration="b30"/>
+							<useroperator declaration="b31"/>
+							<useroperator declaration="b32"/>
+						</partitionelement>
+						<partitionelement id="bs5" name="bs5">
+							<useroperator declaration="b33"/>
+							<useroperator declaration="b34"/>
+							<useroperator declaration="b35"/>
+							<useroperator declaration="b36"/>
+							<useroperator declaration="b37"/>
+							<useroperator declaration="b38"/>
+							<useroperator declaration="b39"/>
+							<useroperator declaration="b40"/>
+							<useroperator declaration="b41"/>
+							<useroperator declaration="b42"/>
+							<useroperator declaration="b43"/>
+							<useroperator declaration="b44"/>
+							<useroperator declaration="b45"/>
+							<useroperator declaration="b46"/>
+							<useroperator declaration="b47"/>
+							<useroperator declaration="b48"/>
+							<useroperator declaration="b49"/>
+							<useroperator declaration="b50"/>
+							<useroperator declaration="b51"/>
+							<useroperator declaration="b52"/>
+							<useroperator declaration="b53"/>
+							<useroperator declaration="b54"/>
+							<useroperator declaration="b55"/>
+							<useroperator declaration="b56"/>
+							<useroperator declaration="b57"/>
+							<useroperator declaration="b58"/>
+							<useroperator declaration="b59"/>
+							<useroperator declaration="b60"/>
+							<useroperator declaration="b61"/>
+							<useroperator declaration="b62"/>
+							<useroperator declaration="b63"/>
+							<useroperator declaration="b64"/>
+						</partitionelement>
+						<partitionelement id="bs6" name="bs6">
+							<useroperator declaration="b65"/>
+							<useroperator declaration="b66"/>
+							<useroperator declaration="b67"/>
+							<useroperator declaration="b68"/>
+							<useroperator declaration="b69"/>
+							<useroperator declaration="b70"/>
+							<useroperator declaration="b71"/>
+							<useroperator declaration="b72"/>
+							<useroperator declaration="b73"/>
+							<useroperator declaration="b74"/>
+							<useroperator declaration="b75"/>
+							<useroperator declaration="b76"/>
+							<useroperator declaration="b77"/>
+							<useroperator declaration="b78"/>
+							<useroperator declaration="b79"/>
+							<useroperator declaration="b80"/>
+							<useroperator declaration="b81"/>
+							<useroperator declaration="b82"/>
+							<useroperator declaration="b83"/>
+							<useroperator declaration="b84"/>
+							<useroperator declaration="b85"/>
+							<useroperator declaration="b86"/>
+							<useroperator declaration="b87"/>
+							<useroperator declaration="b88"/>
+							<useroperator declaration="b89"/>
+							<useroperator declaration="b90"/>
+							<useroperator declaration="b91"/>
+							<useroperator declaration="b92"/>
+							<useroperator declaration="b93"/>
+							<useroperator declaration="b94"/>
+							<useroperator declaration="b95"/>
+							<useroperator declaration="b96"/>
+							<useroperator declaration="b97"/>
+							<useroperator declaration="b98"/>
+							<useroperator declaration="b99"/>
+							<useroperator declaration="b100"/>
+							<useroperator declaration="b101"/>
+							<useroperator declaration="b102"/>
+							<useroperator declaration="b103"/>
+							<useroperator declaration="b104"/>
+							<useroperator declaration="b105"/>
+							<useroperator declaration="b106"/>
+							<useroperator declaration="b107"/>
+							<useroperator declaration="b108"/>
+							<useroperator declaration="b109"/>
+							<useroperator declaration="b110"/>
+							<useroperator declaration="b111"/>
+							<useroperator declaration="b112"/>
+							<useroperator declaration="b113"/>
+							<useroperator declaration="b114"/>
+							<useroperator declaration="b115"/>
+							<useroperator declaration="b116"/>
+							<useroperator declaration="b117"/>
+							<useroperator declaration="b118"/>
+							<useroperator declaration="b119"/>
+							<useroperator declaration="b120"/>
+							<useroperator declaration="b121"/>
+							<useroperator declaration="b122"/>
+							<useroperator declaration="b123"/>
+							<useroperator declaration="b124"/>
+							<useroperator declaration="b125"/>
+							<useroperator declaration="b126"/>
+							<useroperator declaration="b127"/>
+							<useroperator declaration="b128"/>
+						</partitionelement>
+						<partitionelement id="bs7" name="bs7">
+							<useroperator declaration="b129"/>
+							<useroperator declaration="b130"/>
+							<useroperator declaration="b131"/>
+							<useroperator declaration="b132"/>
+							<useroperator declaration="b133"/>
+							<useroperator declaration="b134"/>
+							<useroperator declaration="b135"/>
+							<useroperator declaration="b136"/>
+							<useroperator declaration="b137"/>
+							<useroperator declaration="b138"/>
+							<useroperator declaration="b139"/>
+							<useroperator declaration="b140"/>
+							<useroperator declaration="b141"/>
+							<useroperator declaration="b142"/>
+							<useroperator declaration="b143"/>
+							<useroperator declaration="b144"/>
+							<useroperator declaration="b145"/>
+							<useroperator declaration="b146"/>
+							<useroperator declaration="b147"/>
+							<useroperator declaration="b148"/>
+							<useroperator declaration="b149"/>
+							<useroperator declaration="b150"/>
+							<useroperator declaration="b151"/>
+							<useroperator declaration="b152"/>
+							<useroperator declaration="b153"/>
+							<useroperator declaration="b154"/>
+							<useroperator declaration="b155"/>
+							<useroperator declaration="b156"/>
+							<useroperator declaration="b157"/>
+							<useroperator declaration="b158"/>
+							<useroperator declaration="b159"/>
+							<useroperator declaration="b160"/>
+							<useroperator declaration="b161"/>
+							<useroperator declaration="b162"/>
+							<useroperator declaration="b163"/>
+							<useroperator declaration="b164"/>
+							<useroperator declaration="b165"/>
+							<useroperator declaration="b166"/>
+							<useroperator declaration="b167"/>
+							<useroperator declaration="b168"/>
+							<useroperator declaration="b169"/>
+							<useroperator declaration="b170"/>
+							<useroperator declaration="b171"/>
+							<useroperator declaration="b172"/>
+							<useroperator declaration="b173"/>
+							<useroperator declaration="b174"/>
+							<useroperator declaration="b175"/>
+							<useroperator declaration="b176"/>
+							<useroperator declaration="b177"/>
+							<useroperator declaration="b178"/>
+							<useroperator declaration="b179"/>
+							<useroperator declaration="b180"/>
+							<useroperator declaration="b181"/>
+							<useroperator declaration="b182"/>
+							<useroperator declaration="b183"/>
+							<useroperator declaration="b184"/>
+							<useroperator declaration="b185"/>
+							<useroperator declaration="b186"/>
+							<useroperator declaration="b187"/>
+							<useroperator declaration="b188"/>
+							<useroperator declaration="b189"/>
+							<useroperator declaration="b190"/>
+							<useroperator declaration="b191"/>
+							<useroperator declaration="b192"/>
+							<useroperator declaration="b193"/>
+							<useroperator declaration="b194"/>
+							<useroperator declaration="b195"/>
+							<useroperator declaration="b196"/>
+							<useroperator declaration="b197"/>
+							<useroperator declaration="b198"/>
+							<useroperator declaration="b199"/>
+							<useroperator declaration="b200"/>
+							<useroperator declaration="b201"/>
+							<useroperator declaration="b202"/>
+							<useroperator declaration="b203"/>
+							<useroperator declaration="b204"/>
+							<useroperator declaration="b205"/>
+							<useroperator declaration="b206"/>
+							<useroperator declaration="b207"/>
+							<useroperator declaration="b208"/>
+							<useroperator declaration="b209"/>
+							<useroperator declaration="b210"/>
+							<useroperator declaration="b211"/>
+							<useroperator declaration="b212"/>
+							<useroperator declaration="b213"/>
+							<useroperator declaration="b214"/>
+							<useroperator declaration="b215"/>
+							<useroperator declaration="b216"/>
+							<useroperator declaration="b217"/>
+							<useroperator declaration="b218"/>
+							<useroperator declaration="b219"/>
+							<useroperator declaration="b220"/>
+							<useroperator declaration="b221"/>
+							<useroperator declaration="b222"/>
+							<useroperator declaration="b223"/>
+							<useroperator declaration="b224"/>
+							<useroperator declaration="b225"/>
+							<useroperator declaration="b226"/>
+							<useroperator declaration="b227"/>
+							<useroperator declaration="b228"/>
+							<useroperator declaration="b229"/>
+							<useroperator declaration="b230"/>
+							<useroperator declaration="b231"/>
+							<useroperator declaration="b232"/>
+							<useroperator declaration="b233"/>
+							<useroperator declaration="b234"/>
+							<useroperator declaration="b235"/>
+							<useroperator declaration="b236"/>
+							<useroperator declaration="b237"/>
+							<useroperator declaration="b238"/>
+							<useroperator declaration="b239"/>
+							<useroperator declaration="b240"/>
+							<useroperator declaration="b241"/>
+							<useroperator declaration="b242"/>
+							<useroperator declaration="b243"/>
+							<useroperator declaration="b244"/>
+							<useroperator declaration="b245"/>
+							<useroperator declaration="b246"/>
+							<useroperator declaration="b247"/>
+							<useroperator declaration="b248"/>
+							<useroperator declaration="b249"/>
+							<useroperator declaration="b250"/>
+							<useroperator declaration="b251"/>
+							<useroperator declaration="b252"/>
+							<useroperator declaration="b253"/>
+							<useroperator declaration="b254"/>
+							<useroperator declaration="b255"/>
+							<useroperator declaration="b256"/>
+						</partitionelement>
+						<partitionelement id="bs8" name="bs8">
+							<useroperator declaration="b257"/>
+							<useroperator declaration="b258"/>
+							<useroperator declaration="b259"/>
+							<useroperator declaration="b260"/>
+							<useroperator declaration="b261"/>
+							<useroperator declaration="b262"/>
+							<useroperator declaration="b263"/>
+							<useroperator declaration="b264"/>
+							<useroperator declaration="b265"/>
+							<useroperator declaration="b266"/>
+							<useroperator declaration="b267"/>
+							<useroperator declaration="b268"/>
+							<useroperator declaration="b269"/>
+							<useroperator declaration="b270"/>
+							<useroperator declaration="b271"/>
+							<useroperator declaration="b272"/>
+							<useroperator declaration="b273"/>
+							<useroperator declaration="b274"/>
+							<useroperator declaration="b275"/>
+							<useroperator declaration="b276"/>
+							<useroperator declaration="b277"/>
+							<useroperator declaration="b278"/>
+							<useroperator declaration="b279"/>
+							<useroperator declaration="b280"/>
+							<useroperator declaration="b281"/>
+							<useroperator declaration="b282"/>
+							<useroperator declaration="b283"/>
+							<useroperator declaration="b284"/>
+							<useroperator declaration="b285"/>
+							<useroperator declaration="b286"/>
+							<useroperator declaration="b287"/>
+							<useroperator declaration="b288"/>
+							<useroperator declaration="b289"/>
+							<useroperator declaration="b290"/>
+							<useroperator declaration="b291"/>
+							<useroperator declaration="b292"/>
+							<useroperator declaration="b293"/>
+							<useroperator declaration="b294"/>
+							<useroperator declaration="b295"/>
+							<useroperator declaration="b296"/>
+							<useroperator declaration="b297"/>
+							<useroperator declaration="b298"/>
+							<useroperator declaration="b299"/>
+							<useroperator declaration="b300"/>
+							<useroperator declaration="b301"/>
+							<useroperator declaration="b302"/>
+							<useroperator declaration="b303"/>
+							<useroperator declaration="b304"/>
+							<useroperator declaration="b305"/>
+							<useroperator declaration="b306"/>
+							<useroperator declaration="b307"/>
+							<useroperator declaration="b308"/>
+							<useroperator declaration="b309"/>
+							<useroperator declaration="b310"/>
+							<useroperator declaration="b311"/>
+							<useroperator declaration="b312"/>
+							<useroperator declaration="b313"/>
+							<useroperator declaration="b314"/>
+							<useroperator declaration="b315"/>
+							<useroperator declaration="b316"/>
+							<useroperator declaration="b317"/>
+							<useroperator declaration="b318"/>
+							<useroperator declaration="b319"/>
+							<useroperator declaration="b320"/>
+							<useroperator declaration="b321"/>
+							<useroperator declaration="b322"/>
+							<useroperator declaration="b323"/>
+							<useroperator declaration="b324"/>
+							<useroperator declaration="b325"/>
+							<useroperator declaration="b326"/>
+							<useroperator declaration="b327"/>
+							<useroperator declaration="b328"/>
+							<useroperator declaration="b329"/>
+							<useroperator declaration="b330"/>
+							<useroperator declaration="b331"/>
+							<useroperator declaration="b332"/>
+							<useroperator declaration="b333"/>
+							<useroperator declaration="b334"/>
+							<useroperator declaration="b335"/>
+							<useroperator declaration="b336"/>
+							<useroperator declaration="b337"/>
+							<useroperator declaration="b338"/>
+							<useroperator declaration="b339"/>
+							<useroperator declaration="b340"/>
+							<useroperator declaration="b341"/>
+							<useroperator declaration="b342"/>
+							<useroperator declaration="b343"/>
+							<useroperator declaration="b344"/>
+							<useroperator declaration="b345"/>
+							<useroperator declaration="b346"/>
+							<useroperator declaration="b347"/>
+							<useroperator declaration="b348"/>
+							<useroperator declaration="b349"/>
+							<useroperator declaration="b350"/>
+							<useroperator declaration="b351"/>
+							<useroperator declaration="b352"/>
+							<useroperator declaration="b353"/>
+							<useroperator declaration="b354"/>
+							<useroperator declaration="b355"/>
+							<useroperator declaration="b356"/>
+							<useroperator declaration="b357"/>
+							<useroperator declaration="b358"/>
+							<useroperator declaration="b359"/>
+							<useroperator declaration="b360"/>
+							<useroperator declaration="b361"/>
+							<useroperator declaration="b362"/>
+							<useroperator declaration="b363"/>
+							<useroperator declaration="b364"/>
+							<useroperator declaration="b365"/>
+							<useroperator declaration="b366"/>
+							<useroperator declaration="b367"/>
+							<useroperator declaration="b368"/>
+							<useroperator declaration="b369"/>
+							<useroperator declaration="b370"/>
+							<useroperator declaration="b371"/>
+							<useroperator declaration="b372"/>
+							<useroperator declaration="b373"/>
+							<useroperator declaration="b374"/>
+							<useroperator declaration="b375"/>
+							<useroperator declaration="b376"/>
+							<useroperator declaration="b377"/>
+							<useroperator declaration="b378"/>
+							<useroperator declaration="b379"/>
+							<useroperator declaration="b380"/>
+							<useroperator declaration="b381"/>
+							<useroperator declaration="b382"/>
+							<useroperator declaration="b383"/>
+							<useroperator declaration="b384"/>
+							<useroperator declaration="b385"/>
+							<useroperator declaration="b386"/>
+							<useroperator declaration="b387"/>
+							<useroperator declaration="b388"/>
+							<useroperator declaration="b389"/>
+							<useroperator declaration="b390"/>
+							<useroperator declaration="b391"/>
+							<useroperator declaration="b392"/>
+							<useroperator declaration="b393"/>
+							<useroperator declaration="b394"/>
+							<useroperator declaration="b395"/>
+							<useroperator declaration="b396"/>
+							<useroperator declaration="b397"/>
+							<useroperator declaration="b398"/>
+							<useroperator declaration="b399"/>
+							<useroperator declaration="b400"/>
+							<useroperator declaration="b401"/>
+							<useroperator declaration="b402"/>
+							<useroperator declaration="b403"/>
+							<useroperator declaration="b404"/>
+							<useroperator declaration="b405"/>
+							<useroperator declaration="b406"/>
+							<useroperator declaration="b407"/>
+							<useroperator declaration="b408"/>
+							<useroperator declaration="b409"/>
+							<useroperator declaration="b410"/>
+							<useroperator declaration="b411"/>
+							<useroperator declaration="b412"/>
+							<useroperator declaration="b413"/>
+							<useroperator declaration="b414"/>
+							<useroperator declaration="b415"/>
+							<useroperator declaration="b416"/>
+							<useroperator declaration="b417"/>
+							<useroperator declaration="b418"/>
+							<useroperator declaration="b419"/>
+							<useroperator declaration="b420"/>
+							<useroperator declaration="b421"/>
+							<useroperator declaration="b422"/>
+							<useroperator declaration="b423"/>
+							<useroperator declaration="b424"/>
+							<useroperator declaration="b425"/>
+							<useroperator declaration="b426"/>
+							<useroperator declaration="b427"/>
+							<useroperator declaration="b428"/>
+							<useroperator declaration="b429"/>
+							<useroperator declaration="b430"/>
+							<useroperator declaration="b431"/>
+							<useroperator declaration="b432"/>
+							<useroperator declaration="b433"/>
+							<useroperator declaration="b434"/>
+							<useroperator declaration="b435"/>
+							<useroperator declaration="b436"/>
+							<useroperator declaration="b437"/>
+							<useroperator declaration="b438"/>
+							<useroperator declaration="b439"/>
+							<useroperator declaration="b440"/>
+							<useroperator declaration="b441"/>
+							<useroperator declaration="b442"/>
+							<useroperator declaration="b443"/>
+							<useroperator declaration="b444"/>
+							<useroperator declaration="b445"/>
+							<useroperator declaration="b446"/>
+							<useroperator declaration="b447"/>
+							<useroperator declaration="b448"/>
+							<useroperator declaration="b449"/>
+							<useroperator declaration="b450"/>
+							<useroperator declaration="b451"/>
+							<useroperator declaration="b452"/>
+							<useroperator declaration="b453"/>
+							<useroperator declaration="b454"/>
+							<useroperator declaration="b455"/>
+							<useroperator declaration="b456"/>
+							<useroperator declaration="b457"/>
+							<useroperator declaration="b458"/>
+							<useroperator declaration="b459"/>
+							<useroperator declaration="b460"/>
+							<useroperator declaration="b461"/>
+							<useroperator declaration="b462"/>
+							<useroperator declaration="b463"/>
+							<useroperator declaration="b464"/>
+							<useroperator declaration="b465"/>
+							<useroperator declaration="b466"/>
+							<useroperator declaration="b467"/>
+							<useroperator declaration="b468"/>
+							<useroperator declaration="b469"/>
+							<useroperator declaration="b470"/>
+							<useroperator declaration="b471"/>
+							<useroperator declaration="b472"/>
+							<useroperator declaration="b473"/>
+							<useroperator declaration="b474"/>
+							<useroperator declaration="b475"/>
+							<useroperator declaration="b476"/>
+							<useroperator declaration="b477"/>
+							<useroperator declaration="b478"/>
+							<useroperator declaration="b479"/>
+							<useroperator declaration="b480"/>
+							<useroperator declaration="b481"/>
+							<useroperator declaration="b482"/>
+							<useroperator declaration="b483"/>
+							<useroperator declaration="b484"/>
+							<useroperator declaration="b485"/>
+							<useroperator declaration="b486"/>
+							<useroperator declaration="b487"/>
+							<useroperator declaration="b488"/>
+							<useroperator declaration="b489"/>
+							<useroperator declaration="b490"/>
+							<useroperator declaration="b491"/>
+							<useroperator declaration="b492"/>
+							<useroperator declaration="b493"/>
+							<useroperator declaration="b494"/>
+							<useroperator declaration="b495"/>
+							<useroperator declaration="b496"/>
+							<useroperator declaration="b497"/>
+							<useroperator declaration="b498"/>
+							<useroperator declaration="b499"/>
+							<useroperator declaration="b500"/>
+							<useroperator declaration="b501"/>
+							<useroperator declaration="b502"/>
+							<useroperator declaration="b503"/>
+							<useroperator declaration="b504"/>
+							<useroperator declaration="b505"/>
+							<useroperator declaration="b506"/>
+							<useroperator declaration="b507"/>
+							<useroperator declaration="b508"/>
+							<useroperator declaration="b509"/>
+							<useroperator declaration="b510"/>
+							<useroperator declaration="b511"/>
+							<useroperator declaration="b512"/>
+						</partitionelement>
+						<partitionelement id="bs9" name="bs9">
+							<useroperator declaration="b513"/>
+							<useroperator declaration="b514"/>
+							<useroperator declaration="b515"/>
+							<useroperator declaration="b516"/>
+							<useroperator declaration="b517"/>
+							<useroperator declaration="b518"/>
+							<useroperator declaration="b519"/>
+							<useroperator declaration="b520"/>
+							<useroperator declaration="b521"/>
+							<useroperator declaration="b522"/>
+							<useroperator declaration="b523"/>
+							<useroperator declaration="b524"/>
+							<useroperator declaration="b525"/>
+							<useroperator declaration="b526"/>
+							<useroperator declaration="b527"/>
+							<useroperator declaration="b528"/>
+							<useroperator declaration="b529"/>
+							<useroperator declaration="b530"/>
+							<useroperator declaration="b531"/>
+							<useroperator declaration="b532"/>
+							<useroperator declaration="b533"/>
+							<useroperator declaration="b534"/>
+							<useroperator declaration="b535"/>
+							<useroperator declaration="b536"/>
+							<useroperator declaration="b537"/>
+							<useroperator declaration="b538"/>
+							<useroperator declaration="b539"/>
+							<useroperator declaration="b540"/>
+							<useroperator declaration="b541"/>
+							<useroperator declaration="b542"/>
+							<useroperator declaration="b543"/>
+							<useroperator declaration="b544"/>
+							<useroperator declaration="b545"/>
+							<useroperator declaration="b546"/>
+							<useroperator declaration="b547"/>
+							<useroperator declaration="b548"/>
+							<useroperator declaration="b549"/>
+							<useroperator declaration="b550"/>
+							<useroperator declaration="b551"/>
+							<useroperator declaration="b552"/>
+							<useroperator declaration="b553"/>
+							<useroperator declaration="b554"/>
+							<useroperator declaration="b555"/>
+							<useroperator declaration="b556"/>
+							<useroperator declaration="b557"/>
+							<useroperator declaration="b558"/>
+							<useroperator declaration="b559"/>
+							<useroperator declaration="b560"/>
+							<useroperator declaration="b561"/>
+							<useroperator declaration="b562"/>
+							<useroperator declaration="b563"/>
+							<useroperator declaration="b564"/>
+							<useroperator declaration="b565"/>
+							<useroperator declaration="b566"/>
+							<useroperator declaration="b567"/>
+							<useroperator declaration="b568"/>
+							<useroperator declaration="b569"/>
+							<useroperator declaration="b570"/>
+							<useroperator declaration="b571"/>
+							<useroperator declaration="b572"/>
+							<useroperator declaration="b573"/>
+							<useroperator declaration="b574"/>
+							<useroperator declaration="b575"/>
+							<useroperator declaration="b576"/>
+							<useroperator declaration="b577"/>
+							<useroperator declaration="b578"/>
+							<useroperator declaration="b579"/>
+							<useroperator declaration="b580"/>
+							<useroperator declaration="b581"/>
+							<useroperator declaration="b582"/>
+							<useroperator declaration="b583"/>
+							<useroperator declaration="b584"/>
+							<useroperator declaration="b585"/>
+							<useroperator declaration="b586"/>
+							<useroperator declaration="b587"/>
+							<useroperator declaration="b588"/>
+							<useroperator declaration="b589"/>
+							<useroperator declaration="b590"/>
+							<useroperator declaration="b591"/>
+							<useroperator declaration="b592"/>
+							<useroperator declaration="b593"/>
+							<useroperator declaration="b594"/>
+							<useroperator declaration="b595"/>
+							<useroperator declaration="b596"/>
+							<useroperator declaration="b597"/>
+							<useroperator declaration="b598"/>
+							<useroperator declaration="b599"/>
+							<useroperator declaration="b600"/>
+							<useroperator declaration="b601"/>
+							<useroperator declaration="b602"/>
+							<useroperator declaration="b603"/>
+							<useroperator declaration="b604"/>
+							<useroperator declaration="b605"/>
+							<useroperator declaration="b606"/>
+							<useroperator declaration="b607"/>
+							<useroperator declaration="b608"/>
+							<useroperator declaration="b609"/>
+							<useroperator declaration="b610"/>
+							<useroperator declaration="b611"/>
+							<useroperator declaration="b612"/>
+							<useroperator declaration="b613"/>
+							<useroperator declaration="b614"/>
+							<useroperator declaration="b615"/>
+							<useroperator declaration="b616"/>
+							<useroperator declaration="b617"/>
+							<useroperator declaration="b618"/>
+							<useroperator declaration="b619"/>
+							<useroperator declaration="b620"/>
+							<useroperator declaration="b621"/>
+							<useroperator declaration="b622"/>
+							<useroperator declaration="b623"/>
+							<useroperator declaration="b624"/>
+							<useroperator declaration="b625"/>
+							<useroperator declaration="b626"/>
+							<useroperator declaration="b627"/>
+							<useroperator declaration="b628"/>
+							<useroperator declaration="b629"/>
+							<useroperator declaration="b630"/>
+							<useroperator declaration="b631"/>
+							<useroperator declaration="b632"/>
+							<useroperator declaration="b633"/>
+							<useroperator declaration="b634"/>
+							<useroperator declaration="b635"/>
+							<useroperator declaration="b636"/>
+							<useroperator declaration="b637"/>
+							<useroperator declaration="b638"/>
+							<useroperator declaration="b639"/>
+							<useroperator declaration="b640"/>
+							<useroperator declaration="b641"/>
+							<useroperator declaration="b642"/>
+							<useroperator declaration="b643"/>
+							<useroperator declaration="b644"/>
+							<useroperator declaration="b645"/>
+							<useroperator declaration="b646"/>
+							<useroperator declaration="b647"/>
+							<useroperator declaration="b648"/>
+							<useroperator declaration="b649"/>
+							<useroperator declaration="b650"/>
+							<useroperator declaration="b651"/>
+							<useroperator declaration="b652"/>
+							<useroperator declaration="b653"/>
+							<useroperator declaration="b654"/>
+							<useroperator declaration="b655"/>
+							<useroperator declaration="b656"/>
+							<useroperator declaration="b657"/>
+							<useroperator declaration="b658"/>
+							<useroperator declaration="b659"/>
+							<useroperator declaration="b660"/>
+							<useroperator declaration="b661"/>
+							<useroperator declaration="b662"/>
+							<useroperator declaration="b663"/>
+							<useroperator declaration="b664"/>
+							<useroperator declaration="b665"/>
+							<useroperator declaration="b666"/>
+							<useroperator declaration="b667"/>
+							<useroperator declaration="b668"/>
+							<useroperator declaration="b669"/>
+							<useroperator declaration="b670"/>
+							<useroperator declaration="b671"/>
+							<useroperator declaration="b672"/>
+							<useroperator declaration="b673"/>
+							<useroperator declaration="b674"/>
+							<useroperator declaration="b675"/>
+							<useroperator declaration="b676"/>
+							<useroperator declaration="b677"/>
+							<useroperator declaration="b678"/>
+							<useroperator declaration="b679"/>
+							<useroperator declaration="b680"/>
+							<useroperator declaration="b681"/>
+							<useroperator declaration="b682"/>
+							<useroperator declaration="b683"/>
+							<useroperator declaration="b684"/>
+							<useroperator declaration="b685"/>
+							<useroperator declaration="b686"/>
+							<useroperator declaration="b687"/>
+							<useroperator declaration="b688"/>
+							<useroperator declaration="b689"/>
+							<useroperator declaration="b690"/>
+							<useroperator declaration="b691"/>
+							<useroperator declaration="b692"/>
+							<useroperator declaration="b693"/>
+							<useroperator declaration="b694"/>
+							<useroperator declaration="b695"/>
+							<useroperator declaration="b696"/>
+							<useroperator declaration="b697"/>
+							<useroperator declaration="b698"/>
+							<useroperator declaration="b699"/>
+							<useroperator declaration="b700"/>
+							<useroperator declaration="b701"/>
+							<useroperator declaration="b702"/>
+							<useroperator declaration="b703"/>
+							<useroperator declaration="b704"/>
+							<useroperator declaration="b705"/>
+							<useroperator declaration="b706"/>
+							<useroperator declaration="b707"/>
+							<useroperator declaration="b708"/>
+							<useroperator declaration="b709"/>
+							<useroperator declaration="b710"/>
+							<useroperator declaration="b711"/>
+							<useroperator declaration="b712"/>
+							<useroperator declaration="b713"/>
+							<useroperator declaration="b714"/>
+							<useroperator declaration="b715"/>
+							<useroperator declaration="b716"/>
+							<useroperator declaration="b717"/>
+							<useroperator declaration="b718"/>
+							<useroperator declaration="b719"/>
+							<useroperator declaration="b720"/>
+							<useroperator declaration="b721"/>
+							<useroperator declaration="b722"/>
+							<useroperator declaration="b723"/>
+							<useroperator declaration="b724"/>
+							<useroperator declaration="b725"/>
+							<useroperator declaration="b726"/>
+							<useroperator declaration="b727"/>
+							<useroperator declaration="b728"/>
+							<useroperator declaration="b729"/>
+							<useroperator declaration="b730"/>
+							<useroperator declaration="b731"/>
+							<useroperator declaration="b732"/>
+							<useroperator declaration="b733"/>
+							<useroperator declaration="b734"/>
+							<useroperator declaration="b735"/>
+							<useroperator declaration="b736"/>
+							<useroperator declaration="b737"/>
+							<useroperator declaration="b738"/>
+							<useroperator declaration="b739"/>
+							<useroperator declaration="b740"/>
+							<useroperator declaration="b741"/>
+							<useroperator declaration="b742"/>
+							<useroperator declaration="b743"/>
+							<useroperator declaration="b744"/>
+							<useroperator declaration="b745"/>
+							<useroperator declaration="b746"/>
+							<useroperator declaration="b747"/>
+							<useroperator declaration="b748"/>
+							<useroperator declaration="b749"/>
+							<useroperator declaration="b750"/>
+							<useroperator declaration="b751"/>
+							<useroperator declaration="b752"/>
+							<useroperator declaration="b753"/>
+							<useroperator declaration="b754"/>
+							<useroperator declaration="b755"/>
+							<useroperator declaration="b756"/>
+							<useroperator declaration="b757"/>
+							<useroperator declaration="b758"/>
+							<useroperator declaration="b759"/>
+							<useroperator declaration="b760"/>
+							<useroperator declaration="b761"/>
+							<useroperator declaration="b762"/>
+							<useroperator declaration="b763"/>
+							<useroperator declaration="b764"/>
+							<useroperator declaration="b765"/>
+							<useroperator declaration="b766"/>
+							<useroperator declaration="b767"/>
+							<useroperator declaration="b768"/>
+							<useroperator declaration="b769"/>
+							<useroperator declaration="b770"/>
+							<useroperator declaration="b771"/>
+							<useroperator declaration="b772"/>
+							<useroperator declaration="b773"/>
+							<useroperator declaration="b774"/>
+							<useroperator declaration="b775"/>
+							<useroperator declaration="b776"/>
+							<useroperator declaration="b777"/>
+							<useroperator declaration="b778"/>
+							<useroperator declaration="b779"/>
+							<useroperator declaration="b780"/>
+							<useroperator declaration="b781"/>
+							<useroperator declaration="b782"/>
+							<useroperator declaration="b783"/>
+							<useroperator declaration="b784"/>
+							<useroperator declaration="b785"/>
+							<useroperator declaration="b786"/>
+							<useroperator declaration="b787"/>
+							<useroperator declaration="b788"/>
+							<useroperator declaration="b789"/>
+							<useroperator declaration="b790"/>
+							<useroperator declaration="b791"/>
+							<useroperator declaration="b792"/>
+							<useroperator declaration="b793"/>
+							<useroperator declaration="b794"/>
+							<useroperator declaration="b795"/>
+							<useroperator declaration="b796"/>
+							<useroperator declaration="b797"/>
+							<useroperator declaration="b798"/>
+							<useroperator declaration="b799"/>
+							<useroperator declaration="b800"/>
+							<useroperator declaration="b801"/>
+							<useroperator declaration="b802"/>
+							<useroperator declaration="b803"/>
+							<useroperator declaration="b804"/>
+							<useroperator declaration="b805"/>
+							<useroperator declaration="b806"/>
+							<useroperator declaration="b807"/>
+							<useroperator declaration="b808"/>
+							<useroperator declaration="b809"/>
+							<useroperator declaration="b810"/>
+							<useroperator declaration="b811"/>
+							<useroperator declaration="b812"/>
+							<useroperator declaration="b813"/>
+							<useroperator declaration="b814"/>
+							<useroperator declaration="b815"/>
+							<useroperator declaration="b816"/>
+							<useroperator declaration="b817"/>
+							<useroperator declaration="b818"/>
+							<useroperator declaration="b819"/>
+							<useroperator declaration="b820"/>
+							<useroperator declaration="b821"/>
+							<useroperator declaration="b822"/>
+							<useroperator declaration="b823"/>
+							<useroperator declaration="b824"/>
+							<useroperator declaration="b825"/>
+							<useroperator declaration="b826"/>
+							<useroperator declaration="b827"/>
+							<useroperator declaration="b828"/>
+							<useroperator declaration="b829"/>
+							<useroperator declaration="b830"/>
+							<useroperator declaration="b831"/>
+							<useroperator declaration="b832"/>
+							<useroperator declaration="b833"/>
+							<useroperator declaration="b834"/>
+							<useroperator declaration="b835"/>
+							<useroperator declaration="b836"/>
+							<useroperator declaration="b837"/>
+							<useroperator declaration="b838"/>
+							<useroperator declaration="b839"/>
+							<useroperator declaration="b840"/>
+							<useroperator declaration="b841"/>
+							<useroperator declaration="b842"/>
+							<useroperator declaration="b843"/>
+							<useroperator declaration="b844"/>
+							<useroperator declaration="b845"/>
+							<useroperator declaration="b846"/>
+							<useroperator declaration="b847"/>
+							<useroperator declaration="b848"/>
+							<useroperator declaration="b849"/>
+							<useroperator declaration="b850"/>
+							<useroperator declaration="b851"/>
+							<useroperator declaration="b852"/>
+							<useroperator declaration="b853"/>
+							<useroperator declaration="b854"/>
+							<useroperator declaration="b855"/>
+							<useroperator declaration="b856"/>
+							<useroperator declaration="b857"/>
+							<useroperator declaration="b858"/>
+							<useroperator declaration="b859"/>
+							<useroperator declaration="b860"/>
+							<useroperator declaration="b861"/>
+							<useroperator declaration="b862"/>
+							<useroperator declaration="b863"/>
+							<useroperator declaration="b864"/>
+							<useroperator declaration="b865"/>
+							<useroperator declaration="b866"/>
+							<useroperator declaration="b867"/>
+							<useroperator declaration="b868"/>
+							<useroperator declaration="b869"/>
+							<useroperator declaration="b870"/>
+							<useroperator declaration="b871"/>
+							<useroperator declaration="b872"/>
+							<useroperator declaration="b873"/>
+							<useroperator declaration="b874"/>
+							<useroperator declaration="b875"/>
+							<useroperator declaration="b876"/>
+							<useroperator declaration="b877"/>
+							<useroperator declaration="b878"/>
+							<useroperator declaration="b879"/>
+							<useroperator declaration="b880"/>
+							<useroperator declaration="b881"/>
+							<useroperator declaration="b882"/>
+							<useroperator declaration="b883"/>
+							<useroperator declaration="b884"/>
+							<useroperator declaration="b885"/>
+							<useroperator declaration="b886"/>
+							<useroperator declaration="b887"/>
+							<useroperator declaration="b888"/>
+							<useroperator declaration="b889"/>
+							<useroperator declaration="b890"/>
+							<useroperator declaration="b891"/>
+							<useroperator declaration="b892"/>
+							<useroperator declaration="b893"/>
+							<useroperator declaration="b894"/>
+							<useroperator declaration="b895"/>
+							<useroperator declaration="b896"/>
+							<useroperator declaration="b897"/>
+							<useroperator declaration="b898"/>
+							<useroperator declaration="b899"/>
+							<useroperator declaration="b900"/>
+							<useroperator declaration="b901"/>
+							<useroperator declaration="b902"/>
+							<useroperator declaration="b903"/>
+							<useroperator declaration="b904"/>
+							<useroperator declaration="b905"/>
+							<useroperator declaration="b906"/>
+							<useroperator declaration="b907"/>
+							<useroperator declaration="b908"/>
+							<useroperator declaration="b909"/>
+							<useroperator declaration="b910"/>
+							<useroperator declaration="b911"/>
+							<useroperator declaration="b912"/>
+							<useroperator declaration="b913"/>
+							<useroperator declaration="b914"/>
+							<useroperator declaration="b915"/>
+							<useroperator declaration="b916"/>
+							<useroperator declaration="b917"/>
+							<useroperator declaration="b918"/>
+							<useroperator declaration="b919"/>
+							<useroperator declaration="b920"/>
+							<useroperator declaration="b921"/>
+							<useroperator declaration="b922"/>
+							<useroperator declaration="b923"/>
+							<useroperator declaration="b924"/>
+							<useroperator declaration="b925"/>
+							<useroperator declaration="b926"/>
+							<useroperator declaration="b927"/>
+							<useroperator declaration="b928"/>
+							<useroperator declaration="b929"/>
+							<useroperator declaration="b930"/>
+							<useroperator declaration="b931"/>
+							<useroperator declaration="b932"/>
+							<useroperator declaration="b933"/>
+							<useroperator declaration="b934"/>
+							<useroperator declaration="b935"/>
+							<useroperator declaration="b936"/>
+							<useroperator declaration="b937"/>
+							<useroperator declaration="b938"/>
+							<useroperator declaration="b939"/>
+							<useroperator declaration="b940"/>
+							<useroperator declaration="b941"/>
+							<useroperator declaration="b942"/>
+							<useroperator declaration="b943"/>
+							<useroperator declaration="b944"/>
+							<useroperator declaration="b945"/>
+							<useroperator declaration="b946"/>
+							<useroperator declaration="b947"/>
+							<useroperator declaration="b948"/>
+							<useroperator declaration="b949"/>
+							<useroperator declaration="b950"/>
+							<useroperator declaration="b951"/>
+							<useroperator declaration="b952"/>
+							<useroperator declaration="b953"/>
+							<useroperator declaration="b954"/>
+							<useroperator declaration="b955"/>
+							<useroperator declaration="b956"/>
+							<useroperator declaration="b957"/>
+							<useroperator declaration="b958"/>
+							<useroperator declaration="b959"/>
+							<useroperator declaration="b960"/>
+							<useroperator declaration="b961"/>
+							<useroperator declaration="b962"/>
+							<useroperator declaration="b963"/>
+							<useroperator declaration="b964"/>
+							<useroperator declaration="b965"/>
+							<useroperator declaration="b966"/>
+							<useroperator declaration="b967"/>
+							<useroperator declaration="b968"/>
+							<useroperator declaration="b969"/>
+							<useroperator declaration="b970"/>
+							<useroperator declaration="b971"/>
+							<useroperator declaration="b972"/>
+							<useroperator declaration="b973"/>
+							<useroperator declaration="b974"/>
+							<useroperator declaration="b975"/>
+							<useroperator declaration="b976"/>
+							<useroperator declaration="b977"/>
+							<useroperator declaration="b978"/>
+							<useroperator declaration="b979"/>
+							<useroperator declaration="b980"/>
+							<useroperator declaration="b981"/>
+							<useroperator declaration="b982"/>
+							<useroperator declaration="b983"/>
+							<useroperator declaration="b984"/>
+							<useroperator declaration="b985"/>
+							<useroperator declaration="b986"/>
+							<useroperator declaration="b987"/>
+							<useroperator declaration="b988"/>
+							<useroperator declaration="b989"/>
+							<useroperator declaration="b990"/>
+							<useroperator declaration="b991"/>
+							<useroperator declaration="b992"/>
+							<useroperator declaration="b993"/>
+							<useroperator declaration="b994"/>
+							<useroperator declaration="b995"/>
+							<useroperator declaration="b996"/>
+							<useroperator declaration="b997"/>
+							<useroperator declaration="b998"/>
+							<useroperator declaration="b999"/>
+							<useroperator declaration="b1000"/>
+							<useroperator declaration="b1001"/>
+							<useroperator declaration="b1002"/>
+							<useroperator declaration="b1003"/>
+							<useroperator declaration="b1004"/>
+							<useroperator declaration="b1005"/>
+							<useroperator declaration="b1006"/>
+							<useroperator declaration="b1007"/>
+							<useroperator declaration="b1008"/>
+							<useroperator declaration="b1009"/>
+							<useroperator declaration="b1010"/>
+							<useroperator declaration="b1011"/>
+							<useroperator declaration="b1012"/>
+							<useroperator declaration="b1013"/>
+							<useroperator declaration="b1014"/>
+							<useroperator declaration="b1015"/>
+							<useroperator declaration="b1016"/>
+							<useroperator declaration="b1017"/>
+							<useroperator declaration="b1018"/>
+							<useroperator declaration="b1019"/>
+							<useroperator declaration="b1020"/>
+							<useroperator declaration="b1021"/>
+							<useroperator declaration="b1022"/>
+							<useroperator declaration="b1023"/>
+							<useroperator declaration="b1024"/>
+						</partitionelement>
+					</partition>
+					<namedsort id="Pr" name="Pr">
+						<finiteintrange start="1" end="4"/>
+					</namedsort>
+					<namedsort id="BP" name="BP">
+						<productsort>
+							<usersort declaration="St"/>
+							<usersort declaration="St"/>
+							<usersort declaration="Pr"/>
+						</productsort>
+					</namedsort>
+					<namedsort id="SP" name="SP">
+						<productsort>
+							<usersort declaration="St"/>
+							<usersort declaration="Pr"/>
+						</productsort>
+					</namedsort>
+					<namedsort id="BPMap" name="BPMap">
+						<productsort>
+							<usersort declaration="Pr"/>
+							<usersort declaration="TxCount"/>
+							<usersort declaration="BackoffStage"/>
+						</productsort>
+					</namedsort>
+					<namedsort id="TxCount" name="TxCount">
+						<finiteintrange start="1" end="20"/>
+					</namedsort>
+					<namedsort id="SRPCount" name="SRPCount">
+						<productsort>
+							<usersort declaration="St"/>
+							<usersort declaration="St"/>
+							<usersort declaration="Pr"/>
+							<usersort declaration="TxCount"/>
+						</productsort>
+					</namedsort>
+					<!-- Declaration of user-defined color variables -->
+					<variabledecl id="sa" name="sa">
+						<usersort declaration="St"/>
+					</variabledecl>
+					<variabledecl id="pt" name="pt">
+						<usersort declaration="PT"/>
+					</variabledecl>
+					<variabledecl id="sb" name="sb">
+						<usersort declaration="St"/>
+					</variabledecl>
+					<variabledecl id="b" name="b">
+						<usersort declaration="BackoffStage"/>
+					</variabledecl>
+					<variabledecl id="p" name="p">
+						<usersort declaration="Pr"/>
+					</variabledecl>
+					<variabledecl id="p2" name="p2">
+						<usersort declaration="Pr"/>
+					</variabledecl>
+					<variabledecl id="sc" name="sc">
+						<usersort declaration="St"/>
+					</variabledecl>
+					<variabledecl id="tx" name="tx">
+						<usersort declaration="TxCount"/>
+					</variabledecl>
+				</declarations>
+			</structure>
+		</declaration>
+		<page id="page0">
+			<name>
+				<text>DefaultPage</text>
+			</name>
+			<!-- List of places -->
+			<place id="Idle">
+				<name>
+					<graphics>
+						<offset x="5" y="-15"/>
+					</graphics>
+					<text>Idle</text>
+				</name>
+				<graphics>
+					<position x="930" y="170"/>
+				</graphics>
+				<type>
+					<text>SP</text>
+					<structure>
+						<usersort declaration="SP"/>
+					</structure>
+				</type>
+				<hlinitialMarking>
+					<text>&lt;St,Pr&gt;</text>
+					<structure>
+						<tuple><subterm><all><usersort declaration="St"/></all></subterm><subterm><all><usersort declaration="Pr"/></all></subterm></tuple>
+					</structure>
+				</hlinitialMarking>
+			</place>
+			<place id="Sense">
+				<name>
+					<graphics>
+						<offset x="30" y="15"/>
+					</graphics>
+					<text>Sense</text>
+				</name>
+				<graphics>
+					<position x="1000" y="290"/>
+				</graphics>
+				<type>
+					<text>P</text>
+					<structure>
+						<usersort declaration="P"/>
+					</structure>
+				</type>
+			</place>
+			<place id="Vulnerable">
+				<name>
+					<graphics>
+						<offset x="5" y="-20"/>
+					</graphics>
+					<text>Vulnerable</text>
+				</name>
+				<graphics>
+					<position x="1200" y="290"/>
+				</graphics>
+				<type>
+					<text>P</text>
+					<structure>
+						<usersort declaration="P"/>
+					</structure>
+				</type>
+			</place>
+			<place id="Sending">
+				<name>
+					<graphics>
+						<offset x="0" y="15"/>
+					</graphics>
+					<text>Sending</text>
+				</name>
+				<graphics>
+					<position x="1350" y="290"/>
+				</graphics>
+				<type>
+					<text>P</text>
+					<structure>
+						<usersort declaration="P"/>
+					</structure>
+				</type>
+			</place>
+			<place id="WaitForResponse">
+				<name>
+					<graphics>
+						<offset x="80" y="10"/>
+					</graphics>
+					<text>WaitForResponse</text>
+				</name>
+				<graphics>
+					<position x="1190" y="530"/>
+				</graphics>
+				<type>
+					<text>P</text>
+					<structure>
+						<usersort declaration="P"/>
+					</structure>
+				</type>
+				<hlinitialMarking>
+					<text>&lt;St,s1,pr1,rts&gt;</text>
+					<structure>
+						<tuple><subterm><all><usersort declaration="St"/></all></subterm><subterm> <finiteintrangeconstant value="1"><finiteintrange start="1" end="2"/></finiteintrangeconstant></subterm><subterm> <finiteintrangeconstant value="1"><finiteintrange start="1" end="4"/></finiteintrangeconstant></subterm><subterm><useroperator declaration="rts"/></subterm></tuple>
+					</structure>
+				</hlinitialMarking>
+			</place>
+			<place id="Receiving">
+				<name>
+					<graphics>
+						<offset x="25" y="15"/>
+					</graphics>
+					<text>Receiving</text>
+				</name>
+				<graphics>
+					<position x="1070" y="480"/>
+				</graphics>
+				<type>
+					<text>P</text>
+					<structure>
+						<usersort declaration="P"/>
+					</structure>
+				</type>
+			</place>
+			<place id="Medium">
+				<name>
+					<graphics>
+						<offset x="5" y="15"/>
+					</graphics>
+					<text>Medium</text>
+				</name>
+				<graphics>
+					<position x="1570" y="670"/>
+				</graphics>
+				<type>
+					<text>dot</text>
+					<structure>
+						<usersort declaration="dot"/>
+					</structure>
+				</type>
+			</place>
+			<place id="SentPacket">
+				<name>
+					<graphics>
+						<offset x="-10" y="-15"/>
+					</graphics>
+					<text>SentPacket</text>
+				</name>
+				<graphics>
+					<position x="1800" y="660"/>
+				</graphics>
+				<type>
+					<text>P</text>
+					<structure>
+						<usersort declaration="P"/>
+					</structure>
+				</type>
+			</place>
+			<place id="GoingToBackoff">
+				<name>
+					<graphics>
+						<offset x="15" y="20"/>
+					</graphics>
+					<text>GoingToBackoff</text>
+				</name>
+				<graphics>
+					<position x="800" y="290"/>
+				</graphics>
+				<type>
+					<text>BP</text>
+					<structure>
+						<usersort declaration="BP"/>
+					</structure>
+				</type>
+			</place>
+			<place id="Garbled">
+				<name>
+					<graphics>
+						<offset x="0" y="-15"/>
+					</graphics>
+					<text>Garbled</text>
+				</name>
+				<graphics>
+					<position x="1570" y="560"/>
+				</graphics>
+				<type>
+					<text>dot</text>
+					<structure>
+						<usersort declaration="dot"/>
+					</structure>
+				</type>
+			</place>
+			<place id="PacketSent">
+				<name>
+					<graphics>
+						<offset x="30" y="15"/>
+					</graphics>
+					<text>PacketSent</text>
+				</name>
+				<graphics>
+					<position x="1350" y="480"/>
+				</graphics>
+				<type>
+					<text>P</text>
+					<structure>
+						<usersort declaration="P"/>
+					</structure>
+				</type>
+			</place>
+			<place id="ReadingPacket">
+				<name>
+					<graphics>
+						<offset x="65" y="20"/>
+					</graphics>
+					<text>ReadingPacket</text>
+				</name>
+				<graphics>
+					<position x="940" y="480"/>
+				</graphics>
+				<type>
+					<text>P</text>
+					<structure>
+						<usersort declaration="P"/>
+					</structure>
+				</type>
+			</place>
+			<place id="ChoosingBackoff">
+				<name>
+					<graphics>
+						<offset x="0" y="15"/>
+					</graphics>
+					<text>ChoosingBackoff</text>
+				</name>
+				<graphics>
+					<position x="490" y="320"/>
+				</graphics>
+				<type>
+					<text>BP</text>
+					<structure>
+						<usersort declaration="BP"/>
+					</structure>
+				</type>
+			</place>
+			<place id="TxAttemptsCounter">
+				<name>
+					<graphics>
+						<offset x="25" y="-15"/>
+					</graphics>
+					<text>TxAttemptsCounter</text>
+				</name>
+				<graphics>
+					<position x="540" y="230"/>
+				</graphics>
+				<type>
+					<text>SRPCount</text>
+					<structure>
+						<usersort declaration="SRPCount"/>
+					</structure>
+				</type>
+			</place>
+			<place id="BackoffCounter">
+				<name>
+					<graphics>
+						<offset x="0" y="15"/>
+					</graphics>
+					<text>BackoffCounter</text>
+				</name>
+				<graphics>
+					<position x="370" y="320"/>
+				</graphics>
+				<type>
+					<text>SRB</text>
+					<structure>
+						<usersort declaration="SRB"/>
+					</structure>
+				</type>
+			</place>
+			<place id="PausingBackoff">
+				<name>
+					<graphics>
+						<offset x="0" y="15"/>
+					</graphics>
+					<text>PausingBackoff</text>
+				</name>
+				<graphics>
+					<position x="410" y="410"/>
+				</graphics>
+				<type>
+					<text>SRB</text>
+					<structure>
+						<usersort declaration="SRB"/>
+					</structure>
+				</type>
+			</place>
+			<place id="BackoffMappings">
+				<name>
+					<graphics>
+						<offset x="45" y="-15"/>
+					</graphics>
+					<text>BackoffMappings</text>
+				</name>
+				<graphics>
+					<position x="350" y="180"/>
+				</graphics>
+				<type>
+					<text>BPMap</text>
+					<structure>
+						<usersort declaration="BPMap"/>
+					</structure>
+				</type>
+				<hlinitialMarking>
+					<text>&lt;pr1,tx1,bs1&gt;+&lt;pr1,tx2,bs1+bs2&gt;+&lt;pr1,tx3,bs1+bs2&gt;+&lt;pr1,tx4,bs1+bs2&gt;+&lt;pr2,tx1,bs1&gt;+&lt;pr2,tx2,bs1+bs2&gt;+&lt;pr2,tx3,bs1+bs2+bs3&gt;+&lt;pr2,tx4,bs1+bs2+bs3&gt;+&lt;pr2,tx5,bs1+bs2+bs3&gt;+&lt;pr3,tx1,bs1+bs2&gt;+&lt;pr3,tx2,bs1+bs2+bs3&gt;+&lt;pr3,tx3,bs1+bs2+bs3+bs4&gt;+&lt;pr3,tx4,bs1+bs2+bs3+bs4+bs5&gt;+&lt;pr3,tx5,bs1+bs2+bs3+bs4+bs5+bs6&gt;+&lt;pr3,tx6,bs1+bs2+bs3+bs4+bs5+bs6+bs7&gt;+&lt;pr3,tx7,bs1+bs2+bs3+bs4+bs5+bs6+bs7+bs8&gt;+&lt;pr3,tx8,bs1+bs2+bs3+bs4+bs5+bs6+bs7+bs8+bs9&gt;+&lt;pr3,tx9,bs1+bs2+bs3+bs4+bs5+bs6+bs7+bs8+bs9&gt;+&lt;pr3,tx10,bs1+bs2+bs3+bs4+bs5+bs6+bs7+bs8+bs9&gt;+&lt;pr4,tx1,bs1+bs2+bs3&gt;+&lt;pr4,tx2,bs1+bs2+bs3+bs4&gt;+&lt;pr4,tx3,bs1+bs2+bs3+bs4+bs5&gt;+&lt;pr4,tx4,bs1+bs2+bs3+bs4+bs5+bs6&gt;+&lt;pr4,tx5,bs1+bs2+bs3+bs4+bs5+bs6+bs7&gt;+&lt;pr4,tx6,bs1+bs2+bs3+bs4+bs5+bs6+bs7+bs8&gt;+&lt;pr4,tx7,bs1+bs2+bs3+bs4+bs5+bs6+bs7+bs8+bs9&gt;+&lt;pr4,tx8,bs1+bs2+bs3+bs4+bs5+bs6+bs7+bs8+bs9&gt;+&lt;pr4,tx9,bs1+bs2+bs3+bs4+bs5+bs6+bs7+bs8+bs9&gt; </text>
+					<structure>
+						<add><subterm><add><subterm><add><subterm><add><subterm><add><subterm><add><subterm><add><subterm><add><subterm><add><subterm><add><subterm><add><subterm><add><subterm><add><subterm><add><subterm><add><subterm><add><subterm><add><subterm><add><subterm><add><subterm><add><subterm><add><subterm><add><subterm><add><subterm><add><subterm><add><subterm><add><subterm><add><subterm><tuple><subterm> <finiteintrangeconstant value="1"><finiteintrange start="1" end="4"/></finiteintrangeconstant></subterm><subterm> <finiteintrangeconstant value="1"><finiteintrange start="1" end="20"/></finiteintrangeconstant></subterm><subterm><useroperator declaration="bs1"/>
+</subterm></tuple></subterm><subterm><tuple><subterm> <finiteintrangeconstant value="1"><finiteintrange start="1" end="4"/></finiteintrangeconstant></subterm><subterm> <finiteintrangeconstant value="2"><finiteintrange start="1" end="20"/></finiteintrangeconstant></subterm><subterm><add><subterm><useroperator declaration="bs1"/>
+</subterm><subterm><useroperator declaration="bs2"/>
+</subterm></add></subterm></tuple></subterm></add></subterm><subterm><tuple><subterm> <finiteintrangeconstant value="1"><finiteintrange start="1" end="4"/></finiteintrangeconstant></subterm><subterm> <finiteintrangeconstant value="3"><finiteintrange start="1" end="20"/></finiteintrangeconstant></subterm><subterm><add><subterm><useroperator declaration="bs1"/>
+</subterm><subterm><useroperator declaration="bs2"/>
+</subterm></add></subterm></tuple></subterm></add></subterm><subterm><tuple><subterm> <finiteintrangeconstant value="1"><finiteintrange start="1" end="4"/></finiteintrangeconstant></subterm><subterm> <finiteintrangeconstant value="4"><finiteintrange start="1" end="20"/></finiteintrangeconstant></subterm><subterm><add><subterm><useroperator declaration="bs1"/>
+</subterm><subterm><useroperator declaration="bs2"/>
+</subterm></add></subterm></tuple></subterm></add></subterm><subterm><tuple><subterm> <finiteintrangeconstant value="2"><finiteintrange start="1" end="4"/></finiteintrangeconstant></subterm><subterm> <finiteintrangeconstant value="1"><finiteintrange start="1" end="20"/></finiteintrangeconstant></subterm><subterm><useroperator declaration="bs1"/>
+</subterm></tuple></subterm></add></subterm><subterm><tuple><subterm> <finiteintrangeconstant value="2"><finiteintrange start="1" end="4"/></finiteintrangeconstant></subterm><subterm> <finiteintrangeconstant value="2"><finiteintrange start="1" end="20"/></finiteintrangeconstant></subterm><subterm><add><subterm><useroperator declaration="bs1"/>
+</subterm><subterm><useroperator declaration="bs2"/>
+</subterm></add></subterm></tuple></subterm></add></subterm><subterm><tuple><subterm> <finiteintrangeconstant value="2"><finiteintrange start="1" end="4"/></finiteintrangeconstant></subterm><subterm> <finiteintrangeconstant value="3"><finiteintrange start="1" end="20"/></finiteintrangeconstant></subterm><subterm><add><subterm><add><subterm><useroperator declaration="bs1"/>
+</subterm><subterm><useroperator declaration="bs2"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs3"/>
+</subterm></add></subterm></tuple></subterm></add></subterm><subterm><tuple><subterm> <finiteintrangeconstant value="2"><finiteintrange start="1" end="4"/></finiteintrangeconstant></subterm><subterm> <finiteintrangeconstant value="4"><finiteintrange start="1" end="20"/></finiteintrangeconstant></subterm><subterm><add><subterm><add><subterm><useroperator declaration="bs1"/>
+</subterm><subterm><useroperator declaration="bs2"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs3"/>
+</subterm></add></subterm></tuple></subterm></add></subterm><subterm><tuple><subterm> <finiteintrangeconstant value="2"><finiteintrange start="1" end="4"/></finiteintrangeconstant></subterm><subterm> <finiteintrangeconstant value="5"><finiteintrange start="1" end="20"/></finiteintrangeconstant></subterm><subterm><add><subterm><add><subterm><useroperator declaration="bs1"/>
+</subterm><subterm><useroperator declaration="bs2"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs3"/>
+</subterm></add></subterm></tuple></subterm></add></subterm><subterm><tuple><subterm> <finiteintrangeconstant value="3"><finiteintrange start="1" end="4"/></finiteintrangeconstant></subterm><subterm> <finiteintrangeconstant value="1"><finiteintrange start="1" end="20"/></finiteintrangeconstant></subterm><subterm><add><subterm><useroperator declaration="bs1"/>
+</subterm><subterm><useroperator declaration="bs2"/>
+</subterm></add></subterm></tuple></subterm></add></subterm><subterm><tuple><subterm> <finiteintrangeconstant value="3"><finiteintrange start="1" end="4"/></finiteintrangeconstant></subterm><subterm> <finiteintrangeconstant value="2"><finiteintrange start="1" end="20"/></finiteintrangeconstant></subterm><subterm><add><subterm><add><subterm><useroperator declaration="bs1"/>
+</subterm><subterm><useroperator declaration="bs2"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs3"/>
+</subterm></add></subterm></tuple></subterm></add></subterm><subterm><tuple><subterm> <finiteintrangeconstant value="3"><finiteintrange start="1" end="4"/></finiteintrangeconstant></subterm><subterm> <finiteintrangeconstant value="3"><finiteintrange start="1" end="20"/></finiteintrangeconstant></subterm><subterm><add><subterm><add><subterm><add><subterm><useroperator declaration="bs1"/>
+</subterm><subterm><useroperator declaration="bs2"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs3"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs4"/>
+</subterm></add></subterm></tuple></subterm></add></subterm><subterm><tuple><subterm> <finiteintrangeconstant value="3"><finiteintrange start="1" end="4"/></finiteintrangeconstant></subterm><subterm> <finiteintrangeconstant value="4"><finiteintrange start="1" end="20"/></finiteintrangeconstant></subterm><subterm><add><subterm><add><subterm><add><subterm><add><subterm><useroperator declaration="bs1"/>
+</subterm><subterm><useroperator declaration="bs2"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs3"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs4"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs5"/>
+</subterm></add></subterm></tuple></subterm></add></subterm><subterm><tuple><subterm> <finiteintrangeconstant value="3"><finiteintrange start="1" end="4"/></finiteintrangeconstant></subterm><subterm> <finiteintrangeconstant value="5"><finiteintrange start="1" end="20"/></finiteintrangeconstant></subterm><subterm><add><subterm><add><subterm><add><subterm><add><subterm><add><subterm><useroperator declaration="bs1"/>
+</subterm><subterm><useroperator declaration="bs2"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs3"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs4"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs5"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs6"/>
+</subterm></add></subterm></tuple></subterm></add></subterm><subterm><tuple><subterm> <finiteintrangeconstant value="3"><finiteintrange start="1" end="4"/></finiteintrangeconstant></subterm><subterm> <finiteintrangeconstant value="6"><finiteintrange start="1" end="20"/></finiteintrangeconstant></subterm><subterm><add><subterm><add><subterm><add><subterm><add><subterm><add><subterm><add><subterm><useroperator declaration="bs1"/>
+</subterm><subterm><useroperator declaration="bs2"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs3"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs4"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs5"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs6"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs7"/>
+</subterm></add></subterm></tuple></subterm></add></subterm><subterm><tuple><subterm> <finiteintrangeconstant value="3"><finiteintrange start="1" end="4"/></finiteintrangeconstant></subterm><subterm> <finiteintrangeconstant value="7"><finiteintrange start="1" end="20"/></finiteintrangeconstant></subterm><subterm><add><subterm><add><subterm><add><subterm><add><subterm><add><subterm><add><subterm><add><subterm><useroperator declaration="bs1"/>
+</subterm><subterm><useroperator declaration="bs2"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs3"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs4"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs5"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs6"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs7"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs8"/>
+</subterm></add></subterm></tuple></subterm></add></subterm><subterm><tuple><subterm> <finiteintrangeconstant value="3"><finiteintrange start="1" end="4"/></finiteintrangeconstant></subterm><subterm> <finiteintrangeconstant value="8"><finiteintrange start="1" end="20"/></finiteintrangeconstant></subterm><subterm><add><subterm><add><subterm><add><subterm><add><subterm><add><subterm><add><subterm><add><subterm><add><subterm><useroperator declaration="bs1"/>
+</subterm><subterm><useroperator declaration="bs2"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs3"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs4"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs5"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs6"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs7"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs8"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs9"/>
+</subterm></add></subterm></tuple></subterm></add></subterm><subterm><tuple><subterm> <finiteintrangeconstant value="3"><finiteintrange start="1" end="4"/></finiteintrangeconstant></subterm><subterm> <finiteintrangeconstant value="9"><finiteintrange start="1" end="20"/></finiteintrangeconstant></subterm><subterm><add><subterm><add><subterm><add><subterm><add><subterm><add><subterm><add><subterm><add><subterm><add><subterm><useroperator declaration="bs1"/>
+</subterm><subterm><useroperator declaration="bs2"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs3"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs4"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs5"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs6"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs7"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs8"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs9"/>
+</subterm></add></subterm></tuple></subterm></add></subterm><subterm><tuple><subterm> <finiteintrangeconstant value="3"><finiteintrange start="1" end="4"/></finiteintrangeconstant></subterm><subterm> <finiteintrangeconstant value="10"><finiteintrange start="1" end="20"/></finiteintrangeconstant></subterm><subterm><add><subterm><add><subterm><add><subterm><add><subterm><add><subterm><add><subterm><add><subterm><add><subterm><useroperator declaration="bs1"/>
+</subterm><subterm><useroperator declaration="bs2"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs3"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs4"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs5"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs6"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs7"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs8"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs9"/>
+</subterm></add></subterm></tuple></subterm></add></subterm><subterm><tuple><subterm> <finiteintrangeconstant value="4"><finiteintrange start="1" end="4"/></finiteintrangeconstant></subterm><subterm> <finiteintrangeconstant value="1"><finiteintrange start="1" end="20"/></finiteintrangeconstant></subterm><subterm><add><subterm><add><subterm><useroperator declaration="bs1"/>
+</subterm><subterm><useroperator declaration="bs2"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs3"/>
+</subterm></add></subterm></tuple></subterm></add></subterm><subterm><tuple><subterm> <finiteintrangeconstant value="4"><finiteintrange start="1" end="4"/></finiteintrangeconstant></subterm><subterm> <finiteintrangeconstant value="2"><finiteintrange start="1" end="20"/></finiteintrangeconstant></subterm><subterm><add><subterm><add><subterm><add><subterm><useroperator declaration="bs1"/>
+</subterm><subterm><useroperator declaration="bs2"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs3"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs4"/>
+</subterm></add></subterm></tuple></subterm></add></subterm><subterm><tuple><subterm> <finiteintrangeconstant value="4"><finiteintrange start="1" end="4"/></finiteintrangeconstant></subterm><subterm> <finiteintrangeconstant value="3"><finiteintrange start="1" end="20"/></finiteintrangeconstant></subterm><subterm><add><subterm><add><subterm><add><subterm><add><subterm><useroperator declaration="bs1"/>
+</subterm><subterm><useroperator declaration="bs2"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs3"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs4"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs5"/>
+</subterm></add></subterm></tuple></subterm></add></subterm><subterm><tuple><subterm> <finiteintrangeconstant value="4"><finiteintrange start="1" end="4"/></finiteintrangeconstant></subterm><subterm> <finiteintrangeconstant value="4"><finiteintrange start="1" end="20"/></finiteintrangeconstant></subterm><subterm><add><subterm><add><subterm><add><subterm><add><subterm><add><subterm><useroperator declaration="bs1"/>
+</subterm><subterm><useroperator declaration="bs2"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs3"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs4"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs5"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs6"/>
+</subterm></add></subterm></tuple></subterm></add></subterm><subterm><tuple><subterm> <finiteintrangeconstant value="4"><finiteintrange start="1" end="4"/></finiteintrangeconstant></subterm><subterm> <finiteintrangeconstant value="5"><finiteintrange start="1" end="20"/></finiteintrangeconstant></subterm><subterm><add><subterm><add><subterm><add><subterm><add><subterm><add><subterm><add><subterm><useroperator declaration="bs1"/>
+</subterm><subterm><useroperator declaration="bs2"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs3"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs4"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs5"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs6"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs7"/>
+</subterm></add></subterm></tuple></subterm></add></subterm><subterm><tuple><subterm> <finiteintrangeconstant value="4"><finiteintrange start="1" end="4"/></finiteintrangeconstant></subterm><subterm> <finiteintrangeconstant value="6"><finiteintrange start="1" end="20"/></finiteintrangeconstant></subterm><subterm><add><subterm><add><subterm><add><subterm><add><subterm><add><subterm><add><subterm><add><subterm><useroperator declaration="bs1"/>
+</subterm><subterm><useroperator declaration="bs2"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs3"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs4"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs5"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs6"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs7"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs8"/>
+</subterm></add></subterm></tuple></subterm></add></subterm><subterm><tuple><subterm> <finiteintrangeconstant value="4"><finiteintrange start="1" end="4"/></finiteintrangeconstant></subterm><subterm> <finiteintrangeconstant value="7"><finiteintrange start="1" end="20"/></finiteintrangeconstant></subterm><subterm><add><subterm><add><subterm><add><subterm><add><subterm><add><subterm><add><subterm><add><subterm><add><subterm><useroperator declaration="bs1"/>
+</subterm><subterm><useroperator declaration="bs2"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs3"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs4"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs5"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs6"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs7"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs8"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs9"/>
+</subterm></add></subterm></tuple></subterm></add></subterm><subterm><tuple><subterm> <finiteintrangeconstant value="4"><finiteintrange start="1" end="4"/></finiteintrangeconstant></subterm><subterm> <finiteintrangeconstant value="8"><finiteintrange start="1" end="20"/></finiteintrangeconstant></subterm><subterm><add><subterm><add><subterm><add><subterm><add><subterm><add><subterm><add><subterm><add><subterm><add><subterm><useroperator declaration="bs1"/>
+</subterm><subterm><useroperator declaration="bs2"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs3"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs4"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs5"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs6"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs7"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs8"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs9"/>
+</subterm></add></subterm></tuple></subterm></add></subterm><subterm><tuple><subterm> <finiteintrangeconstant value="4"><finiteintrange start="1" end="4"/></finiteintrangeconstant></subterm><subterm> <finiteintrangeconstant value="9"><finiteintrange start="1" end="20"/></finiteintrangeconstant></subterm><subterm><add><subterm><add><subterm><add><subterm><add><subterm><add><subterm><add><subterm><add><subterm><add><subterm><useroperator declaration="bs1"/>
+</subterm><subterm><useroperator declaration="bs2"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs3"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs4"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs5"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs6"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs7"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs8"/>
+</subterm></add></subterm><subterm><useroperator declaration="bs9"/>
+</subterm></add></subterm></tuple></subterm></add>
+					</structure>
+				</hlinitialMarking>
+			</place>
+			<place id="NotErrorSpike">
+				<name>
+					<graphics>
+						<offset x="0" y="15"/>
+					</graphics>
+					<text>NotErrorSpike</text>
+				</name>
+				<graphics>
+					<position x="1860" y="600"/>
+				</graphics>
+				<type>
+					<text>dot</text>
+					<structure>
+						<usersort declaration="dot"/>
+					</structure>
+				</type>
+				<hlinitialMarking>
+					<text>1</text>
+					<structure>
+						<numberof><subterm><numberconstant value="1"><positive/></numberconstant></subterm><subterm><dotconstant/></subterm></numberof>
+					</structure>
+				</hlinitialMarking>
+			</place>
+			<place id="ErrorSpike">
+				<name>
+					<graphics>
+						<offset x="0" y="-20"/>
+					</graphics>
+					<text>ErrorSpike</text>
+				</name>
+				<graphics>
+					<position x="1860" y="550"/>
+				</graphics>
+				<type>
+					<text>dot</text>
+					<structure>
+						<usersort declaration="dot"/>
+					</structure>
+				</type>
+			</place>
+			<place id="AGarbled">
+				<name>
+					<graphics>
+						<offset x="0" y="15"/>
+					</graphics>
+					<text>AGarbled</text>
+				</name>
+				<graphics>
+					<position x="1440" y="560"/>
+				</graphics>
+				<type>
+					<text>dot</text>
+					<structure>
+						<usersort declaration="dot"/>
+					</structure>
+				</type>
+				<hlinitialMarking>
+					<text>1</text>
+					<structure>
+						<numberof><subterm><numberconstant value="1"><positive/></numberconstant></subterm><subterm><dotconstant/></subterm></numberof>
+					</structure>
+				</hlinitialMarking>
+			</place>
+			<place id="AMedium">
+				<name>
+					<graphics>
+						<offset x="0" y="15"/>
+					</graphics>
+					<text>AMedium</text>
+				</name>
+				<graphics>
+					<position x="1440" y="660"/>
+				</graphics>
+				<type>
+					<text>dot</text>
+					<structure>
+						<usersort declaration="dot"/>
+					</structure>
+				</type>
+				<hlinitialMarking>
+					<text>4</text>
+					<structure>
+						<numberof><subterm><numberconstant value="4"><positive/></numberconstant></subterm><subterm><dotconstant/></subterm></numberof>
+					</structure>
+				</hlinitialMarking>
+			</place>
+			<!-- List of transitions -->
+			<transition id="PacketArrival">
+				<name>
+					<graphics>
+						<offset x="-35" y="-10"/>
+					</graphics>
+					<text>PacketArrival</text>
+				</name>
+				<graphics>
+					<position x="1005" y="230"/>
+				</graphics>
+				<condition>
+					<text>sa!=sb</text>
+					<structure>
+						<inequality><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm></inequality>
+					</structure>
+				</condition>
+			</transition>
+			<transition id="WaitAIFS1">
+				<name>
+					<graphics>
+						<offset x="0" y="-15"/>
+					</graphics>
+					<text>WaitAIFS1</text>
+				</name>
+				<graphics>
+					<position x="1105" y="290"/>
+				</graphics>
+			</transition>
+			<transition id="BeginSending">
+				<name>
+					<graphics>
+						<offset x="0" y="-30"/>
+					</graphics>
+					<text>BeginSending</text>
+				</name>
+				<graphics>
+					<position x="1285" y="290"/>
+				</graphics>
+			</transition>
+			<transition id="SendRTS">
+				<name>
+					<graphics>
+						<offset x="0" y="-15"/>
+					</graphics>
+					<text>SendRTS</text>
+				</name>
+				<graphics>
+					<position x="1235" y="400"/>
+				</graphics>
+			</transition>
+			<transition id="SendCTS">
+				<name>
+					<graphics>
+						<offset x="0" y="-15"/>
+					</graphics>
+					<text>SendCTS</text>
+				</name>
+				<graphics>
+					<position x="1315" y="400"/>
+				</graphics>
+			</transition>
+			<transition id="SendData">
+				<name>
+					<graphics>
+						<offset x="0" y="-15"/>
+					</graphics>
+					<text>SendData</text>
+				</name>
+				<graphics>
+					<position x="1385" y="400"/>
+				</graphics>
+			</transition>
+			<transition id="SendAck">
+				<name>
+					<graphics>
+						<offset x="10" y="-15"/>
+					</graphics>
+					<text>SendAck</text>
+				</name>
+				<graphics>
+					<position x="1445" y="400"/>
+				</graphics>
+			</transition>
+			<transition id="SenderSenseCollision">
+				<name>
+					<graphics>
+						<offset x="5" y="-25"/>
+					</graphics>
+					<text>SenderSenseCollision</text>
+				</name>
+				<graphics>
+					<position x="895" y="290"/>
+				</graphics>
+				<condition>
+					<text>pt==rts||pt==data</text>
+					<structure>
+						<or><subterm><equality><subterm><variable refvariable="pt"/></subterm><subterm><useroperator declaration="rts"/></subterm></equality></subterm><subterm><equality><subterm><variable refvariable="pt"/></subterm><subterm><useroperator declaration="data"/></subterm></equality></subterm></or>
+					</structure>
+				</condition>
+			</transition>
+			<transition id="SenderTimeout">
+				<name>
+					<graphics>
+						<offset x="0" y="-15"/>
+					</graphics>
+					<text>SenderTimeout</text>
+				</name>
+				<graphics>
+					<position x="1105" y="570"/>
+				</graphics>
+				<condition>
+					<text>pt==cts||pt==ack</text>
+					<structure>
+						<or><subterm><equality><subterm><variable refvariable="pt"/></subterm><subterm><useroperator declaration="cts"/></subterm></equality></subterm><subterm><equality><subterm><variable refvariable="pt"/></subterm><subterm><useroperator declaration="ack"/></subterm></equality></subterm></or>
+					</structure>
+				</condition>
+			</transition>
+			<transition id="BeginReceiving">
+				<name>
+					<graphics>
+						<offset x="0" y="-15"/>
+					</graphics>
+					<text>BeginReceiving</text>
+				</name>
+				<graphics>
+					<position x="1135" y="480"/>
+				</graphics>
+			</transition>
+			<transition id="GettingGarbled">
+				<name>
+					<graphics>
+						<offset x="40" y="0"/>
+					</graphics>
+					<text>GettingGarbled</text>
+				</name>
+				<graphics>
+					<position x="1575" y="600"/>
+				</graphics>
+			</transition>
+			<transition id="EndingGarbled">
+				<name>
+					<graphics>
+						<offset x="0" y="20"/>
+					</graphics>
+					<text>EndingGarbled</text>
+				</name>
+				<graphics>
+					<position x="1445" y="600"/>
+				</graphics>
+			</transition>
+			<transition id="SenderGarbled">
+				<name>
+					<graphics>
+						<offset x="25" y="-15"/>
+					</graphics>
+					<text>SenderGarbled</text>
+				</name>
+				<graphics>
+					<position x="985" y="570"/>
+				</graphics>
+				<condition>
+					<text>pt==cts||pt==ack</text>
+					<structure>
+						<or><subterm><equality><subterm><variable refvariable="pt"/></subterm><subterm><useroperator declaration="cts"/></subterm></equality></subterm><subterm><equality><subterm><variable refvariable="pt"/></subterm><subterm><useroperator declaration="ack"/></subterm></equality></subterm></or>
+					</structure>
+				</condition>
+			</transition>
+			<transition id="BeginWaitingForResponse">
+				<name>
+					<graphics>
+						<offset x="0" y="-20"/>
+					</graphics>
+					<text>BeginWaitingForResponse</text>
+				</name>
+				<graphics>
+					<position x="1285" y="480"/>
+				</graphics>
+			</transition>
+			<transition id="StopReceiving">
+				<name>
+					<graphics>
+						<offset x="0" y="-15"/>
+					</graphics>
+					<text>StopReceiving</text>
+				</name>
+				<graphics>
+					<position x="1015" y="480"/>
+				</graphics>
+			</transition>
+			<transition id="ReceiverGarbled">
+				<name>
+					<graphics>
+						<offset x="0" y="-15"/>
+					</graphics>
+					<text>ReceiverGarbled</text>
+				</name>
+				<graphics>
+					<position x="1035" y="430"/>
+				</graphics>
+				<condition>
+					<text>pt==rts||pt==data</text>
+					<structure>
+						<or><subterm><equality><subterm><variable refvariable="pt"/></subterm><subterm><useroperator declaration="rts"/></subterm></equality></subterm><subterm><equality><subterm><variable refvariable="pt"/></subterm><subterm><useroperator declaration="data"/></subterm></equality></subterm></or>
+					</structure>
+				</condition>
+			</transition>
+			<transition id="ReceiverTimeout">
+				<name>
+					<graphics>
+						<offset x="0" y="-15"/>
+					</graphics>
+					<text>ReceiverTimeout</text>
+				</name>
+				<graphics>
+					<position x="1135" y="430"/>
+				</graphics>
+			</transition>
+			<transition id="ReceiverWrongPacket">
+				<name>
+					<graphics>
+						<offset x="0" y="-15"/>
+					</graphics>
+					<text>ReceiverWrongPacket</text>
+				</name>
+				<graphics>
+					<position x="935" y="430"/>
+				</graphics>
+				<condition>
+					<text>pt==rts||pt==data</text>
+					<structure>
+						<or><subterm><equality><subterm><variable refvariable="pt"/></subterm><subterm><useroperator declaration="rts"/></subterm></equality></subterm><subterm><equality><subterm><variable refvariable="pt"/></subterm><subterm><useroperator declaration="data"/></subterm></equality></subterm></or>
+					</structure>
+				</condition>
+			</transition>
+			<transition id="SenderWrongPacket">
+				<name>
+					<graphics>
+						<offset x="35" y="-15"/>
+					</graphics>
+					<text>SenderWrongPacket</text>
+				</name>
+				<graphics>
+					<position x="835" y="570"/>
+				</graphics>
+				<condition>
+					<text>pt==cts||pt==ack</text>
+					<structure>
+						<or><subterm><equality><subterm><variable refvariable="pt"/></subterm><subterm><useroperator declaration="cts"/></subterm></equality></subterm><subterm><equality><subterm><variable refvariable="pt"/></subterm><subterm><useroperator declaration="ack"/></subterm></equality></subterm></or>
+					</structure>
+				</condition>
+			</transition>
+			<transition id="CorrectPacketButAck">
+				<name>
+					<graphics>
+						<offset x="0" y="-15"/>
+					</graphics>
+					<text>CorrectPacketButAck</text>
+				</name>
+				<graphics>
+					<position x="845" y="480"/>
+				</graphics>
+				<condition>
+					<text>pt!=ack &amp;&amp; pt!=rts &amp;&amp; p2==p</text>
+					<structure>
+						<and><subterm><and><subterm><inequality><subterm><variable refvariable="pt"/></subterm><subterm><useroperator declaration="ack"/></subterm></inequality></subterm><subterm><inequality><subterm><variable refvariable="pt"/></subterm><subterm><useroperator declaration="rts"/></subterm></inequality></subterm></and></subterm><subterm><equality><subterm><variable refvariable="p2"/></subterm><subterm><variable refvariable="p"/></subterm></equality></subterm></and>
+					</structure>
+				</condition>
+			</transition>
+			<transition id="CorrectPacketAck">
+				<name>
+					<graphics>
+						<offset x="15" y="-25"/>
+					</graphics>
+					<text>CorrectPacketAck</text>
+				</name>
+				<graphics>
+					<position x="825" y="410"/>
+				</graphics>
+				<condition>
+					<text>pt==ack &amp;&amp; (pt==rts||p2==p)</text>
+					<structure>
+						<and><subterm><equality><subterm><variable refvariable="pt"/></subterm><subterm><useroperator declaration="ack"/></subterm></equality></subterm><subterm><or><subterm><equality><subterm><variable refvariable="pt"/></subterm><subterm><useroperator declaration="rts"/></subterm></equality></subterm><subterm><equality><subterm><variable refvariable="p2"/></subterm><subterm><variable refvariable="p"/></subterm></equality></subterm></or></subterm></and>
+					</structure>
+				</condition>
+			</transition>
+			<transition id="ShortEnterVulnerable">
+				<name>
+					<graphics>
+						<offset x="0" y="-15"/>
+					</graphics>
+					<text>ShortEnterVulnerable</text>
+				</name>
+				<graphics>
+					<position x="1105" y="330"/>
+				</graphics>
+				<condition>
+					<text>pt!=rts</text>
+					<structure>
+						<inequality><subterm><variable refvariable="pt"/></subterm><subterm><useroperator declaration="rts"/></subterm></inequality>
+					</structure>
+				</condition>
+			</transition>
+			<transition id="ReceiverSenseCollision">
+				<name>
+					<graphics>
+						<offset x="5" y="-25"/>
+					</graphics>
+					<text>ReceiverSenseCollision</text>
+				</name>
+				<graphics>
+					<position x="905" y="340"/>
+				</graphics>
+				<condition>
+					<text>pt==cts||pt==ack</text>
+					<structure>
+						<or><subterm><equality><subterm><variable refvariable="pt"/></subterm><subterm><useroperator declaration="cts"/></subterm></equality></subterm><subterm><equality><subterm><variable refvariable="pt"/></subterm><subterm><useroperator declaration="ack"/></subterm></equality></subterm></or>
+					</structure>
+				</condition>
+			</transition>
+			<transition id="GoToBackoff">
+				<name>
+					<graphics>
+						<offset x="5" y="20"/>
+					</graphics>
+					<text>GoToBackoff</text>
+				</name>
+				<graphics>
+					<position x="545" y="320"/>
+				</graphics>
+			</transition>
+			<transition id="ExitBackoff">
+				<name>
+					<graphics>
+						<offset x="0" y="-15"/>
+					</graphics>
+					<text>ExitBackoff</text>
+				</name>
+				<graphics>
+					<position x="255" y="320"/>
+				</graphics>
+			</transition>
+			<transition id="PauseBackoff">
+				<name>
+					<graphics>
+						<offset x="0" y="-15"/>
+					</graphics>
+					<text>PauseBackoff</text>
+				</name>
+				<graphics>
+					<position x="415" y="360"/>
+				</graphics>
+			</transition>
+			<transition id="ResumeBackoff1">
+				<name>
+					<graphics>
+						<offset x="0" y="-15"/>
+					</graphics>
+					<text>ResumeBackoff1</text>
+				</name>
+				<graphics>
+					<position x="315" y="410"/>
+				</graphics>
+			</transition>
+			<transition id="DecrementBackoff">
+				<name>
+					<graphics>
+						<offset x="0" y="-15"/>
+					</graphics>
+					<text>DecrementBackoff</text>
+				</name>
+				<graphics>
+					<position x="375" y="270"/>
+				</graphics>
+				<condition>
+					<text>b!=b1</text>
+					<structure>
+						<inequality><subterm><variable refvariable="b"/></subterm><subterm><useroperator declaration="b1"/></subterm></inequality>
+					</structure>
+				</condition>
+			</transition>
+			<transition id="WaitAIFS2">
+				<name>
+					<graphics>
+						<offset x="0" y="-15"/>
+					</graphics>
+					<text>WaitAIFS2</text>
+				</name>
+				<graphics>
+					<position x="1105" y="250"/>
+				</graphics>
+			</transition>
+			<transition id="InternalCollision">
+				<name>
+					<graphics>
+						<offset x="-45" y="0"/>
+					</graphics>
+					<text>InternalCollision</text>
+				</name>
+				<graphics>
+					<position x="1205" y="370"/>
+				</graphics>
+				<condition>
+					<text>p&gt;p2</text>
+					<structure>
+						<greaterthan><subterm><variable refvariable="p"/></subterm><subterm><variable refvariable="p2"/></subterm></greaterthan>
+					</structure>
+				</condition>
+			</transition>
+			<transition id="ResumeBackoff2">
+				<name>
+					<graphics>
+						<offset x="0" y="-15"/>
+					</graphics>
+					<text>ResumeBackoff2</text>
+				</name>
+				<graphics>
+					<position x="315" y="450"/>
+				</graphics>
+			</transition>
+			<transition id="WaitAIFS3">
+				<name>
+					<graphics>
+						<offset x="0" y="-15"/>
+					</graphics>
+					<text>WaitAIFS3</text>
+				</name>
+				<graphics>
+					<position x="1105" y="210"/>
+				</graphics>
+			</transition>
+			<transition id="WaitAIFS4">
+				<name>
+					<graphics>
+						<offset x="0" y="-15"/>
+					</graphics>
+					<text>WaitAIFS4</text>
+				</name>
+				<graphics>
+					<position x="1105" y="170"/>
+				</graphics>
+			</transition>
+			<transition id="ReturnToBackoff">
+				<name>
+					<graphics>
+						<offset x="0" y="-15"/>
+					</graphics>
+					<text>ReturnToBackoff</text>
+				</name>
+				<graphics>
+					<position x="545" y="280"/>
+				</graphics>
+			</transition>
+			<transition id="ChooseBackoff">
+				<name>
+					<graphics>
+						<offset x="5" y="20"/>
+					</graphics>
+					<text>ChooseBackoff</text>
+				</name>
+				<graphics>
+					<position x="355" y="320"/>
+				</graphics>
+			</transition>
+			<transition id="DropPacket">
+				<name>
+					<graphics>
+						<offset x="0" y="-15"/>
+					</graphics>
+					<text>DropPacket</text>
+				</name>
+				<graphics>
+					<position x="425" y="270"/>
+				</graphics>
+			</transition>
+			<transition id="ResumeBackoff3">
+				<name>
+					<graphics>
+						<offset x="0" y="-15"/>
+					</graphics>
+					<text>ResumeBackoff3</text>
+				</name>
+				<graphics>
+					<position x="315" y="490"/>
+				</graphics>
+			</transition>
+			<transition id="ResumeBackoff4">
+				<name>
+					<graphics>
+						<offset x="0" y="-15"/>
+					</graphics>
+					<text>ResumeBackoff4</text>
+				</name>
+				<graphics>
+					<position x="315" y="530"/>
+				</graphics>
+			</transition>
+			<transition id="EnteringErrorSpike">
+				<name>
+					<graphics>
+						<offset x="-45" y="10"/>
+					</graphics>
+					<text>EnteringErrorSpike</text>
+				</name>
+				<graphics>
+					<position x="1825" y="580"/>
+				</graphics>
+			</transition>
+			<transition id="ExitingErrorSpike">
+				<name>
+					<graphics>
+						<offset x="-35" y="-15"/>
+					</graphics>
+					<text>ExitingErrorSpike</text>
+				</name>
+				<graphics>
+					<position x="1905" y="580"/>
+				</graphics>
+			</transition>
+			<transition id="CorrectPacketRts">
+				<name>
+					<graphics>
+						<offset x="10" y="-15"/>
+					</graphics>
+					<text>CorrectPacketRts</text>
+				</name>
+				<graphics>
+					<position x="735" y="440"/>
+				</graphics>
+				<condition>
+					<text>pt==rts</text>
+					<structure>
+						<equality><subterm><variable refvariable="pt"/></subterm><subterm><useroperator declaration="rts"/></subterm></equality>
+					</structure>
+				</condition>
+			</transition>
+			<!-- List of arcs -->
+			<arc id="id1" source="Idle" target="PacketArrival">
+				<graphics>
+					<position x="1010" y="180"/>
+				</graphics>
+				<hlinscription>
+					<text>&lt;sa,p&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="p"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id2" source="PacketArrival" target="Sense">
+				<hlinscription>
+					<text>&lt;sa,sb,p,rts&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm><variable refvariable="p"/></subterm><subterm><useroperator declaration="rts"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id3" source="Sense" target="WaitAIFS1">
+				<hlinscription>
+					<text>&lt;sa,sb,pr1,rts&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm> <finiteintrangeconstant value="1"><finiteintrange start="1" end="4"/></finiteintrangeconstant></subterm><subterm><useroperator declaration="rts"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id4" source="WaitAIFS1" target="Vulnerable">
+				<hlinscription>
+					<text>&lt;sa,sb,pr1,rts&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm> <finiteintrangeconstant value="1"><finiteintrange start="1" end="4"/></finiteintrangeconstant></subterm><subterm><useroperator declaration="rts"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id5" source="Vulnerable" target="BeginSending">
+				<hlinscription>
+					<text>&lt;sa,sb,p,pt&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm><variable refvariable="p"/></subterm><subterm><variable refvariable="pt"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id6" source="BeginSending" target="Sending">
+				<hlinscription>
+					<text>&lt;sa,sb,p,pt&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm><variable refvariable="p"/></subterm><subterm><variable refvariable="pt"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id7" source="Sending" target="SendRTS">
+				<hlinscription>
+					<text>&lt;sa,sb,p,rts&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm><variable refvariable="p"/></subterm><subterm><useroperator declaration="rts"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id8" source="SendRTS" target="PacketSent">
+				<hlinscription>
+					<text>&lt;sa,sb,p,rts&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm><variable refvariable="p"/></subterm><subterm><useroperator declaration="rts"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id9" source="Sending" target="SendCTS">
+				<hlinscription>
+					<text>&lt;sa,sb,p,cts&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm><variable refvariable="p"/></subterm><subterm><useroperator declaration="cts"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id10" source="SendCTS" target="PacketSent">
+				<hlinscription>
+					<text>&lt;sa,sb,p,cts&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm><variable refvariable="p"/></subterm><subterm><useroperator declaration="cts"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id11" source="Sending" target="SendData">
+				<hlinscription>
+					<text>&lt;sa,sb,p,data&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm><variable refvariable="p"/></subterm><subterm><useroperator declaration="data"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id12" source="SendData" target="PacketSent">
+				<hlinscription>
+					<text>&lt;sa,sb,p,data&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm><variable refvariable="p"/></subterm><subterm><useroperator declaration="data"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id13" source="Sending" target="SendAck">
+				<hlinscription>
+					<text>&lt;sa,sb,p,ack&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm><variable refvariable="p"/></subterm><subterm><useroperator declaration="ack"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id14" source="SendAck" target="WaitForResponse">
+				<graphics>
+					<position x="1430" y="460"/>
+					<position x="1230" y="460"/>
+				</graphics>
+				<hlinscription>
+					<text>&lt;sa,sb,p,rts&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm><variable refvariable="p"/></subterm><subterm><useroperator declaration="rts"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id15" source="BeginSending" target="Medium">
+				<graphics>
+					<position x="1710" y="610"/>
+					<position x="1665" y="615"/>
+				</graphics>
+				<hlinscription>
+					<text>1</text>
+					<structure>
+						<numberof><subterm><numberconstant value="1"><positive/></numberconstant></subterm><subterm><dotconstant/></subterm></numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id16" source="Medium" target="SendAck">
+				<graphics>
+					<position x="1585" y="790"/>
+					<position x="1720" y="430"/>
+				</graphics>
+				<hlinscription>
+					<text>1</text>
+					<structure>
+						<numberof><subterm><numberconstant value="1"><positive/></numberconstant></subterm><subterm><dotconstant/></subterm></numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id17" source="Sense" target="SenderSenseCollision">
+				<hlinscription>
+					<text>&lt;sa,sb,p,pt&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm><variable refvariable="p"/></subterm><subterm><variable refvariable="pt"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id18" source="SenderSenseCollision" target="GoingToBackoff">
+				<hlinscription>
+					<text>&lt;sa,sb,p&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm><variable refvariable="p"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id19" source="Medium" target="SenderSenseCollision">
+				<graphics>
+					<position x="1150" y="840"/>
+					<position x="820" y="330"/>
+				</graphics>
+				<hlinscription>
+					<text>1</text>
+					<structure>
+						<numberof><subterm><numberconstant value="1"><positive/></numberconstant></subterm><subterm><dotconstant/></subterm></numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id20" source="SenderSenseCollision" target="Medium">
+				<graphics>
+					<position x="835" y="325"/>
+					<position x="1370" y="760"/>
+				</graphics>
+				<hlinscription>
+					<text>1</text>
+					<structure>
+						<numberof><subterm><numberconstant value="1"><positive/></numberconstant></subterm><subterm><dotconstant/></subterm></numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id21" source="WaitForResponse" target="SenderTimeout">
+				<graphics>
+					<position x="1200" y="580"/>
+				</graphics>
+				<hlinscription>
+					<text>&lt;sa,sb,p,pt&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm><variable refvariable="p"/></subterm><subterm><variable refvariable="pt"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id22" source="SenderTimeout" target="GoingToBackoff">
+				<graphics>
+					<position x="1110" y="555"/>
+					<position x="1110" y="545"/>
+					<position x="780" y="545"/>
+					<position x="780" y="345"/>
+				</graphics>
+				<hlinscription>
+					<text>&lt;sa,sb,p&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm><variable refvariable="p"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id23" source="WaitForResponse" target="BeginReceiving">
+				<graphics>
+					<position x="1170" y="490"/>
+				</graphics>
+				<hlinscription>
+					<text>&lt;sa,sb,p,pt&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm><variable refvariable="p"/></subterm><subterm><variable refvariable="pt"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id24" source="BeginReceiving" target="Receiving">
+				<hlinscription>
+					<text>&lt;sa,sb,p,pt&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm><variable refvariable="p"/></subterm><subterm><variable refvariable="pt"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id25" source="Medium" target="BeginReceiving">
+				<graphics>
+					<position x="1365" y="765"/>
+					<position x="1205" y="660"/>
+				</graphics>
+				<hlinscription>
+					<text>1</text>
+					<structure>
+						<numberof><subterm><numberconstant value="1"><positive/></numberconstant></subterm><subterm><dotconstant/></subterm></numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id26" source="BeginReceiving" target="Medium">
+				<graphics>
+					<position x="1185" y="610"/>
+					<position x="1470" y="720"/>
+				</graphics>
+				<hlinscription>
+					<text>1</text>
+					<structure>
+						<numberof><subterm><numberconstant value="1"><positive/></numberconstant></subterm><subterm><dotconstant/></subterm></numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id27" source="Medium" target="GettingGarbled">
+				<hlinscription>
+					<text>2</text>
+					<structure>
+						<numberof><subterm><numberconstant value="2"><positive/></numberconstant></subterm><subterm><dotconstant/></subterm></numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id28" source="GettingGarbled" target="Garbled">
+				<hlinscription>
+					<text>1</text>
+					<structure>
+						<numberof><subterm><numberconstant value="1"><positive/></numberconstant></subterm><subterm><dotconstant/></subterm></numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id29" source="GettingGarbled" target="Medium">
+				<hlinscription>
+					<text>2</text>
+					<structure>
+						<numberof><subterm><numberconstant value="2"><positive/></numberconstant></subterm><subterm><dotconstant/></subterm></numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id30" source="Garbled" target="EndingGarbled">
+				<hlinscription>
+					<text>1</text>
+					<structure>
+						<numberof><subterm><numberconstant value="1"><positive/></numberconstant></subterm><subterm><dotconstant/></subterm></numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id31" source="Receiving" target="SenderGarbled">
+				<graphics>
+					<position x="1080" y="580"/>
+				</graphics>
+				<hlinscription>
+					<text>&lt;sa,sb,p,pt&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm><variable refvariable="p"/></subterm><subterm><variable refvariable="pt"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id32" source="SenderGarbled" target="GoingToBackoff">
+				<graphics>
+					<position x="965" y="550"/>
+					<position x="960" y="545"/>
+					<position x="780" y="545"/>
+					<position x="780" y="345"/>
+				</graphics>
+				<hlinscription>
+					<text>&lt;sa,sb,p&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm><variable refvariable="p"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id33" source="SenderGarbled" target="Garbled">
+				<graphics>
+					<position x="960" y="600"/>
+					<position x="1695" y="650"/>
+				</graphics>
+				<hlinscription>
+					<text>1</text>
+					<structure>
+						<numberof><subterm><numberconstant value="1"><positive/></numberconstant></subterm><subterm><dotconstant/></subterm></numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id34" source="Garbled" target="SenderGarbled">
+				<graphics>
+					<position x="1670" y="635"/>
+					<position x="995" y="595"/>
+				</graphics>
+				<hlinscription>
+					<text>1</text>
+					<structure>
+						<numberof><subterm><numberconstant value="1"><positive/></numberconstant></subterm><subterm><dotconstant/></subterm></numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id35" source="PacketSent" target="BeginWaitingForResponse">
+				<hlinscription>
+					<text>&lt;sa,sb,p,pt&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm><variable refvariable="p"/></subterm><subterm><variable refvariable="pt"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id36" source="BeginWaitingForResponse" target="WaitForResponse">
+				<hlinscription>
+					<text>&lt;sa,sb,p,pt++&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm><variable refvariable="p"/></subterm><subterm><successor><subterm><variable refvariable="pt"/></subterm></successor></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id37" source="BeginWaitingForResponse" target="SentPacket">
+				<graphics>
+					<position x="1455" y="645"/>
+					<position x="1835" y="630"/>
+				</graphics>
+				<hlinscription>
+					<text>&lt;sa,sb,p,pt&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm><variable refvariable="p"/></subterm><subterm><variable refvariable="pt"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id38" source="SendAck" target="SentPacket">
+				<graphics>
+					<position x="1575" y="505"/>
+					<position x="1750" y="735"/>
+				</graphics>
+				<hlinscription>
+					<text>&lt;sa,sb,p,ack&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm><variable refvariable="p"/></subterm><subterm><useroperator declaration="ack"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id39" source="Medium" target="BeginWaitingForResponse">
+				<graphics>
+					<position x="1730" y="680"/>
+					<position x="1400" y="545"/>
+				</graphics>
+				<hlinscription>
+					<text>1</text>
+					<structure>
+						<numberof><subterm><numberconstant value="1"><positive/></numberconstant></subterm><subterm><dotconstant/></subterm></numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id40" source="Receiving" target="StopReceiving">
+				<hlinscription>
+					<text>&lt;sa,sb,p,pt&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm><variable refvariable="p"/></subterm><subterm><variable refvariable="pt"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id41" source="StopReceiving" target="ReadingPacket">
+				<hlinscription>
+					<text>&lt;sa,sb,p,pt&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm><variable refvariable="p"/></subterm><subterm><variable refvariable="pt"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id42" source="WaitForResponse" target="ReceiverTimeout">
+				<graphics>
+					<position x="1180" y="440"/>
+				</graphics>
+				<hlinscription>
+					<text>&lt;sa,sb,p,data&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm><variable refvariable="p"/></subterm><subterm><useroperator declaration="data"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id43" source="ReceiverTimeout" target="WaitForResponse">
+				<graphics>
+					<position x="1105" y="440"/>
+					<position x="1105" y="410"/>
+					<position x="1200" y="410"/>
+				</graphics>
+				<hlinscription>
+					<text>&lt;sa,sb,p,rts&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm><variable refvariable="p"/></subterm><subterm><useroperator declaration="rts"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id44" source="ReceiverGarbled" target="Garbled">
+				<graphics>
+					<position x="955" y="445"/>
+					<position x="1650" y="530"/>
+				</graphics>
+				<hlinscription>
+					<text>1</text>
+					<structure>
+						<numberof><subterm><numberconstant value="1"><positive/></numberconstant></subterm><subterm><dotconstant/></subterm></numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id45" source="Garbled" target="ReceiverGarbled">
+				<graphics>
+					<position x="1690" y="515"/>
+					<position x="1000" y="445"/>
+				</graphics>
+				<hlinscription>
+					<text>1</text>
+					<structure>
+						<numberof><subterm><numberconstant value="1"><positive/></numberconstant></subterm><subterm><dotconstant/></subterm></numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id46" source="Receiving" target="ReceiverGarbled">
+				<graphics>
+					<position x="1090" y="465"/>
+					<position x="1090" y="440"/>
+				</graphics>
+				<hlinscription>
+					<text>&lt;sa,sb,p,pt&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm><variable refvariable="p"/></subterm><subterm><variable refvariable="pt"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id47" source="ReceiverGarbled" target="WaitForResponse">
+				<graphics>
+					<position x="990" y="440"/>
+					<position x="990" y="410"/>
+					<position x="1200" y="410"/>
+				</graphics>
+				<hlinscription>
+					<text>&lt;sa,sb,p,rts&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm><variable refvariable="p"/></subterm><subterm><useroperator declaration="rts"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id48" source="ReadingPacket" target="CorrectPacketButAck">
+				<hlinscription>
+					<text>&lt;sa,sb,p2,pt&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm><variable refvariable="p2"/></subterm><subterm><variable refvariable="pt"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id49" source="CorrectPacketButAck" target="Sense">
+				<graphics>
+					<position x="690" y="490"/>
+					<position x="690" y="385"/>
+					<position x="1010" y="385"/>
+				</graphics>
+				<hlinscription>
+					<text>&lt;sa,sb,p,pt++&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm><variable refvariable="p"/></subterm><subterm><successor><subterm><variable refvariable="pt"/></subterm></successor></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id50" source="SentPacket" target="CorrectPacketButAck">
+				<graphics>
+					<position x="1910" y="680"/>
+					<position x="875" y="535"/>
+				</graphics>
+				<hlinscription>
+					<text>&lt;sb,sa,p,pt&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sb"/></subterm><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="p"/></subterm><subterm><variable refvariable="pt"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id51" source="ReadingPacket" target="SenderWrongPacket">
+				<graphics>
+					<position x="950" y="580"/>
+				</graphics>
+				<hlinscription>
+					<text>&lt;sa,sb,p,pt&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm><variable refvariable="p"/></subterm><subterm><variable refvariable="pt"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id52" source="SenderWrongPacket" target="GoingToBackoff">
+				<graphics>
+					<position x="780" y="550"/>
+					<position x="780" y="345"/>
+				</graphics>
+				<hlinscription>
+					<text>&lt;sa,sb,p&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm><variable refvariable="p"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id53" source="ReadingPacket" target="ReceiverWrongPacket">
+				<graphics>
+					<position x="980" y="470"/>
+					<position x="985" y="440"/>
+				</graphics>
+				<hlinscription>
+					<text>&lt;sa,sb,p,pt&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm><variable refvariable="p"/></subterm><subterm><variable refvariable="pt"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id54" source="ReceiverWrongPacket" target="WaitForResponse">
+				<graphics>
+					<position x="915" y="440"/>
+					<position x="915" y="410"/>
+					<position x="1200" y="410"/>
+				</graphics>
+				<hlinscription>
+					<text>&lt;sa,sb,p,rts&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm><variable refvariable="p"/></subterm><subterm><useroperator declaration="rts"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id55" source="ReadingPacket" target="CorrectPacketAck">
+				<graphics>
+					<position x="905" y="465"/>
+					<position x="895" y="420"/>
+				</graphics>
+				<hlinscription>
+					<text>&lt;sa,sb,p2,pt&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm><variable refvariable="p2"/></subterm><subterm><variable refvariable="pt"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id56" source="SentPacket" target="CorrectPacketAck">
+				<graphics>
+					<position x="1845" y="695"/>
+					<position x="930" y="450"/>
+				</graphics>
+				<hlinscription>
+					<text>&lt;sb,sa,p,pt&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sb"/></subterm><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="p"/></subterm><subterm><variable refvariable="pt"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id57" source="CorrectPacketAck" target="Idle">
+				<graphics>
+					<position x="795" y="420"/>
+					<position x="790" y="415"/>
+				</graphics>
+				<hlinscription>
+					<text>&lt;sa,p&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="p"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id58" source="Sense" target="ShortEnterVulnerable">
+				<graphics>
+					<position x="1055" y="300"/>
+					<position x="1055" y="340"/>
+				</graphics>
+				<hlinscription>
+					<text>&lt;sa,sb,p,pt&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm><variable refvariable="p"/></subterm><subterm><variable refvariable="pt"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id59" source="ShortEnterVulnerable" target="Vulnerable">
+				<graphics>
+					<position x="1165" y="340"/>
+					<position x="1165" y="300"/>
+				</graphics>
+				<hlinscription>
+					<text>&lt;sa,sb,p,pt&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm><variable refvariable="p"/></subterm><subterm><variable refvariable="pt"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id60" source="Sense" target="ReceiverSenseCollision">
+				<graphics>
+					<position x="970" y="300"/>
+					<position x="970" y="350"/>
+				</graphics>
+				<hlinscription>
+					<text>&lt;sa,sb,p,pt&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm><variable refvariable="p"/></subterm><subterm><variable refvariable="pt"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id61" source="ReceiverSenseCollision" target="WaitForResponse">
+				<graphics>
+					<position x="780" y="350"/>
+					<position x="1240" y="605"/>
+				</graphics>
+				<hlinscription>
+					<text>&lt;sa,sb,p,rts&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm><variable refvariable="p"/></subterm><subterm><useroperator declaration="rts"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id62" source="ReceiverSenseCollision" target="Medium">
+				<graphics>
+					<position x="840" y="365"/>
+					<position x="1460" y="755"/>
+				</graphics>
+				<hlinscription>
+					<text>1</text>
+					<structure>
+						<numberof><subterm><numberconstant value="1"><positive/></numberconstant></subterm><subterm><dotconstant/></subterm></numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id63" source="Medium" target="ReceiverSenseCollision">
+				<graphics>
+					<position x="1460" y="760"/>
+					<position x="875" y="360"/>
+				</graphics>
+				<hlinscription>
+					<text>1</text>
+					<structure>
+						<numberof><subterm><numberconstant value="1"><positive/></numberconstant></subterm><subterm><dotconstant/></subterm></numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id64" source="GoToBackoff" target="ChoosingBackoff">
+				<hlinscription>
+					<text>&lt;sa,sb,p&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm><variable refvariable="p"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id65" source="BackoffCounter" target="ExitBackoff">
+				<hlinscription>
+					<text>&lt;sa,sb,p,b1&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm><variable refvariable="p"/></subterm><subterm><useroperator declaration="b1"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id66" source="GoingToBackoff" target="GoToBackoff">
+				<graphics>
+					<position x="675" y="320"/>
+				</graphics>
+				<hlinscription>
+					<text>&lt;sa,sb,p&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm><variable refvariable="p"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id67" source="BackoffCounter" target="PauseBackoff">
+				<graphics>
+					<position x="420" y="345"/>
+				</graphics>
+				<hlinscription>
+					<text>&lt;sa,sb,p,b&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm><variable refvariable="p"/></subterm><subterm><variable refvariable="b"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id68" source="PauseBackoff" target="PausingBackoff">
+				<hlinscription>
+					<text>&lt;sa,sb,p,b&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm><variable refvariable="p"/></subterm><subterm><variable refvariable="b"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id69" source="PausingBackoff" target="ResumeBackoff1">
+				<hlinscription>
+					<text>&lt;sa,sb,pr1,b&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm> <finiteintrangeconstant value="1"><finiteintrange start="1" end="4"/></finiteintrangeconstant></subterm><subterm><variable refvariable="b"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id70" source="ResumeBackoff1" target="BackoffCounter">
+				<graphics>
+					<position x="305" y="420"/>
+					<position x="305" y="355"/>
+				</graphics>
+				<hlinscription>
+					<text>&lt;sa,sb,pr1,b&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm> <finiteintrangeconstant value="1"><finiteintrange start="1" end="4"/></finiteintrangeconstant></subterm><subterm><variable refvariable="b"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id71" source="PauseBackoff" target="Medium">
+				<graphics>
+					<position x="955" y="840"/>
+					<position x="1205" y="810"/>
+				</graphics>
+				<hlinscription>
+					<text>1</text>
+					<structure>
+						<numberof><subterm><numberconstant value="1"><positive/></numberconstant></subterm><subterm><dotconstant/></subterm></numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id72" source="Medium" target="PauseBackoff">
+				<graphics>
+					<position x="1395" y="745"/>
+					<position x="615" y="755"/>
+				</graphics>
+				<hlinscription>
+					<text>1</text>
+					<structure>
+						<numberof><subterm><numberconstant value="1"><positive/></numberconstant></subterm><subterm><dotconstant/></subterm></numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id73" source="ExitBackoff" target="Sense">
+				<graphics>
+					<position x="200" y="300"/>
+					<position x="965" y="255"/>
+				</graphics>
+				<hlinscription>
+					<text>&lt;sa,sb,p,rts&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm><variable refvariable="p"/></subterm><subterm><useroperator declaration="rts"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id74" source="BackoffCounter" target="DecrementBackoff">
+				<graphics>
+					<position x="345" y="280"/>
+				</graphics>
+				<hlinscription>
+					<text>&lt;sa,sb,p,b&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm><variable refvariable="p"/></subterm><subterm><variable refvariable="b"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id75" source="DecrementBackoff" target="BackoffCounter">
+				<graphics>
+					<position x="425" y="280"/>
+				</graphics>
+				<hlinscription>
+					<text>&lt;sa,sb,p,b--&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm><variable refvariable="p"/></subterm><subterm><predecessor><subterm><variable refvariable="b"/></subterm></predecessor></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id76" source="Sense" target="WaitAIFS2">
+				<graphics>
+					<position x="1055" y="300"/>
+					<position x="1055" y="260"/>
+				</graphics>
+				<hlinscription>
+					<text>&lt;sa,sb,pr2,rts&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm> <finiteintrangeconstant value="2"><finiteintrange start="1" end="4"/></finiteintrangeconstant></subterm><subterm><useroperator declaration="rts"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id77" source="WaitAIFS2" target="Vulnerable">
+				<graphics>
+					<position x="1165" y="260"/>
+					<position x="1165" y="300"/>
+				</graphics>
+				<hlinscription>
+					<text>&lt;sa,sb,pr2,rts&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm> <finiteintrangeconstant value="2"><finiteintrange start="1" end="4"/></finiteintrangeconstant></subterm><subterm><useroperator declaration="rts"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id78" source="Vulnerable" target="InternalCollision">
+				<graphics>
+					<position x="1210" y="335"/>
+				</graphics>
+				<hlinscription>
+					<text>&lt;sa,sb,p,pt&gt;+&lt;sa,sc,p2,pt&gt;</text>
+					<structure>
+						<add><subterm><tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm><variable refvariable="p"/></subterm><subterm><variable refvariable="pt"/></subterm></tuple></subterm><subterm><tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sc"/></subterm><subterm><variable refvariable="p2"/></subterm><subterm><variable refvariable="pt"/></subterm></tuple></subterm></add>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id79" source="InternalCollision" target="GoingToBackoff">
+				<graphics>
+					<position x="1190" y="395"/>
+					<position x="810" y="185"/>
+				</graphics>
+				<hlinscription>
+					<text>&lt;sa,sb,p&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm><variable refvariable="p"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id80" source="PausingBackoff" target="ResumeBackoff2">
+				<graphics>
+					<position x="385" y="420"/>
+					<position x="385" y="460"/>
+				</graphics>
+				<hlinscription>
+					<text>&lt;sa,sb,pr2,b&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm> <finiteintrangeconstant value="2"><finiteintrange start="1" end="4"/></finiteintrangeconstant></subterm><subterm><variable refvariable="b"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id81" source="ResumeBackoff2" target="BackoffCounter">
+				<graphics>
+					<position x="305" y="460"/>
+					<position x="305" y="355"/>
+				</graphics>
+				<hlinscription>
+					<text>&lt;sa,sb,pr2,b&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm> <finiteintrangeconstant value="2"><finiteintrange start="1" end="4"/></finiteintrangeconstant></subterm><subterm><variable refvariable="b"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id82" source="InternalCollision" target="Vulnerable">
+				<graphics>
+					<position x="1180" y="325"/>
+				</graphics>
+				<hlinscription>
+					<text>&lt;sa,sc,p2,pt&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sc"/></subterm><subterm><variable refvariable="p2"/></subterm><subterm><variable refvariable="pt"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id83" source="Sense" target="WaitAIFS3">
+				<graphics>
+					<position x="1055" y="300"/>
+					<position x="1055" y="220"/>
+				</graphics>
+				<hlinscription>
+					<text>&lt;sa,sb,pr3,rts&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm> <finiteintrangeconstant value="3"><finiteintrange start="1" end="4"/></finiteintrangeconstant></subterm><subterm><useroperator declaration="rts"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id84" source="WaitAIFS3" target="Vulnerable">
+				<graphics>
+					<position x="1165" y="220"/>
+					<position x="1165" y="300"/>
+				</graphics>
+				<hlinscription>
+					<text>&lt;sa,sb,pr3,rts&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm> <finiteintrangeconstant value="3"><finiteintrange start="1" end="4"/></finiteintrangeconstant></subterm><subterm><useroperator declaration="rts"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id85" source="Sense" target="WaitAIFS4">
+				<graphics>
+					<position x="1055" y="300"/>
+					<position x="1055" y="180"/>
+				</graphics>
+				<hlinscription>
+					<text>&lt;sa,sb,pr4,rts&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm> <finiteintrangeconstant value="4"><finiteintrange start="1" end="4"/></finiteintrangeconstant></subterm><subterm><useroperator declaration="rts"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id86" source="WaitAIFS4" target="Vulnerable">
+				<graphics>
+					<position x="1165" y="180"/>
+					<position x="1165" y="300"/>
+				</graphics>
+				<hlinscription>
+					<text>&lt;sa,sb,pr4,rts&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm> <finiteintrangeconstant value="4"><finiteintrange start="1" end="4"/></finiteintrangeconstant></subterm><subterm><useroperator declaration="rts"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id87" source="GoingToBackoff" target="ReturnToBackoff">
+				<graphics>
+					<position x="700" y="290"/>
+					<position x="680" y="290"/>
+				</graphics>
+				<hlinscription>
+					<text>&lt;sa,sb,p&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm><variable refvariable="p"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id88" source="GoToBackoff" target="TxAttemptsCounter">
+				<graphics>
+					<position x="505" y="310"/>
+					<position x="505" y="265"/>
+				</graphics>
+				<hlinscription>
+					<text>&lt;sa,sb,p,tx1&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm><variable refvariable="p"/></subterm><subterm> <finiteintrangeconstant value="1"><finiteintrange start="1" end="20"/></finiteintrangeconstant></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id89" source="ReturnToBackoff" target="TxAttemptsCounter">
+				<graphics>
+					<position x="535" y="280"/>
+					<position x="535" y="260"/>
+				</graphics>
+				<hlinscription>
+					<text>&lt;sa,sb,p,tx++&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm><variable refvariable="p"/></subterm><subterm><successor><subterm><variable refvariable="tx"/></subterm></successor></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id90" source="TxAttemptsCounter" target="ReturnToBackoff">
+				<graphics>
+					<position x="595" y="245"/>
+					<position x="595" y="280"/>
+				</graphics>
+				<hlinscription>
+					<text>&lt;sa,sb,p,tx&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm><variable refvariable="p"/></subterm><subterm><variable refvariable="tx"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id91" source="ReturnToBackoff" target="ChoosingBackoff">
+				<graphics>
+					<position x="540" y="290"/>
+					<position x="540" y="330"/>
+				</graphics>
+				<hlinscription>
+					<text>&lt;sa,sb,p&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm><variable refvariable="p"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id92" source="ChoosingBackoff" target="ChooseBackoff">
+				<hlinscription>
+					<text>&lt;sa,sb,p&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm><variable refvariable="p"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id93" source="ChooseBackoff" target="BackoffMappings">
+				<hlinscription>
+					<text>&lt;p,tx,b&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="p"/></subterm><subterm><variable refvariable="tx"/></subterm><subterm><variable refvariable="b"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id94" source="TxAttemptsCounter" target="ChooseBackoff">
+				<graphics>
+					<position x="355" y="240"/>
+				</graphics>
+				<hlinscription>
+					<text>&lt;sa,sb,p,tx&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm><variable refvariable="p"/></subterm><subterm><variable refvariable="tx"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id95" source="ChooseBackoff" target="TxAttemptsCounter">
+				<graphics>
+					<position x="355" y="240"/>
+				</graphics>
+				<hlinscription>
+					<text>&lt;sa,sb,p,tx&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm><variable refvariable="p"/></subterm><subterm><variable refvariable="tx"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id96" source="ChoosingBackoff" target="DropPacket">
+				<graphics>
+					<position x="390" y="330"/>
+				</graphics>
+				<hlinscription>
+					<text>&lt;sa,sb,p&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm><variable refvariable="p"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id97" source="TxAttemptsCounter" target="DropPacket">
+				<hlinscription>
+					<text>&lt;sa,sb,p,tx&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm><variable refvariable="p"/></subterm><subterm><variable refvariable="tx"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id98" source="BackoffMappings" target="ChooseBackoff">
+				<hlinscription>
+					<text>&lt;p,tx,b&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="p"/></subterm><subterm><variable refvariable="tx"/></subterm><subterm><variable refvariable="b"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id99" source="DropPacket" target="Idle">
+				<graphics>
+					<position x="370" y="250"/>
+					<position x="795" y="180"/>
+				</graphics>
+				<hlinscription>
+					<text>&lt;sa,p&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="p"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id100" source="ChooseBackoff" target="BackoffCounter">
+				<hlinscription>
+					<text>&lt;sa,sb,p,b&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm><variable refvariable="p"/></subterm><subterm><variable refvariable="b"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id101" source="PausingBackoff" target="ResumeBackoff3">
+				<graphics>
+					<position x="385" y="420"/>
+					<position x="385" y="500"/>
+				</graphics>
+				<hlinscription>
+					<text>&lt;sa,sb,pr3,b&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm> <finiteintrangeconstant value="3"><finiteintrange start="1" end="4"/></finiteintrangeconstant></subterm><subterm><variable refvariable="b"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id102" source="ResumeBackoff3" target="BackoffCounter">
+				<graphics>
+					<position x="305" y="500"/>
+					<position x="305" y="355"/>
+				</graphics>
+				<hlinscription>
+					<text>&lt;sa,sb,pr3,b&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm> <finiteintrangeconstant value="3"><finiteintrange start="1" end="4"/></finiteintrangeconstant></subterm><subterm><variable refvariable="b"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id103" source="PausingBackoff" target="ResumeBackoff4">
+				<graphics>
+					<position x="385" y="420"/>
+					<position x="385" y="540"/>
+				</graphics>
+				<hlinscription>
+					<text>&lt;sa,sb,pr4,b&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm> <finiteintrangeconstant value="4"><finiteintrange start="1" end="4"/></finiteintrangeconstant></subterm><subterm><variable refvariable="b"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id104" source="ResumeBackoff4" target="BackoffCounter">
+				<graphics>
+					<position x="305" y="540"/>
+					<position x="305" y="355"/>
+				</graphics>
+				<hlinscription>
+					<text>&lt;sa,sb,pr4,b&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm> <finiteintrangeconstant value="4"><finiteintrange start="1" end="4"/></finiteintrangeconstant></subterm><subterm><variable refvariable="b"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id105" source="ErrorSpike" target="ExitingErrorSpike">
+				<graphics>
+					<position x="1910" y="560"/>
+				</graphics>
+				<hlinscription>
+					<text>1</text>
+					<structure>
+						<numberof><subterm><numberconstant value="1"><positive/></numberconstant></subterm><subterm><dotconstant/></subterm></numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id106" source="ExitingErrorSpike" target="NotErrorSpike">
+				<graphics>
+					<position x="1910" y="610"/>
+				</graphics>
+				<hlinscription>
+					<text>1</text>
+					<structure>
+						<numberof><subterm><numberconstant value="1"><positive/></numberconstant></subterm><subterm><dotconstant/></subterm></numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id107" source="NotErrorSpike" target="EnteringErrorSpike">
+				<graphics>
+					<position x="1830" y="610"/>
+				</graphics>
+				<hlinscription>
+					<text>1</text>
+					<structure>
+						<numberof><subterm><numberconstant value="1"><positive/></numberconstant></subterm><subterm><dotconstant/></subterm></numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id108" source="EnteringErrorSpike" target="ErrorSpike">
+				<graphics>
+					<position x="1830" y="560"/>
+				</graphics>
+				<hlinscription>
+					<text>1</text>
+					<structure>
+						<numberof><subterm><numberconstant value="1"><positive/></numberconstant></subterm><subterm><dotconstant/></subterm></numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id109" source="EnteringErrorSpike" target="Medium">
+				<graphics>
+					<position x="1705" y="550"/>
+					<position x="1720" y="680"/>
+				</graphics>
+				<hlinscription>
+					<text>1</text>
+					<structure>
+						<numberof><subterm><numberconstant value="1"><positive/></numberconstant></subterm><subterm><dotconstant/></subterm></numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id110" source="Medium" target="ExitingErrorSpike">
+				<graphics>
+					<position x="1690" y="680"/>
+					<position x="1975" y="740"/>
+				</graphics>
+				<hlinscription>
+					<text>1</text>
+					<structure>
+						<numberof><subterm><numberconstant value="1"><positive/></numberconstant></subterm><subterm><dotconstant/></subterm></numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id111" source="EnteringErrorSpike" target="Garbled">
+				<graphics>
+					<position x="1750" y="545"/>
+					<position x="1695" y="580"/>
+				</graphics>
+				<hlinscription>
+					<text>1</text>
+					<structure>
+						<numberof><subterm><numberconstant value="1"><positive/></numberconstant></subterm><subterm><dotconstant/></subterm></numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id112" source="ReadingPacket" target="CorrectPacketRts">
+				<graphics>
+					<position x="845" y="450"/>
+				</graphics>
+				<hlinscription>
+					<text>&lt;sa,sb,p,pt&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sb"/></subterm><subterm><variable refvariable="p"/></subterm><subterm><variable refvariable="pt"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id113" source="SentPacket" target="CorrectPacketRts">
+				<graphics>
+					<position x="1850" y="700"/>
+					<position x="755" y="485"/>
+				</graphics>
+				<hlinscription>
+					<text>&lt;sc,sa,p2,pt&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sc"/></subterm><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="p2"/></subterm><subterm><variable refvariable="pt"/></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id114" source="CorrectPacketRts" target="Sense">
+				<graphics>
+					<position x="715" y="450"/>
+					<position x="715" y="375"/>
+					<position x="980" y="375"/>
+				</graphics>
+				<hlinscription>
+					<text>&lt;sa,sc,p2,pt++&gt;</text>
+					<structure>
+						<tuple><subterm><variable refvariable="sa"/></subterm><subterm><variable refvariable="sc"/></subterm><subterm><variable refvariable="p2"/></subterm><subterm><successor><subterm><variable refvariable="pt"/></subterm></successor></subterm></tuple>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id115" source="AGarbled" target="GettingGarbled">
+				<hlinscription>
+					<text>1</text>
+					<structure>
+						<numberof><subterm><numberconstant value="1"><positive/></numberconstant></subterm><subterm><dotconstant/></subterm></numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id116" source="EndingGarbled" target="AGarbled">
+				<hlinscription>
+					<text>1</text>
+					<structure>
+						<numberof><subterm><numberconstant value="1"><positive/></numberconstant></subterm><subterm><dotconstant/></subterm></numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id117" source="AMedium" target="EndingGarbled">
+				<hlinscription>
+					<text>4</text>
+					<structure>
+						<numberof><subterm><numberconstant value="4"><positive/></numberconstant></subterm><subterm><dotconstant/></subterm></numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id118" source="AMedium" target="EnteringErrorSpike">
+				<graphics>
+					<position x="1375" y="685"/>
+					<position x="1775" y="575"/>
+				</graphics>
+				<hlinscription>
+					<text>1</text>
+					<structure>
+						<numberof><subterm><numberconstant value="1"><positive/></numberconstant></subterm><subterm><dotconstant/></subterm></numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id119" source="ExitingErrorSpike" target="AMedium">
+				<graphics>
+					<position x="1975" y="740"/>
+					<position x="1400" y="740"/>
+				</graphics>
+				<hlinscription>
+					<text>1</text>
+					<structure>
+						<numberof><subterm><numberconstant value="1"><positive/></numberconstant></subterm><subterm><dotconstant/></subterm></numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id120" source="AGarbled" target="EnteringErrorSpike">
+				<graphics>
+					<position x="1605" y="465"/>
+				</graphics>
+				<hlinscription>
+					<text>1</text>
+					<structure>
+						<numberof><subterm><numberconstant value="1"><positive/></numberconstant></subterm><subterm><dotconstant/></subterm></numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id121" source="EndingGarbled" target="AMedium">
+				<hlinscription>
+					<text>4</text>
+					<structure>
+						<numberof><subterm><numberconstant value="4"><positive/></numberconstant></subterm><subterm><dotconstant/></subterm></numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id122" source="BeginWaitingForResponse" target="AMedium">
+				<hlinscription>
+					<text>1</text>
+					<structure>
+						<numberof><subterm><numberconstant value="1"><positive/></numberconstant></subterm><subterm><dotconstant/></subterm></numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id123" source="SendAck" target="AMedium">
+				<graphics>
+					<position x="1550" y="415"/>
+					<position x="1275" y="650"/>
+				</graphics>
+				<hlinscription>
+					<text>1</text>
+					<structure>
+						<numberof><subterm><numberconstant value="1"><positive/></numberconstant></subterm><subterm><dotconstant/></subterm></numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id124" source="AMedium" target="BeginSending">
+				<graphics>
+					<position x="1270" y="760"/>
+					<position x="1320" y="325"/>
+				</graphics>
+				<hlinscription>
+					<text>1</text>
+					<structure>
+						<numberof><subterm><numberconstant value="1"><positive/></numberconstant></subterm><subterm><dotconstant/></subterm></numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id125" source="AMedium" target="StopReceiving">
+				<hlinscription>
+					<text>4</text>
+					<structure>
+						<numberof><subterm><numberconstant value="4"><positive/></numberconstant></subterm><subterm><dotconstant/></subterm></numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id126" source="StopReceiving" target="AMedium">
+				<hlinscription>
+					<text>4</text>
+					<structure>
+						<numberof><subterm><numberconstant value="4"><positive/></numberconstant></subterm><subterm><dotconstant/></subterm></numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id127" source="AGarbled" target="BeginReceiving">
+				<hlinscription>
+					<text>1</text>
+					<structure>
+						<numberof><subterm><numberconstant value="1"><positive/></numberconstant></subterm><subterm><dotconstant/></subterm></numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id128" source="BeginReceiving" target="AGarbled">
+				<hlinscription>
+					<text>1</text>
+					<structure>
+						<numberof><subterm><numberconstant value="1"><positive/></numberconstant></subterm><subterm><dotconstant/></subterm></numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id129" source="AMedium" target="ResumeBackoff4">
+				<graphics>
+					<position x="675" y="715"/>
+					<position x="440" y="715"/>
+				</graphics>
+				<hlinscription>
+					<text>4</text>
+					<structure>
+						<numberof><subterm><numberconstant value="4"><positive/></numberconstant></subterm><subterm><dotconstant/></subterm></numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id130" source="AMedium" target="ResumeBackoff3">
+				<graphics>
+					<position x="675" y="715"/>
+					<position x="440" y="715"/>
+				</graphics>
+				<hlinscription>
+					<text>4</text>
+					<structure>
+						<numberof><subterm><numberconstant value="4"><positive/></numberconstant></subterm><subterm><dotconstant/></subterm></numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id131" source="AMedium" target="ResumeBackoff2">
+				<graphics>
+					<position x="675" y="715"/>
+					<position x="440" y="715"/>
+				</graphics>
+				<hlinscription>
+					<text>4</text>
+					<structure>
+						<numberof><subterm><numberconstant value="4"><positive/></numberconstant></subterm><subterm><dotconstant/></subterm></numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id132" source="AMedium" target="ResumeBackoff1">
+				<graphics>
+					<position x="675" y="715"/>
+					<position x="440" y="715"/>
+				</graphics>
+				<hlinscription>
+					<text>4</text>
+					<structure>
+						<numberof><subterm><numberconstant value="4"><positive/></numberconstant></subterm><subterm><dotconstant/></subterm></numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id133" source="ResumeBackoff1" target="AMedium">
+				<hlinscription>
+					<text>4</text>
+					<structure>
+						<numberof><subterm><numberconstant value="4"><positive/></numberconstant></subterm><subterm><dotconstant/></subterm></numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id134" source="ResumeBackoff2" target="AMedium">
+				<hlinscription>
+					<text>4</text>
+					<structure>
+						<numberof><subterm><numberconstant value="4"><positive/></numberconstant></subterm><subterm><dotconstant/></subterm></numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id135" source="ResumeBackoff3" target="AMedium">
+				<hlinscription>
+					<text>4</text>
+					<structure>
+						<numberof><subterm><numberconstant value="4"><positive/></numberconstant></subterm><subterm><dotconstant/></subterm></numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+			<arc id="id136" source="ResumeBackoff4" target="AMedium">
+				<hlinscription>
+					<text>4</text>
+					<structure>
+						<numberof><subterm><numberconstant value="4"><positive/></numberconstant></subterm><subterm><dotconstant/></subterm></numberof>
+					</structure>
+				</hlinscription>
+			</arc>
+		</page>
+	</net>
+</pnml>
