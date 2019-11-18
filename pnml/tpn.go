@@ -49,6 +49,10 @@ func (p Constant) MatchRing(name string, i int) (int, error) {
 	return 0, fmt.Errorf("element not supported in MatchRing (constant)")
 }
 
+func (p FIRConstant) MatchRing(name string, i int) (int, error) {
+	return 0, fmt.Errorf("element not supported in MatchRing (finiteintrangeconstant)")
+}
+
 func (p Var) MatchRing(name string, i int) (int, error) {
 	if name != string(p) {
 		return 0, fmt.Errorf("only one ring variable supported")

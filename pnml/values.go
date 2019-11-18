@@ -10,9 +10,10 @@ import (
 
 // Value provides a more efficient representation for values
 //
-// {0 nil} is a Dot
-// {i nil} is Constant(name) where i uniquely identifies name
-// {i {j {...}}} is for tuples
+// {0 nil} 			is a Dot
+// {i nil} 			is Constant(name) where i uniquely identifies name
+// {i {j {...}}} 	is for tuples
+// we encode a range value, x, using a constant named _intx
 type Value struct {
 	Head int
 	Tail *Value
@@ -22,19 +23,22 @@ type Value struct {
 
 // PrintValue returns a readable description of a Value
 func (net *Net) PrintValue(val *Value) string {
-	c := net.Identity[val.Head]
 	if val.Tail == nil {
-		return c
+		return net.printHeadValue(val.Head)
 	}
-	c = fmt.Sprintf("(%s, %s", c, net.Identity[val.Tail.Head])
-	return net.printTupleValue(c, val.Tail.Tail)
+	c := fmt.Sprintf("(%s, ", net.printHeadValue(val.Head))
+	return net.printTupleValue(c, val.Tail)
+}
+
+func (net *Net) printHeadValue(i int) string {
+	return net.Identity[i]
 }
 
 func (net *Net) printTupleValue(s string, val *Value) string {
 	if val == nil {
 		return s + ")"
 	}
-	c := net.Identity[val.Head]
+	c := net.printHeadValue(val.Head)
 	return net.printTupleValue(s+", "+c, val.Tail)
 }
 
