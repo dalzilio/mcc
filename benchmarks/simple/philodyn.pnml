@@ -1,0 +1,1098 @@
+<?xml version="1.0"?>
+<pnml xmlns="http://www.pnml.org/version-2009/grammar/pnml">
+  <net id="PhilosophersDyn-COL-03" type="http://www.pnml.org/version-2009/grammar/symmetricnet">
+    <page id="DocumentDefaultPage">
+      <place id="Neighbourhood">
+        <name>
+          <text>Neighbourhood</text>
+        </name>
+        <type>
+          <text>Neighbourhood</text>
+          <structure>
+            <usersort declaration="neighbourhood"/>
+          </structure>
+        </type>
+      </place>
+      <place id="Outside">
+        <name>
+          <text>Outside</text>
+        </name>
+        <type>
+          <text>Philosopher</text>
+          <structure>
+            <usersort declaration="Philosopher"/>
+          </structure>
+        </type>
+        <hlinitialMarking>
+          <text>1'(Philosopher.all)</text>
+          <structure>
+            <numberof>
+              <subterm>
+                <numberconstant value="1">
+                  <positive/>
+                </numberconstant>
+              </subterm>
+              <subterm>
+                <all>
+                  <usersort declaration="Philosopher"/>
+                </all>
+              </subterm>
+            </numberof>
+          </structure>
+        </hlinitialMarking>
+      </place>
+      <place id="Think">
+        <name>
+          <text>Think</text>
+        </name>
+        <type>
+          <text>Philosopher</text>
+          <structure>
+            <usersort declaration="Philosopher"/>
+          </structure>
+        </type>
+      </place>
+      <place id="Forks">
+        <name>
+          <text>Forks</text>
+        </name>
+        <type>
+          <text>Philosopher</text>
+          <structure>
+            <usersort declaration="Philosopher"/>
+          </structure>
+        </type>
+      </place>
+      <place id="WaitLeft">
+        <name>
+          <text>WaitLeft</text>
+        </name>
+        <type>
+          <text>Philosopher</text>
+          <structure>
+            <usersort declaration="Philosopher"/>
+          </structure>
+        </type>
+      </place>
+      <place id="WaitRight">
+        <name>
+          <text>WaitRight</text>
+        </name>
+        <type>
+          <text>Philosopher</text>
+          <structure>
+            <usersort declaration="Philosopher"/>
+          </structure>
+        </type>
+      </place>
+      <place id="HasLeft">
+        <name>
+          <text>HasLeft</text>
+        </name>
+        <type>
+          <text>Philosopher</text>
+          <structure>
+            <usersort declaration="Philosopher"/>
+          </structure>
+        </type>
+      </place>
+      <place id="HasRight">
+        <name>
+          <text>HasRight</text>
+        </name>
+        <type>
+          <text>Philosopher</text>
+          <structure>
+            <usersort declaration="Philosopher"/>
+          </structure>
+        </type>
+      </place>
+      <transition id="Initialize">
+        <name>
+          <text>Initialize</text>
+        </name>
+        <condition>
+          <text>(p) ineq (q)</text>
+          <structure>
+            <inequality>
+              <subterm>
+                <variable refvariable="varp"/>
+              </subterm>
+              <subterm>
+                <variable refvariable="varq"/>
+              </subterm>
+            </inequality>
+          </structure>
+        </condition>
+      </transition>
+      <transition id="Join">
+        <name>
+          <text>Join</text>
+        </name>
+      </transition>
+      <transition id="Leave">
+        <name>
+          <text>Leave</text>
+        </name>
+      </transition>
+      <transition id="TakeLeft">
+        <name>
+          <text>TakeLeft</text>
+        </name>
+      </transition>
+      <transition id="TakeRight">
+        <name>
+          <text>TakeRight</text>
+        </name>
+      </transition>
+      <transition id="Eat">
+        <name>
+          <text>Eat</text>
+        </name>
+      </transition>
+      <transition id="SearchForks">
+        <name>
+          <text>SearchForks</text>
+        </name>
+      </transition>
+      <arc id="arc18" source="Eat" target="Neighbourhood">
+        <name>
+          <text>18</text>
+        </name>
+        <hlinscription>
+          <text>1'[(p),(q)]</text>
+          <structure>
+            <numberof>
+              <subterm>
+                <numberconstant value="1">
+                  <positive/>
+                </numberconstant>
+              </subterm>
+              <subterm>
+                <tuple>
+                  <subterm>
+                    <variable refvariable="varp"/>
+                  </subterm>
+                  <subterm>
+                    <variable refvariable="varq"/>
+                  </subterm>
+                </tuple>
+              </subterm>
+            </numberof>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="arc19" source="Neighbourhood" target="Eat">
+        <name>
+          <text>19</text>
+        </name>
+        <hlinscription>
+          <text>1'[(p),(q)]</text>
+          <structure>
+            <numberof>
+              <subterm>
+                <numberconstant value="1">
+                  <positive/>
+                </numberconstant>
+              </subterm>
+              <subterm>
+                <tuple>
+                  <subterm>
+                    <variable refvariable="varp"/>
+                  </subterm>
+                  <subterm>
+                    <variable refvariable="varq"/>
+                  </subterm>
+                </tuple>
+              </subterm>
+            </numberof>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="arc20" source="Eat" target="Forks">
+        <name>
+          <text>20</text>
+        </name>
+        <hlinscription>
+          <text>1'[(p)] + 1'[(q)]</text>
+          <structure>
+            <add>
+              <subterm>
+                <numberof>
+                  <subterm>
+                    <numberconstant value="1">
+                      <positive/>
+                    </numberconstant>
+                  </subterm>
+                  <subterm>
+                    <variable refvariable="varp"/>
+                  </subterm>
+                </numberof>
+              </subterm>
+              <subterm>
+                <numberof>
+                  <subterm>
+                    <numberconstant value="1">
+                      <positive/>
+                    </numberconstant>
+                  </subterm>
+                  <subterm>
+                    <variable refvariable="varq"/>
+                  </subterm>
+                </numberof>
+              </subterm>
+            </add>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="arc21" source="TakeRight" target="Neighbourhood">
+        <name>
+          <text>21</text>
+        </name>
+        <hlinscription>
+          <text>1'[(p),(q)]</text>
+          <structure>
+            <numberof>
+              <subterm>
+                <numberconstant value="1">
+                  <positive/>
+                </numberconstant>
+              </subterm>
+              <subterm>
+                <tuple>
+                  <subterm>
+                    <variable refvariable="varp"/>
+                  </subterm>
+                  <subterm>
+                    <variable refvariable="varq"/>
+                  </subterm>
+                </tuple>
+              </subterm>
+            </numberof>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="arc22" source="Neighbourhood" target="TakeRight">
+        <name>
+          <text>22</text>
+        </name>
+        <hlinscription>
+          <text>1'[(p),(q)]</text>
+          <structure>
+            <numberof>
+              <subterm>
+                <numberconstant value="1">
+                  <positive/>
+                </numberconstant>
+              </subterm>
+              <subterm>
+                <tuple>
+                  <subterm>
+                    <variable refvariable="varp"/>
+                  </subterm>
+                  <subterm>
+                    <variable refvariable="varq"/>
+                  </subterm>
+                </tuple>
+              </subterm>
+            </numberof>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="arc23" source="Eat" target="Think">
+        <name>
+          <text>23</text>
+        </name>
+        <hlinscription>
+          <text>1'[(p)]</text>
+          <structure>
+            <numberof>
+              <subterm>
+                <numberconstant value="1">
+                  <positive/>
+                </numberconstant>
+              </subterm>
+              <subterm>
+                <variable refvariable="varp"/>
+              </subterm>
+            </numberof>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="arc24" source="TakeRight" target="HasRight">
+        <name>
+          <text>24</text>
+        </name>
+        <hlinscription>
+          <text>1'[(p)]</text>
+          <structure>
+            <numberof>
+              <subterm>
+                <numberconstant value="1">
+                  <positive/>
+                </numberconstant>
+              </subterm>
+              <subterm>
+                <variable refvariable="varp"/>
+              </subterm>
+            </numberof>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="arc25" source="WaitRight" target="TakeRight">
+        <name>
+          <text>25</text>
+        </name>
+        <hlinscription>
+          <text>1'[(p)]</text>
+          <structure>
+            <numberof>
+              <subterm>
+                <numberconstant value="1">
+                  <positive/>
+                </numberconstant>
+              </subterm>
+              <subterm>
+                <variable refvariable="varp"/>
+              </subterm>
+            </numberof>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="arc26" source="Forks" target="TakeRight">
+        <name>
+          <text>26</text>
+        </name>
+        <hlinscription>
+          <text>1'[(q)]</text>
+          <structure>
+            <numberof>
+              <subterm>
+                <numberconstant value="1">
+                  <positive/>
+                </numberconstant>
+              </subterm>
+              <subterm>
+                <variable refvariable="varq"/>
+              </subterm>
+            </numberof>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="arc27" source="HasRight" target="Eat">
+        <name>
+          <text>27</text>
+        </name>
+        <hlinscription>
+          <text>1'[(p)]</text>
+          <structure>
+            <numberof>
+              <subterm>
+                <numberconstant value="1">
+                  <positive/>
+                </numberconstant>
+              </subterm>
+              <subterm>
+                <variable refvariable="varp"/>
+              </subterm>
+            </numberof>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="arc28" source="HasLeft" target="Eat">
+        <name>
+          <text>28</text>
+        </name>
+        <hlinscription>
+          <text>1'[(p)]</text>
+          <structure>
+            <numberof>
+              <subterm>
+                <numberconstant value="1">
+                  <positive/>
+                </numberconstant>
+              </subterm>
+              <subterm>
+                <variable refvariable="varp"/>
+              </subterm>
+            </numberof>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="arc29" source="TakeLeft" target="HasLeft">
+        <name>
+          <text>29</text>
+        </name>
+        <hlinscription>
+          <text>1'[(p)]</text>
+          <structure>
+            <numberof>
+              <subterm>
+                <numberconstant value="1">
+                  <positive/>
+                </numberconstant>
+              </subterm>
+              <subterm>
+                <variable refvariable="varp"/>
+              </subterm>
+            </numberof>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="arc30" source="Forks" target="TakeLeft">
+        <name>
+          <text>30</text>
+        </name>
+        <hlinscription>
+          <text>1'[(p)]</text>
+          <structure>
+            <numberof>
+              <subterm>
+                <numberconstant value="1">
+                  <positive/>
+                </numberconstant>
+              </subterm>
+              <subterm>
+                <variable refvariable="varp"/>
+              </subterm>
+            </numberof>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="arc31" source="WaitLeft" target="TakeLeft">
+        <name>
+          <text>31</text>
+        </name>
+        <hlinscription>
+          <text>1'[(p)]</text>
+          <structure>
+            <numberof>
+              <subterm>
+                <numberconstant value="1">
+                  <positive/>
+                </numberconstant>
+              </subterm>
+              <subterm>
+                <variable refvariable="varp"/>
+              </subterm>
+            </numberof>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="arc32" source="SearchForks" target="WaitRight">
+        <name>
+          <text>32</text>
+        </name>
+        <hlinscription>
+          <text>1'[(p)]</text>
+          <structure>
+            <numberof>
+              <subterm>
+                <numberconstant value="1">
+                  <positive/>
+                </numberconstant>
+              </subterm>
+              <subterm>
+                <variable refvariable="varp"/>
+              </subterm>
+            </numberof>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="arc33" source="SearchForks" target="WaitLeft">
+        <name>
+          <text>33</text>
+        </name>
+        <hlinscription>
+          <text>1'[(p)]</text>
+          <structure>
+            <numberof>
+              <subterm>
+                <numberconstant value="1">
+                  <positive/>
+                </numberconstant>
+              </subterm>
+              <subterm>
+                <variable refvariable="varp"/>
+              </subterm>
+            </numberof>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="arc34" source="Think" target="SearchForks">
+        <name>
+          <text>34</text>
+        </name>
+        <hlinscription>
+          <text>1'[(p)]</text>
+          <structure>
+            <numberof>
+              <subterm>
+                <numberconstant value="1">
+                  <positive/>
+                </numberconstant>
+              </subterm>
+              <subterm>
+                <variable refvariable="varp"/>
+              </subterm>
+            </numberof>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="arc35" source="Leave" target="Neighbourhood">
+        <name>
+          <text>35</text>
+        </name>
+        <hlinscription>
+          <text>1'[(l),(r)]</text>
+          <structure>
+            <numberof>
+              <subterm>
+                <numberconstant value="1">
+                  <positive/>
+                </numberconstant>
+              </subterm>
+              <subterm>
+                <tuple>
+                  <subterm>
+                    <variable refvariable="varl"/>
+                  </subterm>
+                  <subterm>
+                    <variable refvariable="varr"/>
+                  </subterm>
+                </tuple>
+              </subterm>
+            </numberof>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="arc36" source="Neighbourhood" target="Leave">
+        <name>
+          <text>36</text>
+        </name>
+        <hlinscription>
+          <text>1'[(l),(p)] + 1'[(p),(r)]</text>
+          <structure>
+            <add>
+              <subterm>
+                <numberof>
+                  <subterm>
+                    <numberconstant value="1">
+                      <positive/>
+                    </numberconstant>
+                  </subterm>
+                  <subterm>
+                    <tuple>
+                      <subterm>
+                        <variable refvariable="varl"/>
+                      </subterm>
+                      <subterm>
+                        <variable refvariable="varp"/>
+                      </subterm>
+                    </tuple>
+                  </subterm>
+                </numberof>
+              </subterm>
+              <subterm>
+                <numberof>
+                  <subterm>
+                    <numberconstant value="1">
+                      <positive/>
+                    </numberconstant>
+                  </subterm>
+                  <subterm>
+                    <tuple>
+                      <subterm>
+                        <variable refvariable="varp"/>
+                      </subterm>
+                      <subterm>
+                        <variable refvariable="varr"/>
+                      </subterm>
+                    </tuple>
+                  </subterm>
+                </numberof>
+              </subterm>
+            </add>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="arc37" source="Leave" target="Outside">
+        <name>
+          <text>37</text>
+        </name>
+        <hlinscription>
+          <text>1'[(p)]</text>
+          <structure>
+            <numberof>
+              <subterm>
+                <numberconstant value="1">
+                  <positive/>
+                </numberconstant>
+              </subterm>
+              <subterm>
+                <variable refvariable="varp"/>
+              </subterm>
+            </numberof>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="arc38" source="Forks" target="Leave">
+        <name>
+          <text>38</text>
+        </name>
+        <hlinscription>
+          <text>1'[(p)]</text>
+          <structure>
+            <numberof>
+              <subterm>
+                <numberconstant value="1">
+                  <positive/>
+                </numberconstant>
+              </subterm>
+              <subterm>
+                <variable refvariable="varp"/>
+              </subterm>
+            </numberof>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="arc39" source="Think" target="Leave">
+        <name>
+          <text>39</text>
+        </name>
+        <hlinscription>
+          <text>1'[(p)]</text>
+          <structure>
+            <numberof>
+              <subterm>
+                <numberconstant value="1">
+                  <positive/>
+                </numberconstant>
+              </subterm>
+              <subterm>
+                <variable refvariable="varp"/>
+              </subterm>
+            </numberof>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="arc40" source="Initialize" target="Forks">
+        <name>
+          <text>40</text>
+        </name>
+        <hlinscription>
+          <text>1'[(p)] + 1'[(q)]</text>
+          <structure>
+            <add>
+              <subterm>
+                <numberof>
+                  <subterm>
+                    <numberconstant value="1">
+                      <positive/>
+                    </numberconstant>
+                  </subterm>
+                  <subterm>
+                    <variable refvariable="varp"/>
+                  </subterm>
+                </numberof>
+              </subterm>
+              <subterm>
+                <numberof>
+                  <subterm>
+                    <numberconstant value="1">
+                      <positive/>
+                    </numberconstant>
+                  </subterm>
+                  <subterm>
+                    <variable refvariable="varq"/>
+                  </subterm>
+                </numberof>
+              </subterm>
+            </add>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="arc41" source="Join" target="Forks">
+        <name>
+          <text>41</text>
+        </name>
+        <hlinscription>
+          <text>1'[(l)] + 1'[(r)]</text>
+          <structure>
+            <add>
+              <subterm>
+                <numberof>
+                  <subterm>
+                    <numberconstant value="1">
+                      <positive/>
+                    </numberconstant>
+                  </subterm>
+                  <subterm>
+                    <variable refvariable="varl"/>
+                  </subterm>
+                </numberof>
+              </subterm>
+              <subterm>
+                <numberof>
+                  <subterm>
+                    <numberconstant value="1">
+                      <positive/>
+                    </numberconstant>
+                  </subterm>
+                  <subterm>
+                    <variable refvariable="varr"/>
+                  </subterm>
+                </numberof>
+              </subterm>
+            </add>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="arc42" source="Forks" target="Join">
+        <name>
+          <text>42</text>
+        </name>
+        <hlinscription>
+          <text>1'[(l)] + 1'[(r)]</text>
+          <structure>
+            <add>
+              <subterm>
+                <numberof>
+                  <subterm>
+                    <numberconstant value="1">
+                      <positive/>
+                    </numberconstant>
+                  </subterm>
+                  <subterm>
+                    <variable refvariable="varl"/>
+                  </subterm>
+                </numberof>
+              </subterm>
+              <subterm>
+                <numberof>
+                  <subterm>
+                    <numberconstant value="1">
+                      <positive/>
+                    </numberconstant>
+                  </subterm>
+                  <subterm>
+                    <variable refvariable="varr"/>
+                  </subterm>
+                </numberof>
+              </subterm>
+            </add>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="arc43" source="Join" target="Think">
+        <name>
+          <text>43</text>
+        </name>
+        <hlinscription>
+          <text>1'[(p)]</text>
+          <structure>
+            <numberof>
+              <subterm>
+                <numberconstant value="1">
+                  <positive/>
+                </numberconstant>
+              </subterm>
+              <subterm>
+                <variable refvariable="varp"/>
+              </subterm>
+            </numberof>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="arc44" source="Join" target="Neighbourhood">
+        <name>
+          <text>44</text>
+        </name>
+        <hlinscription>
+          <text>1'[(l),(p)] + 1'[(p),(r)]</text>
+          <structure>
+            <add>
+              <subterm>
+                <numberof>
+                  <subterm>
+                    <numberconstant value="1">
+                      <positive/>
+                    </numberconstant>
+                  </subterm>
+                  <subterm>
+                    <tuple>
+                      <subterm>
+                        <variable refvariable="varl"/>
+                      </subterm>
+                      <subterm>
+                        <variable refvariable="varp"/>
+                      </subterm>
+                    </tuple>
+                  </subterm>
+                </numberof>
+              </subterm>
+              <subterm>
+                <numberof>
+                  <subterm>
+                    <numberconstant value="1">
+                      <positive/>
+                    </numberconstant>
+                  </subterm>
+                  <subterm>
+                    <tuple>
+                      <subterm>
+                        <variable refvariable="varp"/>
+                      </subterm>
+                      <subterm>
+                        <variable refvariable="varr"/>
+                      </subterm>
+                    </tuple>
+                  </subterm>
+                </numberof>
+              </subterm>
+            </add>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="arc45" source="Neighbourhood" target="Join">
+        <name>
+          <text>45</text>
+        </name>
+        <hlinscription>
+          <text>1'[(l),(r)]</text>
+          <structure>
+            <numberof>
+              <subterm>
+                <numberconstant value="1">
+                  <positive/>
+                </numberconstant>
+              </subterm>
+              <subterm>
+                <tuple>
+                  <subterm>
+                    <variable refvariable="varl"/>
+                  </subterm>
+                  <subterm>
+                    <variable refvariable="varr"/>
+                  </subterm>
+                </tuple>
+              </subterm>
+            </numberof>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="arc46" source="Outside" target="Join">
+        <name>
+          <text>46</text>
+        </name>
+        <hlinscription>
+          <text>1'[(p)]</text>
+          <structure>
+            <numberof>
+              <subterm>
+                <numberconstant value="1">
+                  <positive/>
+                </numberconstant>
+              </subterm>
+              <subterm>
+                <variable refvariable="varp"/>
+              </subterm>
+            </numberof>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="arc47" source="Initialize" target="Neighbourhood">
+        <name>
+          <text>47</text>
+        </name>
+        <hlinscription>
+          <text>1'[(p),(q)] + 1'[(q),(p)]</text>
+          <structure>
+            <add>
+              <subterm>
+                <numberof>
+                  <subterm>
+                    <numberconstant value="1">
+                      <positive/>
+                    </numberconstant>
+                  </subterm>
+                  <subterm>
+                    <tuple>
+                      <subterm>
+                        <variable refvariable="varp"/>
+                      </subterm>
+                      <subterm>
+                        <variable refvariable="varq"/>
+                      </subterm>
+                    </tuple>
+                  </subterm>
+                </numberof>
+              </subterm>
+              <subterm>
+                <numberof>
+                  <subterm>
+                    <numberconstant value="1">
+                      <positive/>
+                    </numberconstant>
+                  </subterm>
+                  <subterm>
+                    <tuple>
+                      <subterm>
+                        <variable refvariable="varq"/>
+                      </subterm>
+                      <subterm>
+                        <variable refvariable="varp"/>
+                      </subterm>
+                    </tuple>
+                  </subterm>
+                </numberof>
+              </subterm>
+            </add>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="arc48" source="Initialize" target="Outside">
+        <name>
+          <text>48</text>
+        </name>
+        <hlinscription>
+          <text>1'[(Philosopher.all)] - 1'[(p)] - 1'[(q)]</text>
+          <structure>
+            <subtract>
+              <subterm>
+                <numberof>
+                  <subterm>
+                    <numberconstant value="1">
+                      <positive/>
+                    </numberconstant>
+                  </subterm>
+                  <subterm>
+                    <all>
+                      <usersort declaration="Philosopher"/>
+                    </all>
+                  </subterm>
+                </numberof>
+              </subterm>
+              <subterm>
+                <numberof>
+                  <subterm>
+                    <numberconstant value="1">
+                      <positive/>
+                    </numberconstant>
+                  </subterm>
+                  <subterm>
+                    <variable refvariable="varp"/>
+                  </subterm>
+                </numberof>
+              </subterm>
+              <subterm>
+                <numberof>
+                  <subterm>
+                    <numberconstant value="1">
+                      <positive/>
+                    </numberconstant>
+                  </subterm>
+                  <subterm>
+                    <variable refvariable="varq"/>
+                  </subterm>
+                </numberof>
+              </subterm>
+            </subtract>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="arc49" source="Initialize" target="Think">
+        <name>
+          <text>49</text>
+        </name>
+        <hlinscription>
+          <text>1'[(p)] + 1'[(q)]</text>
+          <structure>
+            <add>
+              <subterm>
+                <numberof>
+                  <subterm>
+                    <numberconstant value="1">
+                      <positive/>
+                    </numberconstant>
+                  </subterm>
+                  <subterm>
+                    <variable refvariable="varp"/>
+                  </subterm>
+                </numberof>
+              </subterm>
+              <subterm>
+                <numberof>
+                  <subterm>
+                    <numberconstant value="1">
+                      <positive/>
+                    </numberconstant>
+                  </subterm>
+                  <subterm>
+                    <variable refvariable="varq"/>
+                  </subterm>
+                </numberof>
+              </subterm>
+            </add>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="arc50" source="Outside" target="Initialize">
+        <name>
+          <text>50</text>
+        </name>
+        <hlinscription>
+          <text>1'[(Philosopher.all)]</text>
+          <structure>
+            <numberof>
+              <subterm>
+                <numberconstant value="1">
+                  <positive/>
+                </numberconstant>
+              </subterm>
+              <subterm>
+                <all>
+                  <usersort declaration="Philosopher"/>
+                </all>
+              </subterm>
+            </numberof>
+          </structure>
+        </hlinscription>
+      </arc>
+    </page>
+    <name>
+      <text>PhilosophersDyn-COL-03</text>
+    </name>
+    <declaration>
+      <structure>
+        <declarations>
+          <namedsort id="Philosopher" name="Philosopher">
+            <cyclicenumeration>
+              <feconstant id="Philosopher1" name="1"/>
+              <feconstant id="Philosopher2" name="2"/>
+              <feconstant id="Philosopher3" name="3"/>
+            </cyclicenumeration>
+          </namedsort>
+          <namedsort id="neighbourhood" name="Neighbourhood">
+            <productsort>
+              <usersort declaration="Philosopher"/>
+              <usersort declaration="Philosopher"/>
+            </productsort>
+          </namedsort>
+          <variabledecl id="varr" name="r">
+            <usersort declaration="Philosopher"/>
+          </variabledecl>
+          <variabledecl id="varl" name="l">
+            <usersort declaration="Philosopher"/>
+          </variabledecl>
+          <variabledecl id="varq" name="q">
+            <usersort declaration="Philosopher"/>
+          </variabledecl>
+          <variabledecl id="varp" name="p">
+            <usersort declaration="Philosopher"/>
+          </variabledecl>
+        </declarations>
+      </structure>
+    </declaration>
+  </net>
+</pnml>
