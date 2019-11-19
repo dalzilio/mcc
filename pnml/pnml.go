@@ -103,7 +103,7 @@ func (d *Decoder) Build(net *Net) error {
 				fir := FIRConstant{start: v.FIntRan.Start, end: v.FIntRan.End}
 				for i := 0; i < len(v.Elem); i++ {
 					fir.value = v.FIntRan.Start + i
-					c := fir.String()
+					c := fir.stringify()
 					v.Elem[i] = c
 					net.Identity = append(net.Identity, c)
 					net.position[c] = i

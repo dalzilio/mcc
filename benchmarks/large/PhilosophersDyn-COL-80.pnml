@@ -142,16 +142,16 @@
           <text>Initialize</text>
         </name>
         <condition>
-          <text>(p) eq (q)</text>
+          <text>(p) ineq (q)</text>
           <structure>
-            <equality>
+            <inequality>
               <subterm>
                 <variable refvariable="varp"/>
               </subterm>
               <subterm>
                 <variable refvariable="varq"/>
               </subterm>
-            </equality>
+            </inequality>
           </structure>
         </condition>
       </transition>

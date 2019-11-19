@@ -168,15 +168,22 @@ func (p Tuple) AddEnv(env Env) {
 }
 
 func (p Tuple) Match(net *Net, env Env) ([]*Value, []int) {
-	var res *Value
+	res := []*Value{nil}
 	for i := len(p) - 1; i >= 0; i-- {
 		f, _ := p[i].Match(net, env)
-		if len(f) != 1 {
-			return nil, nil
+		foo := []*Value{}
+		for _, v1 := range f {
+			for _, v2 := range res {
+				foo = append(foo, net.unique[Value{Head: v1.Head, Tail: v2}])
+			}
 		}
-		res = net.unique[Value{Head: f[0].Head, Tail: res}]
+		res = foo
 	}
-	return []*Value{res}, []int{1}
+	mres := []int{}
+	for i := 0; i < len(res); i++ {
+		mres = append(mres, 1)
+	}
+	return res, mres
 }
 
 // ----------------------------------------------------------------------
@@ -290,14 +297,18 @@ type FIRConstant struct {
 	end   int
 }
 
-func (p FIRConstant) String() string {
+func (p FIRConstant) stringify() string {
 	return fmt.Sprintf("_int{%d,%d}%d", p.start, p.end, p.value)
+}
+
+func (p FIRConstant) String() string {
+	return strconv.Itoa(p.value)
 }
 
 func (p FIRConstant) AddEnv(env Env) {}
 
 func (p FIRConstant) Match(net *Net, env Env) ([]*Value, []int) {
-	return []*Value{net.order[p.String()]}, []int{1}
+	return []*Value{net.order[p.stringify()]}, []int{1}
 }
 
 // ----------------------------------------------------------------------

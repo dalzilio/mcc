@@ -46,7 +46,7 @@ func (s stringList) union(ns stringList) stringList {
 }
 
 // stringListZip collects all the strings in a collection of stringList (with the
-// hpothesis that they are all disctinct).
+// hypothesis that they are all disctinct).
 func stringListZip(ss []stringList) stringList {
 	if len(ss) == 0 {
 		return stringList{}

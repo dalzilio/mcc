@@ -1,0 +1,878 @@
+<?xml version="1.0"?>
+<pnml xmlns="http://www.pnml.org/version-2009/grammar/pnml">
+  <net id="DatabaseWithMutex-COL-02" type="http://www.pnml.org/version-2009/grammar/symmetricnet">
+    <page id="DocumentDefaultPage">
+      <place id="RecBuff">
+        <name>
+          <text>RecBuff</text>
+        </name>
+        <type>
+          <text>SF</text>
+          <structure>
+            <usersort declaration="sf"/>
+          </structure>
+        </type>
+      </place>
+      <place id="all_active">
+        <name>
+          <text>all_active</text>
+        </name>
+        <type>
+          <text>site</text>
+          <structure>
+            <usersort declaration="site"/>
+          </structure>
+        </type>
+        <hlinitialMarking>
+          <text>1'(site.all)</text>
+          <structure>
+            <numberof>
+              <subterm>
+                <numberconstant value="1">
+                  <positive/>
+                </numberconstant>
+              </subterm>
+              <subterm>
+                <all>
+                  <usersort declaration="site"/>
+                </all>
+              </subterm>
+            </numberof>
+          </structure>
+        </hlinitialMarking>
+      </place>
+      <place id="Active">
+        <name>
+          <text>Active</text>
+        </name>
+        <type>
+          <text>SF</text>
+          <structure>
+            <usersort declaration="sf"/>
+          </structure>
+        </type>
+      </place>
+      <place id="Mutex">
+        <name>
+          <text>Mutex</text>
+        </name>
+        <type>
+          <text>file</text>
+          <structure>
+            <usersort declaration="file"/>
+          </structure>
+        </type>
+        <hlinitialMarking>
+          <text>1'(file.all)</text>
+          <structure>
+            <numberof>
+              <subterm>
+                <numberconstant value="1">
+                  <positive/>
+                </numberconstant>
+              </subterm>
+              <subterm>
+                <all>
+                  <usersort declaration="file"/>
+                </all>
+              </subterm>
+            </numberof>
+          </structure>
+        </hlinitialMarking>
+      </place>
+      <place id="Message">
+        <name>
+          <text>Message</text>
+        </name>
+        <type>
+          <text>SF</text>
+          <structure>
+            <usersort declaration="sf"/>
+          </structure>
+        </type>
+      </place>
+      <place id="Modify">
+        <name>
+          <text>Modify</text>
+        </name>
+        <type>
+          <text>SF</text>
+          <structure>
+            <usersort declaration="sf"/>
+          </structure>
+        </type>
+      </place>
+      <place id="MesBuffReply">
+        <name>
+          <text>MesBuffReply</text>
+        </name>
+        <type>
+          <text>SF</text>
+          <structure>
+            <usersort declaration="sf"/>
+          </structure>
+        </type>
+      </place>
+      <place id="Acknowledge">
+        <name>
+          <text>Acknowledge</text>
+        </name>
+        <type>
+          <text>SF</text>
+          <structure>
+            <usersort declaration="sf"/>
+          </structure>
+        </type>
+      </place>
+      <place id="all_passive">
+        <name>
+          <text>all_passive</text>
+        </name>
+        <type>
+          <text>site</text>
+          <structure>
+            <usersort declaration="site"/>
+          </structure>
+        </type>
+        <hlinitialMarking>
+          <text>1'(site.all)</text>
+          <structure>
+            <numberof>
+              <subterm>
+                <numberconstant value="1">
+                  <positive/>
+                </numberconstant>
+              </subterm>
+              <subterm>
+                <all>
+                  <usersort declaration="site"/>
+                </all>
+              </subterm>
+            </numberof>
+          </structure>
+        </hlinitialMarking>
+      </place>
+      <place id="updating">
+        <name>
+          <text>updating</text>
+        </name>
+        <type>
+          <text>SF</text>
+          <structure>
+            <usersort declaration="sf"/>
+          </structure>
+        </type>
+      </place>
+      <place id="WaitMutex">
+        <name>
+          <text>WaitMutex</text>
+        </name>
+        <type>
+          <text>SF</text>
+          <structure>
+            <usersort declaration="sf"/>
+          </structure>
+        </type>
+      </place>
+      <transition id="SendMsg">
+        <name>
+          <text>SendMsg</text>
+        </name>
+      </transition>
+      <transition id="SendReply">
+        <name>
+          <text>SendReply</text>
+        </name>
+      </transition>
+      <transition id="Change">
+        <name>
+          <text>Change</text>
+        </name>
+      </transition>
+      <transition id="Acquire">
+        <name>
+          <text>Acquire</text>
+        </name>
+      </transition>
+      <transition id="Release">
+        <name>
+          <text>Release</text>
+        </name>
+      </transition>
+      <transition id="Update">
+        <name>
+          <text>Update</text>
+        </name>
+      </transition>
+      <transition id="end_update">
+        <name>
+          <text>end_update</text>
+        </name>
+      </transition>
+      <transition id="Start">
+        <name>
+          <text>Start</text>
+        </name>
+      </transition>
+      <arc id="arc34" source="all_active" target="Start">
+        <name>
+          <text>34</text>
+        </name>
+        <hlinscription>
+          <text>1'[(s)]</text>
+          <structure>
+            <numberof>
+              <subterm>
+                <numberconstant value="1">
+                  <positive/>
+                </numberconstant>
+              </subterm>
+              <subterm>
+                <variable refvariable="vars"/>
+              </subterm>
+            </numberof>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="arc35" source="Change" target="Message">
+        <name>
+          <text>35</text>
+        </name>
+        <hlinscription>
+          <text>1'[(site.all),(f)] - 1'[(s),(f)]</text>
+          <structure>
+            <subtract>
+              <subterm>
+                <add>
+                  <subterm>
+                    <numberof>
+                      <subterm>
+                        <numberconstant value="1">
+                          <positive/>
+                        </numberconstant>
+                      </subterm>
+                      <subterm>
+                        <tuple>
+                          <subterm>
+                            <useroperator declaration="site1"/>
+                          </subterm>
+                          <subterm>
+                            <variable refvariable="varf"/>
+                          </subterm>
+                        </tuple>
+                      </subterm>
+                      <subterm>
+                        <tuple>
+                          <subterm>
+                            <useroperator declaration="site2"/>
+                          </subterm>
+                          <subterm>
+                            <variable refvariable="varf"/>
+                          </subterm>
+                        </tuple>
+                      </subterm>
+                    </numberof>
+                  </subterm>
+                </add>
+              </subterm>
+              <subterm>
+                <numberof>
+                  <subterm>
+                    <numberconstant value="1">
+                      <positive/>
+                    </numberconstant>
+                  </subterm>
+                  <subterm>
+                    <tuple>
+                      <subterm>
+                        <variable refvariable="vars"/>
+                      </subterm>
+                      <subterm>
+                        <variable refvariable="varf"/>
+                      </subterm>
+                    </tuple>
+                  </subterm>
+                </numberof>
+              </subterm>
+            </subtract>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="arc32" source="Active" target="Release">
+        <name>
+          <text>32</text>
+        </name>
+        <hlinscription>
+          <text>1'[(s),(f)]</text>
+          <structure>
+            <numberof>
+              <subterm>
+                <numberconstant value="1">
+                  <positive/>
+                </numberconstant>
+              </subterm>
+              <subterm>
+                <tuple>
+                  <subterm>
+                    <variable refvariable="vars"/>
+                  </subterm>
+                  <subterm>
+                    <variable refvariable="varf"/>
+                  </subterm>
+                </tuple>
+              </subterm>
+            </numberof>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="arc33" source="Release" target="Mutex">
+        <name>
+          <text>33</text>
+        </name>
+        <hlinscription>
+          <text>1'[(f)]</text>
+          <structure>
+            <numberof>
+              <subterm>
+                <numberconstant value="1">
+                  <positive/>
+                </numberconstant>
+              </subterm>
+              <subterm>
+                <variable refvariable="varf"/>
+              </subterm>
+            </numberof>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="arc38" source="updating" target="end_update">
+        <name>
+          <text>38</text>
+        </name>
+        <hlinscription>
+          <text>1'[(s),(f)]</text>
+          <structure>
+            <numberof>
+              <subterm>
+                <numberconstant value="1">
+                  <positive/>
+                </numberconstant>
+              </subterm>
+              <subterm>
+                <tuple>
+                  <subterm>
+                    <variable refvariable="vars"/>
+                  </subterm>
+                  <subterm>
+                    <variable refvariable="varf"/>
+                  </subterm>
+                </tuple>
+              </subterm>
+            </numberof>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="arc39" source="end_update" target="MesBuffReply">
+        <name>
+          <text>39</text>
+        </name>
+        <hlinscription>
+          <text>1'[(s),(f)]</text>
+          <structure>
+            <numberof>
+              <subterm>
+                <numberconstant value="1">
+                  <positive/>
+                </numberconstant>
+              </subterm>
+              <subterm>
+                <tuple>
+                  <subterm>
+                    <variable refvariable="vars"/>
+                  </subterm>
+                  <subterm>
+                    <variable refvariable="varf"/>
+                  </subterm>
+                </tuple>
+              </subterm>
+            </numberof>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="arc36" source="Message" target="SendMsg">
+        <name>
+          <text>36</text>
+        </name>
+        <hlinscription>
+          <text>1'[(s),(f)]</text>
+          <structure>
+            <numberof>
+              <subterm>
+                <numberconstant value="1">
+                  <positive/>
+                </numberconstant>
+              </subterm>
+              <subterm>
+                <tuple>
+                  <subterm>
+                    <variable refvariable="vars"/>
+                  </subterm>
+                  <subterm>
+                    <variable refvariable="varf"/>
+                  </subterm>
+                </tuple>
+              </subterm>
+            </numberof>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="arc37" source="Update" target="updating">
+        <name>
+          <text>37</text>
+        </name>
+        <hlinscription>
+          <text>1'[(s),(f)]</text>
+          <structure>
+            <numberof>
+              <subterm>
+                <numberconstant value="1">
+                  <positive/>
+                </numberconstant>
+              </subterm>
+              <subterm>
+                <tuple>
+                  <subterm>
+                    <variable refvariable="vars"/>
+                  </subterm>
+                  <subterm>
+                    <variable refvariable="varf"/>
+                  </subterm>
+                </tuple>
+              </subterm>
+            </numberof>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="arc42" source="Change" target="Active">
+        <name>
+          <text>42</text>
+        </name>
+        <hlinscription>
+          <text>1'[(s),(f)]</text>
+          <structure>
+            <numberof>
+              <subterm>
+                <numberconstant value="1">
+                  <positive/>
+                </numberconstant>
+              </subterm>
+              <subterm>
+                <tuple>
+                  <subterm>
+                    <variable refvariable="vars"/>
+                  </subterm>
+                  <subterm>
+                    <variable refvariable="varf"/>
+                  </subterm>
+                </tuple>
+              </subterm>
+            </numberof>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="arc43" source="Modify" target="Change">
+        <name>
+          <text>43</text>
+        </name>
+        <hlinscription>
+          <text>1'[(s),(f)]</text>
+          <structure>
+            <numberof>
+              <subterm>
+                <numberconstant value="1">
+                  <positive/>
+                </numberconstant>
+              </subterm>
+              <subterm>
+                <tuple>
+                  <subterm>
+                    <variable refvariable="vars"/>
+                  </subterm>
+                  <subterm>
+                    <variable refvariable="varf"/>
+                  </subterm>
+                </tuple>
+              </subterm>
+            </numberof>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="arc40" source="Acknowledge" target="Release">
+        <name>
+          <text>40</text>
+        </name>
+        <hlinscription>
+          <text>1'[(site.all),(f)] - 1'[(s),(f)]</text>
+          <structure>
+            <subtract>
+              <subterm>
+                <add>
+                  <subterm>
+                    <numberof>
+                      <subterm>
+                        <numberconstant value="1">
+                          <positive/>
+                        </numberconstant>
+                      </subterm>
+                      <subterm>
+                        <tuple>
+                          <subterm>
+                            <useroperator declaration="site1"/>
+                          </subterm>
+                          <subterm>
+                            <variable refvariable="varf"/>
+                          </subterm>
+                        </tuple>
+                      </subterm>
+                      <subterm>
+                        <tuple>
+                          <subterm>
+                            <useroperator declaration="site2"/>
+                          </subterm>
+                          <subterm>
+                            <variable refvariable="varf"/>
+                          </subterm>
+                        </tuple>
+                      </subterm>
+                    </numberof>
+                  </subterm>
+                </add>
+              </subterm>
+              <subterm>
+                <numberof>
+                  <subterm>
+                    <numberconstant value="1">
+                      <positive/>
+                    </numberconstant>
+                  </subterm>
+                  <subterm>
+                    <tuple>
+                      <subterm>
+                        <variable refvariable="vars"/>
+                      </subterm>
+                      <subterm>
+                        <variable refvariable="varf"/>
+                      </subterm>
+                    </tuple>
+                  </subterm>
+                </numberof>
+              </subterm>
+            </subtract>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="arc41" source="all_passive" target="Update">
+        <name>
+          <text>41</text>
+        </name>
+        <hlinscription>
+          <text>1'[(s)]</text>
+          <structure>
+            <numberof>
+              <subterm>
+                <numberconstant value="1">
+                  <positive/>
+                </numberconstant>
+              </subterm>
+              <subterm>
+                <variable refvariable="vars"/>
+              </subterm>
+            </numberof>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="arc23" source="Start" target="WaitMutex">
+        <name>
+          <text>23</text>
+        </name>
+        <hlinscription>
+          <text>1'[(s),(f)]</text>
+          <structure>
+            <numberof>
+              <subterm>
+                <numberconstant value="1">
+                  <positive/>
+                </numberconstant>
+              </subterm>
+              <subterm>
+                <tuple>
+                  <subterm>
+                    <variable refvariable="vars"/>
+                  </subterm>
+                  <subterm>
+                    <variable refvariable="varf"/>
+                  </subterm>
+                </tuple>
+              </subterm>
+            </numberof>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="arc22" source="WaitMutex" target="Acquire">
+        <name>
+          <text>22</text>
+        </name>
+        <hlinscription>
+          <text>1'[(s),(f)]</text>
+          <structure>
+            <numberof>
+              <subterm>
+                <numberconstant value="1">
+                  <positive/>
+                </numberconstant>
+              </subterm>
+              <subterm>
+                <tuple>
+                  <subterm>
+                    <variable refvariable="vars"/>
+                  </subterm>
+                  <subterm>
+                    <variable refvariable="varf"/>
+                  </subterm>
+                </tuple>
+              </subterm>
+            </numberof>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="arc25" source="Release" target="all_active">
+        <name>
+          <text>25</text>
+        </name>
+        <hlinscription>
+          <text>1'[(s)]</text>
+          <structure>
+            <numberof>
+              <subterm>
+                <numberconstant value="1">
+                  <positive/>
+                </numberconstant>
+              </subterm>
+              <subterm>
+                <variable refvariable="vars"/>
+              </subterm>
+            </numberof>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="arc24" source="end_update" target="all_passive">
+        <name>
+          <text>24</text>
+        </name>
+        <hlinscription>
+          <text>1'[(s)]</text>
+          <structure>
+            <numberof>
+              <subterm>
+                <numberconstant value="1">
+                  <positive/>
+                </numberconstant>
+              </subterm>
+              <subterm>
+                <variable refvariable="vars"/>
+              </subterm>
+            </numberof>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="arc27" source="SendMsg" target="RecBuff">
+        <name>
+          <text>27</text>
+        </name>
+        <hlinscription>
+          <text>1'[(s),(f)]</text>
+          <structure>
+            <numberof>
+              <subterm>
+                <numberconstant value="1">
+                  <positive/>
+                </numberconstant>
+              </subterm>
+              <subterm>
+                <tuple>
+                  <subterm>
+                    <variable refvariable="vars"/>
+                  </subterm>
+                  <subterm>
+                    <variable refvariable="varf"/>
+                  </subterm>
+                </tuple>
+              </subterm>
+            </numberof>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="arc26" source="RecBuff" target="Update">
+        <name>
+          <text>26</text>
+        </name>
+        <hlinscription>
+          <text>1'[(s),(f)]</text>
+          <structure>
+            <numberof>
+              <subterm>
+                <numberconstant value="1">
+                  <positive/>
+                </numberconstant>
+              </subterm>
+              <subterm>
+                <tuple>
+                  <subterm>
+                    <variable refvariable="vars"/>
+                  </subterm>
+                  <subterm>
+                    <variable refvariable="varf"/>
+                  </subterm>
+                </tuple>
+              </subterm>
+            </numberof>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="arc29" source="MesBuffReply" target="SendReply">
+        <name>
+          <text>29</text>
+        </name>
+        <hlinscription>
+          <text>1'[(s),(f)]</text>
+          <structure>
+            <numberof>
+              <subterm>
+                <numberconstant value="1">
+                  <positive/>
+                </numberconstant>
+              </subterm>
+              <subterm>
+                <tuple>
+                  <subterm>
+                    <variable refvariable="vars"/>
+                  </subterm>
+                  <subterm>
+                    <variable refvariable="varf"/>
+                  </subterm>
+                </tuple>
+              </subterm>
+            </numberof>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="arc28" source="SendReply" target="Acknowledge">
+        <name>
+          <text>28</text>
+        </name>
+        <hlinscription>
+          <text>1'[(s),(f)]</text>
+          <structure>
+            <numberof>
+              <subterm>
+                <numberconstant value="1">
+                  <positive/>
+                </numberconstant>
+              </subterm>
+              <subterm>
+                <tuple>
+                  <subterm>
+                    <variable refvariable="vars"/>
+                  </subterm>
+                  <subterm>
+                    <variable refvariable="varf"/>
+                  </subterm>
+                </tuple>
+              </subterm>
+            </numberof>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="arc31" source="Mutex" target="Acquire">
+        <name>
+          <text>31</text>
+        </name>
+        <hlinscription>
+          <text>1'[(f)]</text>
+          <structure>
+            <numberof>
+              <subterm>
+                <numberconstant value="1">
+                  <positive/>
+                </numberconstant>
+              </subterm>
+              <subterm>
+                <variable refvariable="varf"/>
+              </subterm>
+            </numberof>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="arc30" source="Acquire" target="Modify">
+        <name>
+          <text>30</text>
+        </name>
+        <hlinscription>
+          <text>1'[(s),(f)]</text>
+          <structure>
+            <numberof>
+              <subterm>
+                <numberconstant value="1">
+                  <positive/>
+                </numberconstant>
+              </subterm>
+              <subterm>
+                <tuple>
+                  <subterm>
+                    <variable refvariable="vars"/>
+                  </subterm>
+                  <subterm>
+                    <variable refvariable="varf"/>
+                  </subterm>
+                </tuple>
+              </subterm>
+            </numberof>
+          </structure>
+        </hlinscription>
+      </arc>
+    </page>
+    <name>
+      <text>DatabaseWithMutex-COL-02</text>
+    </name>
+    <declaration>
+      <structure>
+        <declarations>
+          <namedsort id="site" name="site">
+            <cyclicenumeration>
+              <feconstant id="site1" name="1"/>
+              <feconstant id="site2" name="2"/>
+            </cyclicenumeration>
+          </namedsort>
+          <namedsort id="file" name="file">
+            <cyclicenumeration>
+              <feconstant id="file1" name="1"/>
+              <feconstant id="file2" name="2"/>
+            </cyclicenumeration>
+          </namedsort>
+          <namedsort id="sf" name="SF">
+            <productsort>
+              <usersort declaration="site"/>
+              <usersort declaration="file"/>
+            </productsort>
+          </namedsort>
+          <variabledecl id="vars" name="s">
+            <usersort declaration="site"/>
+          </variabledecl>
+          <variabledecl id="varf" name="f">
+            <usersort declaration="file"/>
+          </variabledecl>
+        </declarations>
+      </structure>
+    </declaration>
+  </net>
+</pnml>
