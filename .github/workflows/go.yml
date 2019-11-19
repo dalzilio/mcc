@@ -33,5 +33,5 @@ jobs:
     - name: Upload Artifacts
       uses: actions/upload-artifact@master
       with:
-        name: my-artifact
+        name: ubuntu
         path: mcc
