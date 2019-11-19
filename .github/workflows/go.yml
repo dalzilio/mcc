@@ -29,3 +29,9 @@ jobs:
       
     - name: Test
       run: go test -v ./pnml ./corenet/
+      
+    - name: Upload Artifacts
+      uses: actions/upload-artifact@master
+      with:
+        name: my-artifact
+        path: go/src/bin/mcc
