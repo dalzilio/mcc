@@ -49,6 +49,7 @@ func (p Constant) MatchRing(name string, i int) (int, error) {
 	return 0, fmt.Errorf("element not supported in MatchRing (constant)")
 }
 
+// We should be able to treat FIRConstant like All
 func (p FIRConstant) MatchRing(name string, i int) (int, error) {
 	return 0, fmt.Errorf("element not supported in MatchRing (finiteintrangeconstant)")
 }

@@ -5,10 +5,11 @@
 package corenet
 
 import (
-	"github.com/dalzilio/mcc/hlnet"
-	"github.com/dalzilio/mcc/pnml"
 	"fmt"
 	"sort"
+
+	"github.com/dalzilio/mcc/hlnet"
+	"github.com/dalzilio/mcc/pnml"
 )
 
 // BuildTPN returns a core net using the TPN syntax.
