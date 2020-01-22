@@ -202,7 +202,7 @@ func (p OP) String() string {
 	case OR:
 		return " or "
 	case EQ:
-		return " == "
+		return " = "
 	case INEQ:
 		return " != "
 	case LESSTHAN:
