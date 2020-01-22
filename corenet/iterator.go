@@ -14,7 +14,7 @@ import (
 // the symmetric net.
 //
 // We add an optimization where we cycle through the subset of variables
-// occuring in (the patterns) of each arc so that we can rule out some
+// occurring in (the patterns) of each arc so that we can rule out some
 // configurations early. This is why we use sub-iterators for each arc. When it
 // is an arc to a stable place, we also rely on the fact that we know exactly
 // the set of possible values in the place.

@@ -105,7 +105,7 @@ type Declaration struct {
 // ----------------------------------------------------------------------
 
 // TypeDecl is the type of  PNML type declarations. We use a pointer field for
-// Dot in order to discriminate to differentiate between defualt value and field
+// Dot in order to discriminate to differentiate between default value and field
 // initialized. Same with finite int range.
 type TypeDecl struct {
 	Sort    TYP
