@@ -6,6 +6,8 @@ package cmd
 
 import (
 	"bufio"
+	"fmt"
+	"time"
 
 	"github.com/dalzilio/mcc/corenet"
 	"github.com/dalzilio/mcc/hlnet"
@@ -36,6 +38,7 @@ var hlnetUseName bool
 var hlnetDebugMode bool
 var hlnetUseComplexPNames bool
 var hlnetVerbose bool
+var hlnetStat bool
 var hlnetLogger *log.Logger
 
 func init() {
@@ -46,6 +49,7 @@ func init() {
 	hlnetCmd.Flags().BoolVar(&hlnetDebugMode, "debug", false, "output a readable version in a format that can be displayed by Tina")
 	hlnetCmd.Flags().BoolVar(&hlnetUseComplexPNames, "sliced", false, "use structured naming for places")
 	hlnetCmd.Flags().BoolVar(&hlnetVerbose, "verbose", false, "add extra information in the labels of the .net file")
+	hlnetCmd.Flags().BoolVar(&hlnetStat, "stats", false, "print statistics (nb. of places, trans. and computation time) but do not output the net")
 	hlnetLogger = log.New(os.Stderr, "MCC HLNET:", 0)
 }
 
@@ -57,6 +61,8 @@ func convert(filename string) {
 	// 		os.Exit(1)
 	// 	}
 	// }()
+
+	start := time.Now()
 
 	if filename == "" {
 		hlnetLogger.Println("Bad command line! Input file mandatory. Use option -i")
@@ -118,14 +124,26 @@ func convert(filename string) {
 	// We try to build a TPN first
 	cn, nbcopies, listlr, listh, err := corenet.BuildTPN(p, hl)
 	if err == nil {
-		hlnetLogger.Println("file " + outfile + " is a TPN")
+		// hlnetLogger.Println("file " + outfile + " is a TPN")
+		if hlnetStat {
+			elapsed := time.Since(start)
+			npl, ntr, narcs := cn.Statistics()
+			fmt.Fprintf(os.Stdout, "%d place(s), %d transition(s), %d arc(s), %.3fs\n", nbcopies*npl, nbcopies*(ntr-len(listlr)), nbcopies*narcs, elapsed.Seconds())
+			return
+		}
 		outfile = outfile + ".tpn"
 		ioutil.WriteFile(outfile, []byte(cn.PrintTPN(nbcopies, listlr, listh)), 0755)
 		return
 	}
 
 	cn = corenet.Build(p, hl)
-	hlnetLogger.Println("file " + outfile + " is a NET")
+	// hlnetLogger.Println("file " + outfile + " is a NET")
+	if hlnetStat {
+		elapsed := time.Since(start)
+		npl, ntr, narcs := cn.Statistics()
+		fmt.Fprintf(os.Stdout, "%d place(s), %d transition(s), %d arc(s), %.3fs\n", npl, ntr, narcs, elapsed.Seconds())
+		return
+	}
 	out, err := os.Create(outfile + ".net")
 	if err != nil {
 		hlnetLogger.Println("Error creating result file:", err)

@@ -36,3 +36,12 @@ type Trans struct {
 	label   string
 	in, out []corep
 }
+
+// Statistics returns the number of places, transitions and arcs in the net
+func (net *Net) Statistics() (int, int, int) {
+	narcs := 0
+	for _, t := range net.tr {
+		narcs = narcs + len(t.in) + len(t.out)
+	}
+	return len(net.pl), len(net.tr), narcs
+}
