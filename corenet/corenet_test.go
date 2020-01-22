@@ -64,7 +64,10 @@ func TestBuild(t *testing.T) {
 			p.SetSliced(true)
 			p.SetVerbose(pnml.MINIMAL)
 			p.SetFES(false)
-			hl := hlnet.Build(p)
+			hl, err := hlnet.Build(p)
+			if err != nil {
+				t.Errorf("corenet.Build(): error decoding PNML file: %s", err)
+			}
 
 			// Then finally build a corenet.Net
 			cn := Build(p, hl)
@@ -115,7 +118,7 @@ func BenchmarkBuildSimple(b *testing.B) {
 
 	for n := 0; n < b.N; n++ {
 		for _, p := range nets {
-			hl := hlnet.Build(p)
+			hl, _ := hlnet.Build(p)
 			cn := Build(p, hl)
 			result = cn.name
 		}
@@ -138,7 +141,7 @@ func benchmarkFile(b *testing.B, filename string) {
 	xmlFile.Close()
 
 	for n := 0; n < b.N; n++ {
-		hl := hlnet.Build(p)
+		hl, _ := hlnet.Build(p)
 		cn := Build(p, hl)
 		result = cn.name
 	}

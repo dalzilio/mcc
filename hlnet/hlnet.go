@@ -5,6 +5,8 @@
 package hlnet
 
 import (
+	"fmt"
+
 	"github.com/dalzilio/mcc/pnml"
 )
 
@@ -49,7 +51,7 @@ func pInit(p pnml.Expression) string {
 
 // Build returns an hlnet from a PNML net. This structure is easier to deal
 // with.
-func Build(n *pnml.Net) *Net {
+func Build(n *pnml.Net) (*Net, error) {
 
 	var net = Net{Name: n.Name}
 
@@ -68,6 +70,11 @@ func Build(n *pnml.Net) *Net {
 			cond = t.Condition.(pnml.Operation)
 		}
 		cond.AddEnv(env)
+		for varname := range env {
+			if _, ok := n.Env[varname]; !ok {
+				return nil, fmt.Errorf("variable \"%s\" used in condition of transition %s was never declared", varname, t.ID)
+			}
+		}
 		net.Trans[t.ID] = &Transition{Cond: cond, Env: env}
 	}
 
@@ -75,6 +82,13 @@ func Build(n *pnml.Net) *Net {
 		e := Arcs{Pattern: a.Pattern}
 		if e.Pattern == nil {
 			e.Pattern = pnml.Operation{Op: pnml.NIL}
+		}
+		env := make(pnml.Env)
+		e.Pattern.AddEnv(env)
+		for varname := range env {
+			if _, ok := n.Env[varname]; !ok {
+				return nil, fmt.Errorf("variable \"%s\" used in pattern of arc from %s to %s was never declared", varname, a.Source, a.Target)
+			}
 		}
 		if p, ok := net.Places[a.Source]; ok {
 			// arc source is a place, target is a transition. The edge is of
@@ -107,5 +121,5 @@ func Build(n *pnml.Net) *Net {
 		}
 	}
 
-	return &net
+	return &net, nil
 }
