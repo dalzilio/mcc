@@ -108,7 +108,7 @@ func (p Add) Match(net *Net, env Env) ([]*Value, []int) {
 // ----------------------------------------------------------------------
 
 // Subtract is the type of subtract expressions. It is an array of two
-// expressions denoting the left and right elements of a substract operation.
+// expressions denoting the left and right elements of a subtract operation.
 type Subtract []Expression
 
 func (p Subtract) String() string {
@@ -189,7 +189,7 @@ func (p Tuple) Match(net *Net, env Env) ([]*Value, []int) {
 // ----------------------------------------------------------------------
 
 // Operation is the type of expressions that apply an operation to a slice of
-// expresions.
+// expressions.
 type Operation struct {
 	Op   OP
 	Elem []Expression

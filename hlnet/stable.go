@@ -1,6 +1,6 @@
 package hlnet
 
-// IsPlaceStable retuns true if place p is stable in the hlnet. We also check
+// IsPlaceStable returns true if place p is stable in the hlnet. We also check
 // that its initial marking is not empty.
 func (hl *Net) IsPlaceStable(p *Place) bool {
 	if p.Init == nil {

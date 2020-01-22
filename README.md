@@ -1,18 +1,26 @@
 # MCC
 
 MCC is a tool designed for a very specific and narrow task: to transform the
-models of High-Level Petri nets, given in the PNML syntax, into equivalent
-Place/Transition nets. The name of the tool derives from the annual
-[Model-Checking Contest](https://mcc.lip6.fr/)), a competition of model-checking
-tools that provides a large and diverse collection of PNML models. Our choice in
-naming serves to underline the main focus of the tool, which is to provide a
-simple, open and extensible solution to lower the access cost for developers
-that would like to engage in this competition.
+models of High-Level Petri nets, given in [PNML](http://www.pnml.org/), into
+equivalent Place/Transition nets.
 
-MCC the generation of Petri nets in both the TINA (.net) and LOLA input formats.
-We have made many improvements on the tool along the years and it is now a very
-efficient solution, on par with (and on many instances more efficient than)
-other tools used for the same purpose.
+[![Go Report Card](https://goreportcard.com/badge/github.com/dalzilio/mcc)](https://goreportcard.com/report/github.com/dalzilio/mcc)
+[![GoDoc](https://godoc.org/github.com/dalzilio/mcc?status.svg)](https://godoc.org/github.com/dalzilio/mcc)
+[![Release](https://img.shields.io/github/v/release/dalzilio/mcc)](https://github.com/dalzilio/mcc/releases)
+
+## Overview
+
+The name of the tool derives from the annual [Model-Checking
+Contest](https://mcc.lip6.fr/)), a competition of model-checking tools that
+provides a large and diverse collection of PNML models. Our choice in naming
+serves to underline the main focus of the tool, which is to provide a simple,
+open and extensible solution to lower the access cost for developers that would
+like to engage in this competition.
+
+MCC supports the generation of Petri nets in both the TINA (.net) and LOLA input
+formats. We have made many improvements on the tool along the years and it is
+now a very efficient solution, on par with (and on many instances more efficient
+than) other tools used for the same purpose.
 
 In the future, we plan to use the transformation to compute interesting
 properties of the models, like symetries and/or set of places that can be
@@ -44,8 +52,8 @@ project](https://godoc.org/github.com/dalzilio/mcc).
 ## Running the program
 
 The *mcc hlnet* command accepts PNML files for high-level nets provided by the
-MCC (also tagged as COL). These files generally have the name *model.pnml*. You
-can invoke the *hlnet* command on this file as follows.
+Model-Checking Contest (also tagged as COL). These files generally have the name
+*model.pnml*. You can invoke the *hlnet* command on this file as follows.
 
 ```text
 $> mcc hlnet -i model.pnml
@@ -107,20 +115,20 @@ Flags:
   option is used.)
 
 * We have modified option ```--debug``` in order to add more visual information
-  when displaying the resulting model using tool ```nd``` for the TINA toolbox.
-  We still display information about types, variables and the expressions
-  associated with arcs inside comments. We also add a copy of this information
-  using the support for (sticky) notes nodes that is built inside TINA's net
-  format. You can see an example of the result obtained on the TableDistance-COL
-  model below.
+  when displaying the resulting model with ```nd``` (part of the [TINA
+  toolbox](http://projects.laas.fr/tina/home.php)). We still display information
+  about types, variables and the expressions associated with arcs inside
+  comments. We also add a copy of this information using the support for
+  (sticky) notes nodes that is built inside TINA's net format. You can see an
+  example of the result obtained on the TableDistance-COL model below.
   
 ![TableDistance-COL model in nd](./docs/nd.png)
 
-## Sources
+## Dependencies
 
 The code repository includes instances of PNML models from the [MCC Petri Nets
-Repository](https://pnrepository.lip6.fr/) inside the ```./benchmarks``` folder.
-We provide instances for all the PNML colored models used in the 2019
+Repository](https://pnrepository.lip6.fr/) located inside the ```./benchmarks```
+folder. We provide instances for all the PNML colored models used in the 2019
 Model-Checking Contest. These files are included in the repository to be used
 for benchmarking and continuous testing.
 
