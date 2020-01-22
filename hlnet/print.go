@@ -4,8 +4,11 @@
 
 package hlnet
 
-import "fmt"
-import "github.com/dalzilio/mcc/pnml"
+import (
+	"fmt"
+
+	"github.com/dalzilio/mcc/pnml"
+)
 
 func (net Net) String() string {
 	// we start by collecting the names of the Places
@@ -53,11 +56,12 @@ func (net Net) Tina() string {
 			s += fmt.Sprintf("pl {%s}\n", k)
 		}
 	}
+	notes := 1
 	for k, v := range net.Trans {
 		if v.Cond.Op == pnml.NIL {
-			s += fmt.Sprintf("tr {%s} : {%s} ", k, v.Env)
+			s += fmt.Sprintf("tr {%s}", k)
 		} else {
-			s += fmt.Sprintf("tr {%s} : {%s %s} ", k, v.Cond, v.Env)
+			s += fmt.Sprintf("tr {%s} : {%s} ", k, v.Cond)
 		}
 		for _, e := range v.Arcs {
 			if e.Kind == IN {
@@ -73,11 +77,26 @@ func (net Net) Tina() string {
 		s += "\n"
 		// we output the Pattern of the edges as a comment because it is not
 		// possible to draw them with Tina's nd tool.
-		for _, e := range v.Arcs {
+		note := fmt.Sprintf("nt n%d 1 {tr %s :", notes, k)
+		notes++
+		for k, e := range v.Arcs {
 			if e.Pattern != nil {
-				s += fmt.Sprintf("#\t--( %s )-- %s\n", e.Pattern, secalp[e.Place])
+				var arc string
+				if e.Kind == IN {
+					arc = fmt.Sprintf("  %s ---( %s )--> ", secalp[e.Place], e.Pattern)
+				} else {
+					arc = fmt.Sprintf("  %s <--( %s )--- ", secalp[e.Place], e.Pattern)
+
+				}
+				if k != 0 {
+					s += "\n"
+				}
+				s += "#" + arc
+				note += "\\\\n" + arc
 			}
 		}
+		s += "\n" + note + "}\n"
+
 	}
 	return s
 }
