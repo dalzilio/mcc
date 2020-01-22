@@ -105,7 +105,12 @@ func convert(filename string) {
 	}
 
 	if hlnetDebugMode {
-		hl := hlnet.Build(p)
+		hl, err := hlnet.Build(p)
+		if err != nil {
+			hlnetLogger.Println("Error decoding PNML file:", err)
+			os.Exit(1)
+			return
+		}
 		ioutil.WriteFile(outfile+".net", []byte(p.String()+hl.Tina()), 0755)
 		os.Exit(0)
 	}
@@ -119,7 +124,12 @@ func convert(filename string) {
 	}
 
 	p.SetFES(false)
-	hl := hlnet.Build(p)
+	hl, err := hlnet.Build(p)
+	if err != nil {
+		hlnetLogger.Println("Error decoding PNML file:", err)
+		os.Exit(1)
+		return
+	}
 
 	// We try to build a TPN first
 	cn, nbcopies, listlr, listh, err := corenet.BuildTPN(p, hl)

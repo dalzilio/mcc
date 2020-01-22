@@ -95,7 +95,12 @@ func lolaConvert(filename string) {
 	p.SetVerbose(pnml.MINIMAL)
 	// set the semantic of "overflowing" enumeration types
 	p.SetFES(false)
-	hl := hlnet.Build(p)
+	hl, err := hlnet.Build(p)
+	if err != nil {
+		hlnetLogger.Println("Error decoding PNML file:", err)
+		os.Exit(1)
+		return
+	}
 
 	cn := corenet.Build(p, hl)
 	out, err := os.Create(outfile + ".net")
