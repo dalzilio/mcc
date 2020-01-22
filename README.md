@@ -93,18 +93,18 @@ $> mcc help hlnet
   We still display information about types, variables and the expressions
   associated with arcs inside comments. We also add a copy of this information
   using the support for (sticky) notes nodes that is built inside TINA's net
-  format. You can see an example of the result obtained on the TableDistance
+  format. You can see an example of the result obtained on the TableDistance-COL
   model below.
   
-![tekst alternatywny](./docs/nd.png)
+![TableDistance-COL model in nd](./docs/nd.png)
 
 ## Sources
 
 The code repository includes instances of PNML models from the [MCC Petri Nets
 Repository](https://pnrepository.lip6.fr/) inside the ```./benchmarks``` folder.
 We provide instances for all the PNML colored models used in the 2019
-Model-Checking Contest. These files are included in repository to be used for
-benchmarking and continuous testing.
+Model-Checking Contest. These files are included in the repository to be used
+for benchmarking and continuous testing.
 
 ## License
 
