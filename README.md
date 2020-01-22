@@ -1,15 +1,18 @@
 # MCC
 
-MCC is a High-Level Net "Blaster" for the Model-Checking Contest (MCC). This
-tool can be used to unfold a PNML file (such as used for colored models in the
-[Model-Checking Contest](https://mcc.lip6.fr/)) into a Petri net. We support the
-generation of Petri nets in both the TINA (.net) and LOLA input formats.
+MCC is a tool designed for a very specific and narrow task: to transform the
+models of High-Level Petri nets, given in the PNML syntax, into equivalent
+Place/Transition nets. The name of the tool derives from the annual
+[Model-Checking Contest](https://mcc.lip6.fr/)), a competition of model-checking
+tools that provides a large and diverse collection of PNML models. Our choice in
+naming serves to underline the main focus of the tool, which is to provide a
+simple, open and extensible solution to lower the access cost for developers
+that would like to engage in this competition.
 
-We use the term *blaster*, instead of *unfolding*, to underline the fact that
-our translation is, in its principle, very crude. Nonetheless, we have made many
-improvements on the tool along the years and ```mcc``` is now a very efficient
-solution, on par with (and on many instances better) than comparable tools used
-for the same purpose.
+MCC the generation of Petri nets in both the TINA (.net) and LOLA input formats.
+We have made many improvements on the tool along the years and it is now a very
+efficient solution, on par with (and on many instances more efficient than)
+other tools used for the same purpose.
 
 In the future, we plan to use the transformation to compute interesting
 properties of the models, like symetries and/or set of places that can be
@@ -35,16 +38,16 @@ need first to install a recent Go distribution (available at
 $> go get github.com/dalzilio/mcc
 ```
 
-You can browse the documentation for this tool on the [GoDoc page for the mcc
+You can browse the documentation for this tool on the [GoDoc page for the MCC
 project](https://godoc.org/github.com/dalzilio/mcc).
 
 ## Running the program
 
-The *mcc hlnet* command accepts PNML files for high-level nets provided by the MCC (also tagged as COL).
-These files generally have the name *model.pnml*.
-You can invoke the *hlnet* command on this file as follows.
+The *mcc hlnet* command accepts PNML files for high-level nets provided by the
+MCC (also tagged as COL). These files generally have the name *model.pnml*. You
+can invoke the *hlnet* command on this file as follows.
 
-```bash
+```text
 $> mcc hlnet -i model.pnml
 ```
 
@@ -62,7 +65,22 @@ Available Commands:
   lola        generates a net file in the LoLa format from a PNML file describing a high-level net
 
 Use "mcc [command] --help" for more information about a command.
+
 $> mcc help hlnet
+generates a .net or .tpn file from a PNML file describing a high-level net
+
+Usage:
+  mcc hlnet -i file.pnml [flags]
+
+Flags:
+      --debug         output a readable version in a format that can be displayed by Tina
+  -i, --file string   name of the input file (.pnml)
+  -h, --help          help for hlnet
+      --name          use PNML (document) name for the output file
+  -o, --out string    basename of the output file (without extension, default to input file basename)
+      --sliced        use structured naming for places
+      --stats         print statistics (nb. of places, trans. and computation time) but do not output the net
+      --verbose       add extra information in the labels of the .net file
 ```
 
 ## Features
