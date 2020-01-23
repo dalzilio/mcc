@@ -37,7 +37,7 @@ var lolaLogger *log.Logger
 func init() {
 	RootCmd.AddCommand(lolaCmd)
 	lolaCmd.Flags().StringVarP(&lolaFileName, "file", "i", "", "name of the input file (.pnml)")
-	lolaCmd.Flags().StringVarP(&lolaOutFileName, "out", "o", "", "basename of the output file (without extension, default to input file basename)")
+	lolaCmd.Flags().StringVarP(&lolaOutFileName, "out", "o", "", "basename of the output file (without extension, default to input file basename) or - for stdout")
 	lolaCmd.Flags().BoolVar(&lolaUseName, "name", false, "use PNML (document) name for the output file")
 
 	lolaLogger = log.New(os.Stderr, "MCC LOLA:", 0)
@@ -103,13 +103,18 @@ func lolaConvert(filename string) {
 	}
 
 	cn := corenet.Build(p, hl)
-	out, err := os.Create(outfile + ".net")
-	if err != nil {
-		hlnetLogger.Println("Error creating result file:", err)
-		os.Exit(1)
-		return
+	var out *os.File
+	if outfile == "-" {
+		out = os.Stdout
+	} else {
+		out, err = os.Create(outfile + ".net")
+		if err != nil {
+			hlnetLogger.Println("Error creating result file:", err)
+			os.Exit(1)
+			return
+		}
+		defer out.Close()
 	}
-	defer out.Close()
 	w := bufio.NewWriter(out)
 	cn.LolaWrite(w)
 	w.Flush()

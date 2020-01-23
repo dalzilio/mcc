@@ -11,7 +11,7 @@ equivalent Place/Transition nets.
 ## Overview
 
 The name of the tool derives from the annual [Model-Checking
-Contest](https://mcc.lip6.fr/)), a competition of model-checking tools that
+Contest](https://mcc.lip6.fr/), a competition of model-checking tools that
 provides a large and diverse collection of PNML models. Our choice in naming
 serves to underline the main focus of the tool, which is to provide a simple,
 open and extensible solution to lower the access cost for developers that would
@@ -83,11 +83,10 @@ Usage:
 Flags:
       --debug         output a readable version in a format that can be displayed by Tina
   -i, --file string   name of the input file (.pnml)
-  -h, --help          help for hlnet
       --name          use PNML (document) name for the output file
-  -o, --out string    basename of the output file (without extension, default to input file basename)
+  -o, --out string    basename of the output file (without extension, default to input file basename) or - for stdout
       --sliced        use structured naming for places
-      --stats         print statistics (nb. of places, trans. and computation time) but do not output the net
+      --stats         print statistics (nb. of places, trans. and computation time); do not output the net
       --verbose       add extra information in the labels of the .net file
 ```
 
@@ -114,6 +113,11 @@ Flags:
   in the resulting Place/Transition net. (We do not output a result when this
   option is used.)
 
+  ```text
+  $> mcc hlnet -i model.pnml --stats
+  100 place(s), 429 transition(s), 858 arc(s), 0.027s
+  ```
+  
 * We have modified option ```--debug``` in order to add more visual information
   when displaying the resulting model with ```nd``` (part of the [TINA
   toolbox](http://projects.laas.fr/tina/home.php)). We still display information
@@ -122,15 +126,25 @@ Flags:
   (sticky) notes nodes that is built inside TINA's net format. You can see an
   example of the result obtained on the TableDistance-COL model below.
   
-![TableDistance-COL model in nd](./docs/nd.png)
+  ![TableDistance-COL model in nd](./docs/nd.png)
+
+* You can now use parameter ```-``` with option ```-o``` to output the result of
+  the unfolding on the standard output. This way it is possible to use ```mcc```
+  to generate a P/T net in PNML format by piping the result to ```ndrio```, a
+  conversion tool for Petri nets  that is part of the [TINA
+  toolbox](http://projects.laas.fr/tina/home.php).
+
+  ```text
+  $> mcc hlnet -i model.pnml -o - | ndrio -pnml -
+  ```
 
 ## Dependencies
 
 The code repository includes instances of PNML models from the [MCC Petri Nets
 Repository](https://pnrepository.lip6.fr/) located inside the ```./benchmarks```
-folder. We provide instances for all the PNML colored models used in the 2019
-Model-Checking Contest. These files are included in the repository to be used
-for benchmarking and continuous testing.
+folder. We provide a selection of instances from all the PNML colored models
+used in the 2019 Model-Checking Contest. These files are included in the
+repository to be used for benchmarking and continuous testing.
 
 ## License
 

@@ -44,7 +44,7 @@ var hlnetLogger *log.Logger
 func init() {
 	RootCmd.AddCommand(hlnetCmd)
 	hlnetCmd.Flags().StringVarP(&hlnetFileName, "file", "i", "", "name of the input file (.pnml)")
-	hlnetCmd.Flags().StringVarP(&hlnetOutFileName, "out", "o", "", "basename of the output file (without extension, default to input file basename)")
+	hlnetCmd.Flags().StringVarP(&hlnetOutFileName, "out", "o", "", "basename of the output file (without extension, default to input file basename) or - for stdout")
 	hlnetCmd.Flags().BoolVar(&hlnetUseName, "name", false, "use PNML (document) name for the output file")
 	hlnetCmd.Flags().BoolVar(&hlnetDebugMode, "debug", false, "output a readable version in a format that can be displayed by Tina")
 	hlnetCmd.Flags().BoolVar(&hlnetUseComplexPNames, "sliced", false, "use structured naming for places")
@@ -56,8 +56,8 @@ func init() {
 	hlnetCmd.SetUsageFunc(func(c *cobra.Command) error {
 		fmt.Fprintf(os.Stdout, defaultusage)
 		fmt.Fprintf(os.Stdout, "\nFiles:\n")
-		fmt.Fprintf(os.Stdout, "   infiles:   input file should be specified with option -i\n")
-		fmt.Fprintf(os.Stdout, "   outfile:   output is stdout when using option -o with parameter -\n")
+		fmt.Fprintf(os.Stdout, "   infile:    input file should be specified with option -i\n")
+		fmt.Fprintf(os.Stdout, "   outfile:   output is stdout when using option \"-o -\"\n")
 		fmt.Fprintf(os.Stdout, "   errorfile: errors are reported on stderr\n")
 		fmt.Fprintf(os.Stdout, "   help:      is reported on stdout\n")
 		return nil
@@ -122,7 +122,12 @@ func convert(filename string) {
 			os.Exit(1)
 			return
 		}
-		ioutil.WriteFile(outfile+".net", []byte(p.String()+hl.Tina()), 0755)
+		if outfile == "-" {
+			os.Stdout.Write([]byte(p.String() + hl.Tina()))
+
+		} else {
+			ioutil.WriteFile(outfile+".net", []byte(p.String()+hl.Tina()), 0755)
+		}
 		os.Exit(0)
 	}
 
@@ -152,9 +157,14 @@ func convert(filename string) {
 			fmt.Fprintf(os.Stdout, "%d place(s), %d transition(s), %d arc(s), %.3fs\n", nbcopies*npl, nbcopies*(ntr-len(listlr)), nbcopies*narcs, elapsed.Seconds())
 			return
 		}
-		outfile = outfile + ".tpn"
-		ioutil.WriteFile(outfile, []byte(cn.PrintTPN(nbcopies, listlr, listh)), 0755)
-		return
+		if outfile == "-" {
+			os.Stdout.Write([]byte(cn.PrintTPN(nbcopies, listlr, listh)))
+
+		} else {
+			outfile = outfile + ".tpn"
+			ioutil.WriteFile(outfile, []byte(cn.PrintTPN(nbcopies, listlr, listh)), 0755)
+			return
+		}
 	}
 
 	cn = corenet.Build(p, hl)
@@ -165,13 +175,18 @@ func convert(filename string) {
 		fmt.Fprintf(os.Stdout, "%d place(s), %d transition(s), %d arc(s), %.3fs\n", npl, ntr, narcs, elapsed.Seconds())
 		return
 	}
-	out, err := os.Create(outfile + ".net")
-	if err != nil {
-		hlnetLogger.Println("Error creating result file:", err)
-		os.Exit(1)
-		return
+	var out *os.File
+	if outfile == "-" {
+		out = os.Stdout
+	} else {
+		out, err = os.Create(outfile + ".net")
+		if err != nil {
+			hlnetLogger.Println("Error creating result file:", err)
+			os.Exit(1)
+			return
+		}
+		defer out.Close()
 	}
-	defer out.Close()
 	w := bufio.NewWriter(out)
 	cn.Write(w)
 	w.Flush()
