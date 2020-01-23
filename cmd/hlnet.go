@@ -49,8 +49,19 @@ func init() {
 	hlnetCmd.Flags().BoolVar(&hlnetDebugMode, "debug", false, "output a readable version in a format that can be displayed by Tina")
 	hlnetCmd.Flags().BoolVar(&hlnetUseComplexPNames, "sliced", false, "use structured naming for places")
 	hlnetCmd.Flags().BoolVar(&hlnetVerbose, "verbose", false, "add extra information in the labels of the .net file")
-	hlnetCmd.Flags().BoolVar(&hlnetStat, "stats", false, "print statistics (nb. of places, trans. and computation time) but do not output the net")
+	hlnetCmd.Flags().BoolVar(&hlnetStat, "stats", false, "print statistics (nb. of places, trans. and computation time); do not output the net")
 	hlnetLogger = log.New(os.Stderr, "MCC HLNET:", 0)
+
+	defaultusage := hlnetCmd.UsageString()
+	hlnetCmd.SetUsageFunc(func(c *cobra.Command) error {
+		fmt.Fprintf(os.Stdout, defaultusage)
+		fmt.Fprintf(os.Stdout, "\nFiles:\n")
+		fmt.Fprintf(os.Stdout, "   infiles:   input file should be specified with option -i\n")
+		fmt.Fprintf(os.Stdout, "   outfile:   output is stdout when using option -o with parameter -\n")
+		fmt.Fprintf(os.Stdout, "   errorfile: errors are reported on stderr\n")
+		fmt.Fprintf(os.Stdout, "   help:      is reported on stdout\n")
+		return nil
+	})
 }
 
 func convert(filename string) {
