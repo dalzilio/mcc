@@ -1,0 +1,212 @@
+<?xml version="1.0" ?>
+<pnml xmlns="http://www.pnml.org/version-2009/grammar/pnml">
+    <net id="Swap-COL-P10-N4" type="http://www.pnml.org/version-2009/grammar/symmetricnet">
+        <page id="SwapDefaultPage">
+            <place id="Here">
+                <name>
+                    <text>Here</text>
+                </name>
+                <type>
+                    <text>Resource</text>
+                    <structure>
+                        <usersort declaration="Resource" />
+                    </structure>
+                </type>
+                <hlinitialMarking>
+                    <text>Resource.all</text>
+                    <structure>
+                        <subterm>
+                            <numberof>
+                                <subterm>
+                                    <numberconstant value="4">
+                                        <positive />
+                                    </numberconstant>
+                                </subterm>
+                                <subterm>
+                                    <all>
+                                        <usersort declaration="Resource" />
+                                    </all>
+                                </subterm>
+                            </numberof>
+                        </subterm>
+                    </structure>
+                </hlinitialMarking>
+            </place>
+            <place id="There">
+                <name>
+                    <text>Resource</text>
+                </name>
+                <type>
+                    <text>Resource</text>
+                    <structure>
+                        <usersort declaration="Resource" />
+                    </structure>
+                </type>
+            </place>
+            <transition id="t1">
+                <name>
+                    <text>t1</text>
+                </name>
+            </transition>
+            <transition id="t2">
+                <name>
+                    <text>t2</text>
+                </name>
+            </transition>
+            <arc id="a1" source="Here" target="t1">
+                <name>
+                    <text>a1</text>
+                </name>
+                <hlinscription>
+                    <text>1'(x)</text>
+                    <structure>
+                        <numberof>
+                            <subterm>
+                                <numberconstant value="1">
+                                    <positive />
+                                </numberconstant>
+                            </subterm>
+                            <subterm>
+                                <variable refvariable="x" />
+                            </subterm>
+                        </numberof>
+                    </structure>
+                </hlinscription>
+            </arc>
+            <arc id="a2" source="t1" target="Here">
+                <name>
+                    <text>a2</text>
+                </name>
+                <hlinscription>
+                    <text>1'(x--)</text>
+                    <structure>
+                        <numberof>
+                            <subterm>
+                                <numberconstant value="1">
+                                    <positive />
+                                </numberconstant>
+                            </subterm>
+                            <subterm>
+                                <predecessor>
+                                    <subterm>
+                                        <variable refvariable="x" />
+                                    </subterm>
+                                </predecessor>
+                            </subterm>
+                        </numberof>
+                    </structure>
+                </hlinscription>
+            </arc>
+            <arc id="a3" source="t1" target="There">
+                <name>
+                    <text>a3</text>
+                </name>
+                <hlinscription>
+                    <text>1'(x)</text>
+                    <structure>
+                        <numberof>
+                            <subterm>
+                                <numberconstant value="1">
+                                    <positive />
+                                </numberconstant>
+                            </subterm>
+                            <subterm>
+                                <variable refvariable="x" />
+                            </subterm>
+                        </numberof>
+                    </structure>
+                </hlinscription>
+            </arc>
+            <arc id="a4" source="There" target="t1">
+                <name>
+                    <text>a4</text>
+                </name>
+                <hlinscription>
+                    <text>1'(x--)</text>
+                    <structure>
+                        <numberof>
+                            <subterm>
+                                <numberconstant value="1">
+                                    <positive />
+                                </numberconstant>
+                            </subterm>
+                            <subterm>
+                                <predecessor>
+                                    <subterm>
+                                        <variable refvariable="x" />
+                                    </subterm>
+                                </predecessor>
+                            </subterm>
+                        </numberof>
+                    </structure>
+                </hlinscription>
+            </arc>
+            <arc id="a5" source="Here" target="t2">
+                <name>
+                    <text>a5</text>
+                </name>
+                <hlinscription>
+                    <text>1'(x)</text>
+                    <structure>
+                        <numberof>
+                            <subterm>
+                                <numberconstant value="1">
+                                    <positive />
+                                </numberconstant>
+                            </subterm>
+                            <subterm>
+                                <variable refvariable="x" />
+                            </subterm>
+                        </numberof>
+                    </structure>
+                </hlinscription>
+            </arc>
+            <arc id="a6" source="t2" target="There">
+                <name>
+                    <text>a1</text>
+                </name>
+                <hlinscription>
+                    <text>1'(x)</text>
+                    <structure>
+                        <numberof>
+                            <subterm>
+                                <numberconstant value="1">
+                                    <positive />
+                                </numberconstant>
+                            </subterm>
+                            <subterm>
+                                <variable refvariable="x" />
+                            </subterm>
+                        </numberof>
+                    </structure>
+                </hlinscription>
+            </arc>
+        </page>
+        <name>
+            <text>Swap-COL-P10-N4</text>
+        </name>
+        <declaration>
+            <structure>
+                <declarations>
+                    <namedsort id="Resource" name="Resource">
+                        <cyclicenumeration>
+                            <feconstant id="r1" name="1" />
+                            <feconstant id="r2" name="2" />
+                            <feconstant id="r3" name="3" />
+                            <feconstant id="r4" name="4" />
+                            <feconstant id="r5" name="5" />
+                            <feconstant id="r6" name="6" />
+                            <feconstant id="r7" name="7" />
+                            <feconstant id="r8" name="8" />
+                            <feconstant id="r9" name="9" />
+                            <feconstant id="r10" name="10" />
+                        </cyclicenumeration>
+                    </namedsort>
+                    <variabledecl id="x" name="x">
+                        <usersort declaration="Resource" />
+                    </variabledecl>
+                </declarations>
+            </structure>
+        </declaration>
+    </net>
+</pnml>

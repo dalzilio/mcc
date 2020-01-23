@@ -1,0 +1,325 @@
+<?xml version="1.0" ?>
+<pnml xmlns="http://www.pnml.org/version-2009/grammar/pnml">
+    <net id="Grid2D-COL-D5-N10" type="http://www.pnml.org/version-2009/grammar/symmetricnet">
+        <page id="grid2d">
+            <place id="grid">
+                <name>
+                    <text>Grid2D</text>
+                </name>
+                <type>
+                    <text>G2D</text>
+                    <structure>
+                        <usersort declaration="G2D" />
+                    </structure>
+                </type>
+                <hlinitialMarking>
+                    <text>{10'(0,0)}</text>
+                    <structure>
+                        <subterm>
+                            <numberof>
+                                <subterm>
+                                    <numberconstant value="10">
+                                        <positive />
+                                    </numberconstant>
+                                </subterm>
+                                <subterm>
+                                    <tuple>
+                                        <subterm>
+                                            <useroperator declaration="c0" />
+                                        </subterm>
+                                        <subterm>
+                                            <useroperator declaration="c0" />
+                                        </subterm>
+                                    </tuple>
+                                </subterm>
+                            </numberof>
+                        </subterm>
+                    </structure>
+                </hlinitialMarking>
+            </place>
+            <transition id="t1">
+                <name>
+                    <text>t1</text>
+                </name>
+                <condition>
+                    <text>(a eq x || a eq x++ || a eq x−-) and (b eq y || b eq
+                    y++ || b=y−-) and (a neq x || b neq y))</text>
+                    <structure>
+                        <and>
+                            <subterm>
+                                <or>
+                                    <subterm>
+                                        <equality>
+                                            <subterm>
+                                                <variable refvariable="a" />
+                                            </subterm>
+                                            <subterm>
+                                                <variable refvariable="x" />
+                                            </subterm>
+                                        </equality>
+                                    </subterm>
+                                    <subterm>
+                                        <and>
+                                            <subterm>
+                                                <lessthan>
+                                                    <subterm>
+                                                        <variable refvariable="x" />
+                                                    </subterm>
+                                                    <subterm>
+                                                        <useroperator declaration="c4" />
+                                                    </subterm>
+                                                </lessthan>
+                                            </subterm>
+                                            <subterm>
+                                                <equality>
+                                                    <subterm>
+                                                        <variable refvariable="a" />
+                                                    </subterm>
+                                                    <subterm>
+                                                        <successor>
+                                                            <subterm>
+                                                                <variable refvariable="x" />
+                                                            </subterm>
+                                                        </successor>
+                                                    </subterm>
+                                                </equality>
+                                            </subterm>
+                                        </and>
+                                    </subterm>
+                                    <subterm>
+                                        <and>
+                                            <subterm>
+                                                <greaterthan>
+                                                    <subterm>
+                                                        <variable refvariable="x" />
+                                                    </subterm>
+                                                    <subterm>
+                                                        <useroperator declaration="c0" />
+                                                    </subterm>
+                                                </greaterthan>
+                                            </subterm>
+                                            <subterm>
+                                                <equality>
+                                                    <subterm>
+                                                        <variable refvariable="a" />
+                                                    </subterm>
+                                                    <subterm>
+                                                        <predecessor>
+                                                            <subterm>
+                                                                <variable refvariable="x" />
+                                                            </subterm>
+                                                        </predecessor>
+                                                    </subterm>
+                                                </equality>
+                                            </subterm>
+                                        </and>
+                                    </subterm>
+                                </or>
+                            </subterm>
+                            <subterm>
+                                <or>
+                                    <subterm>
+                                        <equality>
+                                            <subterm>
+                                                <variable refvariable="b" />
+                                            </subterm>
+                                            <subterm>
+                                                <variable refvariable="y" />
+                                            </subterm>
+                                        </equality>
+                                    </subterm>
+
+                                    <subterm>
+                                        <and>
+                                            <subterm>
+                                                <lessthan>
+                                                    <subterm>
+                                                        <variable refvariable="y" />
+                                                    </subterm>
+                                                    <subterm>
+                                                        <useroperator declaration="c4" />
+                                                    </subterm>
+                                                </lessthan>
+                                            </subterm>
+                                            <subterm>
+                                                <equality>
+                                                    <subterm>
+                                                        <variable refvariable="b" />
+                                                    </subterm>
+                                                    <subterm>
+                                                        <successor>
+                                                            <subterm>
+                                                                <variable refvariable="y" />
+                                                            </subterm>
+                                                        </successor>
+                                                    </subterm>
+                                                </equality>
+                                            </subterm>
+                                        </and>
+                                    </subterm>
+                                    <subterm>
+                                        <and>
+                                            <subterm>
+                                                <greaterthan>
+                                                    <subterm>
+                                                        <variable refvariable="y" />
+                                                    </subterm>
+                                                    <subterm>
+                                                        <useroperator declaration="c0" />
+                                                    </subterm>
+                                                </greaterthan>
+                                            </subterm>
+                                            <subterm>
+                                                <equality>
+                                                    <subterm>
+                                                        <variable refvariable="b" />
+                                                    </subterm>
+                                                    <subterm>
+                                                        <predecessor>
+                                                            <subterm>
+                                                                <variable refvariable="y" />
+                                                            </subterm>
+                                                        </predecessor>
+                                                    </subterm>
+                                                </equality>
+                                            </subterm>
+                                        </and>
+                                    </subterm>
+                                </or>
+                            </subterm>
+                            <subterm>
+                                <or>
+                                    <subterm>
+                                        <inequality>
+                                            <subterm>
+                                                <variable refvariable="a" />
+                                            </subterm>
+                                            <subterm>
+                                                <variable refvariable="x" />
+                                            </subterm>
+                                        </inequality>
+                                    </subterm>
+                                    <subterm>
+                                        <inequality>
+                                            <subterm>
+                                                <variable refvariable="b" />
+                                            </subterm>
+                                            <subterm>
+                                                <subterm>
+                                                    <variable refvariable="y" />
+                                                </subterm>
+                                            </subterm>
+                                        </inequality>
+                                    </subterm>
+                                </or>
+                            </subterm>
+                        </and>
+                    </structure>
+                </condition>
+            </transition>
+            <arc id="grid_2_t1" source="grid" target="t1">
+                <name>
+                    <text>grid_2_t1</text>
+                </name>
+                <hlinscription>
+                    <text>1'(x,y)</text>
+                    <structure>
+                        <add>
+                            <subterm>
+                                <numberof>
+                                    <subterm>
+                                        <numberconstant value="1">
+                                            <positive />
+                                        </numberconstant>
+                                    </subterm>
+                                    <subterm>
+                                        <tuple>
+                                            <subterm>
+                                                <variable refvariable="x" />
+                                            </subterm>
+                                            <subterm>
+                                                <variable refvariable="y" />
+                                            </subterm>
+                                        </tuple>
+                                    </subterm>
+                                </numberof>
+                            </subterm>
+                        </add>
+                    </structure>
+                </hlinscription>
+            </arc>
+            <arc id="t1_2_grid" source="t1" target="grid">
+                <name>
+                    <text>t1_2_grid</text>
+                </name>
+                <hlinscription>
+                    <text>1'(a,b)</text>
+                    <structure>
+                        <add>
+                            <subterm>
+                                <numberof>
+                                    <subterm>
+                                        <numberconstant value="1">
+                                            <positive />
+                                        </numberconstant>
+                                    </subterm>
+                                    <subterm>
+                                        <tuple>
+                                            <subterm>
+                                                <variable refvariable="a" />
+                                            </subterm>
+                                            <subterm>
+                                                <variable refvariable="b" />
+                                            </subterm>
+                                        </tuple>
+                                    </subterm>
+                                </numberof>
+                            </subterm>
+                        </add>
+                    </structure>
+                </hlinscription>
+            </arc>
+        </page>
+        <name>
+            <text>Grid2D-COL-200</text>
+        </name>
+        <declaration>
+            <structure>
+                <declarations>
+                    <namedsort id="CD" name="CD">
+                        <finiteenumeration>
+                            <feconstant id="c0" name="0" />
+                            <feconstant id="c1" name="1" />
+                            <feconstant id="c2" name="2" />
+                            <feconstant id="c3" name="3" />
+                            <feconstant id="c4" name="4" />
+                            <feconstant id="c5" name="5" />
+                            <feconstant id="c6" name="6" />
+                            <feconstant id="c7" name="7" />
+                            <feconstant id="c8" name="8" />
+                            <feconstant id="c9" name="9" />
+                        </finiteenumeration>
+                    </namedsort>
+                    <namedsort id="G2D" name="G2D">
+                        <productsort>
+                            <usersort declaration="CD" />
+                            <usersort declaration="CD" />
+                        </productsort>
+                    </namedsort>
+                    <variabledecl id="a" name="a">
+                        <usersort declaration="CD" />
+                    </variabledecl>
+                    <variabledecl id="b" name="b">
+                        <usersort declaration="CD" />
+                    </variabledecl>
+                    <variabledecl id="x" name="x">
+                        <usersort declaration="CD" />
+                    </variabledecl>
+                    <variabledecl id="y" name="y">
+                        <usersort declaration="CD" />
+                    </variabledecl>
+                </declarations>
+            </structure>
+        </declaration>
+    </net>
+</pnml>
