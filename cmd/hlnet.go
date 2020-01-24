@@ -159,12 +159,11 @@ func convert(filename string) {
 		}
 		if outfile == "-" {
 			os.Stdout.Write([]byte(cn.PrintTPN(nbcopies, listlr, listh)))
-
-		} else {
-			outfile = outfile + ".tpn"
-			ioutil.WriteFile(outfile, []byte(cn.PrintTPN(nbcopies, listlr, listh)), 0755)
 			return
 		}
+		outfile = outfile + ".tpn"
+		ioutil.WriteFile(outfile, []byte(cn.PrintTPN(nbcopies, listlr, listh)), 0755)
+		return
 	}
 
 	cn = corenet.Build(p, hl)
