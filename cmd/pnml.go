@@ -31,6 +31,8 @@ var pnmlCmd = &cobra.Command{
 var pnmlFileName string
 var pnmlOutFileName string
 var pnmlUseName bool
+var pnmlUseComplexPNames bool
+
 var pnmlLogger *log.Logger
 
 func init() {
@@ -38,6 +40,8 @@ func init() {
 	pnmlCmd.Flags().StringVarP(&pnmlFileName, "file", "i", "", "name of the input file (.pnml)")
 	pnmlCmd.Flags().StringVarP(&pnmlOutFileName, "out", "o", "", "basename of the output file (without extension, default to input file basename) or - for stdout")
 	pnmlCmd.Flags().BoolVar(&pnmlUseName, "name", false, "use PNML (document) name for the output file")
+	pnmlCmd.Flags().BoolVar(&pnmlUseComplexPNames, "sliced", false, "use structured naming for places")
+
 	pnmlLogger = log.New(os.Stderr, "MCC PNML:", 0)
 }
 
@@ -89,7 +93,7 @@ func pnmlConvert(filename string) {
 		outfile = p.Name
 	}
 
-	p.SetSliced(true)
+	p.SetSliced(pnmlUseComplexPNames)
 	p.SetVerbose(pnml.MINIMAL)
 	// set the semantic of "overflowing" enumeration types
 	p.SetFES(false)
