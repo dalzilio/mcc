@@ -18,9 +18,12 @@ open and extensible solution to lower the access cost for developers that would
 like to engage in this competition.
 
 MCC supports the generation of Petri nets in both the TINA (.net) and LOLA input
-formats. We have made many improvements on the tool along the years and it is
-now a very efficient solution, on par with (and on many instances more efficient
-than) other tools used for the same purpose.
+formats. We have also recently added a new subcommand to output the result as a
+P/T net in PNML format.
+
+We have made many improvements on the tool along the years and it is now a very
+efficient solution, on par with (and on many instances more efficient than)
+other tools used for the same purpose.
 
 In the future, we plan to use the transformation to compute interesting
 properties of the models, like symetries and/or set of places that can be
@@ -71,6 +74,7 @@ Usage:
 Available Commands:
   hlnet       generates a .net or .tpn file from a PNML file describing a high-level net
   lola        generates a net file in the LoLa format from a PNML file describing a high-level net
+  pnml        generates a P/T net file in PNML format from a PNML file describing a high-level net
 
 Use "mcc [command] --help" for more information about a command.
 
@@ -137,6 +141,9 @@ Flags:
   ```text
   $> mcc hlnet -i model.pnml -o - | ndrio -pnml -
   ```
+
+* We added a new subcommand, ```mcc pnml``` to output the result as a P/T net in
+  PNML format.
 
 ## Dependencies
 
