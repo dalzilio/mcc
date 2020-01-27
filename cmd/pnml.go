@@ -83,11 +83,13 @@ func pnmlConvert(filename string) {
 		return
 	}
 
-	// compute name of the output file. There are three possible cases
+	// compute name of the output file. There are three possible cases. We try
+	// to avoid overwriting over the input file by adding suffix -PT when not
+	// using option -o.
 	_, file := filepath.Split(filename)
 	outfile := pnmlOutFileName
 	if outfile == "" {
-		outfile = file[0 : len(file)-len(".pnml")]
+		outfile = file[0:len(file)-len(".pnml")] + "-PT"
 	}
 	if pnmlUseName {
 		outfile = p.Name
@@ -111,7 +113,7 @@ func pnmlConvert(filename string) {
 	} else {
 		out, err = os.Create(outfile + ".pnml")
 		if err != nil {
-			hlnetLogger.Println("Error creating result file: ", err, " (you may be trying to overwrite your input file!)")
+			hlnetLogger.Println("Error creating result file: ", err)
 			os.Exit(1)
 			return
 		}
