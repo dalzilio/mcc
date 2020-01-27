@@ -20,7 +20,7 @@ const (
 	DOCTYPE = `<?xml version="1.0" encoding="UTF-8"?>` + "\n"
 )
 
-// wpnml is the type of PNML for a P/T net ithout graphical information
+// wpnml is the type of PNML for a P/T net without graphical information
 type wpnml struct {
 	XMLName xml.Name `xml:"http://www.pnml.org/version-2009/grammar/pnml pnml"`
 	WNET    wnet     `xml:"net"`
