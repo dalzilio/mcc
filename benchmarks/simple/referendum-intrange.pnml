@@ -188,7 +188,7 @@
             <structure>
                 <declarations>
                     <namedsort id="Voters" name="Voters">
-                        <finiteintrange start="1" end="100"/>
+                        <finiteintrange start="1" end="10"/>
                     </namedsort>
                     <variabledecl id="varv" name="v">
                         <usersort declaration="Voters"/>
