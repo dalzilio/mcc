@@ -70,10 +70,10 @@ func (v Trans) MarshalXML(e *xml.Encoder, start xml.StartElement) error {
 	e.EncodeToken(xml.EndElement{Name: start.Name})
 
 	for _, c := range v.in {
-		encodeArc(e, fmt.Sprintf("t%d-%d", v.count, c.count), c.Place.name, name, c.int)
+		encodeArc(e, fmt.Sprintf("tpt%d-%d", v.count, c.count), c.Place.name, name, c.int)
 	}
 	for _, c := range v.out {
-		encodeArc(e, fmt.Sprintf("t%d-%d", c.count, v.count), name, c.Place.name, c.int)
+		encodeArc(e, fmt.Sprintf("ttp%d-%d", c.count, v.count), name, c.Place.name, c.int)
 	}
 
 	return nil
