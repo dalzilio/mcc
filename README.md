@@ -75,6 +75,7 @@ Available Commands:
   hlnet       generates a .net or .tpn file from a PNML file describing a high-level net
   lola        generates a net file in the LoLa format from a PNML file describing a high-level net
   pnml        generates a P/T net file in PNML format from a PNML file describing a high-level net
+  tina        generates a P/T net file in .net format
 
 Use "mcc [command] --help" for more information about a command.
 
@@ -134,16 +135,19 @@ Flags:
 
 * You can now use parameter ```-``` with option ```-o``` to output the result of
   the unfolding on the standard output. This way it is possible to use ```mcc```
-  to generate a P/T net in PNML format by piping the result to ```ndrio```, a
-  conversion tool for Petri nets  that is part of the [TINA
+  to generate a P/T net and pipe the result to another program, for instance another
+  conversion tool, such as ```ndrio```, which is part of the [TINA
   toolbox](http://projects.laas.fr/tina/home.php).
 
   ```text
-  $> mcc hlnet -i model.pnml -o - | ndrio -pnml -
+  $> mcc hlnet -i model.pnml -o - | ndrio -romeo -
   ```
 
 * We added a new subcommand, ```mcc pnml``` to output the result as a P/T net in
   PNML format.
+
+* We added a new subcommand, ```mcc tina``` to output the result as a P/T net in
+  TINA's net format.
 
 ## Dependencies
 
