@@ -7,6 +7,7 @@ equivalent Place/Transition nets.
 [![Go Report Card](https://goreportcard.com/badge/github.com/dalzilio/mcc)](https://goreportcard.com/report/github.com/dalzilio/mcc)
 [![GoDoc](https://godoc.org/github.com/dalzilio/mcc?status.svg)](https://godoc.org/github.com/dalzilio/mcc)
 [![Release](https://img.shields.io/github/v/release/dalzilio/mcc)](https://github.com/dalzilio/mcc/releases)
+![Go](https://github.com/dalzilio/mcc/workflows/Go/badge.svg)
 
 ## Overview
 
@@ -29,16 +30,22 @@ In the future, we plan to use the transformation to compute interesting
 properties of the models, like symetries and/or set of places that can be
 clustered together.
 
+## Reference
+
+* Silvano Dal Zilio. [MCC: a Tool for Unfolding Colored Petri Nets in PNML
+  Format](https://hal.laas.fr/hal-02511881). _41st International Conference on
+  Application and Theory of Petri Nets and Concurrency_, Jun 2020, Paris,
+  France. ⟨hal-02511881⟩
+
 ## Installing MCC or building it from source
 
 MCC is a classic Command-Line Interface tool. You can directly install it by
 copying the right binary file in your system. You can find the executable for
 the latest releases on [GitHub's release page for this
 project](https://github.com/dalzilio/mcc/releases). We provide binary files for
-[Windows](https://github.com/dalzilio/mcc/releases/download/v1.0.0/mcc.exe),
-[Linux](https://github.com/dalzilio/mcc/releases/download/v1.0.0/mcc-linux) and
-[MacOS
-(Darwin)](https://github.com/dalzilio/mcc/releases/download/v1.0.0/mcc-darwin).
+[Windows](https://github.com/dalzilio/mcc/releases/download/v1.5.0/mcc.exe),
+[Linux](https://github.com/dalzilio/mcc/releases/download/v1.5.0/mcc-linux) and
+[MacOS (Darwin)](https://github.com/dalzilio/mcc/releases/download/v1.5.0/mcc-darwin).
 
 You also have the option to install the tool directly from source. For this, you
 need first to install a recent Go distribution (available at
