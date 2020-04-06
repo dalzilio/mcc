@@ -213,6 +213,11 @@ func Build(pnet *pnml.Net, hl *hlnet.Net) *Net {
 			}
 			return true
 		})
+		// and we also reflect the new ordering of transitions in the count field
+		for k, v := range net.tr {
+			v.count = k
+		}
+
 	}
 
 	return &net

@@ -8,6 +8,7 @@ import (
 	"encoding/xml"
 	"fmt"
 	"io"
+	"sort"
 )
 
 // ----------------------------------------------------------------------
@@ -61,7 +62,7 @@ func (v Place) MarshalXML(e *xml.Encoder, start xml.StartElement) error {
 // MarshalXML encodes the receiver as zero or more XML elements. This makes
 // Trans a xml.Marshaller
 func (v Trans) MarshalXML(e *xml.Encoder, start xml.StartElement) error {
-	name := fmt.Sprintf("%s-%d", v.label, v.count)
+	name := fmt.Sprintf("t%d", v.count)
 	start.Attr = []xml.Attr{xml.Attr{Name: xml.Name{Local: "id"}, Value: name}}
 	e.EncodeToken(start)
 	e.EncodeToken(xml.StartElement{Name: xml.Name{Local: "name"}})
@@ -70,10 +71,10 @@ func (v Trans) MarshalXML(e *xml.Encoder, start xml.StartElement) error {
 	e.EncodeToken(xml.EndElement{Name: start.Name})
 
 	for _, c := range v.in {
-		encodeArc(e, fmt.Sprintf("tpt%d-%d", v.count, c.count), c.Place.name, name, c.int)
+		encodeArc(e, fmt.Sprintf("p2t-%d-%d", v.count, c.count), c.Place.name, name, c.int)
 	}
 	for _, c := range v.out {
-		encodeArc(e, fmt.Sprintf("ttp%d-%d", c.count, v.count), name, c.Place.name, c.int)
+		encodeArc(e, fmt.Sprintf("t2p-%d-%d", c.count, v.count), name, c.Place.name, c.int)
 	}
 
 	return nil
@@ -101,6 +102,12 @@ func encodeArc(e *xml.Encoder, id, src, tgt string, weight int) {
 func (net Net) PnmlWrite(w io.Writer) error {
 	encoder := xml.NewEncoder(w)
 	encoder.Indent("", "  ")
+
+	// we start by sorting the slice of places
+	sort.Slice(net.pl, func(i, j int) bool {
+		return net.pl[i].name < net.pl[j].name
+	})
+
 	wpnml := wpnml{
 		WNET: wnet{
 			Thetype: "http://www.pnml.org/version-2009/grammar/ptnet",
