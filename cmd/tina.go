@@ -118,7 +118,6 @@ func tinaConvert(filename string) {
 		}
 		defer out.Close()
 	}
-
 	w := bufio.NewWriter(out)
 	cn.Write(w)
 	w.Flush()
