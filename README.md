@@ -27,7 +27,7 @@ efficient solution, on par with (and on many instances more efficient than)
 other tools used for the same purpose.
 
 In the future, we plan to use the transformation to compute interesting
-properties of the models, like symetries and/or set of places that can be
+properties of the models, like symmetries and/or set of places that can be
 clustered together.
 
 ## Reference

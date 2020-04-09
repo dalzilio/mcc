@@ -22,7 +22,7 @@ import (
 // and generates a P/T net equivalent, also in PNML format.
 var pnmlCmd = &cobra.Command{
 	Use:   "pnml -i file.pnml",
-	Short: "generates a P/T net file in PNML format",
+	Short: "mcc pnml generates a P/T net file in PNML format",
 	Run: func(cmd *cobra.Command, args []string) {
 		pnmlConvert(pnmlFileName)
 	},

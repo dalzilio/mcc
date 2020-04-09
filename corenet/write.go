@@ -48,7 +48,7 @@ func (tr Trans) Write(w io.Writer, k int) {
 
 // Write outputs the corenet in .net format on an io.Writer.
 func (net Net) Write(w io.Writer) {
-	fmt.Fprintf(w, "#net %s has %d places and %d transitions\n", net.name, len(net.pl), len(net.tr))
+	fmt.Fprintf(w, "# net %s has %d places and %d transitions\n", net.name, len(net.pl), len(net.tr))
 	fmt.Fprintf(w, "net {%s}\n", net.name)
 
 	// we start by sorting the slice of places

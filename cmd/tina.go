@@ -6,6 +6,7 @@ package cmd
 
 import (
 	"bufio"
+	"fmt"
 
 	"github.com/dalzilio/mcc/corenet"
 	"github.com/dalzilio/mcc/hlnet"
@@ -22,7 +23,7 @@ import (
 // generates a P/T net equivalent in the .net format used in TINA.
 var tinaCmd = &cobra.Command{
 	Use:   "tina -i file.pnml",
-	Short: "generates a P/T net file in .net format",
+	Short: "mcc tina generates a P/T net file in .net format",
 	Run: func(cmd *cobra.Command, args []string) {
 		tinaConvert(tinaFileName)
 	},
@@ -32,7 +33,6 @@ var tinaFileName string
 var tinaOutFileName string
 var tinaUseName bool
 var tinaUseComplexPNames bool
-
 var tinaLogger *log.Logger
 
 func init() {
@@ -42,6 +42,17 @@ func init() {
 	tinaCmd.Flags().BoolVar(&tinaUseName, "name", false, "use PNML (document) name for the output file")
 
 	tinaLogger = log.New(os.Stderr, "MCC TINA:", 0)
+
+	defaultusage := tinaCmd.UsageString()
+	tinaCmd.SetUsageFunc(func(c *cobra.Command) error {
+		fmt.Fprintf(os.Stdout, defaultusage)
+		fmt.Fprintf(os.Stdout, "\nFiles:\n")
+		fmt.Fprintf(os.Stdout, "   infile:    input file should be specified with option -i\n")
+		fmt.Fprintf(os.Stdout, "   outfile:   output is stdout when using option \"-o -\"\n")
+		fmt.Fprintf(os.Stdout, "   errorfile: errors are reported on stderr\n")
+		fmt.Fprintf(os.Stdout, "   help:      is reported on stdout\n")
+		return nil
+	})
 }
 
 func tinaConvert(filename string) {
@@ -119,6 +130,7 @@ func tinaConvert(filename string) {
 		defer out.Close()
 	}
 	w := bufio.NewWriter(out)
+	fmt.Fprintf(w, "# %s\n", Generated())
 	cn.Write(w)
 	w.Flush()
 }

@@ -26,7 +26,7 @@ import (
 // an error for  PNML files that contain a core net description.
 var hlnetCmd = &cobra.Command{
 	Use:   "hlnet -i file.pnml",
-	Short: "generates a .net or .tpn file from a PNML file describing a high-level net",
+	Short: "mcc hlnet generates a .net or .tpn file in Tina format",
 	Run: func(cmd *cobra.Command, args []string) {
 		convert(hlnetFileName)
 	},
@@ -50,6 +50,7 @@ func init() {
 	hlnetCmd.Flags().BoolVar(&hlnetUseComplexPNames, "sliced", false, "use structured naming for places")
 	hlnetCmd.Flags().BoolVar(&hlnetVerbose, "verbose", false, "add extra information in the labels of the .net file")
 	hlnetCmd.Flags().BoolVar(&hlnetStat, "stats", false, "print statistics (nb. of places, trans. and computation time); do not output the net")
+
 	hlnetLogger = log.New(os.Stderr, "MCC HLNET:", 0)
 
 	defaultusage := hlnetCmd.UsageString()
@@ -66,12 +67,12 @@ func init() {
 
 func convert(filename string) {
 	// we capture panics
-	// defer func() {
-	// 	if r := recover(); r != nil {
-	// 		hlnetLogger.Println("Error in generation: cannot compute")
-	// 		os.Exit(1)
-	// 	}
-	// }()
+	defer func() {
+		if r := recover(); r != nil {
+			hlnetLogger.Println("Error in generation: cannot compute")
+			os.Exit(1)
+		}
+	}()
 
 	start := time.Now()
 
@@ -187,6 +188,7 @@ func convert(filename string) {
 		defer out.Close()
 	}
 	w := bufio.NewWriter(out)
+	fmt.Fprintf(w, "# %s\n", Generated())
 	cn.Write(w)
 	w.Flush()
 }

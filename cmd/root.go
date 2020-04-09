@@ -7,6 +7,8 @@ package cmd
 import (
 	"fmt"
 	"os"
+	"strings"
+	"time"
 
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
@@ -14,10 +16,17 @@ import (
 
 var cfgFile string
 
+// builddate is the compilation date for the executable, in %Y%m%d format
+var builddate string = "2020/03/21"
+
+// version describe the current git version,
+var version string = "v0"
+
 // RootCmd represents the base command when called without any subcommands
 var RootCmd = &cobra.Command{
-	Use:   "mcc",
-	Short: "collection of tools for the MCC",
+	Use:     "mcc",
+	Short:   "mcc transforms High-Level Petri nets in PNML format into equivalent Place/Transition nets",
+	Version: Version(),
 }
 
 // Execute adds all child commands to the root command sets flags appropriately.
@@ -27,6 +36,16 @@ func Execute() {
 		fmt.Println(err)
 		os.Exit(-1)
 	}
+}
+
+// Version returns information on the current version
+func Version() string {
+	return fmt.Sprintf("mcc version %s -- %s -- LAAS/CNRS", version, builddate)
+}
+
+// Generated returns information that can be embedded in generated files
+func Generated() string {
+	return fmt.Sprintf("generated with \"mcc %s\", version: %s, build date: %s, at: %s", strings.Join(os.Args[1:], " "), version, builddate, time.Now().Format("2006-01-02T15:04:05"))
 }
 
 func init() {
