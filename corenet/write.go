@@ -8,6 +8,8 @@ import (
 	"fmt"
 	"io"
 	"sort"
+
+	"github.com/dalzilio/mcc/pnml"
 )
 
 // ----------------------------------------------------------------------
@@ -30,8 +32,8 @@ func (pl corep) Write(w io.Writer) {
 	fmt.Fprintf(w, " %s*%d", pl.name, pl.int)
 }
 
-func (tr Trans) Write(w io.Writer, k int) {
-	if tr.label == "" {
+func (tr Trans) Write(w io.Writer, k int, verbosity pnml.VERB) {
+	if (verbosity == pnml.QUIET) || (tr.label == "") {
 		fmt.Fprintf(w, "tr t%d ", k)
 	} else {
 		fmt.Fprintf(w, "tr t%d : {%s} ", k, tr.label)
@@ -60,6 +62,6 @@ func (net Net) Write(w io.Writer) {
 	}
 
 	for k, v := range net.tr {
-		v.Write(w, k)
+		v.Write(w, k, net.verbose)
 	}
 }

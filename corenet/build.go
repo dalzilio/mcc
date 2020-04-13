@@ -56,7 +56,7 @@ func maketlabel(net *pnml.Net, name string, env pnml.Env) string {
 	}
 
 	if net.VERBOSE != pnml.MAXIMAL {
-		return name
+		return normalize2aname(name)
 	}
 
 	return fmt.Sprintf("%s %s", name, net.PrintEnv(env))
@@ -180,6 +180,10 @@ func Build(pnet *pnml.Net, hl *hlnet.Net) *Net {
 	// we also sort the transitions when net.sliced is true
 	if net.sliced {
 		sort.Slice(net.tr, func(i, j int) bool {
+			b := strings.Compare(net.tr[i].label, net.tr[j].label)
+			if b != 0 {
+				return b < 0
+			}
 			k := 0
 			for k < len(net.tr[i].in) && k < len(net.tr[j].in) {
 				if net.tr[i].in[k] == net.tr[j].in[k] {
@@ -213,6 +217,40 @@ func Build(pnet *pnml.Net, hl *hlnet.Net) *Net {
 			}
 			return true
 		})
+		// sort.Slice(net.tr, func(i, j int) bool {
+		// 	k := 0
+		// 	for k < len(net.tr[i].in) && k < len(net.tr[j].in) {
+		// 		if net.tr[i].in[k] == net.tr[j].in[k] {
+		// 			k++
+		// 			continue
+		// 		}
+		// 		if net.tr[i].in[k].name == net.tr[j].in[k].name {
+		// 			return (net.tr[i].in[k].int < net.tr[j].in[k].int)
+		// 		}
+		// 		return (net.tr[i].in[k].name < net.tr[j].in[k].name)
+		// 	}
+		// 	if k < len(net.tr[i].in) {
+		// 		return false
+		// 	}
+		// 	if k < len(net.tr[j].in) {
+		// 		return true
+		// 	}
+		// 	k = 0
+		// 	for k < len(net.tr[i].out) && k < len(net.tr[j].out) {
+		// 		if net.tr[i].out[k] == net.tr[j].out[k] {
+		// 			k++
+		// 			continue
+		// 		}
+		// 		if net.tr[i].out[k].name == net.tr[j].out[k].name {
+		// 			return (net.tr[i].out[k].int < net.tr[j].out[k].int)
+		// 		}
+		// 		return (net.tr[i].out[k].name < net.tr[j].out[k].name)
+		// 	}
+		// 	if k < len(net.tr[i].out) {
+		// 		return false
+		// 	}
+		// 	return true
+		// })
 		// and we also reflect the new ordering of transitions in the count field
 		for k, v := range net.tr {
 			v.count = k

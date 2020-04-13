@@ -62,7 +62,7 @@ func (v Place) MarshalXML(e *xml.Encoder, start xml.StartElement) error {
 // MarshalXML encodes the receiver as zero or more XML elements. This makes
 // Trans a xml.Marshaller
 func (v Trans) MarshalXML(e *xml.Encoder, start xml.StartElement) error {
-	name := fmt.Sprintf("t%d", v.count)
+	name := fmt.Sprintf("%s_%d", v.label, v.count)
 	start.Attr = []xml.Attr{xml.Attr{Name: xml.Name{Local: "id"}, Value: name}}
 	e.EncodeToken(start)
 	e.EncodeToken(xml.StartElement{Name: xml.Name{Local: "name"}})
