@@ -1,4 +1,21 @@
-# MCC
+
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+  <a href="https://github.com/dalzilio/mcc">
+    <img src="docs/mcc.png" alt="Logo" width="240" height="80">
+  </a>
+
+  <p align="center">
+    A tool to remove colors from your High-Level Petri nets !
+    <br />
+    <a href="https://github.com/dalzilio/mcc#features"><strong>see what's new »</strong></a>
+    <br />
+    <!-- <a href="https://github.com/dalzilio/mcc">View Demo</a> -->
+  </p>
+</p>
+
+## About
 
 MCC is a tool designed for a very specific and narrow task: to transform the
 models of High-Level Petri nets, given in [PNML](http://www.pnml.org/), into
