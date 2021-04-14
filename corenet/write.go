@@ -50,13 +50,40 @@ func (tr Trans) Write(w io.Writer, k int, verbosity pnml.VERB) {
 // Write outputs the corenet in .net format on an io.Writer.
 func (net Net) Write(w io.Writer) {
 	fmt.Fprintf(w, "# net %s has %d places and %d transitions\n", net.name, len(net.pl), len(net.tr))
-	fmt.Fprintf(w, "net {%s}\n", net.name)
+	fmt.Fprintf(w, "net {%s}", net.name)
 
-	// we start by sorting the slice of places
-	sort.Slice(net.pl, func(i, j int) bool {
-		return net.pl[i].name < net.pl[j].name
-	})
+	// we start by sorting the slice of places. In the case where the result is
+	// not "sliced", place names are all of the form p_k, with k an integer, and are already sorted, so we can just do nothing.
+	if net.sliced {
+		sort.Slice(net.pl, func(i, j int) bool {
+			return net.pl[i].name < net.pl[j].name
+		})
+	}
 
+	// we print out properties if needed. We use the fact that places are sorted
+	// by names. Hence (core) places corresponding to the same colored place are
+	// grouped together. Same for transitions.
+	if net.printprops {
+		currentname := ""
+		for _, v := range net.pl {
+			if v.label != currentname {
+				currentname = v.label
+				fmt.Fprintf(w, "\n# pl %s", v.label)
+			}
+			fmt.Fprintf(w, " %s", v.name)
+		}
+		currentname = ""
+		for k, v := range net.tr {
+			if v.label != currentname {
+				currentname = v.label
+				fmt.Fprintf(w, "\n# tr %s", currentname)
+			}
+			fmt.Fprintf(w, " t%d", k)
+		}
+	}
+	fmt.Fprint(w, "\n")
+
+	// Finally we output the .net declarations
 	for _, v := range net.pl {
 		v.Write(w)
 	}

@@ -50,6 +50,10 @@ type Net struct {
 	// successor/predecessor of a constant in a finite enumeration may be an
 	// unvalid value).
 	FES bool
+	// PrintProperties tells us whether we want to  output associations betweeen
+	// places and their colored equivalent. Same for transitions. This is used when
+	// checking properties.
+	PrintProperties bool
 }
 
 // ----------------------------------------------------------------------
@@ -66,6 +70,14 @@ func (net *Net) SetVerbose(b VERB) {
 // the names of places.
 func (net *Net) SetSliced(b bool) {
 	net.SLICED = b
+}
+
+// ----------------------------------------------------------------------
+
+// SetProperties sets the value of the PrintProperties setting to true (it is
+// false by default).
+func (net *Net) SetProperties() {
+	net.PrintProperties = true
 }
 
 // ----------------------------------------------------------------------

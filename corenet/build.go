@@ -40,6 +40,9 @@ func makepname(net *pnml.Net, pname string, count int, val *pnml.Value) string {
 
 func makeplabel(net *pnml.Net, name string, val *pnml.Value) string {
 	if net.VERBOSE == pnml.QUIET {
+		if net.PrintProperties {
+			return name
+		}
 		return ""
 	}
 
@@ -52,6 +55,9 @@ func makeplabel(net *pnml.Net, name string, val *pnml.Value) string {
 
 func maketlabel(net *pnml.Net, name string, env pnml.Env) string {
 	if net.VERBOSE == pnml.QUIET {
+		if net.PrintProperties {
+			return name
+		}
 		return ""
 	}
 
@@ -112,6 +118,7 @@ func Build(pnet *pnml.Net, hl *hlnet.Net) *Net {
 	net.name = pnet.Name
 	net.verbose = pnet.VERBOSE
 	net.sliced = pnet.SLICED
+	net.printprops = pnet.PrintProperties
 
 	// we build all the places in the final net. They are of the form p x val,
 	// where val is one of the possible values from the type of p. We build a

@@ -8,11 +8,12 @@ import "github.com/dalzilio/mcc/pnml"
 
 // Net is the type of (core) Petri nets.
 type Net struct {
-	verbose pnml.VERB
-	sliced  bool
-	name    string
-	pl      []*Place
-	tr      []*Trans
+	verbose    pnml.VERB
+	printprops bool
+	sliced     bool
+	name       string
+	pl         []*Place
+	tr         []*Trans
 }
 
 // Place is the type of places in a (core) net.
