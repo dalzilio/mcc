@@ -21,7 +21,6 @@ func (pl Place) Write(w io.Writer) {
 		return
 	}
 	fmt.Fprintf(w, "pl %s (%d)\n", pl.name, pl.init)
-	return
 }
 
 func (pl corep) Write(w io.Writer) {
@@ -57,6 +56,7 @@ func (net Net) Write(w io.Writer) {
 	sort.Slice(net.pl, func(i, j int) bool {
 		return net.pl[i].name < net.pl[j].name
 	})
+
 	for _, v := range net.pl {
 		v.Write(w)
 	}

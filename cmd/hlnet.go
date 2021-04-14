@@ -55,7 +55,7 @@ func init() {
 
 	defaultusage := hlnetCmd.UsageString()
 	hlnetCmd.SetUsageFunc(func(c *cobra.Command) error {
-		fmt.Fprintf(os.Stdout, defaultusage)
+		fmt.Fprint(os.Stdout, defaultusage)
 		fmt.Fprintf(os.Stdout, "\nFiles:\n")
 		fmt.Fprintf(os.Stdout, "   infile:    input file should be specified with option -i\n")
 		fmt.Fprintf(os.Stdout, "   outfile:   output is stdout when using option \"-o -\"\n")
