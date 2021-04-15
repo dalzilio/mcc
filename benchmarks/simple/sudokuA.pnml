@@ -1,0 +1,243 @@
+<?xml version="1.0"?>
+<pnml xmlns="http://www.pnml.org/version-2009/grammar/pnml">
+  <!-- Written by GreatSPN Editor. -->
+  <net id="Sudoku-COL-AN03" type="http://www.pnml.org/version-2009/grammar/symmetricnet">
+    <name>
+      <text>Sudoku-COL-AN03</text>
+    </name>
+    <declaration>
+      <structure>
+        <declarations>
+          <!-- Declaration of user-defined color classes (sorts) -->
+          <namedsort id="N" name="N">
+            <finiteintrange start="1" end="3"/>
+          </namedsort>
+          <namedsort id="N3" name="N3">
+            <productsort>
+              <usersort declaration="N"/>
+              <usersort declaration="N"/>
+              <usersort declaration="N"/>
+            </productsort>
+          </namedsort>
+          <namedsort id="N2" name="N2">
+            <productsort>
+              <usersort declaration="N"/>
+              <usersort declaration="N"/>
+            </productsort>
+          </namedsort>
+          <!-- Declaration of user-defined color variables -->
+          <variabledecl id="x" name="x">
+            <usersort declaration="N"/>
+          </variabledecl>
+          <variabledecl id="y" name="y">
+            <usersort declaration="N"/>
+          </variabledecl>
+          <variabledecl id="v" name="v">
+            <usersort declaration="N"/>
+          </variabledecl>
+        </declarations>
+      </structure>
+    </declaration>
+    <page id="page0">
+      <name>
+        <text>DefaultPage</text>
+      </name>
+      <!-- List of places -->
+      <place id="Rows">
+        <name>
+          <graphics>
+            <offset x="0" y="-15"/>
+          </graphics>
+          <text>Rows</text>
+        </name>
+        <graphics>
+          <position x="240" y="30"/>
+        </graphics>
+        <type>
+          <text>N2</text>
+          <structure>
+            <usersort declaration="N2"/>
+          </structure>
+        </type>
+        <hlinitialMarking>
+          <text>&lt;All,All&gt;</text>
+          <structure>
+            <tuple>
+              <subterm>
+                <all>
+                  <usersort declaration="N"/>
+                </all>
+              </subterm>
+              <subterm>
+                <all>
+                  <usersort declaration="N"/>
+                </all>
+              </subterm>
+            </tuple>
+          </structure>
+        </hlinitialMarking>
+      </place>
+      <place id="Board">
+        <name>
+          <graphics>
+            <offset x="-5" y="15"/>
+          </graphics>
+          <text>Board</text>
+        </name>
+        <graphics>
+          <position x="280" y="170"/>
+        </graphics>
+        <type>
+          <text>N3</text>
+          <structure>
+            <usersort declaration="N3"/>
+          </structure>
+        </type>
+      </place>
+      <place id="Cells">
+        <name>
+          <graphics>
+            <offset x="0" y="-15"/>
+          </graphics>
+          <text>Cells</text>
+        </name>
+        <graphics>
+          <position x="360" y="70"/>
+        </graphics>
+        <type>
+          <text>N2</text>
+          <structure>
+            <usersort declaration="N2"/>
+          </structure>
+        </type>
+        <hlinitialMarking>
+          <text>&lt;All,All&gt;</text>
+          <structure>
+            <tuple>
+              <subterm>
+                <all>
+                  <usersort declaration="N"/>
+                </all>
+              </subterm>
+              <subterm>
+                <all>
+                  <usersort declaration="N"/>
+                </all>
+              </subterm>
+            </tuple>
+          </structure>
+        </hlinitialMarking>
+      </place>
+      <place id="Columns">
+        <name>
+          <graphics>
+            <offset x="10" y="-15"/>
+          </graphics>
+          <text>Columns</text>
+        </name>
+        <graphics>
+          <position x="310" y="30"/>
+        </graphics>
+        <type>
+          <text>N2</text>
+          <structure>
+            <usersort declaration="N2"/>
+          </structure>
+        </type>
+        <hlinitialMarking>
+          <text>&lt;All,All&gt;</text>
+          <structure>
+            <tuple>
+              <subterm>
+                <all>
+                  <usersort declaration="N"/>
+                </all>
+              </subterm>
+              <subterm>
+                <all>
+                  <usersort declaration="N"/>
+                </all>
+              </subterm>
+            </tuple>
+          </structure>
+        </hlinitialMarking>
+      </place>
+      <!-- List of transitions -->
+      <transition id="select">
+        <name>
+          <graphics>
+            <offset x="25" y="0"/>
+          </graphics>
+          <text>select</text>
+        </name>
+        <graphics>
+          <position x="285" y="110"/>
+        </graphics>
+      </transition>
+      <!-- List of arcs -->
+      <arc id="id1" source="Rows" target="select">
+        <hlinscription>
+          <text>&lt;x,v&gt;</text>
+          <structure>
+            <tuple>
+              <subterm>
+                <variable refvariable="x"/>
+              </subterm>
+              <subterm>
+                <variable refvariable="v"/>
+              </subterm>
+            </tuple>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="id2" source="select" target="Board">
+        <hlinscription>
+          <text>&lt;x,y,v&gt;</text>
+          <structure>
+            <tuple>
+              <subterm>
+                <variable refvariable="x"/>
+              </subterm>
+              <subterm>
+                <variable refvariable="y"/>
+              </subterm>
+              <subterm>
+                <variable refvariable="v"/>
+              </subterm>
+            </tuple>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="id3" source="Cells" target="select">
+        <hlinscription>
+          <text>&lt;x,y&gt;</text>
+          <structure>
+            <tuple>
+              <subterm>
+                <variable refvariable="x"/>
+              </subterm>
+              <subterm>
+                <variable refvariable="y"/>
+              </subterm>
+            </tuple>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="id4" source="Columns" target="select">
+        <hlinscription>
+          <text>&lt;y,v&gt;</text>
+          <structure>
+            <tuple>
+              <subterm>
+                <variable refvariable="y"/>
+              </subterm>
+              <subterm>
+                <variable refvariable="v"/>
+              </subterm>
+            </tuple>
+          </structure>
+        </hlinscription>
+      </arc>
+    </page>
+  </net>
+</pnml>
