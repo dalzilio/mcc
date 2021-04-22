@@ -110,12 +110,13 @@ func Build(n *pnml.Net) (*Net, error) {
 		}
 	}
 
-	// if there are less than 5 places we try to find "stable places", that is a
-	// place p such that, for every transition t, there is an edge t--exp-->p if
-	// and only if there is an edge p--exp-->t. When a place is stable we know
-	// that the tokens in place p (the possible pairs p x val) are exactly the
-	// same than in the initial marking.
-	if len(net.Places) < 6 {
+	// if there are less than 200 places (we chose an arbitrary value) we try to
+	// find "stable places", that is a place p such that, for every transition
+	// t, there is an edge t--exp-->p if and only if there is an edge
+	// p--exp-->t. When a place is stable we know that the tokens in place p
+	// (the possible pairs p x val) are exactly the same than in the initial
+	// marking.
+	if len(net.Places) < 200 {
 		for _, p := range net.Places {
 			p.Stable = net.IsPlaceStable(p)
 		}

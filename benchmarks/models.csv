@@ -14,7 +14,7 @@ family,FamilyReunion-COL-L00010M0001C001P001G001,104,66,1486,1234,-1
 galloc,GlobalResAllocation-COL-03,5,7,33,4791,6320
 GlobalResAllocation-COL-06,GlobalResAllocation-COL-06,5,7,102,136662,-1
 lamport,LamportFastMutEx-COL-3,18,17,100,156,19742
-neoelection,NeoElection-COL-2,18,22,438,375,241
+neoelection,NeoElection-COL-2,18,22,422,343,241
 permadmissibility,PermAdmissibility-COL-01,40,16,208,1024,52537
 peterson,Peterson-COL-2,11,14,108,138,20754
 philo,Philosophers-COL-000020,5,5,100,100,3486784401
@@ -36,5 +36,5 @@ sudokuA,Sudoku-COL-AN03,4,1,54,27,11776
 sudokuB,Sudoku-COL-BN04,5,1,128,64,-1
 token,TokenRing-COL-005,1,2,36,156,166
 TokenRing-COL-050,TokenRing-COL-050,1,2,2601,127551,-1
-VehicularWifi-COL,VehicularWifi-COL-none,21,41,115566,378492,-1
+VehicularWifi-COL,VehicularWifi-COL-none,21,41,41902,83836,-1
 referendum-intrange,Referendum-COL-010,4,3,31,21,59050

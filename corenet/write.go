@@ -64,6 +64,7 @@ func (net Net) Write(w io.Writer) {
 	// by names. Hence (core) places corresponding to the same colored place are
 	// grouped together. Same for transitions.
 	if net.printprops {
+		// output list of places for each colored one
 		currentname := ""
 		for _, v := range net.pl {
 			if v.label != currentname {
@@ -72,6 +73,7 @@ func (net Net) Write(w io.Writer) {
 			}
 			fmt.Fprintf(w, " %s", v.name)
 		}
+		// output list of transitions for each colored one
 		currentname = ""
 		for k, v := range net.tr {
 			if v.label != currentname {
@@ -79,6 +81,45 @@ func (net Net) Write(w io.Writer) {
 				fmt.Fprintf(w, "\n# tr %s", currentname)
 			}
 			fmt.Fprintf(w, " t%d", k)
+		}
+		// find places that are not used in any transitions, they give rise to
+		// simple invariants: (m(p) == m0(p)). We visit transitions and mark
+		// places that are being used. We also use a counter to speed things up
+		// if we find that all places are used early.
+		usedpl := make([]bool, len(net.pl))
+		cusedpl := len(net.pl)
+		for _, v := range net.tr {
+			for _, c := range v.in {
+				if index := c.Place.count; !usedpl[index] {
+					usedpl[index] = true
+					cusedpl--
+				}
+				for _, c := range v.out {
+					if index := c.Place.count; !usedpl[index] {
+						usedpl[index] = true
+						cusedpl--
+					}
+				}
+			}
+			if cusedpl == 0 {
+				break
+			}
+		}
+		if cusedpl != 0 {
+			for k, isused := range usedpl {
+				if !isused {
+					if net.pl[k].init == 0 {
+						fmt.Fprintf(w, "\n# inv %s == %d", net.pl[k].name, net.pl[k].init)
+					}
+				}
+			}
+			for k, isused := range usedpl {
+				if !isused && (net.pl[k].init == 0) {
+					if net.pl[k].init == 0 {
+						fmt.Fprintf(w, "\npl %s", net.pl[k].name)
+					}
+				}
+			}
 		}
 	}
 	fmt.Fprint(w, "\n")
