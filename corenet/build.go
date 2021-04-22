@@ -20,6 +20,12 @@ func makepname(net *pnml.Net, pname string, count int, val *pnml.Value) string {
 		return fmt.Sprintf("p_%d", count)
 	}
 	s := strings.Builder{}
+	if net.PrintProperties {
+		// When we print properties we keep the original name of the PNML place,
+		// which may contain illegal characters. This is the case for example
+		// with model neoelection that uses `-` in the id of places.
+		pname = normalize2aname(pname)
+	}
 	s.WriteString(pname)
 	if val.Head == 0 {
 		return s.String()
@@ -125,8 +131,13 @@ func Build(pnet *pnml.Net, hl *hlnet.Net) *Net {
 	// map to find the given place from the pair {p val}
 	cpl := make(map[coreAssoc]*Place)
 	pcount := 0
+	pname := ""
 	for k, p := range hl.Places {
-		pname := normalize2aname(k)
+		if pnet.PrintProperties {
+			pname = k
+		} else {
+			pname = normalize2aname(k)
+		}
 		if p.Stable {
 			// when the place is stable, its rechable "values" are the one in
 			// its initial marking (moreover the marking of the place is an

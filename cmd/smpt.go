@@ -62,7 +62,7 @@ func init() {
 }
 
 func smptConvert(filename string) {
-	// we capture panics so that that we don't pollute stdout if something goes wrong
+	// we capture panics so that we don't pollute stdout if something goes wrong
 	defer func() {
 		if r := recover(); r != nil {
 			smptLogger.Println("Error in generation: cannot compute")
