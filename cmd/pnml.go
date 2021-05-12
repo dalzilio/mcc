@@ -95,9 +95,10 @@ func pnmlConvert(filename string) {
 		outfile = p.Name
 	}
 
+	p.SetProperties()
 	p.SetSliced(pnmlUseComplexPNames)
-	// p.SetVerbose(pnml.QUIET)
-	p.SetVerbose(pnml.MINIMAL)
+	p.SetVerbose(pnml.QUIET)
+	// p.SetVerbose(pnml.MINIMAL)
 	// set the semantic of "overflowing" enumeration types
 	p.SetFES(false)
 	hl, err := hlnet.Build(p)

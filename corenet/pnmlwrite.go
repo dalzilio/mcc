@@ -45,10 +45,10 @@ type wpage struct {
 // MarshalXML encodes the receiver as zero or more XML elements. This makes
 // Place a xml.Marshaller
 func (v Place) MarshalXML(e *xml.Encoder, start xml.StartElement) error {
-	start.Attr = []xml.Attr{xml.Attr{Name: xml.Name{Local: "id"}, Value: v.name}}
+	start.Attr = []xml.Attr{{Name: xml.Name{Local: "id"}, Value: v.name}}
 	e.EncodeToken(start)
 	e.EncodeToken(xml.StartElement{Name: xml.Name{Local: "name"}})
-	e.EncodeElement(v.name, xml.StartElement{Name: xml.Name{Local: "text"}})
+	e.EncodeElement(v.label+" "+v.name, xml.StartElement{Name: xml.Name{Local: "text"}})
 	e.EncodeToken(xml.EndElement{Name: xml.Name{Local: "name"}})
 	if v.init != 0 {
 		e.EncodeToken(xml.StartElement{Name: xml.Name{Local: "initialMarking"}})
@@ -62,11 +62,11 @@ func (v Place) MarshalXML(e *xml.Encoder, start xml.StartElement) error {
 // MarshalXML encodes the receiver as zero or more XML elements. This makes
 // Trans a xml.Marshaller
 func (v Trans) MarshalXML(e *xml.Encoder, start xml.StartElement) error {
-	name := fmt.Sprintf("%s_%d", v.label, v.count)
-	start.Attr = []xml.Attr{xml.Attr{Name: xml.Name{Local: "id"}, Value: name}}
+	name := fmt.Sprintf("t%d", v.count)
+	start.Attr = []xml.Attr{{Name: xml.Name{Local: "id"}, Value: name}}
 	e.EncodeToken(start)
 	e.EncodeToken(xml.StartElement{Name: xml.Name{Local: "name"}})
-	e.EncodeElement(name, xml.StartElement{Name: xml.Name{Local: "text"}})
+	e.EncodeElement(v.label+" "+name, xml.StartElement{Name: xml.Name{Local: "text"}})
 	e.EncodeToken(xml.EndElement{Name: xml.Name{Local: "name"}})
 	e.EncodeToken(xml.EndElement{Name: start.Name})
 
@@ -84,9 +84,9 @@ func encodeArc(e *xml.Encoder, id, src, tgt string, weight int) {
 	arc := xml.StartElement{
 		Name: xml.Name{Local: "arc"},
 		Attr: []xml.Attr{
-			xml.Attr{Name: xml.Name{Local: "id"}, Value: id},
-			xml.Attr{Name: xml.Name{Local: "source"}, Value: src},
-			xml.Attr{Name: xml.Name{Local: "target"}, Value: tgt},
+			{Name: xml.Name{Local: "id"}, Value: id},
+			{Name: xml.Name{Local: "source"}, Value: src},
+			{Name: xml.Name{Local: "target"}, Value: tgt},
 		},
 	}
 	e.EncodeToken(arc)
@@ -103,11 +103,40 @@ func (net Net) PnmlWrite(w io.Writer) error {
 	encoder := xml.NewEncoder(w)
 	encoder.Indent("", "  ")
 
-	// we start by sorting the slice of places
-	sort.Slice(net.pl, func(i, j int) bool {
-		return net.pl[i].name < net.pl[j].name
-	})
+	// we start by sorting the slice of places. In the case where the result is
+	// not "sliced", place names are all of the form p_k, with k an integer, and are already sorted, so we can just do nothing.
+	if net.sliced {
+		sort.Slice(net.pl, func(i, j int) bool {
+			return net.pl[i].name < net.pl[j].name
+		})
+	}
 
+	// we print out properties. We use the fact that places are sorted by names.
+	// Hence (core) places corresponding to the same colored place are grouped
+	// together. Same for transitions.
+	if net.printprops {
+		// output list of places for each colored one
+		currentname := ""
+		for _, v := range net.pl {
+			if v.label != currentname {
+				currentname = v.label
+				fmt.Printf("\npl %s", v.label)
+			}
+			fmt.Printf(" %s", v.name)
+		}
+		// output list of transitions for each colored one
+		currentname = ""
+		for k, v := range net.tr {
+			if v.label != currentname {
+				currentname = v.label
+				fmt.Printf("\ntr %s", currentname)
+			}
+			fmt.Printf(" t%d", k)
+		}
+	}
+	fmt.Print("\n")
+
+	// Now we output the file on the io.Writer
 	wpnml := wpnml{
 		WNET: wnet{
 			Thetype: "http://www.pnml.org/version-2009/grammar/ptnet",
