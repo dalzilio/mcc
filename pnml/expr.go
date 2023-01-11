@@ -27,6 +27,7 @@ type Expression interface {
 	AddEnv(Env)
 	Match(*Net, Env) ([]*Value, []int)
 	MatchRing(string, int) (int, error)
+	Skeletonize(*Net) int
 }
 
 // ----------------------------------------------------------------------
@@ -81,6 +82,10 @@ func (p All) Match(net *Net, env Env) ([]*Value, []int) {
 	return f, m
 }
 
+func (p All) Skeletonize(net *Net) int {
+	return len(net.World[string(p)])
+}
+
 // ----------------------------------------------------------------------
 
 // Add is the type of add expressions.
@@ -103,6 +108,14 @@ func (p Add) Match(net *Net, env Env) ([]*Value, []int) {
 		mult = append(mult, m...)
 	}
 	return res, mult
+}
+
+func (p Add) Skeletonize(net *Net) int {
+	res := 0
+	for i := range p {
+		res += p[i].Skeletonize(net)
+	}
+	return res
 }
 
 // ----------------------------------------------------------------------
@@ -154,6 +167,14 @@ OUTER:
 	return f, m
 }
 
+func (p Subtract) Skeletonize(net *Net) int {
+	res := p[0].Skeletonize(net)
+	for i := 1; i < len(p); i++ {
+		res = res - p[i].Skeletonize(net)
+	}
+	return res
+}
+
 // ----------------------------------------------------------------------
 
 // Tuple is the type of tuple expressions.
@@ -184,6 +205,10 @@ func (p Tuple) Match(net *Net, env Env) ([]*Value, []int) {
 		mres = append(mres, 1)
 	}
 	return res, mres
+}
+
+func (p Tuple) Skeletonize(net *Net) int {
+	return 1
 }
 
 // ----------------------------------------------------------------------
@@ -261,6 +286,10 @@ func (p Operation) OK(net *Net, env Env) bool {
 	}
 }
 
+func (p Operation) Skeletonize(net *Net) int {
+	panic("Match not authorized on Operation")
+}
+
 // ----------------------------------------------------------------------
 
 // Constant is the type of constant expressions.
@@ -288,6 +317,10 @@ func (p Constant) Match(net *Net, env Env) ([]*Value, []int) {
 	return []*Value{pval}, []int{1}
 }
 
+func (p Constant) Skeletonize(net *Net) int {
+	return 1
+}
+
 // ----------------------------------------------------------------------
 
 // FIRConstant is the type of finite int range constant expressions.
@@ -311,6 +344,10 @@ func (p FIRConstant) Match(net *Net, env Env) ([]*Value, []int) {
 	return []*Value{net.order[p.stringify()]}, []int{1}
 }
 
+func (p FIRConstant) Skeletonize(net *Net) int {
+	return 1
+}
+
 // ----------------------------------------------------------------------
 
 // Var is the type of variables.
@@ -328,6 +365,10 @@ func (p Var) Match(net *Net, env Env) ([]*Value, []int) {
 	return []*Value{env[string(p)]}, []int{1}
 }
 
+func (p Var) Skeletonize(net *Net) int {
+	return 1
+}
+
 // ----------------------------------------------------------------------
 
 // Dot is the type of dot constants.
@@ -341,6 +382,10 @@ func (p Dot) AddEnv(env Env) {}
 
 func (p Dot) Match(net *Net, env Env) ([]*Value, []int) {
 	return []*Value{net.vdot}, []int{1}
+}
+
+func (p Dot) Skeletonize(net *Net) int {
+	return 1
 }
 
 // ----------------------------------------------------------------------
@@ -374,6 +419,10 @@ func (p Successor) Match(net *Net, env Env) ([]*Value, []int) {
 	return []*Value{res}, []int{1}
 }
 
+func (p Successor) Skeletonize(net *Net) int {
+	return 1
+}
+
 // ----------------------------------------------------------------------
 
 // Numberof is the type of numberof expressions in PNML. This is used to add a
@@ -397,6 +446,10 @@ func (p Numberof) Match(net *Net, env Env) ([]*Value, []int) {
 		m[i] = p.Mult
 	}
 	return f, m
+}
+
+func (p Numberof) Skeletonize(net *Net) int {
+	return p.Mult * p.Expression.Skeletonize(net)
 }
 
 // ----------------------------------------------------------------------

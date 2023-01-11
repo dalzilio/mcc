@@ -15,6 +15,9 @@ import (
 
 // ----------------------------------------------------------------------
 
+// makepname returns a (corenet) place name using either a counter or, if we
+// want sliced names, a combination of the name of the colored place, pname, and
+// a value of the current type.
 func makepname(net *pnml.Net, pname string, count int, val *pnml.Value) string {
 	if !net.SLICED {
 		return fmt.Sprintf("p_%d", count)

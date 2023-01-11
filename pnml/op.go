@@ -41,12 +41,15 @@ const (
 
 // ----------------------------------------------------------------------
 
-// VERB describes the level of verbosity in the output
+// VERB describes the level of verbosity in the output. We use a special value
+// SKELETON for the case where we need to use the label of the transition as its
+// name
 type VERB int
 
 const (
 	QUIET VERB = iota
 	MINIMAL
+	SKELETON
 	MAXIMAL
 )
 

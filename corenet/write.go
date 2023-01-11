@@ -34,6 +34,8 @@ func (pl corep) Write(w io.Writer) {
 func (tr Trans) Write(w io.Writer, k int, verbosity pnml.VERB) {
 	if (verbosity == pnml.QUIET) || (tr.label == "") {
 		fmt.Fprintf(w, "tr t%d ", k)
+	} else if verbosity == pnml.SKELETON {
+		fmt.Fprintf(w, "tr %s ", tr.label)
 	} else {
 		fmt.Fprintf(w, "tr t%d : {%s} ", k, tr.label)
 	}
