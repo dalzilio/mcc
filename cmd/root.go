@@ -50,6 +50,8 @@ func Generated() string {
 
 func init() {
 	cobra.OnInitialize(initConfig)
+	// tell Cobra to completely disable descriptions for completions
+	RootCmd.CompletionOptions.DisableDefaultCmd = true
 }
 
 // initConfig reads in config file and ENV variables if set.
