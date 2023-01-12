@@ -33,7 +33,7 @@ sharedmemory,SharedMemory-COL-000005,6,5,46,60,1863
 SharedMemory-COL-000100,SharedMemory-COL-000100,6,5,10401,20200,-1
 SharedMemory-COL-000200,SharedMemory-COL-000200,6,5,40801,80400,-1
 simple,SimpleLoadBal-COL-02,14,13,32,65,916
-sudokuA,Sudoku-COL-AN03,4,1,54,27,11776,208341
+sudokuA,Sudoku-COL-AN03,4,1,54,27,11776
 sudokuB,Sudoku-COL-BN04,5,1,128,64,-1
 token,TokenRing-COL-005,1,2,36,156,166
 TokenRing-COL-050,TokenRing-COL-050,1,2,2601,127551,-1
