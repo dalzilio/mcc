@@ -22,11 +22,14 @@ import (
 )
 
 // hlnetCmd takes a a PNML model for a high level net, with a .pnml extension,
-// and generates a .net or .tpn file with the same basename. The command returns
-// an error for  PNML files that contain a core net description.
+// and outputs statistics on the size and computation time of the result (option
+// `--stats`), or generates a .net file with information about the (option
+// `--debug`) structure of the colored net. This replaces the `hlnet` command
+// that is deprecated.` The command returns an error for PNML files that contain
+// a core net description.
 var hlnetCmd = &cobra.Command{
-	Use:   "hlnet -i file.pnml",
-	Short: "mcc hlnet generates a .net or .tpn file in Tina format",
+	Use:   "info -i file.pnml",
+	Short: "Prints statistics or generates textual version for use with NetDraw (nd)",
 	Run: func(cmd *cobra.Command, args []string) {
 		convert(hlnetFileName)
 	},
@@ -36,8 +39,6 @@ var hlnetFileName string
 var hlnetOutFileName string
 var hlnetUseName bool
 var hlnetDebugMode bool
-var hlnetUseComplexPNames bool
-var hlnetVerbose bool
 var hlnetStat bool
 var hlnetLogger *log.Logger
 
@@ -46,10 +47,8 @@ func init() {
 	hlnetCmd.Flags().StringVarP(&hlnetFileName, "file", "i", "", "name of the input file (.pnml)")
 	hlnetCmd.Flags().StringVarP(&hlnetOutFileName, "out", "o", "", "basename of the output file (without extension, default to input file basename) or - for stdout")
 	hlnetCmd.Flags().BoolVar(&hlnetUseName, "name", false, "use PNML (document) name for the output file")
-	hlnetCmd.Flags().BoolVar(&hlnetDebugMode, "debug", false, "output a readable version in a format that can be displayed by Tina")
-	hlnetCmd.Flags().BoolVar(&hlnetUseComplexPNames, "sliced", false, "use structured naming for places")
-	hlnetCmd.Flags().BoolVar(&hlnetVerbose, "verbose", false, "add extra information in the labels of the .net file")
-	hlnetCmd.Flags().BoolVar(&hlnetStat, "stats", false, "print statistics (nb. of places, trans. and computation time); do not output the net")
+	hlnetCmd.Flags().BoolVar(&hlnetDebugMode, "debug", false, "output a readable version in a format that can be displayed by Tina's NetDraw tool (nd)")
+	hlnetCmd.Flags().BoolVar(&hlnetStat, "stats", false, "print statistics (nb. of places, trans. and computation time) and quit; do not output the net")
 
 	hlnetLogger = log.New(os.Stderr, "MCC HLNET:", 0)
 
@@ -132,15 +131,10 @@ func convert(filename string) {
 		os.Exit(0)
 	}
 
-	p.SetSliced(hlnetUseComplexPNames)
-
-	if hlnetVerbose {
-		p.SetVerbose(pnml.MINIMAL)
-	} else {
-		p.SetVerbose(pnml.QUIET)
-	}
-
+	p.SetSliced(false)
+	p.SetVerbose(pnml.MINIMAL)
 	p.SetFES(false)
+
 	hl, err := hlnet.Build(p)
 	if err != nil {
 		hlnetLogger.Println("Error decoding PNML file:", err)
@@ -148,27 +142,26 @@ func convert(filename string) {
 		return
 	}
 
-	// We try to build a TPN first
-	cn, nbcopies, listlr, listh, err := corenet.BuildTPN(p, hl)
-	if err == nil {
-		// hlnetLogger.Println("file " + outfile + " is a TPN")
-		if hlnetStat {
-			elapsed := time.Since(start)
-			npl, ntr, narcs := cn.Statistics()
-			fmt.Fprintf(os.Stdout, "%d place(s), %d transition(s), %d arc(s), %.3fs\n", nbcopies*npl, nbcopies*(ntr-len(listlr)), nbcopies*narcs, elapsed.Seconds())
-			return
-		}
-		if outfile == "-" {
-			os.Stdout.Write([]byte(cn.PrintTPN(nbcopies, listlr, listh)))
-			return
-		}
-		outfile = outfile + ".tpn"
-		ioutil.WriteFile(outfile, []byte(cn.PrintTPN(nbcopies, listlr, listh)), 0755)
-		return
-	}
+	// // We try to build a TPN first
+	// cn, nbcopies, listlr, listh, err := corenet.BuildTPN(p, hl)
+	// if err == nil {
+	// 	// hlnetLogger.Println("file " + outfile + " is a TPN")
+	// 	if hlnetStat {
+	// 		elapsed := time.Since(start)
+	// 		npl, ntr, narcs := cn.Statistics()
+	// 		fmt.Fprintf(os.Stdout, "%d place(s), %d transition(s), %d arc(s), %.3fs\n", nbcopies*npl, nbcopies*(ntr-len(listlr)), nbcopies*narcs, elapsed.Seconds())
+	// 		return
+	// 	}
+	// 	if outfile == "-" {
+	// 		os.Stdout.Write([]byte(cn.PrintTPN(nbcopies, listlr, listh)))
+	// 		return
+	// 	}
+	// 	outfile = outfile + ".tpn"
+	// 	ioutil.WriteFile(outfile, []byte(cn.PrintTPN(nbcopies, listlr, listh)), 0755)
+	// 	return
+	// }
 
-	cn = corenet.Build(p, hl)
-	// hlnetLogger.Println("file " + outfile + " is a NET")
+	cn := corenet.Build(p, hl)
 	if hlnetStat {
 		elapsed := time.Since(start)
 		npl, ntr, narcs := cn.Statistics()
