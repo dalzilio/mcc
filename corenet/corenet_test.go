@@ -61,8 +61,7 @@ func TestBuild(t *testing.T) {
 			}
 
 			// Build a hlnet.Net object from it
-			p.SetSliced(true)
-			p.SetVerbose(pnml.MINIMAL)
+			p.SetVerbose(pnml.SLICED)
 			p.SetFES(false)
 			hl, err := hlnet.Build(p)
 			if err != nil {
@@ -108,8 +107,7 @@ func BenchmarkBuildSimple(b *testing.B) {
 			decoder := pnml.NewDecoder(xmlFile)
 			var p = new(pnml.Net)
 			_ = decoder.Build(p)
-			p.SetSliced(true)
-			p.SetVerbose(pnml.MINIMAL)
+			p.SetVerbose(pnml.SLICED)
 			p.SetFES(false)
 			nets = append(nets, p)
 			xmlFile.Close()
@@ -135,8 +133,7 @@ func benchmarkFile(b *testing.B, filename string) {
 	decoder := pnml.NewDecoder(xmlFile)
 	var p = new(pnml.Net)
 	_ = decoder.Build(p)
-	p.SetSliced(false)
-	p.SetVerbose(pnml.MINIMAL)
+	p.SetVerbose(pnml.SMPT)
 	p.SetFES(false)
 	xmlFile.Close()
 

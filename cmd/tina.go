@@ -104,8 +104,7 @@ func tinaConvert(filename string) {
 		outfile = p.Name
 	}
 
-	p.SetSliced(true)
-	p.SetVerbose(pnml.QUIET)
+	p.SetVerbose(pnml.SLICED)
 	p.SetFES(false)
 
 	hl, err := hlnet.Build(p)

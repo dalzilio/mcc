@@ -41,16 +41,38 @@ const (
 
 // ----------------------------------------------------------------------
 
-// VERB describes the level of verbosity in the output. We use a special value
-// SKELETON for the case where we need to use the label of the transition as its
-// name
+// VERB describes the level of verbosity in the output. Each value has an impact
+// on the level of information carried by place and transition names, and the
+// details added to the labels when printing the P/T net. Note that labels will
+// always be the same identifiers than the ones used in the corresponding COL
+// model.
+//
+// - INFO: place/trans are identifiers + encoding of colors ; exact COL
+// identifiers are kept as labels. PT identifiers are normalized version of
+// their COL equivalent (e.g. non aname characters like "-" or spaces are
+// replaced by underscores "_"). Colors are encoded using color names. Used by
+// command `mcc info`.
+//
+// - SKELETON: place/trans are exactly those of the COL nets, without
+// normalization.
+//
+// - SLICED: place are identifiers + encoding of colors and transitions are of
+// the form t%d, with %d an integer; no labels.  PT identifiers are normalized,
+// liked with INFO, but colors are encoded using integers. Used by command `mcc
+// pnml` and `mcc tina` by default.
+//
+// - SMPT: place/trans are p/t + integers ; no labels and no association between
+// the COL and PT nets. Equivalent to what is used by command `mcc lola`. Used
+// as default by command `mcc smpt`, with the difference that we also provide a
+// separate list of association between COL and PT identifiers
+//
 type VERB int
 
 const (
-	QUIET VERB = iota
-	MINIMAL
+	INFO VERB = iota
 	SKELETON
-	MAXIMAL
+	SLICED
+	SMPT
 )
 
 // ----------------------------------------------------------------------

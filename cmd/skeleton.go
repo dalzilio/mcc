@@ -26,7 +26,7 @@ import (
 // answer reachability problems.
 var skeletonCmd = &cobra.Command{
 	Use:   "skeleton -i file.pnml",
-	Short: "mcc skeleton generates a P/T net file in .net format",
+	Short: "Generates a skeleton of a colored net in .net format",
 	Run: func(cmd *cobra.Command, args []string) {
 		skeletonConvert(skeletonFileName)
 	},

@@ -26,7 +26,7 @@ import (
 // model-checking reachability properties in the Model-Checking Contest.
 var smptCmd = &cobra.Command{
 	Use:   "smpt -i file.pnml",
-	Short: "mcc smpt generates a P/T net file in .net format",
+	Short: "Generates a P/T net file with extra information for use with SMPT",
 	Run: func(cmd *cobra.Command, args []string) {
 		smptConvert(smptFileName)
 	},
@@ -109,10 +109,7 @@ func smptConvert(filename string) {
 		outfile = p.Name
 	}
 
-	p.SetSliced(smptUseComplexPNames)
-	// p.SetSliced(true)
-	p.SetProperties()
-	p.SetVerbose(pnml.QUIET)
+	p.SetVerbose(pnml.SMPT)
 	// set the semantic of "overflowing" enumeration types
 	p.SetFES(false)
 

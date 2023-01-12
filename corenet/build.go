@@ -19,62 +19,35 @@ import (
 // want sliced names, a combination of the name of the colored place, pname, and
 // a value of the current type.
 func makepname(net *pnml.Net, pname string, count int, val *pnml.Value) string {
-	if !net.SLICED {
+	if (net.VERBOSE == pnml.SMPT) ||
+		(net.VERBOSE == pnml.SKELETON) {
 		return fmt.Sprintf("p_%d", count)
 	}
+
 	s := strings.Builder{}
-	if net.PrintProperties {
-		// When we print properties we keep the original name of the PNML place,
-		// which may contain illegal characters. This is the case for example
-		// with model neoelection that uses `-` in the id of places.
-		pname = normalize2aname(pname)
-	}
-	s.WriteString(pname)
+	s.WriteString(normalize2aname(pname))
 	if val.Head == 0 {
 		return s.String()
 	}
-	if net.VERBOSE == pnml.QUIET {
+
+	// when SLICED identifiers are of the kind `Id__Name_1_4`, where `Id__Name`
+	// is a normalized COL identifier and color constants are encoded using
+	// integers.
+	if net.VERBOSE == pnml.SLICED {
 		fmt.Fprintf(&s, "_%d", val.Head)
 		for v := val.Tail; v != nil; v = v.Tail {
 			fmt.Fprintf(&s, "_%d", v.Head)
 		}
 		return s.String()
 	}
+
+	// last case is INFI, where identifiers are of the kind `Id__Name_c0_s3`
+	// where `c0` and `s3` are constants values from the COL types.
 	fmt.Fprintf(&s, "_%s", net.Identity[val.Head])
 	for v := val.Tail; v != nil; v = v.Tail {
 		fmt.Fprintf(&s, "_%s", net.Identity[v.Head])
 	}
 	return s.String()
-}
-
-func makeplabel(net *pnml.Net, name string, val *pnml.Value) string {
-	if net.VERBOSE == pnml.QUIET {
-		if net.PrintProperties {
-			return name
-		}
-		return ""
-	}
-
-	s := fmt.Sprintf("%s_%s", name, net.Identity[val.Head])
-	if val.Tail == nil {
-		return s
-	}
-	return makeplabel(net, s+"x", val.Tail)
-}
-
-func maketlabel(net *pnml.Net, name string, env pnml.Env) string {
-	if net.VERBOSE == pnml.QUIET {
-		if net.PrintProperties {
-			return name
-		}
-		return ""
-	}
-
-	if net.VERBOSE != pnml.MAXIMAL {
-		return normalize2aname(name)
-	}
-
-	return fmt.Sprintf("%s %s", name, net.PrintEnv(env))
 }
 
 // ----------------------------------------------------------------------
@@ -120,13 +93,12 @@ func normalize2aname(s string) string {
 	return strings.Map(anamize, s)
 }
 
-// Build returns a core net from a colored Petri net  by unfolding the
+// Build returns a core net from a colored Petri net by unfolding the
 // corresponding hlnet.
 func Build(pnet *pnml.Net, hl *hlnet.Net) *Net {
 	var net Net
 	net.name = pnet.Name
 	net.verbose = pnet.VERBOSE
-	net.sliced = pnet.SLICED
 	net.printprops = pnet.PrintProperties
 
 	// we build all the places in the final net. They are of the form p x val,
@@ -134,13 +106,7 @@ func Build(pnet *pnml.Net, hl *hlnet.Net) *Net {
 	// map to find the given place from the pair {p val}
 	cpl := make(map[coreAssoc]*Place)
 	pcount := 0
-	pname := ""
-	for k, p := range hl.Places {
-		if pnet.PrintProperties {
-			pname = k
-		} else {
-			pname = normalize2aname(k)
-		}
+	for plname, p := range hl.Places {
 		if p.Stable {
 			// when the place is stable, its rechable "values" are the one in
 			// its initial marking (moreover the marking of the place is an
@@ -150,7 +116,7 @@ func Build(pnet *pnml.Net, hl *hlnet.Net) *Net {
 			// of invariants).
 			initv, multv := p.Init.Match(pnet, nil)
 			for k, v := range initv {
-				cp := Place{count: pcount, name: makepname(pnet, pname, pcount, v), label: makeplabel(pnet, pname, v)}
+				cp := Place{count: pcount, name: makepname(pnet, plname, pcount, v), label: plname}
 				cp.init = multv[k]
 				pcount++
 				cpl[coreAssoc{place: p, val: v}] = &cp
@@ -159,7 +125,7 @@ func Build(pnet *pnml.Net, hl *hlnet.Net) *Net {
 		} else {
 			// the possible values of p are the one in its type
 			for _, v := range pnet.World[p.Type] {
-				cp := Place{count: pcount, name: makepname(pnet, pname, pcount, v), label: makeplabel(pnet, pname, v)}
+				cp := Place{count: pcount, name: makepname(pnet, plname, pcount, v), label: plname}
 				pcount++
 				cpl[coreAssoc{place: p, val: v}] = &cp
 				net.pl = append(net.pl, &cp)
@@ -179,12 +145,21 @@ func Build(pnet *pnml.Net, hl *hlnet.Net) *Net {
 	// condition is true. iterator[i] gives the value (index) we are currently
 	// considering for variable varnames[i].
 	tcount := 0
-	for k, t := range hl.Trans {
+	for trname, t := range hl.Trans {
 		for iter := mkiter(pnet, cpl, t); iter.hasNext(); {
 			if ct, ok := iter.check(); ok {
 				ct.count = tcount
-				ct.label = maketlabel(pnet, k, iter.env)
-				if net.sliced {
+				ct.label = trname
+				// we sort the places in the IN and OUT arcs to obtain a
+				// deterministic output
+				if net.verbose == pnml.SMPT {
+					sort.Slice(ct.in, func(i, j int) bool {
+						return ct.in[i].count < ct.in[j].count
+					})
+					sort.Slice(ct.out, func(i, j int) bool {
+						return ct.out[i].count < ct.out[j].count
+					})
+				} else {
 					sort.Slice(ct.in, func(i, j int) bool {
 						return ct.in[i].name < ct.in[j].name
 					})
@@ -198,80 +173,48 @@ func Build(pnet *pnml.Net, hl *hlnet.Net) *Net {
 		}
 	}
 
-	// we also sort the transitions when net.sliced is true
-	if net.sliced {
+	// we also sort the transitions when their name are meaningful
+	if net.verbose != pnml.SMPT {
 		sort.Slice(net.tr, func(i, j int) bool {
 			b := strings.Compare(net.tr[i].label, net.tr[j].label)
 			if b != 0 {
 				return b < 0
 			}
-			k := 0
-			for k < len(net.tr[i].in) && k < len(net.tr[j].in) {
-				if net.tr[i].in[k] == net.tr[j].in[k] {
-					k++
-					continue
-				}
-				if net.tr[i].in[k].name == net.tr[j].in[k].name {
-					return (net.tr[i].in[k].int < net.tr[j].in[k].int)
-				}
-				return (net.tr[i].in[k].name < net.tr[j].in[k].name)
-			}
-			if k < len(net.tr[i].in) {
-				return false
-			}
-			if k < len(net.tr[j].in) {
-				return true
-			}
-			k = 0
-			for k < len(net.tr[i].out) && k < len(net.tr[j].out) {
-				if net.tr[i].out[k] == net.tr[j].out[k] {
-					k++
-					continue
-				}
-				if net.tr[i].out[k].name == net.tr[j].out[k].name {
-					return (net.tr[i].out[k].int < net.tr[j].out[k].int)
-				}
-				return (net.tr[i].out[k].name < net.tr[j].out[k].name)
-			}
-			if k < len(net.tr[i].out) {
-				return false
-			}
-			return true
+			return net.tr[i].count < net.tr[j].count
+			// k := 0
+			// for k < len(net.tr[i].c) && k < len(net.tr[j].in) {
+			// 	if net.tr[i].in[k] == net.tr[j].in[k] {
+			// 		k++
+			// 		continue
+			// 	}
+			// 	if net.tr[i].in[k].name == net.tr[j].in[k].name {
+			// 		return (net.tr[i].in[k].int < net.tr[j].in[k].int)
+			// 	}
+			// 	return (net.tr[i].in[k].name < net.tr[j].in[k].name)
+			// }
+			// if k < len(net.tr[i].in) {
+			// 	return false
+			// }
+			// if k < len(net.tr[j].in) {
+			// 	return true
+			// }
+			// k = 0
+			// for k < len(net.tr[i].out) && k < len(net.tr[j].out) {
+			// 	if net.tr[i].out[k] == net.tr[j].out[k] {
+			// 		k++
+			// 		continue
+			// 	}
+			// 	if net.tr[i].out[k].name == net.tr[j].out[k].name {
+			// 		return (net.tr[i].out[k].int < net.tr[j].out[k].int)
+			// 	}
+			// 	return (net.tr[i].out[k].name < net.tr[j].out[k].name)
+			// }
+			// if k < len(net.tr[i].out) {
+			// 	return false
+			// }
+			// return true
 		})
-		// sort.Slice(net.tr, func(i, j int) bool {
-		// 	k := 0
-		// 	for k < len(net.tr[i].in) && k < len(net.tr[j].in) {
-		// 		if net.tr[i].in[k] == net.tr[j].in[k] {
-		// 			k++
-		// 			continue
-		// 		}
-		// 		if net.tr[i].in[k].name == net.tr[j].in[k].name {
-		// 			return (net.tr[i].in[k].int < net.tr[j].in[k].int)
-		// 		}
-		// 		return (net.tr[i].in[k].name < net.tr[j].in[k].name)
-		// 	}
-		// 	if k < len(net.tr[i].in) {
-		// 		return false
-		// 	}
-		// 	if k < len(net.tr[j].in) {
-		// 		return true
-		// 	}
-		// 	k = 0
-		// 	for k < len(net.tr[i].out) && k < len(net.tr[j].out) {
-		// 		if net.tr[i].out[k] == net.tr[j].out[k] {
-		// 			k++
-		// 			continue
-		// 		}
-		// 		if net.tr[i].out[k].name == net.tr[j].out[k].name {
-		// 			return (net.tr[i].out[k].int < net.tr[j].out[k].int)
-		// 		}
-		// 		return (net.tr[i].out[k].name < net.tr[j].out[k].name)
-		// 	}
-		// 	if k < len(net.tr[i].out) {
-		// 		return false
-		// 	}
-		// 	return true
-		// })
+
 		// and we also reflect the new ordering of transitions in the count field
 		for k, v := range net.tr {
 			v.count = k

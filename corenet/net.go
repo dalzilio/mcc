@@ -10,7 +10,6 @@ import "github.com/dalzilio/mcc/pnml"
 type Net struct {
 	verbose    pnml.VERB
 	printprops bool
-	sliced     bool
 	name       string
 	pl         []*Place
 	tr         []*Trans

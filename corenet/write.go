@@ -7,7 +7,6 @@ package corenet
 import (
 	"fmt"
 	"io"
-	"sort"
 
 	"github.com/dalzilio/mcc/pnml"
 )
@@ -15,26 +14,40 @@ import (
 // ----------------------------------------------------------------------
 
 // Write prints a place declaration.
-func (pl Place) Write(w io.Writer, issliced bool, verbosity pnml.VERB) {
-	//  If the net is sliced, its name already give
-	// some info about the colored place it originates from. In this case, we do
-	// not need to print the place when it is not initially marked. Otherwise,
-	// unless the verbosity is MINIMAL, we use the label to keep the relation
-	// between the corenet place and the colored one.
-	if (verbosity == pnml.MINIMAL) || issliced {
-		if pl.init != 0 {
-			fmt.Fprintf(w, "pl %s (%d)\n", pl.name, pl.init)
+func (pl Place) Write(w io.Writer, verbosity pnml.VERB) {
+	if verbosity == pnml.SKELETON {
+		normalized := normalize2aname(pl.label)
+		if normalized != pl.label {
+			normalized = fmt.Sprintf("{%s}", pl.label)
 		}
+		if pl.init != 0 {
+			fmt.Fprintf(w, "pl %s (%d)\n", normalized, pl.init)
+			return
+		}
+		fmt.Fprintf(w, "pl %s\n", normalized)
 		return
 	}
-	if pl.init == 0 {
-		fmt.Fprintf(w, "pl %s : {%s}\n", pl.name, pl.label)
-		return
+	if pl.init != 0 {
+		fmt.Fprintf(w, "pl %s (%d)\n", pl.name, pl.init)
 	}
-	fmt.Fprintf(w, "pl %s : {%s} (%d)\n", pl.name, pl.label, pl.init)
+	if verbosity == pnml.INFO {
+		fmt.Fprintf(w, "pl %s\n", pl.name)
+	}
 }
 
-func (pl corep) Write(w io.Writer) {
+func (pl corep) Write(w io.Writer, verbosity pnml.VERB) {
+	if verbosity == pnml.SKELETON {
+		normalized := normalize2aname(pl.label)
+		if normalized != pl.label {
+			normalized = fmt.Sprintf("{%s}", pl.label)
+		}
+		if pl.int == 1 {
+			fmt.Fprintf(w, " %s", normalized)
+			return
+		}
+		fmt.Fprintf(w, " %s*%d", normalized, pl.int)
+		return
+	}
 	if pl.int == 1 {
 		fmt.Fprintf(w, " %s", pl.name)
 		return
@@ -42,20 +55,28 @@ func (pl corep) Write(w io.Writer) {
 	fmt.Fprintf(w, " %s*%d", pl.name, pl.int)
 }
 
-func (tr Trans) Write(w io.Writer, k int, verbosity pnml.VERB) {
-	if (verbosity == pnml.MINIMAL) || (tr.label == "") {
-		fmt.Fprintf(w, "tr t%d ", k)
-	} else if verbosity == pnml.SKELETON {
-		fmt.Fprintf(w, "tr {%s} ", tr.label)
-	} else {
-		fmt.Fprintf(w, "tr t%d : {%s} ", k, tr.label)
+func (tr Trans) Write(w io.Writer, verbosity pnml.VERB) {
+	switch verbosity {
+	case pnml.INFO:
+		fmt.Fprintf(w, "tr %s_%d ", normalize2aname(tr.label), tr.count)
+	case pnml.SKELETON:
+		normalized := normalize2aname(tr.label)
+		if normalized != tr.label {
+			normalized = fmt.Sprintf("{%s}", tr.label)
+		}
+		fmt.Fprintf(w, "tr %s ", normalized)
+	case pnml.SLICED:
+		fmt.Fprintf(w, "tr t%d ", tr.count)
+	case pnml.SMPT:
+		fmt.Fprintf(w, "tr t%d ", tr.count)
 	}
+
 	for _, v := range tr.in {
-		v.Write(w)
+		v.Write(w, verbosity)
 	}
 	fmt.Fprint(w, " ->")
 	for _, v := range tr.out {
-		v.Write(w)
+		v.Write(w, verbosity)
 	}
 	fmt.Fprint(w, "\n")
 }
@@ -69,11 +90,11 @@ func (net Net) Write(w io.Writer) {
 	// not "sliced", place names are all of the form p_k, with k an integer, and
 	// are already sorted (numerically and not lexicographically, which is
 	// better). We do nothing in this case.
-	if net.sliced {
-		sort.Slice(net.pl, func(i, j int) bool {
-			return net.pl[i].name < net.pl[j].name
-		})
-	}
+	// if net.sliced {
+	// 	sort.Slice(net.pl, func(i, j int) bool {
+	// 		return net.pl[i].name < net.pl[j].name
+	// 	})
+	// }
 
 	// // we print out properties if needed. We use the fact that places are sorted
 	// // by names. Hence (core) places corresponding to the same colored place are
@@ -141,10 +162,10 @@ func (net Net) Write(w io.Writer) {
 
 	// Finally we output the .net declarations
 	for _, v := range net.pl {
-		v.Write(w, net.sliced, net.verbose)
+		v.Write(w, net.verbose)
 	}
 
-	for k, v := range net.tr {
-		v.Write(w, k, net.verbose)
+	for _, v := range net.tr {
+		v.Write(w, net.verbose)
 	}
 }

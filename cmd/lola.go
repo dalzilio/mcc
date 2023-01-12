@@ -23,7 +23,7 @@ import (
 // an error for  PNML files that contain a core net description.
 var lolaCmd = &cobra.Command{
 	Use:   "lola -i file.pnml",
-	Short: "mcc lola generates a net file in the LoLa format",
+	Short: "Generates a P/T net file in the LoLa format",
 	Run: func(cmd *cobra.Command, args []string) {
 		lolaConvert(lolaFileName)
 	},
@@ -92,9 +92,9 @@ func lolaConvert(filename string) {
 		outfile = p.Name
 	}
 
-	p.SetVerbose(pnml.MINIMAL)
-	// set the semantic of "overflowing" enumeration types
+	p.SetVerbose(pnml.INFO)
 	p.SetFES(false)
+
 	hl, err := hlnet.Build(p)
 	if err != nil {
 		hlnetLogger.Println("Error decoding PNML file:", err)

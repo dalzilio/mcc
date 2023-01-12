@@ -9,6 +9,8 @@ import (
 	"fmt"
 	"io"
 	"sort"
+
+	"github.com/dalzilio/mcc/pnml"
 )
 
 // ----------------------------------------------------------------------
@@ -104,37 +106,38 @@ func (net Net) PnmlWrite(w io.Writer) error {
 	encoder.Indent("", "  ")
 
 	// we start by sorting the slice of places. In the case where the result is
-	// not "sliced", place names are all of the form p_k, with k an integer, and are already sorted, so we can just do nothing.
-	if net.sliced {
+	// not "sliced", place names are all of the form p_k, with k an integer, and
+	// are already sorted, so we can just do nothing.
+	if net.verbose != pnml.SMPT {
 		sort.Slice(net.pl, func(i, j int) bool {
 			return net.pl[i].name < net.pl[j].name
 		})
 	}
 
-	// we print out properties. We use the fact that places are sorted by names.
-	// Hence (core) places corresponding to the same colored place are grouped
-	// together. Same for transitions.
-	if net.printprops {
-		// output list of places for each colored one
-		currentname := ""
-		for _, v := range net.pl {
-			if v.label != currentname {
-				currentname = v.label
-				fmt.Printf("\npl %s", v.label)
-			}
-			fmt.Printf(" %s", v.name)
-		}
-		// output list of transitions for each colored one
-		currentname = ""
-		for k, v := range net.tr {
-			if v.label != currentname {
-				currentname = v.label
-				fmt.Printf("\ntr %s", currentname)
-			}
-			fmt.Printf(" t%d", k)
-		}
-	}
-	fmt.Print("\n")
+	// // we print out properties. We use the fact that places are sorted by names.
+	// // Hence (core) places corresponding to the same colored place are grouped
+	// // together. Same for transitions.
+	// if net.printprops {
+	// 	// output list of places for each colored one
+	// 	currentname := ""
+	// 	for _, v := range net.pl {
+	// 		if v.label != currentname {
+	// 			currentname = v.label
+	// 			fmt.Printf("\npl %s", v.label)
+	// 		}
+	// 		fmt.Printf(" %s", v.name)
+	// 	}
+	// 	// output list of transitions for each colored one
+	// 	currentname = ""
+	// 	for k, v := range net.tr {
+	// 		if v.label != currentname {
+	// 			currentname = v.label
+	// 			fmt.Printf("\ntr %s", currentname)
+	// 		}
+	// 		fmt.Printf(" t%d", k)
+	// 	}
+	// }
+	// fmt.Print("\n")
 
 	// Now we output the file on the io.Writer
 	wpnml := wpnml{

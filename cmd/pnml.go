@@ -22,7 +22,7 @@ import (
 // and generates a P/T net equivalent, also in PNML format.
 var pnmlCmd = &cobra.Command{
 	Use:   "pnml -i file.pnml",
-	Short: "mcc pnml generates a P/T net file in PNML format",
+	Short: "Generates a P/T net file in PNML format",
 	Run: func(cmd *cobra.Command, args []string) {
 		pnmlConvert(pnmlFileName)
 	},
@@ -95,12 +95,10 @@ func pnmlConvert(filename string) {
 		outfile = p.Name
 	}
 
-	p.SetProperties()
-	p.SetSliced(pnmlUseComplexPNames)
-	p.SetVerbose(pnml.QUIET)
-	// p.SetVerbose(pnml.MINIMAL)
-	// set the semantic of "overflowing" enumeration types
+	// p.SetProperties()
+	p.SetVerbose(pnml.SLICED)
 	p.SetFES(false)
+
 	hl, err := hlnet.Build(p)
 	if err != nil {
 		hlnetLogger.Println("Error decoding PNML file:", err)
