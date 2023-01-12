@@ -25,6 +25,7 @@ polyorb-lf,PolyORBLF-COL-S02J04T06,81,65,476,920,-1
 polyorb-nt,PolyORBNT-COL-S05J20,48,38,369,1230,-1
 qcertif,Document,30,26,86,56,1029
 referendum,Referendum-COL-010,4,3,31,21,59050
+referendum-intrange,Referendum-COL-010,4,3,31,21,59050
 safebus,Document,20,14,60,97,4650
 SafeBus-COL-50,Document,20,14,5606,140251,-1
 SafeBus-COL-80,Document,20,14,13766,550801,-1
@@ -32,9 +33,9 @@ sharedmemory,SharedMemory-COL-000005,6,5,46,60,1863
 SharedMemory-COL-000100,SharedMemory-COL-000100,6,5,10401,20200,-1
 SharedMemory-COL-000200,SharedMemory-COL-000200,6,5,40801,80400,-1
 simple,SimpleLoadBal-COL-02,14,13,32,65,916
-sudokuA,Sudoku-COL-AN03,4,1,54,27,11776
+sudokuA,Sudoku-COL-AN03,4,1,54,27,11776,208341
 sudokuB,Sudoku-COL-BN04,5,1,128,64,-1
 token,TokenRing-COL-005,1,2,36,156,166
 TokenRing-COL-050,TokenRing-COL-050,1,2,2601,127551,-1
+utilitycr,UtilityControlRoom-COL-Z2T3N04,13,12,72,108
 VehicularWifi-COL,VehicularWifi-COL-none,21,41,41902,83836,-1
-referendum-intrange,Referendum-COL-010,4,3,31,21,59050

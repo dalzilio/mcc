@@ -1,0 +1,1053 @@
+<?xml version="1.0"?>
+<pnml xmlns="http://www.pnml.org/version-2009/grammar/pnml">
+  <!-- Written by GreatSPN Editor. -->
+  <net id="UtilityControlRoom-COL-Z2T3N04" type="http://www.pnml.org/version-2009/grammar/symmetricnet">
+    <name>
+      <text>UtilityControlRoom-COL-Z2T3N04</text>
+    </name>
+    <declaration>
+      <structure>
+        <declarations>
+          <!-- Declaration of user-defined color classes (sorts) -->
+          <namedsort id="dot" name="Dot">
+            <dot/>
+          </namedsort>
+          <namedsort id="Z" name="Z">
+            <finiteintrange start="1" end="2"/>
+          </namedsort>
+          <namedsort id="ZxZ" name="ZxZ">
+            <productsort>
+              <usersort declaration="Z"/>
+              <usersort declaration="Z"/>
+            </productsort>
+          </namedsort>
+          <namedsort id="AxZ1xZ" name="AxZ1xZ">
+            <productsort>
+              <usersort declaration="Z"/>
+              <usersort declaration="Z"/>
+              <usersort declaration="Z"/>
+            </productsort>
+          </namedsort>
+          <namedsort id="Cli" name="Cli">
+            <finiteintrange start="1" end="4"/>
+          </namedsort>
+          <namedsort id="CxZ" name="CxZ">
+            <productsort>
+              <usersort declaration="Cli"/>
+              <usersort declaration="Z"/>
+            </productsort>
+          </namedsort>
+          <namedsort id="CxZxZ" name="CxZxZ">
+            <productsort>
+              <usersort declaration="Cli"/>
+              <usersort declaration="Z"/>
+              <usersort declaration="Z"/>
+            </productsort>
+          </namedsort>
+          <!-- Declaration of user-defined color variables -->
+          <variabledecl id="a" name="a">
+            <usersort declaration="Z"/>
+          </variabledecl>
+          <variabledecl id="r" name="r">
+            <usersort declaration="Z"/>
+          </variabledecl>
+          <variabledecl id="c" name="c">
+            <usersort declaration="Cli"/>
+          </variabledecl>
+        </declarations>
+      </structure>
+    </declaration>
+    <page id="page0">
+      <name>
+        <text>DefaultPage</text>
+      </name>
+      <!-- List of places -->
+      <place id="IdleTechs">
+        <name>
+          <graphics>
+            <offset x="10" y="-15"/>
+          </graphics>
+          <text>IdleTechs</text>
+        </name>
+        <graphics>
+          <position x="180" y="140"/>
+        </graphics>
+        <type>
+          <text>Z</text>
+          <structure>
+            <usersort declaration="Z"/>
+          </structure>
+        </type>
+        <hlinitialMarking>
+          <text>&lt;All&gt;</text>
+          <structure>
+            <tuple>
+              <subterm>
+                <all>
+                  <usersort declaration="Z"/>
+                </all>
+              </subterm>
+            </tuple>
+          </structure>
+        </hlinitialMarking>
+      </place>
+      <place id="Clients">
+        <name>
+          <graphics>
+            <offset x="5" y="-15"/>
+          </graphics>
+          <text>Clients</text>
+        </name>
+        <graphics>
+          <position x="150" y="70"/>
+        </graphics>
+        <type>
+          <text>Cli</text>
+          <structure>
+            <usersort declaration="Cli"/>
+          </structure>
+        </type>
+        <hlinitialMarking>
+          <text>&lt;All&gt;</text>
+          <structure>
+            <tuple>
+              <subterm>
+                <all>
+                  <usersort declaration="Cli"/>
+                </all>
+              </subterm>
+            </tuple>
+          </structure>
+        </hlinitialMarking>
+      </place>
+      <place id="OpenRequests">
+        <name>
+          <graphics>
+            <offset x="62" y="-13"/>
+          </graphics>
+          <text>OpenRequests</text>
+        </name>
+        <graphics>
+          <position x="230" y="100"/>
+        </graphics>
+        <type>
+          <text>CxZ</text>
+          <structure>
+            <usersort declaration="CxZ"/>
+          </structure>
+        </type>
+      </place>
+      <place id="Assigned">
+        <name>
+          <graphics>
+            <offset x="-30" y="0"/>
+          </graphics>
+          <text>Assigned</text>
+        </name>
+        <graphics>
+          <position x="230" y="260"/>
+        </graphics>
+        <type>
+          <text>CxZ</text>
+          <structure>
+            <usersort declaration="CxZ"/>
+          </structure>
+        </type>
+      </place>
+      <place id="MovetoZ">
+        <name>
+          <graphics>
+            <offset x="-36" y="10"/>
+          </graphics>
+          <text>MovetoZ</text>
+        </name>
+        <graphics>
+          <position x="370" y="260"/>
+        </graphics>
+        <type>
+          <text>CxZxZ</text>
+          <structure>
+            <usersort declaration="CxZxZ"/>
+          </structure>
+        </type>
+      </place>
+      <place id="StartSecuring">
+        <name>
+          <graphics>
+            <offset x="66" y="5"/>
+          </graphics>
+          <text>StartSecuring</text>
+        </name>
+        <graphics>
+          <position x="230" y="330"/>
+        </graphics>
+        <type>
+          <text>CxZ</text>
+          <structure>
+            <usersort declaration="CxZ"/>
+          </structure>
+        </type>
+      </place>
+      <place id="ControlRoomDispatch">
+        <name>
+          <graphics>
+            <offset x="105" y="0"/>
+          </graphics>
+          <text>ControlRoomDispatch</text>
+        </name>
+        <graphics>
+          <position x="230" y="30"/>
+        </graphics>
+        <type>
+          <text>Cli</text>
+          <structure>
+            <usersort declaration="Cli"/>
+          </structure>
+        </type>
+      </place>
+      <place id="Idles">
+        <name>
+          <graphics>
+            <offset x="-5" y="-15"/>
+          </graphics>
+          <text>Idles</text>
+        </name>
+        <graphics>
+          <position x="180" y="230"/>
+        </graphics>
+		<type>
+			<text>dot</text>
+			<structure>
+				<usersort declaration="dot"/>
+			</structure>
+		</type>
+        <hlinitialMarking>
+          <text>3</text>
+          <structure>
+            <numberof>
+              <subterm>
+                <numberconstant value="3">
+                  <positive/>
+                </numberconstant>
+              </subterm>
+              <subterm>
+                <dotconstant/>
+              </subterm>
+            </numberof>
+          </structure>
+        </hlinitialMarking>
+      </place>
+      <place id="NumClientsReq">
+        <name>
+          <graphics>
+            <offset x="8" y="15"/>
+          </graphics>
+          <text>NumClientsReq</text>
+        </name>
+        <graphics>
+          <position x="86" y="25"/>
+        </graphics>
+		<type>
+			<text>dot</text>
+			<structure>
+				<usersort declaration="dot"/>
+			</structure>
+		</type>
+      </place>
+      <place id="Finished">
+        <name>
+          <graphics>
+            <offset x="10" y="15"/>
+          </graphics>
+          <text>Finished</text>
+        </name>
+        <graphics>
+          <position x="100" y="410"/>
+        </graphics>
+        <type>
+          <text>Cli</text>
+          <structure>
+            <usersort declaration="Cli"/>
+          </structure>
+        </type>
+      </place>
+      <place id="ClientsWaiting">
+        <name>
+          <graphics>
+            <offset x="72" y="0"/>
+          </graphics>
+          <text>ClientsWaiting</text>
+        </name>
+        <graphics>
+          <position x="100" y="110"/>
+        </graphics>
+        <type>
+          <text>Cli</text>
+          <structure>
+            <usersort declaration="Cli"/>
+          </structure>
+        </type>
+      </place>
+      <place id="ClientsTimeout">
+        <name>
+          <graphics>
+            <offset x="35" y="15"/>
+          </graphics>
+          <text>ClientsTimeout</text>
+        </name>
+        <graphics>
+          <position x="100" y="190"/>
+        </graphics>
+        <type>
+          <text>Cli</text>
+          <structure>
+            <usersort declaration="Cli"/>
+          </structure>
+        </type>
+      </place>
+      <place id="DoSecuring">
+        <name>
+          <graphics>
+            <offset x="35" y="15"/>
+          </graphics>
+          <text>DoSecuring</text>
+        </name>
+        <graphics>
+          <position x="230" y="410"/>
+        </graphics>
+        <type>
+          <text>CxZ</text>
+          <structure>
+            <usersort declaration="CxZ"/>
+          </structure>
+        </type>
+      </place>
+      <!-- List of transitions -->
+      <transition id="calls">
+        <name>
+          <graphics>
+            <offset x="0" y="-15"/>
+          </graphics>
+          <text>calls</text>
+        </name>
+        <graphics>
+          <position x="185" y="30"/>
+        </graphics>
+      </transition>
+      <transition id="assignSameZone">
+        <name>
+          <graphics>
+            <offset x="45" y="0"/>
+          </graphics>
+          <text>assignSameZone</text>
+        </name>
+        <graphics>
+          <position x="238" y="180"/>
+        </graphics>
+      </transition>
+      <transition id="assignNearZone">
+        <name>
+          <graphics>
+            <offset x="40" y="0"/>
+          </graphics>
+          <text>assignNearZone</text>
+        </name>
+        <graphics>
+          <position x="298" y="200"/>
+        </graphics>
+      </transition>
+      <transition id="move_between_Municipalities">
+        <name>
+          <graphics>
+            <offset x="70" y="0"/>
+          </graphics>
+          <text>move_between_Municipalities</text>
+        </name>
+        <graphics>
+          <position x="285" y="310"/>
+        </graphics>
+      </transition>
+      <transition id="reachLocation">
+        <name>
+          <graphics>
+            <offset x="-40" y="-5"/>
+          </graphics>
+          <text>reachLocation</text>
+        </name>
+        <graphics>
+          <position x="235" y="295"/>
+        </graphics>
+      </transition>
+      <transition id="securing">
+        <name>
+          <graphics>
+            <offset x="30" y="-5"/>
+          </graphics>
+          <text>securing</text>
+        </name>
+        <graphics>
+          <position x="155" y="410"/>
+        </graphics>
+      </transition>
+      <transition id="assignMunicipality">
+        <name>
+          <graphics>
+            <offset x="50" y="0"/>
+          </graphics>
+          <text>assignMunicipality</text>
+        </name>
+        <graphics>
+          <position x="238" y="60"/>
+        </graphics>
+      </transition>
+      <transition id="assignFar">
+        <name>
+          <graphics>
+            <offset x="30" y="0"/>
+          </graphics>
+          <text>assignFar</text>
+        </name>
+        <graphics>
+          <position x="378" y="230"/>
+        </graphics>
+      </transition>
+      <transition id="end">
+        <name>
+          <graphics>
+            <offset x="20" y="0"/>
+          </graphics>
+          <text>end</text>
+        </name>
+        <graphics>
+          <position x="108" y="350"/>
+        </graphics>
+      </transition>
+      <transition id="Timeout">
+        <name>
+          <graphics>
+            <offset x="25" y="-5"/>
+          </graphics>
+          <text>Timeout</text>
+        </name>
+        <graphics>
+          <position x="105" y="150"/>
+        </graphics>
+      </transition>
+      <transition id="timeout">
+        <name>
+          <graphics>
+            <offset x="25" y="0"/>
+          </graphics>
+          <text>timeout</text>
+        </name>
+        <graphics>
+          <position x="198" y="370"/>
+        </graphics>
+      </transition>
+      <transition id="securingInTime">
+        <name>
+          <graphics>
+            <offset x="40" y="-5"/>
+          </graphics>
+          <text>securingInTime</text>
+        </name>
+        <graphics>
+          <position x="278" y="370"/>
+        </graphics>
+      </transition>
+      <!-- List of arcs -->
+      <arc id="id1" source="Clients" target="calls">
+        <graphics>
+          <position x="160" y="45"/>
+        </graphics>
+        <hlinscription>
+          <text>&lt;c&gt;</text>
+          <structure>
+            <tuple>
+              <subterm>
+                <variable refvariable="c"/>
+              </subterm>
+            </tuple>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="id2" source="OpenRequests" target="assignSameZone">
+        <graphics>
+          <position x="240" y="150"/>
+        </graphics>
+        <hlinscription>
+          <text>&lt;c,a&gt;</text>
+          <structure>
+            <tuple>
+              <subterm>
+                <variable refvariable="c"/>
+              </subterm>
+              <subterm>
+                <variable refvariable="a"/>
+              </subterm>
+            </tuple>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="id3" source="IdleTechs" target="assignSameZone">
+        <hlinscription>
+          <text>&lt;a&gt;</text>
+          <structure>
+            <tuple>
+              <subterm>
+                <variable refvariable="a"/>
+              </subterm>
+            </tuple>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="id4" source="OpenRequests" target="assignNearZone">
+        <graphics>
+          <position x="300" y="125"/>
+        </graphics>
+        <hlinscription>
+          <text>&lt;c,r&gt;</text>
+          <structure>
+            <tuple>
+              <subterm>
+                <variable refvariable="c"/>
+              </subterm>
+              <subterm>
+                <variable refvariable="r"/>
+              </subterm>
+            </tuple>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="id5" source="IdleTechs" target="assignNearZone">
+        <graphics>
+          <position x="290" y="165"/>
+        </graphics>
+        <hlinscription>
+          <text>&lt;a&gt;</text>
+          <structure>
+            <tuple>
+              <subterm>
+                <variable refvariable="a"/>
+              </subterm>
+            </tuple>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="id6" source="assignSameZone" target="Assigned">
+        <hlinscription>
+          <text>&lt;c,a&gt;</text>
+          <structure>
+            <tuple>
+              <subterm>
+                <variable refvariable="c"/>
+              </subterm>
+              <subterm>
+                <variable refvariable="a"/>
+              </subterm>
+            </tuple>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="id7" source="assignNearZone" target="MovetoZ">
+        <graphics>
+          <position x="300" y="250"/>
+        </graphics>
+        <hlinscription>
+          <text>&lt;c,a,r&gt;</text>
+          <structure>
+            <tuple>
+              <subterm>
+                <variable refvariable="c"/>
+              </subterm>
+              <subterm>
+                <variable refvariable="a"/>
+              </subterm>
+              <subterm>
+                <variable refvariable="r"/>
+              </subterm>
+            </tuple>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="id8" source="MovetoZ" target="move_between_Municipalities">
+        <graphics>
+          <position x="380" y="315"/>
+        </graphics>
+        <hlinscription>
+          <text>&lt;c,a,r&gt;</text>
+          <structure>
+            <tuple>
+              <subterm>
+                <variable refvariable="c"/>
+              </subterm>
+              <subterm>
+                <variable refvariable="a"/>
+              </subterm>
+              <subterm>
+                <variable refvariable="r"/>
+              </subterm>
+            </tuple>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="id9" source="move_between_Municipalities" target="Assigned">
+        <graphics>
+          <position x="275" y="320"/>
+          <position x="275" y="270"/>
+        </graphics>
+        <hlinscription>
+          <text>&lt;c,r&gt;</text>
+          <structure>
+            <tuple>
+              <subterm>
+                <variable refvariable="c"/>
+              </subterm>
+              <subterm>
+                <variable refvariable="r"/>
+              </subterm>
+            </tuple>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="id10" source="Assigned" target="reachLocation">
+        <hlinscription>
+          <text>&lt;c,r&gt;</text>
+          <structure>
+            <tuple>
+              <subterm>
+                <variable refvariable="c"/>
+              </subterm>
+              <subterm>
+                <variable refvariable="r"/>
+              </subterm>
+            </tuple>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="id11" source="reachLocation" target="StartSecuring">
+        <hlinscription>
+          <text>&lt;c,r&gt;</text>
+          <structure>
+            <tuple>
+              <subterm>
+                <variable refvariable="c"/>
+              </subterm>
+              <subterm>
+                <variable refvariable="r"/>
+              </subterm>
+            </tuple>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="id12" source="DoSecuring" target="securing">
+        <hlinscription>
+          <text>&lt;c,r&gt;</text>
+          <structure>
+            <tuple>
+              <subterm>
+                <variable refvariable="c"/>
+              </subterm>
+              <subterm>
+                <variable refvariable="r"/>
+              </subterm>
+            </tuple>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="id13" source="securing" target="IdleTechs">
+        <graphics>
+          <position x="145" y="445"/>
+        </graphics>
+        <hlinscription>
+          <text>&lt;r&gt;</text>
+          <structure>
+            <tuple>
+              <subterm>
+                <variable refvariable="r"/>
+              </subterm>
+            </tuple>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="id14" source="ControlRoomDispatch" target="assignMunicipality">
+        <hlinscription>
+          <text>&lt;c&gt;</text>
+          <structure>
+            <tuple>
+              <subterm>
+                <variable refvariable="c"/>
+              </subterm>
+            </tuple>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="id15" source="assignMunicipality" target="OpenRequests">
+        <hlinscription>
+          <text>&lt;c,r&gt;</text>
+          <structure>
+            <tuple>
+              <subterm>
+                <variable refvariable="c"/>
+              </subterm>
+              <subterm>
+                <variable refvariable="r"/>
+              </subterm>
+            </tuple>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="id16" source="Idles" target="assignSameZone">
+        <graphics>
+          <position x="215" y="190"/>
+        </graphics>
+        <hlinscription>
+          <text>1</text>
+          <structure>
+            <numberof>
+              <subterm>
+                <numberconstant value="1">
+                  <positive/>
+                </numberconstant>
+              </subterm>
+              <subterm>
+                <dotconstant/>
+              </subterm>
+            </numberof>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="id17" source="Idles" target="assignNearZone">
+        <graphics>
+          <position x="240" y="210"/>
+        </graphics>
+        <hlinscription>
+          <text>1</text>
+          <structure>
+            <numberof>
+              <subterm>
+                <numberconstant value="1">
+                  <positive/>
+                </numberconstant>
+              </subterm>
+              <subterm>
+                <dotconstant/>
+              </subterm>
+            </numberof>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="id18" source="calls" target="NumClientsReq">
+        <hlinscription>
+          <text>1</text>
+          <structure>
+            <numberof>
+              <subterm>
+                <numberconstant value="1">
+                  <positive/>
+                </numberconstant>
+              </subterm>
+              <subterm>
+                <dotconstant/>
+              </subterm>
+            </numberof>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="id19" source="calls" target="ControlRoomDispatch">
+        <hlinscription>
+          <text>&lt;c&gt;</text>
+          <structure>
+            <tuple>
+              <subterm>
+                <variable refvariable="c"/>
+              </subterm>
+            </tuple>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="id20" source="OpenRequests" target="assignFar">
+        <graphics>
+          <position x="380" y="110"/>
+        </graphics>
+        <hlinscription>
+          <text>&lt;c,r&gt;</text>
+          <structure>
+            <tuple>
+              <subterm>
+                <variable refvariable="c"/>
+              </subterm>
+              <subterm>
+                <variable refvariable="r"/>
+              </subterm>
+            </tuple>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="id21" source="IdleTechs" target="assignFar">
+        <graphics>
+          <position x="355" y="150"/>
+        </graphics>
+        <hlinscription>
+          <text>&lt;a&gt;</text>
+          <structure>
+            <tuple>
+              <subterm>
+                <variable refvariable="a"/>
+              </subterm>
+            </tuple>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="id22" source="assignFar" target="MovetoZ">
+        <hlinscription>
+          <text>&lt;c,a,r&gt;</text>
+          <structure>
+            <tuple>
+              <subterm>
+                <variable refvariable="c"/>
+              </subterm>
+              <subterm>
+                <variable refvariable="a"/>
+              </subterm>
+              <subterm>
+                <variable refvariable="r"/>
+              </subterm>
+            </tuple>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="id23" source="Idles" target="assignFar">
+        <hlinscription>
+          <text>1</text>
+          <structure>
+            <numberof>
+              <subterm>
+                <numberconstant value="1">
+                  <positive/>
+                </numberconstant>
+              </subterm>
+              <subterm>
+                <dotconstant/>
+              </subterm>
+            </numberof>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="id24" source="securing" target="Finished">
+        <hlinscription>
+          <text>&lt;c&gt;</text>
+          <structure>
+            <tuple>
+              <subterm>
+                <variable refvariable="c"/>
+              </subterm>
+            </tuple>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="id25" source="end" target="Idles">
+        <graphics>
+          <position x="110" y="270"/>
+          <position x="140" y="240"/>
+        </graphics>
+        <hlinscription>
+          <text>1</text>
+          <structure>
+            <numberof>
+              <subterm>
+                <numberconstant value="1">
+                  <positive/>
+                </numberconstant>
+              </subterm>
+              <subterm>
+                <dotconstant/>
+              </subterm>
+            </numberof>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="id26" source="end" target="Clients">
+        <graphics>
+          <position x="130" y="330"/>
+          <position x="195" y="85"/>
+        </graphics>
+        <hlinscription>
+          <text>&lt;c&gt;</text>
+          <structure>
+            <tuple>
+              <subterm>
+                <variable refvariable="c"/>
+              </subterm>
+            </tuple>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="id27" source="Finished" target="end">
+        <hlinscription>
+          <text>&lt;c&gt;</text>
+          <structure>
+            <tuple>
+              <subterm>
+                <variable refvariable="c"/>
+              </subterm>
+            </tuple>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="id28" source="calls" target="ClientsWaiting">
+        <graphics>
+          <position x="155" y="40"/>
+          <position x="110" y="85"/>
+        </graphics>
+        <hlinscription>
+          <text>&lt;c&gt;</text>
+          <structure>
+            <tuple>
+              <subterm>
+                <variable refvariable="c"/>
+              </subterm>
+            </tuple>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="id29" source="NumClientsReq" target="securing">
+        <graphics>
+          <position x="150" y="15"/>
+          <position x="145" y="310"/>
+        </graphics>
+        <hlinscription>
+          <text>1</text>
+          <structure>
+            <numberof>
+              <subterm>
+                <numberconstant value="1">
+                  <positive/>
+                </numberconstant>
+              </subterm>
+              <subterm>
+                <dotconstant/>
+              </subterm>
+            </numberof>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="id30" source="ClientsWaiting" target="Timeout">
+        <hlinscription>
+          <text>&lt;c&gt;</text>
+          <structure>
+            <tuple>
+              <subterm>
+                <variable refvariable="c"/>
+              </subterm>
+            </tuple>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="id31" source="Timeout" target="ClientsTimeout">
+        <hlinscription>
+          <text>&lt;c&gt;</text>
+          <structure>
+            <tuple>
+              <subterm>
+                <variable refvariable="c"/>
+              </subterm>
+            </tuple>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="id32" source="StartSecuring" target="securingInTime">
+        <hlinscription>
+          <text>&lt;c,r&gt;</text>
+          <structure>
+            <tuple>
+              <subterm>
+                <variable refvariable="c"/>
+              </subterm>
+              <subterm>
+                <variable refvariable="r"/>
+              </subterm>
+            </tuple>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="id33" source="StartSecuring" target="timeout">
+        <hlinscription>
+          <text>&lt;c,r&gt;</text>
+          <structure>
+            <tuple>
+              <subterm>
+                <variable refvariable="c"/>
+              </subterm>
+              <subterm>
+                <variable refvariable="r"/>
+              </subterm>
+            </tuple>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="id34" source="timeout" target="DoSecuring">
+        <hlinscription>
+          <text>&lt;c,r&gt;</text>
+          <structure>
+            <tuple>
+              <subterm>
+                <variable refvariable="c"/>
+              </subterm>
+              <subterm>
+                <variable refvariable="r"/>
+              </subterm>
+            </tuple>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="id35" source="securingInTime" target="DoSecuring">
+        <hlinscription>
+          <text>&lt;c,r&gt;</text>
+          <structure>
+            <tuple>
+              <subterm>
+                <variable refvariable="c"/>
+              </subterm>
+              <subterm>
+                <variable refvariable="r"/>
+              </subterm>
+            </tuple>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="id36" source="ClientsWaiting" target="securingInTime">
+        <graphics>
+          <position x="100" y="95"/>
+          <position x="325" y="415"/>
+        </graphics>
+        <hlinscription>
+          <text>&lt;c&gt;</text>
+          <structure>
+            <tuple>
+              <subterm>
+                <variable refvariable="c"/>
+              </subterm>
+            </tuple>
+          </structure>
+        </hlinscription>
+      </arc>
+      <arc id="id37" source="ClientsTimeout" target="timeout">
+        <graphics>
+          <position x="110" y="250"/>
+          <position x="200" y="335"/>
+        </graphics>
+        <hlinscription>
+          <text>&lt;c&gt;</text>
+          <structure>
+            <tuple>
+              <subterm>
+                <variable refvariable="c"/>
+              </subterm>
+            </tuple>
+          </structure>
+        </hlinscription>
+      </arc>
+    </page>
+  </net>
+</pnml>
