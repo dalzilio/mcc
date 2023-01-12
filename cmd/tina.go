@@ -23,7 +23,7 @@ import (
 // generates a P/T net equivalent in the .net format used in TINA.
 var tinaCmd = &cobra.Command{
 	Use:   "tina -i file.pnml",
-	Short: "mcc tina generates a P/T net file in .net format",
+	Short: "Generates a P/T net file in .net format",
 	Run: func(cmd *cobra.Command, args []string) {
 		tinaConvert(tinaFileName)
 	},
@@ -106,9 +106,8 @@ func tinaConvert(filename string) {
 
 	p.SetSliced(true)
 	p.SetVerbose(pnml.QUIET)
-	// p.SetVerbose(pnml.MINIMAL)
-	// set the semantic of "overflowing" enumeration types
 	p.SetFES(false)
+
 	hl, err := hlnet.Build(p)
 	if err != nil {
 		hlnetLogger.Println("Error decoding PNML file:", err)
