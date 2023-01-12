@@ -132,7 +132,7 @@ func convert(filename string) {
 	}
 
 	p.SetSliced(false)
-	p.SetVerbose(pnml.MINIMAL)
+	p.SetVerbose(pnml.QUIET)
 	p.SetFES(false)
 
 	hl, err := hlnet.Build(p)
