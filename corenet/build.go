@@ -18,10 +18,9 @@ import (
 // makepname returns a (corenet) place name using either a counter or, if we
 // want sliced names, a combination of the name of the colored place, pname, and
 // a value of the current type.
-func makepname(net *pnml.Net, pname string, count int, val *pnml.Value) string {
-	if (net.VERBOSE == pnml.SMPT) ||
-		(net.VERBOSE == pnml.SKELETON) {
-		return fmt.Sprintf("p_%d", count)
+func makepname(net *pnml.Net, pname string, val *pnml.Value) string {
+	if net.VERBOSE == pnml.SMPT {
+		return ""
 	}
 
 	s := strings.Builder{}
@@ -46,7 +45,8 @@ func makepname(net *pnml.Net, pname string, count int, val *pnml.Value) string {
 		}
 		return s.String()
 	}
-	// we are in the case pnml.INFO, where identifiers are of the kind
+
+	// otherwise we are in the case INFO, where identifiers are of the kind
 	// `Id_c0_s3` where `c0` and `s3` describe the COL constants.
 	fmt.Fprintf(&s, "_%s", net.Identity[val.Head])
 	for v := val.Tail; v != nil; v = v.Tail {
@@ -129,10 +129,9 @@ func Build(pnet *pnml.Net, hl *hlnet.Net) *Net {
 	// where val is one of the possible values from the type of p. We build a
 	// map to find the given place from the pair {p val}
 	cpl := make(map[coreAssoc]*Place)
-	pcount := 0
 	for plname, p := range hl.Places {
 		if p.Stable {
-			// when the place is stable, its rechable "values" are the one in
+			// when the place is stable, its reachable "values" are the one in
 			// its initial marking (moreover the marking of the place is an
 			// invariant). We still keep those places in the net in order to have the
 			// right value for "maximal number of tokens in a marking" but we do
@@ -140,17 +139,15 @@ func Build(pnet *pnml.Net, hl *hlnet.Net) *Net {
 			// of invariants).
 			initv, multv := p.Init.Match(pnet, nil)
 			for k, v := range initv {
-				cp := Place{count: pcount, name: makepname(pnet, plname, pcount, v), label: plname}
+				cp := Place{name: makepname(pnet, plname, v), label: plname}
 				cp.init = multv[k]
-				pcount++
 				cpl[coreAssoc{place: p, val: v}] = &cp
 				net.pl = append(net.pl, &cp)
 			}
 		} else {
 			// the possible values of p are the one in its type
 			for _, v := range pnet.World[p.Type] {
-				cp := Place{count: pcount, name: makepname(pnet, plname, pcount, v), label: plname}
-				pcount++
+				cp := Place{name: makepname(pnet, plname, v), label: plname}
 				cpl[coreAssoc{place: p, val: v}] = &cp
 				net.pl = append(net.pl, &cp)
 			}
@@ -164,54 +161,80 @@ func Build(pnet *pnml.Net, hl *hlnet.Net) *Net {
 		}
 	}
 
+	// we sort the places and instantiate their count field accordingly. We also
+	// reflect the new ordering of transitions in the count field. It should not
+	// be possible to call function Build with verbosity SKELETON
+	switch net.verbose {
+	case pnml.INFO: // we can sort using the name
+		sort.Slice(net.pl, func(i, j int) bool {
+			return net.pl[i].name < net.pl[j].name
+		})
+		for k, v := range net.pl {
+			v.count = k
+		}
+	case pnml.SKELETON:
+		panic("should not call Build with SKELETON")
+	case pnml.SLICED: // similar to INFO
+		sort.Slice(net.pl, func(i, j int) bool {
+			return net.pl[i].name < net.pl[j].name
+		})
+		for k, v := range net.pl {
+			v.count = k
+		}
+	case pnml.SMPT: // we use a stable sort on the label and also instantiate the name
+		sort.SliceStable(net.pl, func(i, j int) bool {
+			return net.pl[i].label < net.pl[j].label
+		})
+		for k, v := range net.pl {
+			v.count = k
+			v.name = fmt.Sprintf("p%d", k)
+		}
+	}
+
 	// we go through all the transitions and build coretrans by enumerating all
 	// the possible association of variables and values, testing if the
 	// condition is true. iterator[i] gives the value (index) we are currently
 	// considering for variable varnames[i].
-	tcount := 0
 	for trname, t := range hl.Trans {
 		for iter := mkiter(pnet, cpl, t); iter.hasNext(); {
 			if ct, ok := iter.check(); ok {
-				ct.count = tcount
 				ct.label = trname
 				// we sort the places in the IN and OUT arcs to obtain a
 				// deterministic output
-				if net.verbose == pnml.SMPT {
-					sort.Slice(ct.in, func(i, j int) bool {
-						return ct.in[i].count < ct.in[j].count
-					})
-					sort.Slice(ct.out, func(i, j int) bool {
-						return ct.out[i].count < ct.out[j].count
-					})
-				} else {
-					sort.Slice(ct.in, func(i, j int) bool {
-						return ct.in[i].name < ct.in[j].name
-					})
-					sort.Slice(ct.out, func(i, j int) bool {
-						return ct.out[i].name < ct.out[j].name
-					})
-				}
+				sort.Slice(ct.in, func(i, j int) bool {
+					return ct.in[i].count < ct.in[j].count
+				})
+				sort.Slice(ct.out, func(i, j int) bool {
+					return ct.out[i].count < ct.out[j].count
+				})
 				net.tr = append(net.tr, ct)
-				tcount++
 			}
 		}
 	}
 
-	// we also sort the transitions when their name are meaningful
-	if net.verbose != pnml.SMPT {
-		sort.Slice(net.tr, func(i, j int) bool {
-			b := strings.Compare(net.tr[i].label, net.tr[j].label)
-			if b != 0 {
-				return b < 0
+	// we sort the transitions using their labels, and a stable sort, and
+	// instantiate their count field to have a deterministic output. This is the
+	// same algorithm with all the different verbosity level.
+	sort.SliceStable(net.tr, func(i, j int) bool {
+		if net.tr[i].label == net.tr[j].label {
+			// transitions with the same label have the same arc cardinality
+			for k := range net.tr[i].in {
+				if net.tr[i].in[k].count == net.tr[j].in[k].count {
+					continue
+				}
+				return net.tr[i].in[k].count < net.tr[j].in[k].count
 			}
-			return net.tr[i].count < net.tr[j].count
-		})
-
-		// and we also reflect the new ordering of transitions in the count field
-		for k, v := range net.tr {
-			v.count = k
+			for k := range net.tr[i].out {
+				if net.tr[i].out[k].count == net.tr[j].out[k].count {
+					continue
+				}
+				return net.tr[i].out[k].count < net.tr[j].out[k].count
+			}
 		}
-
+		return net.tr[i].label < net.tr[j].label
+	})
+	for k, v := range net.tr {
+		v.count = k
 	}
 
 	return &net

@@ -23,7 +23,7 @@ func BuildSkeleton(pnet *pnml.Net, hl *hlnet.Net) *Net {
 	skelpl := make(map[*hlnet.Place]*Place)
 
 	for plname, p := range hl.Places {
-		cp := Place{count: 0, name: "", label: escape2aname(plname), init: 0}
+		cp := Place{name: "", label: escape2aname(plname)}
 		if p.Init != nil {
 			cp.init = p.Init.Skeletonize(pnet)
 		}
@@ -45,7 +45,7 @@ func BuildSkeleton(pnet *pnml.Net, hl *hlnet.Net) *Net {
 	// satisfiable (which should be the case in practice) and always consider
 	// that the condition is true.
 	for k, t := range hl.Trans {
-		ct := Trans{count: 0, label: escape2aname(k)}
+		ct := Trans{label: escape2aname(k)}
 		for _, e := range t.Arcs {
 			cp := skelpl[e.Place]
 			if e.Kind == hlnet.IN {

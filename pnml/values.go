@@ -21,6 +21,18 @@ type Value struct {
 
 // ----------------------------------------------------------------------
 
+// func CompareValues(vi, vj *Value) bool {
+// 	if vi == nil {
+// 		return vj == nil
+// 	}
+// 	if vi.Head == vj.Head {
+// 		return CompareValues(vi.Tail, vj.Tail)
+// 	}
+// 	return vi.Head < vj.Head
+// }
+
+// ----------------------------------------------------------------------
+
 // PrintValue returns a readable description of a Value
 func (net *Net) PrintValue(val *Value) string {
 	if val.Tail == nil {
