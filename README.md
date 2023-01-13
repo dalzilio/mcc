@@ -39,13 +39,9 @@ MCC supports the generation of Petri nets in both the TINA (.net) and LOLA input
 formats. We have also recently added a new subcommand to output the result as a
 P/T net in PNML format.
 
-We have made many improvements on the tool along the years and it is now a very
+We have made many improvements on the tool along the years, and it is now a very
 efficient solution, on par with (and on many instances more efficient than)
 other tools used for the same purpose.
-
-In the future, we plan to use the transformation to compute interesting
-properties of the models, like symmetries and/or set of places that can be
-clustered together.
 
 ## Reference
 
@@ -67,7 +63,7 @@ project](https://github.com/dalzilio/mcc/releases). We provide binary files for
 You also have the option to install the tool directly from source. For this, you
 need first to install a recent Go distribution (available at
 <https://golang.org/doc/install>). Then you can install the software using the
-*go get* command.
+`go get` command.
 
 ```bash
 $> go get github.com/dalzilio/mcc
@@ -78,107 +74,101 @@ project](https://godoc.org/github.com/dalzilio/mcc).
 
 ## Running the program
 
-The *mcc hlnet* command accepts PNML files for high-level nets provided by the
-Model-Checking Contest (also tagged as COL). These files generally have the name
-*model.pnml*. You can invoke the *hlnet* command on this file as follows.
+The `mcc pnml` command accepts PNML files for high-level nets provided by the
+Model-Checking Contest (also tagged as COL) and generates a P/T net equivalent
+file. These files generally have the name `model.pnml`. You can invoke the
+`pnml` command on this file as follows.
 
 ```text
-$> mcc hlnet -i model.pnml
+$> mcc pnml -i model.pnml
 ```
 
-You can obtain info on the other available options by using the *help* command:
+You can obtain info on all available options by using the `help` command:
 
 ```text
 $> mcc help
-collection of tools for the MCC
+mcc transforms High-Level Petri nets in PNML format into equivalent Place/Transition nets
 
 Usage:
   mcc [command]
 
 Available Commands:
-  hlnet       generates a .net or .tpn file from a PNML file describing a high-level net
-  lola        generates a net file in the LoLa format from a PNML file describing a high-level net
-  pnml        generates a P/T net file in PNML format from a PNML file describing a high-level net
-  tina        generates a P/T net file in .net format
-
-Use "mcc [command] --help" for more information about a command.
-
-$> mcc help hlnet
-generates a .net or .tpn file from a PNML file describing a high-level net
-
-Usage:
-  mcc hlnet -i file.pnml [flags]
+  help        Help about any command
+  info        Print statistics or generate textual version for use with NetDraw (nd)
+  lola        Generate a P/T net using the LoLa format
+  pnml        Generate a P/T net using the PNML format
+  skeleton    Generate the skeleton of a colored net in .net format
+  smpt        Generate a P/T net file for use with SMPT
+  tina        Generate a P/T net file using Tina's .net format
+  version     Print the version number
 
 Flags:
-      --debug         output a readable version in a format that can be displayed by Tina
-  -i, --file string   name of the input file (.pnml)
-      --name          use PNML (document) name for the output file
-  -o, --out string    basename of the output file (without extension, default to input file basename) or - for stdout
-      --sliced        use structured naming for places
-      --stats         print statistics (nb. of places, trans. and computation time); do not output the net
-      --verbose       add extra information in the labels of the .net file
+  -h, --help      help for mcc
+  -v, --version   version for mcc
+
+Use "mcc [command] --help" for more information about a command.
 ```
 
-## Features
+## Features and recent modifications
 
-* We recognize the case of high-level nets with a single variable used with a
-  circular symmetry (basically, this is a "scalar set"). This allows us to
-  manage very big instances of the *Philosophers* model.
+* We provide a new command, `skeleton`, that generates a P/T net by coalescing
+  all the colors in a place into a single one, and forgetting the guards on
+  transitions. This is exactly the construction defined by S. Wallner and K.
+  Wolf in [Skeleton Abstraction for Universal Temporal
+  Properties](https://doi.org/10.1007/978-3-030-76983-3_10) (2021).
 
-* We have improved the performances on colored models with a large number of
-  variables. This means that we can now unfold model BART in a few seconds.
-
-* We support the generation of Petri nets with more structured place names
-  (option ```--sliced```) and with labels that add traceability information to
-  the colored model (with option ```--verbose```). With these options, the output
-  of the tool becomes more deterministic.
-
-* We now support the declaration of ```finiteintrange``` types in PNML. as well
-  as the declaration of ```Partition``` and ```PartitionElement```. This means
+* We support the declaration of `finiteintrange` types in PNML. as well
+  as the declaration of `Partition` and `PartitionElement`. This means
   that we can now unfold model VehicularWifi (surprise model in 2019)
 
-* We have added a new option, ```--stats```, to print statistics about the
-  computation, such as computation time, or the number of places and transitions
-  in the resulting Place/Transition net. (We do not output a result when this
-  option is used.)
+* We deprecated command `hlnet` since version 2.0 and replaced it with `mcc
+  info`, which provides similar functionalities. Option `--stats` can be used to
+  print statistics about the unfolding of a colored net, such as the computation
+  time, or the number of places and transitions in the resulting P/ net. (We do
+  not output a result when this option is used.)
 
   ```text
-  $> mcc hlnet -i model.pnml --stats
+  $> mcc info -i model.pnml --stats
   100 place(s), 429 transition(s), 858 arc(s), 0.027s
   ```
   
-* We have modified option ```--debug``` in order to add more visual information
-  when displaying the resulting model with ```nd``` (part of the [TINA
-  toolbox](http://projects.laas.fr/tina/home.php)). We still display information
-  about types, variables and the expressions associated with arcs inside
-  comments. We also add a copy of this information using the support for
-  (sticky) notes nodes that is built inside TINA's net format. You can see an
-  example of the result obtained on the TableDistance-COL model below.
+* Option `--debug` in command `mcc info` generates a P/T net "documentation" for
+  a colored net with information that can be displayed with the tool NetDraw
+  (`nd`), which is part of the [TINA
+  toolbox](http://projects.laas.fr/tina/home.php). Wedisplay information about
+  types, variables and the expressions associated with arcs inside comments. We
+  also add a copy of this information using the support for (sticky) notes that
+  is built inside TINA's net format. You can see an example of the result
+  obtained on the TableDistance-COL model below.
   
   ![TableDistance-COL model in nd](./docs/nd.png)
 
-* You can now use parameter ```-``` with option ```-o``` to output the result of
-  the unfolding on the standard output. This way it is possible to use ```mcc```
-  to generate a P/T net and pipe the result to another program, for instance another
-  conversion tool, such as ```ndrio```, which is part of the [TINA
-  toolbox](http://projects.laas.fr/tina/home.php).
+* You can use parameter `-` with option `-o`, in most commands, to output the
+  result of the unfolding on the standard output. This way it is possible to
+  pipe the result of `mcc` to another program, for instance another conversion
+  tool, such as `ndrio`, which is part of the [TINA
+  toolbox](http://projects.laas.fr/tina/home.php). The following example shows
+  how to output a result using the [Roméo](http://romeo.rts-software.org/)
+  format.
 
   ```text
-  $> mcc hlnet -i model.pnml -o - | ndrio -romeo -
+  $> mcc tina -i model.pnml -o - | ndrio -romeo -
   ```
 
-* We added a new subcommand, ```mcc pnml``` to output the result as a P/T net in
-  PNML format.
+* Command `mcc smpt` generates a P/T net in .net format, like with `mcc tina`,
+  but with simpler identifiers. It also includes traceability information
+  between places and transitions in the colored net, and their P/T equivalent.
 
-* We added a new subcommand, ```mcc tina``` to output the result as a P/T net in
-  TINA's net format.
+* Since version 2.0, command `mcc pnml` always output results using "structured"
+  place names. We also ensure that the XML attributes for place names and id are
+  equal.
 
 ## Dependencies
 
 The code repository includes instances of PNML models from the [MCC Petri Nets
-Repository](https://pnrepository.lip6.fr/) located inside the ```./benchmarks```
+Repository](https://pnrepository.lip6.fr/) located inside the `./benchmarks`
 folder. We provide a selection of instances from all the PNML colored models
-used in the 2019 Model-Checking Contest. These files are included in the
+used in the Model-Checking Contest. These files are included in the
 repository to be used for benchmarking and continuous testing.
 
 ## License
