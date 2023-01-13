@@ -205,38 +205,6 @@ func Build(pnet *pnml.Net, hl *hlnet.Net) *Net {
 				return b < 0
 			}
 			return net.tr[i].count < net.tr[j].count
-			// k := 0
-			// for k < len(net.tr[i].c) && k < len(net.tr[j].in) {
-			// 	if net.tr[i].in[k] == net.tr[j].in[k] {
-			// 		k++
-			// 		continue
-			// 	}
-			// 	if net.tr[i].in[k].name == net.tr[j].in[k].name {
-			// 		return (net.tr[i].in[k].int < net.tr[j].in[k].int)
-			// 	}
-			// 	return (net.tr[i].in[k].name < net.tr[j].in[k].name)
-			// }
-			// if k < len(net.tr[i].in) {
-			// 	return false
-			// }
-			// if k < len(net.tr[j].in) {
-			// 	return true
-			// }
-			// k = 0
-			// for k < len(net.tr[i].out) && k < len(net.tr[j].out) {
-			// 	if net.tr[i].out[k] == net.tr[j].out[k] {
-			// 		k++
-			// 		continue
-			// 	}
-			// 	if net.tr[i].out[k].name == net.tr[j].out[k].name {
-			// 		return (net.tr[i].out[k].int < net.tr[j].out[k].int)
-			// 	}
-			// 	return (net.tr[i].out[k].name < net.tr[j].out[k].name)
-			// }
-			// if k < len(net.tr[i].out) {
-			// 	return false
-			// }
-			// return true
 		})
 
 		// and we also reflect the new ordering of transitions in the count field

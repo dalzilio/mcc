@@ -39,10 +39,28 @@ type wnet struct {
 }
 
 type wpage struct {
-	ID     string   `xml:"id,attr"`
-	PLACES []*Place `xml:"place"`
-	TRANS  []*Trans `xml:"transition"`
+	ID     string        `xml:"id,attr"`
+	PLACES []*Place      `xml:"place"`
+	TRANS  []*Trans      `xml:"transition"`
+	TOOLS  *toolspecific `xml:"toolspecific,omitempty"`
 }
+
+// toolspecific is the type of toolspecific XML annotation added to the PNML
+// output to declare association lists between place and transitions in the COL,
+// input net and  their counterparts in the output, P/T net
+type toolspecific struct {
+	TheTool    string    `xml:"tool,attr"`
+	TheVersion string    `xml:"version,attr"`
+	HLPL       []hlassoc `xml:"places>place"`
+	HLTR       []hlassoc `xml:"transitions>transition"`
+}
+
+type hlassoc struct {
+	ID    string   `xml:"id,attr"`
+	NAMES []string `xml:"name"`
+}
+
+// ----------------------------------------------------------------------
 
 // MarshalXML encodes the receiver as zero or more XML elements. This makes
 // Place a xml.Marshaller
@@ -100,6 +118,8 @@ func encodeArc(e *xml.Encoder, id, src, tgt string, weight int) {
 	e.EncodeToken(xml.EndElement{Name: xml.Name{Local: "arc"}})
 }
 
+// ----------------------------------------------------------------------
+
 // PnmlWrite prints a P/T net in PNML format on an io.Writer
 func (net Net) PnmlWrite(w io.Writer) error {
 	encoder := xml.NewEncoder(w)
@@ -114,30 +134,45 @@ func (net Net) PnmlWrite(w io.Writer) error {
 		})
 	}
 
-	// // we print out properties. We use the fact that places are sorted by names.
-	// // Hence (core) places corresponding to the same colored place are grouped
-	// // together. Same for transitions.
-	// if net.printprops {
-	// 	// output list of places for each colored one
-	// 	currentname := ""
-	// 	for _, v := range net.pl {
-	// 		if v.label != currentname {
-	// 			currentname = v.label
-	// 			fmt.Printf("\npl %s", v.label)
-	// 		}
-	// 		fmt.Printf(" %s", v.name)
-	// 	}
-	// 	// output list of transitions for each colored one
-	// 	currentname = ""
-	// 	for k, v := range net.tr {
-	// 		if v.label != currentname {
-	// 			currentname = v.label
-	// 			fmt.Printf("\ntr %s", currentname)
-	// 		}
-	// 		fmt.Printf(" t%d", k)
-	// 	}
-	// }
-	// fmt.Print("\n")
+	var tools *toolspecific
+
+	// we print out properties. We use the fact that places are sorted by names.
+	// Hence (core) places corresponding to the same colored place are grouped
+	// together. Same for transitions.
+	if net.printprops {
+		tools = &toolspecific{TheTool: "mcc-unfolder", TheVersion: "2.0"}
+		assoc := hlassoc{ID: ""}
+		// output list of places for each colored one
+		for _, v := range net.pl {
+			if assoc.ID != v.label {
+				// if this is not the first assoc list we need to push the
+				// previous one in tools
+				if assoc.ID != "" {
+					tools.HLPL = append(tools.HLPL, assoc)
+				}
+				assoc = hlassoc{ID: v.label}
+			}
+			assoc.NAMES = append(assoc.NAMES, v.name)
+		}
+		// we should also push the last one
+		if assoc.ID != "" {
+			tools.HLPL = append(tools.HLPL, assoc)
+		}
+		// we do the same with the list of transitions
+		assoc = hlassoc{ID: ""}
+		for k, v := range net.tr {
+			if assoc.ID != v.label {
+				if assoc.ID != "" {
+					tools.HLTR = append(tools.HLTR, assoc)
+				}
+				assoc = hlassoc{ID: v.label}
+			}
+			assoc.NAMES = append(assoc.NAMES, fmt.Sprintf("t%d", k))
+		}
+		if assoc.ID != "" {
+			tools.HLTR = append(tools.HLTR, assoc)
+		}
+	}
 
 	// Now we output the file on the io.Writer
 	wpnml := wpnml{
@@ -149,6 +184,7 @@ func (net Net) PnmlWrite(w io.Writer) error {
 				ID:     "page",
 				PLACES: net.pl,
 				TRANS:  net.tr,
+				TOOLS:  tools,
 			},
 		},
 	}
