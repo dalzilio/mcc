@@ -25,14 +25,20 @@ func makepname(net *pnml.Net, pname string, count int, val *pnml.Value) string {
 	}
 
 	s := strings.Builder{}
-	s.WriteString(normalize2aname(pname))
+	if net.VERBOSE == pnml.SLICED {
+		s.WriteString(normalize2aname(pname))
+	} else {
+		// we are in the case pnml.INFO
+		s.WriteString(pname)
+	}
+
 	if val.Head == 0 {
 		return s.String()
 	}
 
-	// when SLICED identifiers are of the kind `Id__Name_1_4`, where `Id__Name`
-	// is a normalized COL identifier and color constants are encoded using
-	// integers.
+	// when verbosity is SLICED, identifiers are of the kind `Id__Name_1_4`,
+	// where `Id__Name` is a normalized COL identifier and color constants are
+	// encoded using integers.
 	if net.VERBOSE == pnml.SLICED {
 		fmt.Fprintf(&s, "_%d", val.Head)
 		for v := val.Tail; v != nil; v = v.Tail {
@@ -40,14 +46,13 @@ func makepname(net *pnml.Net, pname string, count int, val *pnml.Value) string {
 		}
 		return s.String()
 	}
-
-	// last case is INFI, where identifiers are of the kind `Id__Name_c0_s3`
-	// where `c0` and `s3` are constants values from the COL types.
+	// we are in the case pnml.INFO, where identifiers are of the kind
+	// `Id_c0_s3` where `c0` and `s3` describe the COL constants.
 	fmt.Fprintf(&s, "_%s", net.Identity[val.Head])
 	for v := val.Tail; v != nil; v = v.Tail {
 		fmt.Fprintf(&s, "_%s", net.Identity[v.Head])
 	}
-	return s.String()
+	return escape2aname(s.String())
 }
 
 // ----------------------------------------------------------------------
@@ -84,13 +89,32 @@ func appendCorep(in []corep, c corep) []corep {
 func normalize2aname(s string) string {
 	anamize := func(r rune) rune {
 		switch {
-		case (r >= 'A' && r <= 'z') || (r >= '0' && r <= '9'):
+		case (r >= 'A' && r <= 'z') ||
+			(r >= '0' && r <= '9') ||
+			(r == '\''):
 			return r
 		default:
 			return '_'
 		}
 	}
 	return strings.Map(anamize, s)
+}
+
+// escape2aname takes an identifier and escape it (with braces) if it is not a
+// valid .net identifier
+func escape2aname(s string) string {
+	for _, c := range s {
+		switch {
+		case (c >= 'A' && c <= 'z') ||
+			(c >= '0' && c <= '9') ||
+			(c == '\'') ||
+			(c == '_'):
+			continue
+		default:
+			return fmt.Sprintf("{%s}", s)
+		}
+	}
+	return s
 }
 
 // Build returns a core net from a colored Petri net by unfolding the

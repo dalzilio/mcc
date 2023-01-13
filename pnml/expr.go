@@ -331,7 +331,7 @@ type FIRConstant struct {
 }
 
 func (p FIRConstant) stringify() string {
-	return fmt.Sprintf("_int{%d,%d}%d", p.start, p.end, p.value)
+	return fmt.Sprintf("_int%d'%d'%d", p.start, p.end, p.value)
 }
 
 func (p FIRConstant) String() string {

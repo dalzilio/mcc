@@ -16,15 +16,11 @@ import (
 // Write prints a place declaration.
 func (pl Place) Write(w io.Writer, verbosity pnml.VERB) {
 	if verbosity == pnml.SKELETON {
-		normalized := normalize2aname(pl.label)
-		if normalized != pl.label {
-			normalized = fmt.Sprintf("{%s}", pl.label)
-		}
 		if pl.init != 0 {
-			fmt.Fprintf(w, "pl %s (%d)\n", normalized, pl.init)
+			fmt.Fprintf(w, "pl %s (%d)\n", pl.label, pl.init)
 			return
 		}
-		fmt.Fprintf(w, "pl %s\n", normalized)
+		fmt.Fprintf(w, "pl %s\n", pl.label)
 		return
 	}
 	if pl.init != 0 {
@@ -37,15 +33,11 @@ func (pl Place) Write(w io.Writer, verbosity pnml.VERB) {
 
 func (pl corep) Write(w io.Writer, verbosity pnml.VERB) {
 	if verbosity == pnml.SKELETON {
-		normalized := normalize2aname(pl.label)
-		if normalized != pl.label {
-			normalized = fmt.Sprintf("{%s}", pl.label)
-		}
 		if pl.int == 1 {
-			fmt.Fprintf(w, " %s", normalized)
+			fmt.Fprintf(w, " %s", pl.label)
 			return
 		}
-		fmt.Fprintf(w, " %s*%d", normalized, pl.int)
+		fmt.Fprintf(w, " %s*%d", pl.label, pl.int)
 		return
 	}
 	if pl.int == 1 {
@@ -60,11 +52,7 @@ func (tr Trans) Write(w io.Writer, verbosity pnml.VERB) {
 	case pnml.INFO:
 		fmt.Fprintf(w, "tr %s_%d ", normalize2aname(tr.label), tr.count)
 	case pnml.SKELETON:
-		normalized := normalize2aname(tr.label)
-		if normalized != tr.label {
-			normalized = fmt.Sprintf("{%s}", tr.label)
-		}
-		fmt.Fprintf(w, "tr %s ", normalized)
+		fmt.Fprintf(w, "tr %s ", tr.label)
 	case pnml.SLICED:
 		fmt.Fprintf(w, "tr t%d ", tr.count)
 	case pnml.SMPT:
