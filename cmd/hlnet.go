@@ -29,7 +29,7 @@ import (
 // a core net description.
 var hlnetCmd = &cobra.Command{
 	Use:   "info -i file.pnml",
-	Short: "Prints statistics or generates textual version for use with NetDraw (nd)",
+	Short: "Print statistics or generate textual version for use with NetDraw (nd)",
 	Run: func(cmd *cobra.Command, args []string) {
 		convert(hlnetFileName)
 	},
@@ -47,7 +47,7 @@ func init() {
 	hlnetCmd.Flags().StringVarP(&hlnetFileName, "file", "i", "", "name of the input file (.pnml)")
 	hlnetCmd.Flags().StringVarP(&hlnetOutFileName, "out", "o", "", "basename of the output file (without extension, default to input file basename) or - for stdout")
 	hlnetCmd.Flags().BoolVar(&hlnetUseName, "name", false, "use PNML (document) name for the output file")
-	hlnetCmd.Flags().BoolVar(&hlnetDebugMode, "debug", false, "output a readable version in a format that can be displayed by Tina's NetDraw tool (nd)")
+	hlnetCmd.Flags().BoolVar(&hlnetDebugMode, "debug", false, "output a readable version of the colored net for use with Tina's NetDraw (nd)")
 	hlnetCmd.Flags().BoolVar(&hlnetStat, "stats", false, "print statistics (nb. of places, trans. and computation time) and quit; do not output the net")
 
 	hlnetLogger = log.New(os.Stderr, "MCC HLNET:", 0)

@@ -23,7 +23,7 @@ import (
 // an error for  PNML files that contain a core net description.
 var lolaCmd = &cobra.Command{
 	Use:   "lola -i file.pnml",
-	Short: "Generates a P/T net file in the LoLa format",
+	Short: "Generate a P/T net using the LoLa format",
 	Run: func(cmd *cobra.Command, args []string) {
 		lolaConvert(lolaFileName)
 	},

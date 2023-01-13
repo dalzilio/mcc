@@ -23,7 +23,7 @@ import (
 // generates a P/T net equivalent in the .net format used in TINA.
 var tinaCmd = &cobra.Command{
 	Use:   "tina -i file.pnml",
-	Short: "Generates a P/T net file in .net format",
+	Short: "Generate a P/T net file using Tina's .net format",
 	Run: func(cmd *cobra.Command, args []string) {
 		tinaConvert(tinaFileName)
 	},

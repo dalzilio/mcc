@@ -26,7 +26,7 @@ import (
 // model-checking reachability properties in the Model-Checking Contest.
 var smptCmd = &cobra.Command{
 	Use:   "smpt -i file.pnml",
-	Short: "Generates a P/T net file with extra information for use with SMPT",
+	Short: "Generate a P/T net file for use with SMPT",
 	Run: func(cmd *cobra.Command, args []string) {
 		smptConvert(smptFileName)
 	},
