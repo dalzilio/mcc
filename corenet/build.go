@@ -215,21 +215,28 @@ func Build(pnet *pnml.Net, hl *hlnet.Net) *Net {
 	// we sort the transitions using their labels, and a stable sort, and
 	// instantiate their count field to have a deterministic output. This is the
 	// same algorithm with all the different verbosity level.
-	sort.SliceStable(net.tr, func(i, j int) bool {
+	sort.Slice(net.tr, func(i, j int) bool {
 		if net.tr[i].label == net.tr[j].label {
 			// transitions with the same label have the same arc cardinality
-			for k := range net.tr[i].in {
-				if net.tr[i].in[k].count == net.tr[j].in[k].count {
+			if len(net.tr[i].in) != len(net.tr[j].in) {
+				return len(net.tr[i].in) < len(net.tr[j].in)
+			}
+			for k, c := range net.tr[i].in {
+				if c.count == net.tr[j].in[k].count {
 					continue
 				}
-				return net.tr[i].in[k].count < net.tr[j].in[k].count
+				return c.count < net.tr[j].in[k].count
 			}
-			for k := range net.tr[i].out {
-				if net.tr[i].out[k].count == net.tr[j].out[k].count {
+			if len(net.tr[i].out) != len(net.tr[j].out) {
+				return len(net.tr[i].out) < len(net.tr[j].out)
+			}
+			for k, c := range net.tr[i].out {
+				if c.count == net.tr[j].out[k].count {
 					continue
 				}
-				return net.tr[i].out[k].count < net.tr[j].out[k].count
+				return c.count < net.tr[j].out[k].count
 			}
+			return false
 		}
 		return net.tr[i].label < net.tr[j].label
 	})
