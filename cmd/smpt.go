@@ -36,7 +36,6 @@ var smptFileName string
 var smptOutFileName string
 var smptUseName bool
 
-// var smptUseComplexPNames bool
 var smptLogger *log.Logger
 
 func init() {
@@ -109,6 +108,7 @@ func smptConvert(filename string) {
 
 	p.SetVerbose(pnml.SMPT)
 	p.SetFES(false)
+	p.SetProperties()
 
 	hl, err := hlnet.Build(p)
 	if err != nil {
