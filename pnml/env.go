@@ -4,8 +4,10 @@
 
 package pnml
 
-import "fmt"
-import "sort"
+import (
+	"fmt"
+	"sort"
+)
 
 // ----------------------------------------------------------------------
 
@@ -18,7 +20,7 @@ func (p Env) String() string {
 	start := true
 	for k := range p {
 		if start {
-			s += fmt.Sprintf("%s", k)
+			s += k
 			start = false
 		} else {
 			s += fmt.Sprintf(", %s", k)

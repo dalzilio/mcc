@@ -31,7 +31,7 @@ func parseExprInner(decoder *xml.Decoder) (Expression, error) {
 func skipUntilEnd(d *xml.Decoder) error {
 	t, _ := d.Token()
 	if t == nil {
-		return fmt.Errorf("I was expecting an xml.EndElement")
+		return fmt.Errorf("expecting an xml.EndElement")
 	}
 	switch t.(type) {
 	case xml.CharData:
@@ -39,7 +39,7 @@ func skipUntilEnd(d *xml.Decoder) error {
 	case xml.EndElement:
 		return nil
 	}
-	return fmt.Errorf("I was expecting an xml.EndElement, found (%T) %v", t, t)
+	return fmt.Errorf("expecting an xml.EndElement, found (%T) %v", t, t)
 }
 
 func parseExprElement(decoder *xml.Decoder) (Expression, error) {
@@ -65,7 +65,7 @@ func parseExprElement(decoder *xml.Decoder) (Expression, error) {
 			if s, ok := res.(Constant); ok {
 				return All(s), nil
 			}
-			return nil, errors.New("Malformed PNML, an all element should contain usersort")
+			return nil, errors.New("malformed PNML, an all element should contain usersort")
 		case "usersort":
 			var s Type
 			decoder.DecodeElement(&s, &se)
@@ -111,7 +111,7 @@ func parseExprElement(decoder *xml.Decoder) (Expression, error) {
 			if r, ok := res.(Var); ok {
 				return Successor{Var: r, Incr: inc}, nil
 			}
-			return nil, errors.New("We only support successor and predecessor on variables")
+			return nil, errors.New("we only support successor and predecessor on variables")
 		case "or", "and", "equality", "inequality",
 			"lessthanorequal", "lessthan",
 			"greaterthan", "greaterthanorequal":
@@ -143,7 +143,7 @@ func parseExprElement(decoder *xml.Decoder) (Expression, error) {
 				// element.
 				return Numberof{Expression: res1, Mult: 1}, nil
 			}
-			return nil, errors.New("Malformed PNML in numberof, numberconstant is missing")
+			return nil, errors.New("malformed PNML in numberof, numberconstant is missing")
 		case "numberconstant":
 			var val NumberConstant
 			decoder.DecodeElement(&val, &se)

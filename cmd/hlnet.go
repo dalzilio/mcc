@@ -13,7 +13,6 @@ import (
 	"github.com/dalzilio/mcc/hlnet"
 	"github.com/dalzilio/mcc/pnml"
 
-	"io/ioutil"
 	"log"
 	"os"
 	"path/filepath"
@@ -126,7 +125,7 @@ func convert(filename string) {
 			os.Stdout.Write([]byte(p.String() + hl.Tina()))
 
 		} else {
-			ioutil.WriteFile(outfile+".net", []byte(p.String()+hl.Tina()), 0755)
+			os.WriteFile(outfile+".net", []byte(p.String()+hl.Tina()), 0755)
 		}
 		os.Exit(0)
 	}
@@ -163,7 +162,7 @@ func convert(filename string) {
 	// 		return
 	// 	}
 	// 	outfile = outfile + ".tpn"
-	// 	ioutil.WriteFile(outfile, []byte(cn.PrintTPN(nbcopies, listlr, listh)), 0755)
+	// 	os.WriteFile(outfile, []byte(cn.PrintTPN(nbcopies, listlr, listh)), 0755)
 	// 	return
 	// }
 

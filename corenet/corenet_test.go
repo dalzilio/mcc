@@ -3,7 +3,6 @@ package corenet
 import (
 	"bufio"
 	"encoding/csv"
-	"io/ioutil"
 	"log"
 	"os"
 	"path/filepath"
@@ -38,7 +37,7 @@ func TestBuild(t *testing.T) {
 	}
 	// Iterate through all the PNML file in the benchmarks folder
 	directory := "../benchmarks/simple/"
-	files, err := ioutil.ReadDir(directory)
+	files, err := os.ReadDir(directory)
 	if err != nil {
 		t.Errorf("corenet.Build(): error opening the benchmarks folder (%s)", directory)
 	}
@@ -92,7 +91,7 @@ var result string
 func BenchmarkBuildSimple(b *testing.B) {
 	// Find all the PNML file in the benchmarks folder
 	directory := "../benchmarks/simple"
-	files, err := ioutil.ReadDir(directory)
+	files, err := os.ReadDir(directory)
 	if err != nil {
 		os.Exit(1)
 	}

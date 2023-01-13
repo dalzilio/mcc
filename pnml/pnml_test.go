@@ -3,7 +3,6 @@ package pnml
 import (
 	"bufio"
 	"encoding/csv"
-	"io/ioutil"
 	"log"
 	"os"
 	"path/filepath"
@@ -36,7 +35,7 @@ func TestBuild(t *testing.T) {
 	}
 	// Iterate through all the PNML file in the benchmarks folder
 	directory := "../benchmarks/simple/"
-	files, err := ioutil.ReadDir(directory)
+	files, err := os.ReadDir(directory)
 	if err != nil {
 		t.Errorf("pnml.Build(): error opening the benchmarks folder (%s)", directory)
 	}
@@ -80,7 +79,7 @@ var result string
 func BenchmarkBuild(b *testing.B) {
 	// Find all the PNML file in the benchmarks folder
 	directory := "../benchmarks/large/"
-	files, err := ioutil.ReadDir(directory)
+	files, err := os.ReadDir(directory)
 	if err != nil {
 		os.Exit(1)
 	}

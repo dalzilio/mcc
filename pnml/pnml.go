@@ -64,7 +64,7 @@ func (d *Decoder) Build(net *Net) error {
 	decoder := d.Decoder
 	err := decoder.Decode(&pnml)
 	if err != nil {
-		return fmt.Errorf("Error decoding PNML input: %s", err)
+		return fmt.Errorf("error decoding PNML input: %s", err)
 	}
 
 	net.Name = pnml.Net.Name
@@ -188,7 +188,7 @@ func (d *Decoder) Build(net *Net) error {
 		}
 		e, ok := exp.(Operation)
 		if !ok {
-			return fmt.Errorf("Invalid condition in a PNML transition")
+			return fmt.Errorf("invalid condition in a PNML transition")
 		}
 		t.Condition = e
 	}
