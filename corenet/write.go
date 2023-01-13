@@ -54,7 +54,7 @@ func (tr Trans) Write(w io.Writer, verbosity pnml.VERB) {
 	case pnml.SKELETON:
 		fmt.Fprintf(w, "tr %s ", tr.label)
 	case pnml.SLICED:
-		fmt.Fprintf(w, "tr t%d ", tr.count)
+		fmt.Fprintf(w, "tr t%d : {%s} ", tr.count, tr.label)
 	case pnml.SMPT:
 		fmt.Fprintf(w, "tr t%d ", tr.count)
 	}

@@ -131,7 +131,14 @@ func convert(filename string) {
 		os.Exit(0)
 	}
 
-	p.SetVerbose(pnml.INFO)
+	if hlnetStat {
+		// if we do not print the resulting net, we do not need to build complex
+		// identifiers
+		p.SetVerbose(pnml.SMPT)
+	} else {
+		p.SetVerbose(pnml.INFO)
+	}
+
 	p.SetFES(false)
 
 	hl, err := hlnet.Build(p)

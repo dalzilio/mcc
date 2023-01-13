@@ -50,7 +50,7 @@ func (v Place) MarshalXML(e *xml.Encoder, start xml.StartElement) error {
 	start.Attr = []xml.Attr{{Name: xml.Name{Local: "id"}, Value: v.name}}
 	e.EncodeToken(start)
 	e.EncodeToken(xml.StartElement{Name: xml.Name{Local: "name"}})
-	e.EncodeElement(v.label+" "+v.name, xml.StartElement{Name: xml.Name{Local: "text"}})
+	e.EncodeElement(v.name, xml.StartElement{Name: xml.Name{Local: "text"}})
 	e.EncodeToken(xml.EndElement{Name: xml.Name{Local: "name"}})
 	if v.init != 0 {
 		e.EncodeToken(xml.StartElement{Name: xml.Name{Local: "initialMarking"}})
@@ -68,7 +68,7 @@ func (v Trans) MarshalXML(e *xml.Encoder, start xml.StartElement) error {
 	start.Attr = []xml.Attr{{Name: xml.Name{Local: "id"}, Value: name}}
 	e.EncodeToken(start)
 	e.EncodeToken(xml.StartElement{Name: xml.Name{Local: "name"}})
-	e.EncodeElement(v.label+" "+name, xml.StartElement{Name: xml.Name{Local: "text"}})
+	e.EncodeElement(name, xml.StartElement{Name: xml.Name{Local: "text"}})
 	e.EncodeToken(xml.EndElement{Name: xml.Name{Local: "name"}})
 	e.EncodeToken(xml.EndElement{Name: start.Name})
 

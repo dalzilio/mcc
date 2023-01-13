@@ -35,7 +35,6 @@ var smptCmd = &cobra.Command{
 var smptFileName string
 var smptOutFileName string
 var smptUseName bool
-var smptUseComplexPNames bool
 
 // var smptUseComplexPNames bool
 var smptLogger *log.Logger
@@ -45,7 +44,6 @@ func init() {
 	smptCmd.Flags().StringVarP(&smptFileName, "file", "i", "", "name of the input file (.pnml)")
 	smptCmd.Flags().StringVarP(&smptOutFileName, "out", "o", "", "basename of the output file (without extension, default to input file basename) or - for stdout")
 	smptCmd.Flags().BoolVar(&smptUseName, "name", false, "use PNML (document) name for the output file")
-	smptCmd.Flags().BoolVar(&smptUseComplexPNames, "sliced", false, "use structured naming for places")
 
 	smptLogger = log.New(os.Stderr, "MCC SMPT:", 0)
 
@@ -110,7 +108,6 @@ func smptConvert(filename string) {
 	}
 
 	p.SetVerbose(pnml.SMPT)
-	// set the semantic of "overflowing" enumeration types
 	p.SetFES(false)
 
 	hl, err := hlnet.Build(p)

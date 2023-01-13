@@ -40,7 +40,7 @@ func init() {
 	pnmlCmd.Flags().StringVarP(&pnmlFileName, "file", "i", "", "name of the input file (.pnml)")
 	pnmlCmd.Flags().StringVarP(&pnmlOutFileName, "out", "o", "", "basename of the output file (without extension, default to input file basename) or - for stdout")
 	pnmlCmd.Flags().BoolVar(&pnmlUseName, "name", false, "use PNML (document) name for the output file")
-	pnmlCmd.Flags().BoolVar(&pnmlUseComplexPNames, "sliced", false, "use structured naming for places")
+	pnmlCmd.Flags().BoolVar(&pnmlUseComplexPNames, "sliced", false, "use structured naming for places (default)")
 
 	pnmlLogger = log.New(os.Stderr, "MCC PNML:", 0)
 }

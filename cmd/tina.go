@@ -33,7 +33,6 @@ var tinaFileName string
 var tinaOutFileName string
 var tinaUseName bool
 
-// var tinaUseComplexPNames bool
 var tinaLogger *log.Logger
 
 func init() {
