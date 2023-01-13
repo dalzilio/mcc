@@ -58,7 +58,7 @@ the latest releases on [GitHub's release page for this
 project](https://github.com/dalzilio/mcc/releases). We provide binary files for
 [Windows](https://github.com/dalzilio/mcc/releases/download/v1.5.0/mcc.exe),
 [Linux](https://github.com/dalzilio/mcc/releases/download/v1.5.0/mcc-linux) and
-[MacOS (Darwin)](https://github.com/dalzilio/mcc/releases/download/v1.5.0/mcc-darwin).
+[macOS (Darwin)](https://github.com/dalzilio/mcc/releases/download/v1.5.0/mcc-darwin).
 
 You also have the option to install the tool directly from source. For this, you
 need first to install a recent Go distribution (available at
@@ -117,9 +117,9 @@ Use "mcc [command] --help" for more information about a command.
   Wolf in [Skeleton Abstraction for Universal Temporal
   Properties](https://doi.org/10.1007/978-3-030-76983-3_10) (2021).
 
-* We support the declaration of `finiteintrange` types in PNML. as well
-  as the declaration of `Partition` and `PartitionElement`. This means
-  that we can now unfold model VehicularWifi (surprise model in 2019)
+* We support the declaration of `finiteintrange` types in PNML, as well as the
+  declaration of `Partition` and `PartitionElement`. This means that we can now
+  unfold model VehicularWifi (surprise model in 2019)
 
 * We deprecated command `hlnet` since version 2.0 and replaced it with `mcc
   info`, which provides similar functionalities. Option `--stats` can be used to
@@ -135,7 +135,7 @@ Use "mcc [command] --help" for more information about a command.
 * Option `--debug` in command `mcc info` generates a P/T net "documentation" for
   a colored net with information that can be displayed with the tool NetDraw
   (`nd`), which is part of the [TINA
-  toolbox](http://projects.laas.fr/tina/home.php). Wedisplay information about
+  toolbox](http://projects.laas.fr/tina/home.php). We display information about
   types, variables and the expressions associated with arcs inside comments. We
   also add a copy of this information using the support for (sticky) notes that
   is built inside TINA's net format. You can see an example of the result
@@ -160,7 +160,7 @@ Use "mcc [command] --help" for more information about a command.
   between places and transitions in the colored net, and their P/T equivalent.
 
 * Since version 2.0, command `mcc pnml` always output results using "structured"
-  place names. We also ensure that the XML attributes for place names and id are
+  place names. We also ensure that the XML attributes for place names and IDs are
   equal.
 
 ## Dependencies
@@ -179,4 +179,4 @@ file.
 
 ## Authors
 
-* **Silvano DAL ZILIO** -  [LAAS/CNRS](https://www.laas.fr/)
+* **Silvano DAL ZILIO** - [LAAS/CNRS](https://www.laas.fr/)

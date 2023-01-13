@@ -47,35 +47,35 @@ func (s stringList) union(ns stringList) stringList {
 
 // stringListZip collects all the strings in a collection of stringList (with the
 // hypothesis that they are all disctinct).
-func stringListZip(ss []stringList) stringList {
-	if len(ss) == 0 {
-		return stringList{}
-	}
-	res := ss[0]
-	for i := 1; i < len(ss); i++ {
-		res = res.union(ss[i])
-	}
-	return res
-}
+// func stringListZip(ss []stringList) stringList {
+// 	if len(ss) == 0 {
+// 		return stringList{}
+// 	}
+// 	res := ss[0]
+// 	for i := 1; i < len(ss); i++ {
+// 		res = res.union(ss[i])
+// 	}
+// 	return res
+// }
 
-func (s stringList) addEnv(p pnml.Expression) stringList {
-	res := stringListBuild(p)
-	for _, v := range s {
-		res = res.add(v)
-	}
-	return res
-}
+// func (s stringList) addEnv(p pnml.Expression) stringList {
+// 	res := stringListBuild(p)
+// 	for _, v := range s {
+// 		res = res.add(v)
+// 	}
+// 	return res
+// }
 
 // member returns the index in s at which element v occurs, or -1 if v does not
 // appear in s.
-func (s stringList) member(v string) int {
-	for k, i := range s {
-		if i == v {
-			return k
-		}
-	}
-	return -1
-}
+// func (s stringList) member(v string) int {
+// 	for k, i := range s {
+// 		if i == v {
+// 			return k
+// 		}
+// 	}
+// 	return -1
+// }
 
 // delete returns a stringList containing the values s that are different from
 // v.
