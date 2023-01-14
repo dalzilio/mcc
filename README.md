@@ -111,7 +111,7 @@ Use "mcc [command] --help" for more information about a command.
 
 ## Features and recent modifications
 
-* We provide a new command, `skeleton`, that generates a P/T net by coalescing
+* We provide a new command, `skeleton` :bone:, that generates a P/T net by coalescing
   all the colors in a place into a single one, and forgetting the guards on
   transitions. This is exactly the construction defined by S. Wallner and K.
   Wolf in [Skeleton Abstraction for Universal Temporal
@@ -160,8 +160,12 @@ Use "mcc [command] --help" for more information about a command.
   between places and transitions in the colored net, and their P/T equivalent.
 
 * Since version 2.0, command `mcc pnml` always output results using "structured"
-  place names. We also ensure that the XML attributes for place names and IDs are
-  equal.
+  place names. It means that option `--sliced` is not necessary anymore. We also
+  ensure that the XML attributes for place names and IDs are equal. We added a
+  new option, `--properties`, which adds traceability information between
+  identifiers in the P/T and COL models, just like with command `smpt`. This
+  information is included into the resulting PNML file using a `<toolspecific>`
+  element.
 
 ## Dependencies
 
