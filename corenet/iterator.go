@@ -46,9 +46,9 @@ func mkiter(net *pnml.Net, cpl map[coreAssoc]*Place, t *hlnet.Transition) *envIt
 		partition: []*subIterator{},
 	}
 	// we build a subiterator for each arc in the transition but keep only the
-	// IN arc when we have a stable place (because we kn ow that there is the
-	// equivalent OUT arc). We also collect the set of
-	// variables used in the arcs.
+	// IN arc when we have a stable place (because we know that there is the
+	// equivalent OUT arc). We also collect the set of variables used in the
+	// arcs.
 	for _, a := range t.Arcs {
 		if a.Place.Stable && a.Kind == hlnet.OUT {
 			continue
