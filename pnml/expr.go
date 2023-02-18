@@ -207,8 +207,15 @@ func (p Tuple) Match(net *Net, env Env) ([]*Value, []int) {
 	return res, mres
 }
 
+// tuple are supposed to be a single value, except in model UtilityControlRoom,
+// where we can find a tuple of size 1 containing an <all>. So we take a look at
+// what is inside the tuple and report the size of the cartesian product.
 func (p Tuple) Skeletonize(net *Net) int {
-	return 1
+	res := 1
+	for k := range p {
+		res = res * p[k].Skeletonize(net)
+	}
+	return res
 }
 
 // ----------------------------------------------------------------------
@@ -318,7 +325,14 @@ func (p Constant) Match(net *Net, env Env) ([]*Value, []int) {
 }
 
 func (p Constant) Skeletonize(net *Net) int {
-	return 1
+	if _, found := net.order[string(p)]; found {
+		return 1
+	}
+	if _, found := net.World[string(p)]; found {
+		return len(net.World[string(p)])
+	}
+	log.Fatalf("identifier %s is not a constant or a known type", string(p))
+	panic("")
 }
 
 // ----------------------------------------------------------------------
