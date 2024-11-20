@@ -1,0 +1,35 @@
+{
+    "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+    "type": "SoftwareSourceCode",
+    "applicationCategory": "Computer science",
+    "author": [
+        {
+            "id": "https://orcid.org/0000-0002-6002-2696",
+            "type": "Person",
+            "affiliation": {
+                "type": "Organization",
+                "name": "LAAS-CNRS, Université de Toulouse"
+            },
+            "email": "dalzilio@laas.fr",
+            "familyName": "Dal Zilio",
+            "givenName": "Silvano"
+        }
+    ],
+    "codeRepository": "https://github.com/dalzilio/mcc",
+    "dateCreated": "2017-11-22",
+    "dateModified": "2023-01-14",
+    "datePublished": "2019-11-22",
+    "description": "MCC is a tool for transforming the models of High-Level Petri nets, given in PNML format, into equivalent Place/Transition nets. ",
+    "keywords": [
+        "Petri nets",
+        "model checking",
+        "PNML"
+    ],
+    "license": "https://spdx.org/licenses/CECILL-B",
+    "name": "MCC",
+    "programmingLanguage": "Go",
+    "schema:releaseNotes": "This release add a new subcommand (mcc skeleton) for generating the skeleton of a colored net using TINA's .net format.\n\nCommand mcc hlnet has been replaced with a new command, mcc info, which provides similar functionalities.\n\ncommand mcc pnml now returns models that use \"structured\" place/transition names by default. We also ensure that the XML attributes for place names and IDs are equal. Finally, we added a new option, --properties, which adds traceability information between identifiers in the P/T and COL models. This information is included into the resulting PNML file using a <toolspecific> element.",
+    "version": "2.0.0",
+    "developmentStatus": "active",
+    "referencePublication": "https://link.springer.com/chapter/10.1007/978-3-030-51831-8_23"
+}
